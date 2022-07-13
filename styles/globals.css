@@ -3,6 +3,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap');
 /* font-family: 'Genos', sans-serif; */
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+/* font-family: 'Lato', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@300;400;600;700&display=swap');
+/* font-family: 'Saira Semi Condensed', sans-serif; */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700&display=swap');
+/* 'Darker Grotesque', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+/* 'K2D', sans-serif; */
+
 * {
   margin: 0;
   padding: 0;
@@ -37,17 +48,17 @@ body {
 
 
 .app {
-  --secondaryColor: #BF6B04;
-  --secondaryColor: #A65F37;
-  --secondaryColor2: #A65F37;
+  --secondaryColor: #47352b;
+  --secondaryColor2: #292624;
   --primaryColor: rgb(10, 10, 10);
   --appBgColor: #fff;
-  --navbarBgColor: #eee;
+  --navbarBgColor: #997e71;
+  /* --navbarBgColor: #bf947a; */
   --galleryContentColor: #111;
   --galleryBtnBg: rgb(30, 30, 30);
   --logoBgMobile: rgba(0, 0, 0, 0.7);
-  --textFont: "Kanit", sans-serif;
-  --titleFont: 'Genos', sans-serif;
+  --textFont: 'Darker Grotesque', sans-serif;
+  --titleFont: 'K2D', sans-serif;
   width: 100vw;
   min-height: 100vh;
   background-color: var(--appBgColor);
@@ -80,8 +91,9 @@ body {
 }
 
 .title h2 {
-  font-family: 'Genos', sans-serif;
-  font-size: 3rem;
+  font-family: var(--titleFont);
+  font-size: 2.7rem;
+  color: var(--navbarBgColor);
   text-transform: uppercase;
   letter-spacing: 5px;
   margin-bottom: 10vh;

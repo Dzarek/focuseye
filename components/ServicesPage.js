@@ -139,11 +139,18 @@ const Wrapper = styled.div`
     margin: 5vh auto;
     section {
       margin-bottom: 2vh;
-      font-size: 1.2rem;
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
+      p {
+        font-weight: 500;
+        font-size: 1.5rem;
+        .icon {
+          margin-top: 5px;
+        }
+      }
     }
+
     @media screen and (max-width: 800px) {
       width: 90%;
       section {

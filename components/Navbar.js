@@ -11,6 +11,8 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { MdOutlinePhoneAndroid } from "react-icons/md";
 import { IoHome } from "react-icons/io5";
 
+const backgroundImg = "../images/backgroundNav.jpg";
+
 const Navbar = () => {
   const [offset, setOffset] = useState(0);
 
@@ -49,6 +51,16 @@ const Navbar = () => {
           >
             Oferta
           </Link>
+          <Link
+            to="offer"
+            smooth={true}
+            duration={1000}
+            activeClass="active"
+            spy={true}
+            offset={-50}
+          >
+            Blog
+          </Link>
           <div
             onClick={() => {
               scroll.scrollToTop();
@@ -58,9 +70,19 @@ const Navbar = () => {
             <h2>
               FocusEye
               <div className="logoLine"></div>
-              <span>Sylwia Sajdak</span>{" "}
+              <span className="logoName">Sylwia Sajdak</span>{" "}
             </h2>
           </div>
+          <Link
+            to="aboutMe"
+            smooth={true}
+            duration={1000}
+            activeClass="active"
+            spy={true}
+            offset={-30}
+          >
+            FAQ
+          </Link>
           <Link
             to="aboutMe"
             smooth={true}
@@ -190,38 +212,40 @@ const Wrapper = styled.div`
 
     h5,
     a {
-      font-weight: 600;
-      font-size: 1.3rem;
-      font-family: "Genos", sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      font-family: var(--titleFont);
       margin: 10px 1.5vw 0;
       text-transform: uppercase;
       transition: 0.4s;
       cursor: pointer;
+      color: var(--navbarBgColor);
       &.active {
         color: var(--secondaryColor);
       }
       :hover {
         /* color: var(--secondaryColor); */
-        font-size: 1.4rem;
+        font-size: 1.2rem;
       }
     }
     .logo {
-      margin: 0 5vw;
+      margin: 0 3vw;
       cursor: pointer;
       h2 {
-        font-family: "Genos", sans-serif;
-        font-size: 2rem;
+        font-family: var(--titleFont);
+        font-size: 1.7rem;
         letter-spacing: 2px;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-left: -1.5rem;
+        /* margin-left: -1.5rem; */
         .logoLine {
           margin: 5px 30px 0;
           height: 1.5rem;
           width: 3px;
-          background: white;
           background: #999;
+          background: var(--navbarBgColor);
           animation: logoR 4s linear infinite;
           @keyframes logoR {
             20% {
@@ -254,14 +278,39 @@ const Wrapper = styled.div`
           }
         }
         span {
-          color: var(--secondaryColor);
+          color: var(--secondaryColor2);
+          color: var(--primaryColor);
         }
       }
     }
   }
   .navbarBg {
-    background: var(--navbarBgColor);
-    transition: 0.5s;
+    /* background: var(--navbarBgColor); */
+    background: url(${backgroundImg});
+    background-size: cover;
+    color: #fff;
+    transition: 1s;
+    h5,
+    a {
+      color: #fff;
+      &.active {
+        color: var(--secondaryColor);
+      }
+      :hover {
+        font-size: 1.4rem;
+      }
+    }
+    .logo {
+      h2 {
+        color: var(--secondaryColor);
+        .logoLine {
+          background: #fff;
+        }
+        span {
+          color: var(--secondaryColor);
+        }
+      }
+    }
   }
   .upBtn {
     position: fixed;
@@ -385,6 +434,7 @@ const Wrapper2 = styled.div`
   }
   .navbarBg {
     background: var(--navbarBgColor);
+    color: #fff;
     transition: 0.5s;
   }
 `;

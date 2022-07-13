@@ -37,7 +37,7 @@ const HomePage = ({ setShowDetails }) => {
           animationSpeed={1000}
           slidesPerPage={1}
           addArrowClickHandler
-          stopAutoPlayOnHover
+          // stopAutoPlayOnHover
           arrowLeft={<IoIosArrowDropleftCircle className="arrow arrowLeft" />}
           arrowRight={
             <IoIosArrowDroprightCircle className="arrow arrowRight" />
@@ -104,14 +104,15 @@ const Wrapper = styled.div`
       align-items: center;
       justify-content: space-around;
       margin: 0 2rem;
-      font-family: "Kanit", sans-serif;
+      font-family: var(--titleFont);
       cursor: pointer;
       p {
         margin: 0 10px;
         font-size: 1rem;
       }
       .fbInIcon {
-        color: var(--secondaryColor);
+        color: var(--navbarBgColor);
+        font-size: 1.4rem;
       }
     }
   }
@@ -119,9 +120,9 @@ const Wrapper = styled.div`
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -48%);
+    transform: translate(-47.5%, -48%);
     height: 80vh;
-    width: 90vw;
+    width: 95vw;
     .arrow {
       position: absolute;
       font-size: 2rem;
@@ -154,7 +155,7 @@ const Wrapper = styled.div`
   }
   .headerPart {
     height: 80vh;
-    width: 90vw;
+    width: 95vw;
     position: relative;
     top: 50%;
     left: 50%;
@@ -190,15 +191,17 @@ const Wrapper = styled.div`
       /* height: 40%; */
       width: 60%;
       h2 {
-        font-family: "Kanit", sans-serif;
-        font-size: 2rem;
+        font-family: var(--textFont);
+        letter-spacing: 1px;
+        font-size: 2.5rem;
         margin: 1vh 0 4vh 0;
         color: white;
       }
       p {
-        font-family: "Genos", sans-serif;
-        font-weight: 600;
-        font-size: 1.3rem;
+        font-family: var(--titleFont);
+        font-weight: 800;
+        font-size: 1.1rem;
+        /* text-transform: uppercase; */
         color: #ccc;
       }
       a {

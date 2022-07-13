@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
+const backgroundImg = "../images/backgroundNav.jpg";
+
 const Footer = () => {
   return (
     <Wrapper>
       <p>
-        &copy; {new Date().getFullYear()} Kamil Łach - Sesje Fotograficzne.
-        Wszelkie prawa zastrzeżone.
+        &copy; {new Date().getFullYear()} FocusEye - Sylwia Sajdak. Wszelkie
+        prawa zastrzeżone.
       </p>
     </Wrapper>
   );
@@ -18,7 +20,9 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--navbarBgColor);
+  /* background: var(--navbarBgColor); */
+  background: url(${backgroundImg});
+  background-size: cover;
   font-family: var(--titleFont);
   font-size: 1.3rem;
   @media screen and (max-width: 800px) {
