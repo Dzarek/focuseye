@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { BsPeopleFill } from "react-icons/bs";
 
 const aboutImg = "../images/meImg.jpg";
 
@@ -10,28 +11,18 @@ const AboutPage = () => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <Wrapper id="aboutMe" className="mainPage">
-      <div className="title">
-        <h2>O mnie</h2>
-      </div>
+    <Wrapper>
       <div className="aboutMeContainer">
         <div data-aos="fade-right" className="imgContainer"></div>
         <div data-aos="fade-left" data-aos-offset="200" className="aboutInfo">
-          <h3>
-            Nazywam się Kamil Łach <br /> i jestem <span>fotografem</span>.
-          </h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            cupiditate illo deleniti dicta provident, odio blanditiis nesciunt
-            inventore. Ab maiores numquam explicabo corporis quis fuga eaque
-            quam quo nostrum ipsum?
+          <h2 className="shortTitle">Poznaj mnie!</h2>
+          <p className="shortText">
+            Jak to się stało że jestem fotografem? Co robię na codzień?...Lorem
+            ipsum dolor sit amet, consectetur adipisicing elit. Similique quos,
+            hic voluptatum nihil mollitia incidunt, sunt fugit alias cumque
+            dolor,
           </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique
-            quos, hic voluptatum nihil mollitia incidunt, sunt fugit alias
-            cumque dolor, vel corrupti inventore aliquid nulla sapiente saepe
-            eveniet error quae?
-          </p>
+          <BsPeopleFill className="icon" />
         </div>
       </div>
     </Wrapper>
@@ -39,9 +30,12 @@ const AboutPage = () => {
 };
 
 const Wrapper = styled.div`
-  background: var(--galleryBtnBg);
+  background: var(--aboutMeBgColor);
   width: 100vw;
-  max-width: 100vw;
+  min-height: 80vh;
+  margin: 0 auto;
+  padding-top: 10vh;
+  position: relative;
 
   .aboutMeContainer {
     max-width: 1360px;
@@ -63,17 +57,18 @@ const Wrapper = styled.div`
       width: 50%;
       display: flex;
       flex-direction: column;
-      h3 {
-        font-size: 3rem;
-        font-family: var(--titleFont);
-        font-weight: 500;
-        margin-bottom: 8vh;
+      h2 {
+        color: #fff;
+        text-align: left;
+        margin-bottom: 10vh;
+        letter-spacing: 3px;
         span {
           color: var(--secondaryColor);
         }
       }
       p {
-        font-size: 1.2rem;
+        color: var(--sectionBgColor);
+        font-size: 1.5rem;
       }
     }
     @media screen and (max-width: 800px) {
@@ -96,6 +91,16 @@ const Wrapper = styled.div`
           text-align: right;
         }
       }
+    }
+  }
+  .icon {
+    margin-top: 7vh;
+    font-size: 3rem;
+    align-self: center;
+    transition: 0.5s;
+    cursor: pointer;
+    :hover {
+      color: #fff;
     }
   }
 `;

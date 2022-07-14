@@ -33,7 +33,7 @@ const Wrapper = styled.div`
   width: 90vw;
   max-width: 1360px;
   min-height: 70vh;
-  margin: 0 auto;
+  margin: 10vh auto;
   padding: 10vh 0;
   position: relative;
   .blogTitle {
