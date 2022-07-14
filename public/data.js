@@ -129,8 +129,8 @@ export const gallery = [
 export const offers = [
   {
     id: 1,
-    category: "ciążowe",
-    title: "Sesja Ciążowa",
+    category: "brzuszkowe",
+    title: "Sesje Brzuszkowe",
     price: 200,
     numberOfImages: 20,
     time: "2h",
@@ -144,8 +144,8 @@ export const offers = [
   },
   {
     id: 2,
-    category: "moda",
-    title: "Sesja Mody",
+    category: "noworodkowe",
+    title: "Sesje Noworodkowe Lifestyle",
     price: 300,
     numberOfImages: 30,
     time: "3h",
@@ -159,8 +159,8 @@ export const offers = [
   },
   {
     id: 3,
-    category: "portrety",
-    title: "Sesja Portretowa",
+    category: "chrzty święte",
+    title: "Chrzty Święte",
     price: 100,
     numberOfImages: 10,
     time: "1h",
@@ -175,7 +175,7 @@ export const offers = [
   {
     id: 4,
     category: "rodzinne",
-    title: "Sesja Rodzinna",
+    title: "Sesje Rodzinne Lifestyle",
     price: 300,
     numberOfImages: 30,
     time: "2h",
@@ -201,6 +201,21 @@ export const offers = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti?",
     imgs: [slubne6, slubne9],
+  },
+  {
+    id: 6,
+    category: "miłosne",
+    title: "Sesje Miłosne",
+    price: 500,
+    numberOfImages: 100,
+    time: "4h",
+    place: "plener",
+    ready: "do 6 tygodni",
+    album: "za dodatkową opłatą",
+    quality: "Full HD",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti?",
+    imgs: [slubne5, slubne9],
   },
 ];
 

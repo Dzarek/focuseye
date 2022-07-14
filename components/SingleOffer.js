@@ -12,7 +12,7 @@ const SingleOffer = ({ offer, setShowDetails }) => {
       ></div>
       <div className="singleContent">
         <h3 className="title">{category}</h3>
-        <h2 className="price">{price} zł</h2>
+        <h2 className="price">od {price} zł</h2>
         <button onClick={() => setShowDetails(category)} className="detailsBtn">
           szczegóły
         </button>
@@ -59,7 +59,7 @@ const Wrapper = styled.div`
     color: white;
     .title {
       text-transform: uppercase;
-      width: 60%;
+      width: 80%;
       border-bottom: 2px solid white;
       padding-bottom: 15px;
       font-size: 2rem;

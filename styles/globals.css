@@ -54,6 +54,7 @@ body {
   --appBgColor: #fff;
   --navbarBgColor: #997e71;
   --sectionBgColor: #e2d6d1;
+  --singleOfferBgColor: #837772;
   --galleryContentColor: #111;
   --galleryBtnBg: rgb(30, 30, 30);
   --logoBgMobile: rgba(0, 0, 0, 0.7);
@@ -99,6 +100,35 @@ body {
   margin-bottom: 10vh;
 }
 
+.shortTitle {
+  font-family: var(--titleFont);
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--secondaryColor);
+}
+
+.shortText {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.buttonLink {
+  background: none;
+  border: none;
+  font-size: 4rem;
+  cursor: pointer;
+  color: var(--navbarBgColor);
+  transition: 0.5s;
+}
+
+.buttonLink:hover {
+  color: var(--secondaryColor);
+}
+
+
 /* @media screen and (max-width:800px) {
   .title h2 {}
 } */
@@ -116,8 +146,6 @@ body {
 .icon {
   color: var(--secondaryColor2);
   margin-right: 10px;
-  margin-top: 2px;
-  font-size: 1.5rem;
 }
 
 .details::-webkit-scrollbar {

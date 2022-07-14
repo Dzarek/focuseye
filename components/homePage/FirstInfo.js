@@ -46,7 +46,7 @@ const Wrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    opacity: 0.3;
+    opacity: 0.5;
     img {
       width: 100%;
     }

@@ -6,6 +6,8 @@ import Header from "../components/homePage/Header";
 import FirstInfo from "../components/homePage/FirstInfo";
 import ShortGallery from "../components/homePage/ShortGallery";
 import ShortOffer from "../components/homePage/ShortOffer";
+import ShortBlog from "../components/homePage/ShortBlog";
+import ShortAboutMe from "../components/homePage/ShortAboutMe";
 // import GalleryPage from "../components/GalleryPage";
 // import ServicesPage from "../components/ServicesPage";
 // import AboutPage from "../components/AboutPage";
@@ -34,6 +36,8 @@ export default function Home() {
         <FirstInfo />
         <ShortGallery />
         <ShortOffer showDetails={showDetails} setShowDetails={setShowDetails} />
+        <ShortBlog />
+        <ShortAboutMe />
         {/* <GalleryPage /> */}
         {/* <ServicesPage
           showDetails={showDetails}

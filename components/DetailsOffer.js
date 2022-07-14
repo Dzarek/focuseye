@@ -73,7 +73,7 @@ const Wrapper = styled.div`
   z-index: 9999;
 
   .details {
-    background-color: #111;
+    background-color: var(--singleOfferBgColor);
     width: 55vw;
     height: 80vh;
     position: absolute;
@@ -83,7 +83,7 @@ const Wrapper = styled.div`
     color: white;
     overflow: auto;
     border-radius: 5px;
-    border: 2px solid var(--secondaryColor);
+    border: 3px solid var(--secondaryColor);
     @media screen and (max-width: 800px) {
       width: 100vw;
       height: 100vh;
@@ -120,7 +120,7 @@ const Wrapper = styled.div`
       text-transform: uppercase;
       font-family: var(--titleFont);
       text-shadow: 3px 3px 3px black;
-      font-size: 3rem;
+      font-size: 2.2rem;
     }
     .detailsContent {
       margin: 5vh auto;
@@ -142,6 +142,7 @@ const Wrapper = styled.div`
         }
         h3 {
           margin-bottom: 3vh;
+          font-size: 1.2rem;
           span {
             color: var(--secondaryColor2);
             margin-right: 5px;
@@ -177,6 +178,7 @@ const Wrapper = styled.div`
         p {
           margin-bottom: 3vh;
           font-size: 1.2rem;
+          font-weight: 500;
         }
       }
     }

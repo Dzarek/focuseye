@@ -15,6 +15,8 @@ import { offers } from "../../public/data";
 import SingleOffer from "../SingleOffer";
 import DetailsOffer from "../DetailsOffer";
 
+import { TiArrowRightOutline } from "react-icons/ti";
+
 const ShortOffer = ({ showDetails, setShowDetails }) => {
   const oneOffer = offers.find((item) => item.category === showDetails);
   useEffect(() => {
@@ -24,8 +26,37 @@ const ShortOffer = ({ showDetails, setShowDetails }) => {
     <Wrapper>
       <div className="shortOfferContainer">
         <div className="textContainer">
-          <h2>Oferta</h2>
-          <p>Moja oferta składa się z następujących sesji zdjęciowych:</p>
+          <h2 className="shortTitle">Oferta</h2>
+          <p className="shortText">
+            Moja oferta składa się z następujących sesji zdjęciowych:
+          </p>
+          <ul data-aos="fade-right" data-aos-duration="1500">
+            <li>
+              <TiArrowRightOutline className="icon" />
+              <p>sesje noworodkowe lifestyle</p>
+            </li>
+            <li>
+              <TiArrowRightOutline className="icon" />
+              <p>sesje rodzinne lifestyle</p>
+            </li>
+            <li>
+              <TiArrowRightOutline className="icon" />
+              <p>sesje brzuszkowe</p>
+            </li>
+            <li>
+              <TiArrowRightOutline className="icon" />
+              <p>chrzty święte</p>
+            </li>
+            <li>
+              <TiArrowRightOutline className="icon" />
+              <p>śluby</p>
+            </li>
+            <li>
+              <TiArrowRightOutline className="icon" />
+              <p>sesje miłosne</p>
+            </li>
+          </ul>
+          <button>zobacz oferty</button>
         </div>
         <div className="offerContainer">
           <Carousel
@@ -81,6 +112,56 @@ const Wrapper = styled.div`
   }
   .textContainer {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2 {
+      margin-bottom: 7vh;
+      color: #fff;
+      font-size: 4rem;
+    }
+    p {
+      margin-bottom: 3vh;
+      font-weight: 700;
+    }
+    ul {
+      list-style: none;
+      line-height: 1;
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        .icon {
+          font-size: 1.3rem;
+          margin-top: -17px;
+        }
+        p {
+          font-size: 1.4rem;
+          font-style: italic;
+          font-weight: 500;
+        }
+      }
+    }
+    button {
+      border: 2px solid #fff;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-family: var(--titleFont);
+      text-transform: uppercase;
+      padding: 10px 0px;
+      width: 200px;
+      margin: 2vh auto;
+      font-weight: 800;
+      color: #fff;
+      background: var(--secondaryColor);
+      transition: 0.4s;
+      cursor: pointer;
+      :hover {
+        background: #fff;
+        border: 2px solid var(--secondaryColor);
+        color: var(--secondaryColor);
+      }
+    }
   }
   .offerContainer {
     width: 40%;

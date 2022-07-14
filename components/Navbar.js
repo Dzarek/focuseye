@@ -81,7 +81,7 @@ const Navbar = () => {
             spy={true}
             offset={-30}
           >
-            FAQ
+            O mnie
           </Link>
           <Link
             to="aboutMe"
@@ -91,7 +91,7 @@ const Navbar = () => {
             spy={true}
             offset={-30}
           >
-            O mnie
+            FAQ
           </Link>
           <Link
             to="contact"
@@ -225,7 +225,7 @@ const Wrapper = styled.div`
         color: var(--secondaryColor);
       }
       :hover {
-        /* color: var(--secondaryColor); */
+        color: var(--secondaryColor);
         font-size: 1.2rem;
       }
     }
@@ -296,9 +296,9 @@ const Wrapper = styled.div`
       &.active {
         color: var(--secondaryColor);
       }
-      :hover {
-        font-size: 1.4rem;
-      }
+      /* :hover {
+        font-size: 1.2rem;
+      } */
     }
     .logo {
       h2 {
