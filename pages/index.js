@@ -5,6 +5,7 @@ import { useState } from "react";
 import Header from "../components/homePage/Header";
 import FirstInfo from "../components/homePage/FirstInfo";
 import ShortGallery from "../components/homePage/ShortGallery";
+import ShortOffer from "../components/homePage/ShortOffer";
 // import GalleryPage from "../components/GalleryPage";
 // import ServicesPage from "../components/ServicesPage";
 // import AboutPage from "../components/AboutPage";
@@ -32,6 +33,7 @@ export default function Home() {
         <Header setShowDetails={setShowDetails} />
         <FirstInfo />
         <ShortGallery />
+        <ShortOffer showDetails={showDetails} setShowDetails={setShowDetails} />
         {/* <GalleryPage /> */}
         {/* <ServicesPage
           showDetails={showDetails}

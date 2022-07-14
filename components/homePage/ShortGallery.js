@@ -34,6 +34,7 @@ const ShortGallery = () => {
 };
 
 const Wrapper = styled.div`
+  margin: 20vh auto 0vh;
   .pageContainer {
     width: 90%;
     height: 70vh;
@@ -44,14 +45,9 @@ const Wrapper = styled.div`
     .imgContainer {
       width: 47%;
       height: 100%;
-      /* display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap; */
       position: relative;
       img {
         height: 190px;
-        /* margin: 10px; */
         position: absolute;
         top: 0;
         left: 0;

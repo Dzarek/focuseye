@@ -319,7 +319,7 @@ const Wrapper = styled.div`
     font-size: 2rem;
     background: transparent;
     border: none;
-    color: var(--primaryColor);
+    color: var(--secondaryColor);
     transition: 0.5s;
     cursor: pointer;
     :hover {
