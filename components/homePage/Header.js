@@ -3,7 +3,7 @@ import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import { Link } from "react-scroll";
 
-import { headerData } from "../public/data";
+import { headerData } from "../../public/data";
 
 import {
   IoIosArrowDropleftCircle,
@@ -61,7 +61,7 @@ const HomePage = ({ setShowDetails }) => {
                     <p>{shortTitle}</p>
                     <div className="oneline"></div>
                   </div>
-                  <h2>{longTitle}</h2>
+                  <h1>{longTitle}</h1>
                   <Link
                     to="offer"
                     smooth={true}
@@ -190,7 +190,7 @@ const Wrapper = styled.div`
       justify-content: space-between;
       /* height: 40%; */
       width: 60%;
-      h2 {
+      h1 {
         font-family: var(--textFont);
         letter-spacing: 1px;
         font-size: 2.5rem;

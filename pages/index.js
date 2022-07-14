@@ -1,12 +1,14 @@
 import Head from "next/head";
 import { useState } from "react";
 
-import Navbar from "../components/Navbar";
-import HomePage from "../components/HomePage";
-import GalleryPage from "../components/GalleryPage";
-import ServicesPage from "../components/ServicesPage";
-import AboutPage from "../components/AboutPage";
-import ContactPage from "../components/ContactPage";
+// import Navbar from "../components/Navbar";
+import Header from "../components/homePage/Header";
+import FirstInfo from "../components/homePage/FirstInfo";
+import ShortGallery from "../components/homePage/ShortGallery";
+// import GalleryPage from "../components/GalleryPage";
+// import ServicesPage from "../components/ServicesPage";
+// import AboutPage from "../components/AboutPage";
+// import ContactPage from "../components/ContactPage";
 import Footer from "../components/Footer";
 
 export default function Home() {
@@ -25,18 +27,20 @@ export default function Home() {
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="shortcut icon" href="/logo192.png" />
       </Head>
-      <div className="app">
-        <Navbar />
-        <HomePage setShowDetails={setShowDetails} />
-        <GalleryPage />
-        <ServicesPage
+      <>
+        {/* <Navbar /> */}
+        <Header setShowDetails={setShowDetails} />
+        <FirstInfo />
+        <ShortGallery />
+        {/* <GalleryPage /> */}
+        {/* <ServicesPage
           showDetails={showDetails}
           setShowDetails={setShowDetails}
         />
         <AboutPage />
-        <ContactPage />
+        <ContactPage /> */}
         <Footer />
-      </div>
+      </>
     </>
   );
 }
