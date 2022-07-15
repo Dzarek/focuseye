@@ -9,6 +9,7 @@ import ShortOffer from "../components/homePage/ShortOffer";
 import ShortBlog from "../components/homePage/ShortBlog";
 import ShortAboutMe from "../components/homePage/ShortAboutMe";
 import ShortFaqContact from "../components/homePage/ShortFaqContact";
+import ShortInstagram from "../components/homePage/ShortInstagram";
 // import GalleryPage from "../components/GalleryPage";
 // import ServicesPage from "../components/ServicesPage";
 // import AboutPage from "../components/AboutPage";
@@ -40,6 +41,7 @@ export default function Home() {
         <ShortBlog />
         <ShortAboutMe />
         <ShortFaqContact />
+        <ShortInstagram />
         {/* <GalleryPage /> */}
         {/* <ServicesPage
           showDetails={showDetails}

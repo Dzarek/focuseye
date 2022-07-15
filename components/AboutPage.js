@@ -10,6 +10,7 @@ const AboutPage = () => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
+    // 5 lat doświadczenia z apartatem, 50 sesji zdjęciowych, 200 zadowolonych klientów
     <Wrapper id="aboutMe" className="mainPage">
       <div className="title">
         <h2>O mnie</h2>

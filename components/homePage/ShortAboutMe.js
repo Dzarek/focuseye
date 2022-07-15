@@ -22,7 +22,10 @@ const AboutPage = () => {
             hic voluptatum nihil mollitia incidunt, sunt fugit alias cumque
             dolor,
           </p>
-          <BsPeopleFill className="icon" />
+          <button>
+            Czytaj więcej
+            <BsPeopleFill className="icon" />
+          </button>
         </div>
       </div>
     </Wrapper>
@@ -93,15 +96,29 @@ const Wrapper = styled.div`
       }
     }
   }
-  .icon {
+  button {
+    width: 170px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     margin-top: 7vh;
-    font-size: 3rem;
-    align-self: center;
-    transition: 0.5s;
+    font-size: 1rem;
+    font-style: var(--titleFont);
+    font-weight: 600;
+    text-transform: lowercase;
+    border-radius: 10px;
+    background: #fff;
     cursor: pointer;
+    padding: 5px;
+    transition: 0.5s;
     :hover {
-      color: #fff;
+      transform: scale(1.05);
     }
+  }
+  .icon {
+    font-size: 1.4rem;
+    transition: 0.5s;
   }
 `;
 

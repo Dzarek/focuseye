@@ -144,7 +144,7 @@ const Wrapper = styled.div`
     }
     button {
       border: 2px solid #fff;
-      border-radius: 5px;
+      border-radius: 10px;
       font-size: 1rem;
       font-family: var(--titleFont);
       text-transform: uppercase;

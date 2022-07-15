@@ -88,7 +88,7 @@ const ShortFaqContact = () => {
 
 const Wrapper = styled.div`
   width: 100vw;
-  min-height: 70vh;
+  min-height: 80vh;
   margin: 0vh auto;
   padding: 10vh 0;
   position: relative;
@@ -188,7 +188,7 @@ const Wrapper = styled.div`
     bottom: 0;
     left: 0;
     width: 100vw;
-    height: 15vh;
+    height: 20vh;
     background: #fff;
     display: flex;
     align-items: center;
@@ -202,7 +202,7 @@ const Wrapper = styled.div`
       background: var(--secondaryColor);
       padding: 10px 15px;
       color: white;
-      border-radius: 5px;
+      border-radius: 10px;
       border: 2px solid var(--secondaryColor);
       transition: 0.5s;
       text-transform: uppercase;
