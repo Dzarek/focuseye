@@ -9,7 +9,12 @@ import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle,
 } from "react-icons/io";
-import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
+import {
+  FaFacebookSquare,
+  FaInstagramSquare,
+  FaPhoneSquare,
+} from "react-icons/fa";
+import { ImMail } from "react-icons/im";
 
 const HomePage = ({ setShowDetails }) => {
   const handleShowDetails = (category) => {
@@ -78,6 +83,16 @@ const HomePage = ({ setShowDetails }) => {
           })}
         </Carousel>
       </div>
+      <div className="phoneAndMail">
+        <div>
+          <FaPhoneSquare className="fbInIcon" />
+          <p>798 698 605</p>
+        </div>
+        <div>
+          <ImMail className="fbInIcon" />
+          <p>kontakt.focuseye@gmail.com</p>
+        </div>
+      </div>
     </Wrapper>
   );
 };
@@ -104,6 +119,36 @@ const Wrapper = styled.div`
       align-items: center;
       justify-content: space-around;
       margin: 0 2rem;
+      font-family: var(--titleFont);
+      cursor: pointer;
+      p {
+        margin: 0 10px;
+        font-size: 1rem;
+      }
+      .fbInIcon {
+        color: var(--navbarBgColor);
+        font-size: 1.4rem;
+      }
+    }
+  }
+  .phoneAndMail {
+    position: absolute;
+    bottom: 2.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 5vw; */
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: 0 5rem;
       font-family: var(--titleFont);
       cursor: pointer;
       p {
@@ -172,7 +217,7 @@ const Wrapper = styled.div`
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      filter: brightness(0.5);
+      filter: brightness(0.7);
       background-size: cover;
       background-position: center;
       @media screen and (max-width: 800px) {

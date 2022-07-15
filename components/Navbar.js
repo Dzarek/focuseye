@@ -230,10 +230,11 @@ const Wrapper = styled.div`
       }
     }
     .logo {
-      margin: 0 3vw;
+      margin: 0 4vw;
       cursor: pointer;
       h2 {
-        font-family: var(--titleFont);
+        /* font-family: var(--titleFont); */
+        font-family: "Genos", sans-serif;
         font-size: 1.7rem;
         letter-spacing: 2px;
         display: flex;
@@ -285,11 +286,13 @@ const Wrapper = styled.div`
     }
   }
   .navbarBg {
-    /* background: var(--navbarBgColor); */
-    background: url(${backgroundImg});
+    /* background: url(${backgroundImg}); */
+    background: var(--navigationBgColor);
     background-size: cover;
+    /* background-position: center; */
     color: #fff;
     transition: 1s;
+    border-bottom: 2px solid var(--navbarBgColor);
     h5,
     a {
       color: #fff;
@@ -302,12 +305,16 @@ const Wrapper = styled.div`
     }
     .logo {
       h2 {
-        color: var(--secondaryColor);
+        /* color: var(--secondaryColor); */
+        color: var(--sectionBgColor);
+        /* font-family: "Genos", sans-serif; */
+        text-shadow: 2px 2px 2px black;
         .logoLine {
           background: #fff;
         }
         span {
-          color: var(--secondaryColor);
+          /* color: var(--secondaryColor); */
+          color: var(--sectionBgColor);
         }
       }
     }

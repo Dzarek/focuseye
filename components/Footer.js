@@ -20,11 +20,12 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: var(--navbarBgColor); */
-  background: url(${backgroundImg});
+  background: var(--navigationBgColor);
+  /* background: url(${backgroundImg}); */
   background-size: cover;
   font-family: var(--titleFont);
   font-size: 1.3rem;
+  color: #fff;
   @media screen and (max-width: 800px) {
     margin-bottom: 10vh;
     height: 12vh;

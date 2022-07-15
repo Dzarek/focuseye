@@ -1,5 +1,9 @@
+import { useEffect } from "react";
+
 import styled from "styled-components";
 import { TbSlideshow } from "react-icons/tb";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const rodzinne1 = "../../images/gallery/rodzinne/98.jpg";
 const rodzinne2 = "../../images/gallery/rodzinne/101.jpg";
@@ -7,10 +11,13 @@ const rodzinne3 = "../../images/gallery/rodzinne/104.jpg";
 const rodzinne4 = "../../images/gallery/rodzinne/103.jpg";
 
 const ShortGallery = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <Wrapper className="mainPage">
       <div className="pageContainer">
-        <div className="imgContainer">
+        <div data-aos="zoom-in-up" className="imgContainer">
           <img src={rodzinne1} alt="" />
           <img src={rodzinne2} alt="" />
           <img src={rodzinne3} alt="" />
