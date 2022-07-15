@@ -11,6 +11,7 @@ import {
 } from "react-accessible-accordion";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { BsFillQuestionOctagonFill } from "react-icons/bs";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 const qBg = "../../images/Qbg.jpg";
 
@@ -76,13 +77,18 @@ const ShortFaqContact = () => {
           })}
         </Accordion>
       </div>
+      <div className="contactShort">
+        <h2>Jeśli interesują Cię moje usługi zapraszam do kontaktu</h2>
+        <FaLongArrowAltRight className="icon" />
+        <button>Kontakt</button>
+      </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
   width: 100vw;
-  min-height: 60vh;
+  min-height: 70vh;
   margin: 0vh auto;
   padding: 10vh 0;
   position: relative;
@@ -95,6 +101,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
+
     h2 {
       width: 40%;
       font-family: var(--titleFont);
@@ -174,6 +181,47 @@ const Wrapper = styled.div`
       display: flex;
       align-items: center;
       font-size: 1.3rem;
+    }
+  }
+  .contactShort {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 15vh;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      font-size: 1.8rem;
+    }
+    button {
+      font-size: 1.2rem;
+      font-family: var(--titleFont);
+      background: var(--secondaryColor);
+      padding: 10px 15px;
+      color: white;
+      border-radius: 5px;
+      border: 2px solid var(--secondaryColor);
+      transition: 0.5s;
+      text-transform: uppercase;
+      cursor: pointer;
+      :hover {
+        color: var(--secondaryColor);
+        background: white;
+      }
+    }
+    .icon {
+      font-size: 2rem;
+      margin: 0 5vw;
+      transform: translateX(-2vw);
+      animation: arrowMove 1s ease infinite alternate;
+      @keyframes arrowMove {
+        100% {
+          transform: translateX(2vw);
+        }
+      }
     }
   }
 `;
