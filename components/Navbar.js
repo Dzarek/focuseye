@@ -221,6 +221,7 @@ const Wrapper = styled.div`
       transition: 0.4s;
       cursor: pointer;
       color: var(--navbarBgColor);
+      text-shadow: 0.3px 0.3px 0.3px black;
       &.active {
         color: var(--secondaryColor);
       }
@@ -296,12 +297,14 @@ const Wrapper = styled.div`
     h5,
     a {
       color: #fff;
+      text-shadow: 1px 1px 1px black;
       &.active {
-        color: var(--secondaryColor);
+        color: var(--sectionBgColor);
       }
-      /* :hover {
+      :hover {
+        color: var(--sectionBgColor);
         font-size: 1.2rem;
-      } */
+      }
     }
     .logo {
       h2 {
