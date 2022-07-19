@@ -1,12 +1,12 @@
 import styled from "styled-components";
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { gallery } from "../../public/data";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import { FaInstagramSquare } from "react-icons/fa";
 
 const ShortInstagram = () => {
-  const url = `https://www.instagram.com/graphql/query/?query_hash=69cba40317214236af40e7efa697781d&variables={"id":"15459832366","first":1}`;
+  const url = `https://www.instagram.com/graphql/query/?query_hash=69cba40317214236af40e7efa697781d&variables={"id":"15459832366","first":10}`;
   const [instaImg, setInstaImg] = useState([]);
 
   useEffect(() => {
