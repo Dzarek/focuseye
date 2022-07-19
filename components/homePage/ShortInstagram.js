@@ -1,31 +1,28 @@
 import styled from "styled-components";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { gallery } from "../../public/data";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import { FaInstagramSquare } from "react-icons/fa";
+import { getInstagramImages } from "../../helpers/api-util";
 
 const ShortInstagram = () => {
-  const url = `https://www.instagram.com/graphql/query/?query_hash=69cba40317214236af40e7efa697781d&variables={"id":"15459832366","first":10}`;
   const [instaImg, setInstaImg] = useState([]);
 
-  const fetchImg = async () => {
-    const response = await fetch(url);
+  const fetchImages = async () => {
+    const response = await fetch(
+      "https://focuseye.pl/wp-json/wp/v2/media?media_folder=59"
+    );
     const data = await response.json();
-    // const thumbs = data.user.edge_owner_to_timeline_media.edges.map(
-    //   (edge) => ({
-    //     url: edge.node.thumbnail_src,
-    //     caption: edge.node.edge_media_to_caption?.edges[0]?.node?.text,
-    //     id: edge.id,
-    //   })
-    // );
-    setInstaImg(data);
-    console.log(instaImg);
+    const thumbnails = data.map((image) => {
+      const smallImg = image.media_details.sizes.full.source_url;
+      return smallImg;
+    });
+    setInstaImg(thumbnails);
   };
   useEffect(() => {
-    fetchImg();
+    fetchImages();
   }, []);
-
   const galleryCategory = gallery.filter(
     (item) => item.category === "rodzinne"
   );
@@ -39,10 +36,11 @@ const ShortInstagram = () => {
         animationSpeed={1000}
         slidesPerPage={7}
       >
-        {galleryInsta.map((item, index) => {
+        {instaImg.map((item, index) => {
           return <img key={index} src={item} alt="" />;
         })}
       </Carousel>
+
       <button>
         {" "}
         <FaInstagramSquare className="fbInIcon" /> Obserwuj
@@ -93,3 +91,22 @@ const Wrapper = styled.div`
 `;
 
 export default ShortInstagram;
+
+export const getStaticProps = async () => {
+  const thumbnails = await getInstagramImages();
+  // const url = "https://focuseye.pl/wp-json/wp/v2/media?media_folder=59";
+  // const response = await fetch(url);
+  // const data = await response.json();
+  // const thumbnails = data.map((image) => {
+  //   const smallImg = image.media_details.sizes.thumbnail.source_url;
+  //   return smallImg;
+  // });
+  // return thumbnails;
+  console.log(thumbnails);
+  return {
+    props: {
+      thumbnails,
+    },
+    revalidate: 60,
+  };
+};

@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
 
-// import Navbar from "../components/Navbar";
 import Header from "../components/homePage/Header";
 import FirstInfo from "../components/homePage/FirstInfo";
 import ShortGallery from "../components/homePage/ShortGallery";
@@ -10,10 +9,6 @@ import ShortBlog from "../components/homePage/ShortBlog";
 import ShortAboutMe from "../components/homePage/ShortAboutMe";
 import ShortFaqContact from "../components/homePage/ShortFaqContact";
 import ShortInstagram from "../components/homePage/ShortInstagram";
-// import GalleryPage from "../components/GalleryPage";
-// import ServicesPage from "../components/ServicesPage";
-// import AboutPage from "../components/AboutPage";
-// import ContactPage from "../components/ContactPage";
 import Footer from "../components/Footer";
 
 export default function Home() {
@@ -33,7 +28,6 @@ export default function Home() {
         <link rel="shortcut icon" href="/logo192.png" />
       </Head>
       <>
-        {/* <Navbar /> */}
         <Header setShowDetails={setShowDetails} />
         <FirstInfo />
         <ShortGallery />
@@ -42,13 +36,6 @@ export default function Home() {
         <ShortAboutMe />
         <ShortFaqContact />
         <ShortInstagram />
-        {/* <GalleryPage /> */}
-        {/* <ServicesPage
-          showDetails={showDetails}
-          setShowDetails={setShowDetails}
-        />
-        <AboutPage />
-        <ContactPage /> */}
         <Footer />
       </>
     </>
