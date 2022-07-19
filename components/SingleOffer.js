@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const SingleOffer = ({ offer, setShowDetails }) => {
   const { category, price, imgs } = offer;
-  console.log(imgs[0]);
+  // console.log(imgs[0]);
   return (
     <Wrapper className="singleOffer">
       <div
