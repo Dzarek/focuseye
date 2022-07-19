@@ -24,7 +24,7 @@ const ShortInstagram = () => {
   };
   useEffect(() => {
     fetchImg();
-  }, [instaImg]);
+  }, []);
 
   const galleryCategory = gallery.filter(
     (item) => item.category === "rodzinne"
