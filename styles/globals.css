@@ -48,15 +48,20 @@ body {
 
 
 .app {
-  --secondaryColor: #47352b;
+  --secondaryColor: #8c472e;
   --secondaryColor2: #292624;
+  --secondaryColor3: #47352b;
   --primaryColor: rgb(10, 10, 10);
   --appBgColor: #fff;
   --navbarBgColor: #997e71;
   --sectionBgColor: #e2d6d1;
+  --sectionBgColor: #edcba1;
   --singleOfferBgColor: #837772;
-  --aboutMeBgColor: #584b46;
+  --aboutMeBgColor: rgb(112, 93, 86);
+  --aboutMeBgColor: #d0a076;
   --navigationBgColor: #281711;
+  --navigationBgColor: #4b2912;
+  --footerBgColor: #54331b;
   --galleryContentColor: #111;
   --galleryBtnBg: rgb(30, 30, 30);
   --logoBgMobile: rgba(0, 0, 0, 0.7);

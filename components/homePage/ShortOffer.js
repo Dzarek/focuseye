@@ -137,7 +137,7 @@ const Wrapper = styled.div`
         }
         p {
           font-size: 1.4rem;
-          font-style: italic;
+          /* font-style: italic; */
           font-weight: 500;
         }
       }

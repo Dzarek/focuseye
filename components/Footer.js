@@ -62,6 +62,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   background: var(--navigationBgColor);
+  background: var(--footerBgColor);
   background-size: cover;
   font-family: var(--titleFont);
   font-size: 1.3rem;

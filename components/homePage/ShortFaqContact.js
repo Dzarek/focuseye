@@ -78,7 +78,7 @@ const ShortFaqContact = () => {
         </Accordion>
       </div>
       <div className="contactShort">
-        <h2>Jeśli interesują Cię moje usługi zapraszam do kontaktu</h2>
+        <h2>Jeśli interesują Cię moje usługi przejdź do kontaktu</h2>
         <FaLongArrowAltRight className="icon" />
         <button>Kontakt</button>
       </div>

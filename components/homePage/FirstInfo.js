@@ -74,7 +74,7 @@ const Wrapper = styled.div`
     p {
       font-size: 1.4rem;
       font-weight: 600;
-      font-style: italic;
+      /* font-style: italic; */
       font-family: var(--textFont);
     }
   }

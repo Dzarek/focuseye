@@ -54,7 +54,7 @@ const Wrapper = styled.div`
       background-image: url(${aboutImg});
       background-size: cover;
       background-position: center;
-      box-shadow: 5px 0 0 0 var(--secondaryColor);
+      box-shadow: 5px 0 0 0 var(--secondaryColor3);
     }
     .aboutInfo {
       width: 50%;
@@ -70,7 +70,8 @@ const Wrapper = styled.div`
         }
       }
       p {
-        color: var(--sectionBgColor);
+        color: var(--secondaryColor2);
+        font-weight: 600;
         font-size: 1.5rem;
       }
     }

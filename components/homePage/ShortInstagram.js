@@ -7,17 +7,23 @@ import { FaInstagramSquare } from "react-icons/fa";
 
 const ShortInstagram = () => {
   const url = `https://www.instagram.com/graphql/query/?query_hash=69cba40317214236af40e7efa697781d&variables={"id":"15459832366","first":1}`;
-  //   const [instaImg, setInstaImg] = useState([]);
+  const [instaImg, setInstaImg] = useState([]);
 
   const fetchImg = async () => {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
+    const thumbs = data.user.edge_owner_to_timeline_media.edges.map((edge) => ({
+      url: edge.node.thumbnail_src,
+      caption: edge.node.edge_media_to_caption?.edges[0]?.node?.text,
+      id: edge.id,
+    }));
+    setInstaImg(thumbs);
+    console.log(instaImg);
   };
 
-  //   useEffect(() => {
-  //     fetchImg();
-  //   }, []);
+  useEffect(() => {
+    fetchImg();
+  }, []);
 
   const galleryCategory = gallery.filter(
     (item) => item.category === "rodzinne"

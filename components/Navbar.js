@@ -221,7 +221,7 @@ const Wrapper = styled.div`
       transition: 0.4s;
       cursor: pointer;
       color: var(--navbarBgColor);
-      text-shadow: 0.3px 0.3px 0.3px black;
+      text-shadow: 0.1px 0.1px 0.1px black;
       &.active {
         color: var(--secondaryColor);
       }

@@ -32,9 +32,9 @@ const ShortBlog = () => {
 const Wrapper = styled.div`
   width: 90vw;
   max-width: 1360px;
-  min-height: 70vh;
+  min-height: 60vh;
   margin: 10vh auto;
-  padding: 10vh 0;
+  /* padding: 10vh 0; */
   position: relative;
   .blogTitle {
     position: absolute;
