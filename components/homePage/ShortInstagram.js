@@ -1,28 +1,31 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { gallery } from "../../public/data";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import { FaInstagramSquare } from "react-icons/fa";
-import { getInstagramImages } from "../../helpers/api-util";
+// import { getInstagramImages } from "../../helpers/api-util";
 
-const ShortInstagram = () => {
-  const [instaImg, setInstaImg] = useState([]);
+const ShortInstagram = ({ data }) => {
+  // const [instaImg, setInstaImg] = useState(thumbnails);
 
-  const fetchImages = async () => {
-    const response = await fetch(
-      "https://focuseye.pl/wp-json/wp/v2/media?media_folder=59"
-    );
-    const data = await response.json();
-    const thumbnails = data.map((image) => {
-      const smallImg = image.media_details.sizes.full.source_url;
-      return smallImg;
-    });
-    setInstaImg(thumbnails);
-  };
-  useEffect(() => {
-    fetchImages();
-  }, []);
+  // const fetchImages = async () => {
+  //   const response = await fetch(
+  //     "https://focuseye.pl/wp-json/wp/v2/media?media_folder=59"
+  //   );
+  //   const data = await response.json();
+  //   const thumbnails = data.map((image) => {
+  //     const smallImg = image.media_details.sizes.full.source_url;
+  //     return smallImg;
+  //   });
+  //   setInstaImg(thumbnails);
+  // };
+  // useEffect(() => {
+  //   fetchImages();
+  // }, []);
+
+  console.log(data);
+
   const galleryCategory = gallery.filter(
     (item) => item.category === "rodzinne"
   );
@@ -36,7 +39,7 @@ const ShortInstagram = () => {
         animationSpeed={1000}
         slidesPerPage={7}
       >
-        {instaImg.map((item, index) => {
+        {galleryInsta.map((item, index) => {
           return <img key={index} src={item} alt="" />;
         })}
       </Carousel>
@@ -90,23 +93,31 @@ const Wrapper = styled.div`
   }
 `;
 
-export default ShortInstagram;
-
 export const getStaticProps = async () => {
-  const thumbnails = await getInstagramImages();
-  // const url = "https://focuseye.pl/wp-json/wp/v2/media?media_folder=59";
-  // const response = await fetch(url);
-  // const data = await response.json();
+  // const thumbnails = await getInstagramImages();
+
+  // console.log(thumbnails);
+  // return {
+  //   props: {
+  //     thumbnails,
+  //   },
+  //   revalidate: 60,
+  // };
+
+  const response = await fetch(
+    "https://focuseye.pl/wp-json/wp/v2/media?media_folder=59"
+  );
+  const data = await response.json();
   // const thumbnails = data.map((image) => {
   //   const smallImg = image.media_details.sizes.thumbnail.source_url;
   //   return smallImg;
   // });
   // return thumbnails;
-  console.log(thumbnails);
   return {
     props: {
-      thumbnails,
+      data,
     },
-    revalidate: 60,
+    // revalidate: 60,
   };
 };
+export default ShortInstagram;
