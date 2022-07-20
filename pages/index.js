@@ -11,7 +11,7 @@ import ShortFaqContact from "../components/homePage/ShortFaqContact";
 import ShortInstagram from "../components/homePage/ShortInstagram";
 import Footer from "../components/Footer";
 
-export default function Home() {
+const Home = ({ thumbnails }) => {
   const [showDetails, setShowDetails] = useState("");
   return (
     <>
@@ -35,9 +35,29 @@ export default function Home() {
         <ShortBlog />
         <ShortAboutMe />
         <ShortFaqContact />
-        <ShortInstagram />
+        <ShortInstagram thumbnails={thumbnails} />
         <Footer />
       </>
     </>
   );
-}
+};
+
+export const getStaticProps = async () => {
+  const response = await fetch(
+    "https://focuseye.pl/wp-json/wp/v2/media?media_folder=59"
+  );
+  const data = await response.json();
+  const thumbnails = data.map((image) => {
+    const smallImg = image.media_details.sizes.thumbnail.source_url;
+    return smallImg;
+  });
+
+  return {
+    props: {
+      thumbnails,
+    },
+    revalidate: 60,
+  };
+};
+
+export default Home;
