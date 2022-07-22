@@ -20,7 +20,7 @@ const FirstInfo = () => {
         />
       </div>
       <div className="textContainer">
-        <h1>Sesje fotograficzne - FocusEye</h1>
+        {/* <h1>Sesje fotograficzne - FocusEye</h1> */}
         <p>
           W fotografii zależy mi na tym aby oddać naturalność i pokazać Waszą
           miłość. Za każdym zaproszeniem mnie na sesję kryje się głęboka radość

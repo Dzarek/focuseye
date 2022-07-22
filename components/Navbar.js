@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
 import { animateScroll as scroll } from "react-scroll";
 
-import { BsFillArrowUpSquareFill } from "react-icons/bs";
-import { IoMdImages } from "react-icons/io";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-import { FaHandshake } from "react-icons/fa";
-import { BsFillPersonFill } from "react-icons/bs";
-import { MdOutlinePhoneAndroid } from "react-icons/md";
+import { BsFillArrowUpSquareFill } from "react-icons/bs";
 import { IoHome } from "react-icons/io5";
+// import { IoMdImages } from "react-icons/io";
+
+// import { FaHandshake } from "react-icons/fa";
+// import { BsFillPersonFill } from "react-icons/bs";
+// import { MdOutlinePhoneAndroid } from "react-icons/md";
+// import { IoHome } from "react-icons/io5";
 
 const Navbar = () => {
   const [offset, setOffset] = useState(0);
@@ -24,82 +28,50 @@ const Navbar = () => {
       scroll.scrollMore(1);
     }, 1100);
   };
+  const router = useRouter();
 
   return (
     <>
       <Wrapper>
         <div className={offset === 0 ? "navbar" : "navbar navbarBg"}>
-          <Link
-            to="gallery"
-            smooth={true}
-            duration={1000}
-            activeClass="active"
-            spy={true}
-            offset={-50}
-          >
-            Galeria
+          <Link href="/galeria">
+            <a className={router.pathname == "/galeria" ? "active" : ""}>
+              Galeria
+            </a>
           </Link>
-          <Link
-            to="offer"
-            smooth={true}
-            duration={1000}
-            activeClass="active"
-            spy={true}
-            offset={-50}
-          >
-            Oferta
+          <Link href="/oferta">
+            <a className={router.pathname == "/oferta" ? "active" : ""}>
+              Oferta
+            </a>
           </Link>
-          <Link
-            to="offer"
-            smooth={true}
-            duration={1000}
-            activeClass="active"
-            spy={true}
-            offset={-50}
-          >
-            Blog
+          <Link href="/blog">
+            <a className={router.pathname == "/blog" ? "active" : ""}>Blog</a>
           </Link>
-          <div
-            onClick={() => {
-              scroll.scrollToTop();
-            }}
-            className="logo"
-          >
-            <h2>
-              FocusEye
-              <div className="logoLine"></div>
-              <span className="logoName">Sylwia Sajdak</span>{" "}
-            </h2>
+          <div className="logo">
+            <Link href="/">
+              <h2>
+                FocusEye
+                {router.pathname == "/" ? (
+                  <div className="logoLine"></div>
+                ) : (
+                  <IoHome className="logoIcon" />
+                )}
+                <span className="logoName">Sylwia Sajdak</span>
+              </h2>
+            </Link>
           </div>
-          <Link
-            to="aboutMe"
-            smooth={true}
-            duration={1000}
-            activeClass="active"
-            spy={true}
-            offset={-30}
-          >
-            O mnie
+          <Link href="/omnie">
+            <a className={router.pathname == "/omnie" ? "active" : ""}>
+              O mnie
+            </a>
           </Link>
-          <Link
-            to="aboutMe"
-            smooth={true}
-            duration={1000}
-            activeClass="active"
-            spy={true}
-            offset={-30}
-          >
-            FAQ
+          <Link href="/faq">
+            <a className={router.pathname == "/faq" ? "active" : ""}>FAQ</a>
           </Link>
-          <Link
-            to="contact"
-            smooth={true}
-            duration={1000}
-            activeClass="active"
-            spy={true}
-            offset={-20}
-          >
-            Kontakt
+          <Link href="/kontakt">
+            <a className={router.pathname == "/kontakt" ? "active" : ""}>
+              Kontakt
+            </a>
           </Link>
         </div>
         <button
@@ -111,7 +83,7 @@ const Navbar = () => {
           <BsFillArrowUpSquareFill />
         </button>
       </Wrapper>
-      <Wrapper2>
+      {/* <Wrapper2>
         <div
           onClick={() => {
             scroll.scrollToTop();
@@ -180,7 +152,7 @@ const Navbar = () => {
             <MdOutlinePhoneAndroid />
           </Link>
         </div>
-      </Wrapper2>
+      </Wrapper2> */}
     </>
   );
 };
@@ -218,7 +190,7 @@ const Wrapper = styled.div`
       text-transform: uppercase;
       transition: 0.4s;
       cursor: pointer;
-      /* color: var(--navbarBgColor); */
+      text-decoration: none;
       color: var(--secondaryColor);
       /* text-shadow: 0.1px 0.1px 0.1px black; */
       &.active {
@@ -241,11 +213,19 @@ const Wrapper = styled.div`
         justify-content: center;
         align-items: center;
         /* margin-left: -1.5rem; */
+        :hover .logoIcon {
+          transform: scale(1.2);
+        }
+        .logoIcon {
+          margin: 5px 30px 0;
+          color: var(--secondaryColor);
+          transition: 0.4s;
+          font-size: 1.5rem;
+        }
         .logoLine {
           margin: 5px 30px 0;
           height: 1.5rem;
           width: 3px;
-          background: #999;
           background: var(--secondaryColor);
           animation: logoR 4s linear infinite;
           @keyframes logoR {
@@ -306,6 +286,12 @@ const Wrapper = styled.div`
       h2 {
         color: var(--sectionBgColor);
         text-shadow: 2px 2px 2px black;
+        :hover .logoIcon {
+          color: var(--activeNavLink);
+        }
+        .logoIcon {
+          color: #fff;
+        }
         .logoLine {
           background: #fff;
         }

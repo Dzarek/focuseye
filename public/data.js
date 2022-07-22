@@ -116,17 +116,17 @@ export const gallery = [
       ciaza12,
       ciaza13,
     ],
-    category: "ciąża",
+    category: "miłosne",
   },
   {
     id: 2,
     img: [moda1, moda2, moda3, moda4, moda5, moda6],
-    category: "moda",
+    category: "ślubne",
   },
   {
     id: 3,
     img: [portret1, portret2, portret3, portret4, portret5],
-    category: "portrety",
+    category: "brzuszkowe",
   },
   {
     id: 4,
@@ -144,7 +144,7 @@ export const gallery = [
       rodzinne11,
       rodzinne12,
     ],
-    category: "rodzinne",
+    category: "noworodkowe",
   },
   {
     id: 5,
@@ -161,7 +161,24 @@ export const gallery = [
       slubne10,
       slubne11,
     ],
-    category: "ślubne",
+    category: "chrzciny",
+  },
+  {
+    id: 6,
+    img: [
+      slubne1,
+      slubne2,
+      slubne3,
+      slubne4,
+      slubne5,
+      slubne6,
+      slubne7,
+      slubne8,
+      slubne9,
+      slubne10,
+      slubne11,
+    ],
+    category: "rodzinne",
   },
 ];
 

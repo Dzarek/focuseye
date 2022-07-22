@@ -113,8 +113,8 @@ body {
 .title h2 {
   font-family: var(--titleFont);
   font-size: 2.7rem;
-  font-weight: 800;
-  color: var(--navbarBgColor);
+  font-weight: 600;
+  color: var(--secondaryColor);
   text-transform: uppercase;
   letter-spacing: 5px;
   margin-bottom: 10vh;

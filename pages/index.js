@@ -9,10 +9,10 @@ import ShortBlog from "../components/homePage/ShortBlog";
 import ShortAboutMe from "../components/homePage/ShortAboutMe";
 import ShortFaqContact from "../components/homePage/ShortFaqContact";
 import ShortInstagram from "../components/homePage/ShortInstagram";
-import Footer from "../components/Footer";
 
 const Home = ({ thumbnails }) => {
   const [showDetails, setShowDetails] = useState("");
+
   return (
     <>
       <Head>
@@ -36,7 +36,6 @@ const Home = ({ thumbnails }) => {
         <ShortAboutMe />
         <ShortFaqContact />
         <ShortInstagram thumbnails={thumbnails} />
-        <Footer />
       </>
     </>
   );

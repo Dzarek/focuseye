@@ -7,17 +7,19 @@ import ReactLoading from "react-loading";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
+const galleryHeaderImg = "../images/gallery/galleryHeaderImg.jpg";
+
 const allCategories = [
   ...new Set(gallery.map((item) => item.category)),
   "wszystkie",
 ];
 
-const galleryCategory = gallery.filter((item) => item.category === "ciąża");
+const galleryCategory = gallery.filter((item) => item.category === "miłosne");
 
 const GalleryPage = () => {
   const [menuItems, setMenuItems] = useState(galleryCategory);
   const [categories] = useState(allCategories);
-  const [activeBtn, setActiveBtn] = useState("ciąża");
+  const [activeBtn, setActiveBtn] = useState("miłosne");
   // const [currentPage, setCurrentPage] = useState(1);
   const [currentPage] = useState(1);
   const [imagesPerPage, setImagesPerPage] = useState(10);
@@ -86,7 +88,7 @@ const GalleryPage = () => {
   };
 
   const breakpointColumnsObj = {
-    default: 4,
+    default: 5,
     1280: 3,
     900: 2,
     500: 1,
@@ -101,23 +103,28 @@ const GalleryPage = () => {
   };
 
   return (
-    <Wrapper id="gallery" className="mainPage">
-      <div className="title">
-        <h2>Galeria</h2>
-      </div>
-      <div data-aos="fade-up" className="galleryCategory">
-        {categories.map((category, index) => {
-          return (
-            <button
-              key={index}
-              onClick={() => filterItems(category)}
-              className={activeBtn === category ? "activeBtn" : null}
-            >
-              {category}
-            </button>
-          );
-        })}
-      </div>
+    <Wrapper>
+      <header>
+        <div className="headerBg"></div>
+        <div className="headerContent">
+          <div className="title">
+            <h2>Galeria</h2>
+          </div>
+          <div data-aos="fade-up" className="galleryCategory">
+            {categories.map((category, index) => {
+              return (
+                <button
+                  key={index}
+                  onClick={() => filterItems(category)}
+                  className={activeBtn === category ? "activeBtn" : null}
+                >
+                  {category}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </header>
       <SRLWrapper>
         <div className="galleryContent">
           <Masonry
@@ -163,6 +170,12 @@ const GalleryPage = () => {
 const Wrapper = styled.div`
   width: 100vw;
   max-width: 100vw;
+  /* width: 90vw;
+  max-width: 1440px; */
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-top: 10vh;
+  position: relative;
   @media screen and (max-width: 800px) {
     /* margin-top: 5vh; */
     .title {
@@ -171,12 +184,42 @@ const Wrapper = styled.div`
     }
   }
 
+  header {
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .headerBg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(${galleryHeaderImg});
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      opacity: 0.2;
+    }
+    .headerContent {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+  }
+
   .galleryCategory {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 60vw;
+    width: 80vw;
     margin: 0 auto;
+
     @media screen and (max-width: 800px) {
       width: 90vw;
       flex-wrap: wrap;
@@ -195,7 +238,7 @@ const Wrapper = styled.div`
       font-family: "Kanit", sans-serif;
       transition: background 0.5s;
       :hover {
-        background: var(--galleryBtnBg);
+        background: var(--sectionBgColor);
       }
       @media screen and (max-width: 800px) {
         margin: 2vh 2vw;
@@ -209,20 +252,20 @@ const Wrapper = styled.div`
     }
     .activeBtn {
       border: 2px solid var(--secondaryColor);
-      background: var(--logoBgMobile);
+      background: var(--sectionBgColor);
     }
   }
   .galleryContent {
-    width: 100vw;
-    margin: 10vh auto 0;
+    width: 95vw;
+    margin: 0 auto;
     /* margin-left: -5vw; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: space-between;
     flex-wrap: wrap;
-    padding: 10vh 12vw;
-    background: var(--galleryBtnBg);
+    padding: 10vh 0;
+    /* background: var(--galleryBtnBg); */
     @media screen and (max-width: 800px) {
       padding: 30px 0;
     }
@@ -239,6 +282,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     width: 100%;
+    max-width: 1330px;
     margin: 0 auto;
   }
   /* .my-masonry-grid_column {
@@ -247,7 +291,7 @@ const Wrapper = styled.div`
 
   .my-masonry-grid_column > img {
     background: grey;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     width: 250px;
     @media screen and (max-width: 800px) {
       width: 100vw;

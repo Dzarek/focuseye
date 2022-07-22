@@ -131,7 +131,7 @@ const Wrapper = styled.div`
     .iconFooter {
       margin-right: 15px;
       margin-top: 3px;
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: var(--secondaryColor);
       transition: 0.4s;
     }

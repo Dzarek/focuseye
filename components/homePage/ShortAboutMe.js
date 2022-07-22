@@ -11,24 +11,26 @@ const AboutPage = () => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <Wrapper>
-      <div className="aboutMeContainer">
-        <div data-aos="fade-right" className="imgContainer"></div>
-        <div data-aos="fade-left" data-aos-offset="200" className="aboutInfo">
-          <h2 className="shortTitle">Poznaj mnie!</h2>
-          <p className="shortText">
-            Jak to się stało że jestem fotografem? Co robię na codzień?...Lorem
-            ipsum dolor sit amet, consectetur adipisicing elit. Similique quos,
-            hic voluptatum nihil mollitia incidunt, sunt fugit alias cumque
-            dolor,
-          </p>
-          <button>
-            Czytaj więcej
-            <BsPeopleFill className="icon" />
-          </button>
+    <>
+      <Wrapper>
+        <div className="aboutMeContainer">
+          <div data-aos="fade-right" className="imgContainer"></div>
+          <div data-aos="fade-left" data-aos-offset="200" className="aboutInfo">
+            <h2 className="shortTitle">Poznaj mnie!</h2>
+            <p className="shortText">
+              Jak to się stało że jestem fotografem? Co robię na
+              codzień?...Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Similique quos, hic voluptatum nihil mollitia incidunt, sunt
+              fugit alias cumque dolor,
+            </p>
+            <button>
+              Czytaj więcej
+              <BsPeopleFill className="icon" />
+            </button>
+          </div>
         </div>
-      </div>
-    </Wrapper>
+      </Wrapper>
+    </>
   );
 };
 
