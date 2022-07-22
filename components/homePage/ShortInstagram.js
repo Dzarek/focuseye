@@ -57,7 +57,7 @@ const Wrapper = styled.div`
     transform: translate(-50%, -50%);
     border: none;
     border-radius: 10px;
-    width: 160px;
+    width: 180px;
     height: 50px;
     background: #fff;
     display: flex;
@@ -72,7 +72,8 @@ const Wrapper = styled.div`
     text-decoration: none;
     cursor: pointer;
     :hover {
-      background: var(--sectionBgColor);
+      background: var(--activeNavLink);
+      color: var(--secondaryColor3);
     }
   }
 `;

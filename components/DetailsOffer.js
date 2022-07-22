@@ -73,14 +73,14 @@ const Wrapper = styled.div`
   z-index: 9999;
 
   .details {
-    background-color: var(--sectionBgColor);
-    width: 55vw;
+    background-color: var(--singleOfferBgColor);
+    width: 60vw;
     height: 80vh;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -45%);
-    color: white;
+    color: var(--secondaryColor3);
     overflow: auto;
     border-radius: 5px;
     border: 3px solid var(--secondaryColor);
@@ -91,10 +91,10 @@ const Wrapper = styled.div`
     }
     header {
       width: 100%;
-      height: 50%;
+      height: 60%;
       background-size: cover;
       background-position: center;
-      filter: saturate(0.1);
+      /* filter: saturate(0.5); */
       button {
         position: absolute;
         top: 0%;
@@ -119,8 +119,9 @@ const Wrapper = styled.div`
       text-align: center;
       text-transform: uppercase;
       font-family: var(--titleFont);
-      text-shadow: 3px 3px 3px black;
+      text-shadow: 2px 2px 2px black;
       font-size: 2.2rem;
+      color: #fff;
     }
     .detailsContent {
       margin: 5vh auto;
@@ -141,16 +142,19 @@ const Wrapper = styled.div`
           margin: 0 auto;
         }
         h3 {
-          margin-bottom: 3vh;
+          margin-bottom: 2vh;
           font-size: 1.2rem;
           span {
-            color: var(--secondaryColor3);
+            text-transform: uppercase;
+            font-family: var(--titleFont);
+            color: #fff;
+            text-shadow: 1px 1px 1px black;
             margin-right: 5px;
           }
         }
       }
       .detailsBorder {
-        background: var(--secondaryColor);
+        background: var(--secondaryColor3);
         width: 2px;
         height: 40vh;
         justify-self: center;
@@ -170,15 +174,17 @@ const Wrapper = styled.div`
           margin: 0 auto;
         }
         h3 {
+          text-transform: uppercase;
           font-family: var(--titleFont);
-          color: var(--secondaryColor3);
+          color: #fff;
+          text-shadow: 2px 2px 2px black;
           font-size: 2rem;
           margin-bottom: 2vh;
         }
         p {
           margin-bottom: 3vh;
-          font-size: 1.2rem;
-          font-weight: 500;
+          font-size: 1.3rem;
+          font-weight: 400;
         }
       }
     }

@@ -64,7 +64,7 @@ body {
   /* --navbarBgColor: #997e71; */
   /* --sectionBgColor: #f6dfc3; */
   --sectionBgColor: #fcf0e5;
-  --singleOfferBgColor: #d3a591;
+  --singleOfferBgColor: #cdb596;
   /* --aboutMeBgColor: #d0a076;
   --aboutMeBgColor: #dcc5a8; */
   --aboutMeBgColor: #f6dfc3;
@@ -172,7 +172,7 @@ body {
 
 /* Handle */
 .details::-webkit-scrollbar-thumb {
-  background: var(--secondaryColor2);
+  background: var(--navigationBgColor);
 
 }
 

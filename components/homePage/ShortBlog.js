@@ -47,15 +47,17 @@ const Wrapper = styled.div`
     color: var(--secondaryColor);
     letter-spacing: 10px;
     cursor: pointer;
-    transition: 1s;
+    transition: 0.5s;
     :hover {
-      color: var(--navbarBgColor);
+      color: var(--navigationBgColor);
+      letter-spacing: 30px;
     }
   }
   h3 {
     text-align: center;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     width: 90%;
+    font-weight: 600;
   }
   .firsth3 {
     position: absolute;
@@ -70,10 +72,10 @@ const Wrapper = styled.div`
     transform: translate(-50%, -50%);
   }
   p {
-    font-style: italic;
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 400;
     position: absolute;
+    color: var(--secondaryColor3);
   }
   p:nth-of-type(1) {
     top: 30%;

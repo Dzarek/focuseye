@@ -88,9 +88,9 @@ const ShortFaqContact = () => {
 
 const Wrapper = styled.div`
   width: 100vw;
-  min-height: 70vh;
+  min-height: 75vh;
   margin: 0vh auto;
-  padding: 5vh 0 0;
+  padding: 8vh 0 0;
   position: relative;
   background: url(${qBg});
   background-size: cover;
@@ -105,20 +105,22 @@ const Wrapper = styled.div`
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
 
     h2 {
       width: 40%;
       font-family: var(--titleFont);
-      font-size: 1.4rem;
-      line-height: 1.7;
+      font-size: 1.3rem;
+      line-height: 2;
+      font-weight: 500;
+      margin-top: 10vh;
       span {
         color: var(--secondaryColor);
-        font-size: 3rem;
+        font-size: 2rem;
         cursor: pointer;
         transition: 0.4s;
         :hover {
-          color: var(--navbarBgColor);
+          color: var(--secondaryColor3);
         }
       }
     }
@@ -142,15 +144,16 @@ const Wrapper = styled.div`
     background: transparent;
     border: none;
     font-size: 2rem;
-    color: var(--secondaryColor2);
+    color: var(--secondaryColor);
     display: flex;
     align-items: center;
     cursor: pointer;
+    transition: 0.4s;
     @media screen and (max-width: 800px) {
       font-size: 1.8rem;
     }
     :hover {
-      color: var(--secondaryColor);
+      color: var(--secondaryColor3);
     }
   }
   .icon {
@@ -162,11 +165,10 @@ const Wrapper = styled.div`
     margin: 2vh auto;
     padding: 10px 20px;
     width: 35vw;
-    /* background: var(--navbarBgColor); */
     background: #fff;
     color: var(--secondaryColor2);
     border-radius: 5px;
-    border: 2px solid var(--secondaryColor2);
+    border: 1px solid var(--secondaryColor3);
     font-family: var(--buttonFont);
     @media screen and (max-width: 800px) {
       width: 100%;
@@ -175,7 +177,7 @@ const Wrapper = styled.div`
       margin-top: 4vh;
       font-family: var(--textFont);
       font-size: 1.3rem;
-      font-weight: 500;
+      font-weight: 400;
     }
   }
   header {
@@ -183,15 +185,14 @@ const Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     h3 {
+      font-family: var(--textFont);
       display: flex;
       align-items: center;
       font-size: 1.3rem;
+      font-weight: 600;
     }
   }
   .contactShort {
-    /* position: absolute;
-    bottom: 0;
-    left: 0; */
     width: 100vw;
     height: 20vh;
     background: #fff;
@@ -199,7 +200,9 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     h2 {
-      font-size: 1.8rem;
+      font-size: 1.3rem;
+      font-family: var(--titleFont);
+      font-weight: 500;
     }
     button {
       font-size: 1.2rem;
@@ -211,6 +214,7 @@ const Wrapper = styled.div`
       border: 2px solid var(--secondaryColor);
       transition: 0.5s;
       text-transform: uppercase;
+      font-weight: 600;
       cursor: pointer;
       :hover {
         color: var(--secondaryColor);

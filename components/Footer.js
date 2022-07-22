@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import styled from "styled-components";
 import {
   FaFacebookSquare,
@@ -6,15 +6,20 @@ import {
   FaPhoneSquare,
 } from "react-icons/fa";
 import { ImMail } from "react-icons/im";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
-const bgImg = "../images/logoBg.png";
+const bgImg = "../images/logoBg2.png";
 const dotacjaImg = "../images/dotacjaImg.png";
 
 const Footer = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <Wrapper>
       <section className="firstSection">
-        <img className="logo" src={bgImg} alt="logo" />
+        <img data-aos="fade-right" className="logo" src={bgImg} alt="logo" />
         <p>
           &copy; {new Date().getFullYear()} FocusEye - Sylwia Sajdak. <br />{" "}
           Wszelkie prawa zastrzeżone.
@@ -61,12 +66,12 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--navigationBgColor);
   background: var(--footerBgColor);
   background-size: cover;
   font-family: var(--titleFont);
+  font-weight: 500;
   font-size: 1.3rem;
-  color: var(--secondaryColor2);
+  color: var(--secondaryColor3);
   @media screen and (max-width: 800px) {
     margin-bottom: 10vh;
     height: 12vh;
@@ -76,6 +81,15 @@ const Wrapper = styled.div`
   .logo {
     width: 15vw;
     margin-bottom: 3vh;
+    /* animation: bigger 2s ease infinite alternate;
+    @keyframes bigger {
+      80% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0.5);
+      }
+    } */
   }
   .firstSection {
     display: flex;
@@ -94,26 +108,32 @@ const Wrapper = styled.div`
     align-items: flex-start;
     h3 {
       margin-bottom: 3vh;
+      font-weight: 600;
+      text-transform: uppercase;
     }
     p {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       margin-bottom: 1vh;
       color: var(--secondaryColor3);
-      color: #fff;
       font-family: var(--textFont);
+      font-weight: 500;
       transition: 0.4s;
+      letter-spacing: 1px;
       cursor: pointer;
-      :hover {
-        color: var(--sectionBgColor);
+      :hover .iconFooter {
+        transform: scale(1.1);
+        color: var(--navigationBgColor);
       }
     }
     .iconFooter {
       margin-right: 15px;
       margin-top: 3px;
       font-size: 2rem;
+      color: var(--secondaryColor);
+      transition: 0.4s;
     }
   }
   .thirdSection {

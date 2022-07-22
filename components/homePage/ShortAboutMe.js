@@ -41,8 +41,8 @@ const Wrapper = styled.div`
   position: relative;
 
   .aboutMeContainer {
-    max-width: 1360px;
-    width: 70%;
+    max-width: 1440px;
+    width: 75%;
     margin: 0vh auto;
     display: flex;
     justify-content: space-between;
@@ -65,13 +65,13 @@ const Wrapper = styled.div`
         text-align: left;
         margin-bottom: 10vh;
         letter-spacing: 3px;
-        span {
-          color: var(--secondaryColor);
-        }
+        font-family: var(--titleFont);
+        font-size: 2rem;
+        text-shadow: 2px 2px 2px var(--secondaryColor3);
       }
       p {
-        color: var(--secondaryColor2);
-        font-weight: 600;
+        color: var(--secondaryColor3);
+        font-weight: 400;
         font-size: 1.5rem;
       }
     }
@@ -98,28 +98,31 @@ const Wrapper = styled.div`
     }
   }
   button {
-    width: 170px;
+    width: 200px;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin-top: 7vh;
     font-size: 1rem;
-    font-style: var(--titleFont);
-    font-weight: 600;
-    text-transform: lowercase;
+    font-family: var(--titleFont);
+    font-weight: 700;
     border-radius: 10px;
     background: #fff;
     cursor: pointer;
     padding: 5px;
     transition: 0.5s;
+    color: var(--secondaryColor);
+    border: 2px solid var(--secondaryColor);
+    text-transform: uppercase;
     :hover {
-      transform: scale(1.05);
+      color: #fff;
+      border: 2px solid #fff;
+      background: var(--secondaryColor);
     }
   }
   .icon {
     font-size: 1.4rem;
-    transition: 0.5s;
   }
 `;
 
