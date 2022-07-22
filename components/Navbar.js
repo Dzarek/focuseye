@@ -288,7 +288,7 @@ const Wrapper = styled.div`
     background: var(--navigationBgColor);
     color: #fff;
     transition: 1s;
-    border-bottom: 2px solid var(--secondaryColor2);
+    /* border-bottom: 2px solid var(--secondaryColor3); */
     h5,
     a {
       color: #fff;

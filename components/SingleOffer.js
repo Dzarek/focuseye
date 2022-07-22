@@ -38,7 +38,7 @@ const Wrapper = styled.div`
     border-radius: 5px;
     background-size: cover;
     background-position: center;
-    filter: brightness(0.7);
+    filter: brightness(0.6);
     transition: 0.5s;
   }
   .singleContent {

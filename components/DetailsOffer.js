@@ -27,7 +27,7 @@ const DetailsOffer = ({ oneOffer, setShowDetails }) => {
         <div className="detailsContent">
           <div className="firstPart">
             <h3 className="detailsPrice">
-              <span>Cena:</span> {price} zł
+              <span>Cena:</span> od {price} zł
             </h3>
             <h3 className="detailsNumber">
               <span>Minimalna ilość zdjęć:</span> {numberOfImages}

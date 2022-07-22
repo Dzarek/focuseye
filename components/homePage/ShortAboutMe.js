@@ -53,7 +53,7 @@ const Wrapper = styled.div`
       width: 450px;
       background-image: url(${aboutImg});
       background-size: cover;
-      background-position: center;
+      background-position: left;
       box-shadow: 5px 0 0 0 var(--secondaryColor3);
     }
     .aboutInfo {

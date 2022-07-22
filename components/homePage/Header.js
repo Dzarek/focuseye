@@ -304,7 +304,7 @@ const Wrapper = styled.div`
     .oneline {
       width: 20px;
       height: 3px;
-      background: var(--secondaryColor);
+      background: var(--navigationBgColor);
       margin: 5px 10px 0;
     }
   }

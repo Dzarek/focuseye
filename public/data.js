@@ -59,6 +59,8 @@ const headerPortfolioM = "./images/header/headerPortfolioM.jpg";
 const headerRodzinneM = "./images/header/headerRodzinneM.jpg";
 const headerSlubM = "./images/header/headerSlubM.jpg";
 
+// od Fotografa
+
 const instaImg1 = "./images/instagramImg/1.jpg";
 const instaImg2 = "./images/instagramImg/2.jpg";
 const instaImg3 = "./images/instagramImg/3.jpg";
@@ -69,6 +71,19 @@ const instaImg7 = "./images/instagramImg/7.jpg";
 const instaImg8 = "./images/instagramImg/8.jpg";
 const instaImg9 = "./images/instagramImg/9.jpg";
 const instaImg10 = "./images/instagramImg/10.jpg";
+
+const offerChrzest1 = "./images/ofertaImg/chrzest1.jpg";
+const offerChrzest2 = "./images/ofertaImg/chrzest2.jpg";
+const offerCiazowe1 = "./images/ofertaImg/ciazowe1.jpg";
+const offerCiazowe2 = "./images/ofertaImg/ciazowe2.jpg";
+const offerNoworodkowe1 = "./images/ofertaImg/noworodkowe1.jpg";
+const offerNoworodkowe2 = "./images/ofertaImg/noworodkowe2.jpg";
+const offerRodzinna1 = "./images/ofertaImg/rodzinna1.jpg";
+const offerRodzinna2 = "./images/ofertaImg/rodzinna2.jpg";
+const offerSlub1 = "./images/ofertaImg/slub1.jpg";
+const offerSlub2 = "./images/ofertaImg/slub2.jpg";
+const offerZakochani1 = "./images/ofertaImg/zakochani1.jpg";
+const offerZakochani2 = "./images/ofertaImg/zakochani2.jpg";
 
 export const galleryInstagram = [
   instaImg1,
@@ -164,7 +179,7 @@ export const offers = [
     quality: "Full HD",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti?",
-    imgs: [ciaza13, ciaza10],
+    imgs: [offerCiazowe1, offerCiazowe2],
   },
   {
     id: 2,
@@ -179,7 +194,7 @@ export const offers = [
     quality: "Full HD",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti?",
-    imgs: [moda2, moda5],
+    imgs: [offerNoworodkowe1, offerNoworodkowe2],
   },
   {
     id: 3,
@@ -194,7 +209,7 @@ export const offers = [
     quality: "Full HD",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti?",
-    imgs: [portret2, portret1],
+    imgs: [offerChrzest1, offerChrzest2],
   },
   {
     id: 4,
@@ -209,7 +224,7 @@ export const offers = [
     quality: "Full HD",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti?",
-    imgs: [rodzinne1, rodzinne7],
+    imgs: [offerRodzinna1, offerRodzinna2],
   },
   {
     id: 5,
@@ -224,7 +239,7 @@ export const offers = [
     quality: "Full HD",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti?",
-    imgs: [slubne6, slubne9],
+    imgs: [offerSlub1, offerSlub2],
   },
   {
     id: 6,
@@ -239,49 +254,57 @@ export const offers = [
     quality: "Full HD",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti?",
-    imgs: [slubne5, slubne9],
+    imgs: [offerZakochani1, offerZakochani2],
   },
 ];
 
 export const headerData = [
   {
     id: 1,
-    img: headerCiaza,
-    imgM: headerCiazaM,
-    shortTitle: "sesje ciążowe",
+    img: offerZakochani2,
+    imgM: offerZakochani1,
+    shortTitle: "sesje miłosne",
+    longTitle: "Romantyczna sesja zakochanych",
+    category: "miłosne",
+  },
+  {
+    id: 2,
+    img: offerSlub2,
+    imgM: offerSlub1,
+    shortTitle: "sesje ślubne",
+    longTitle: "Reportaż z waszego ślubu",
+    category: "ślubne",
+  },
+  {
+    id: 3,
+    img: offerCiazowe2,
+    imgM: offerCiazowe1,
+    shortTitle: "sesje brzuszkowe",
     longTitle: "Sesja ciążowa dla Ciebie i Twojego brzuszka",
     category: "ciążowe",
   },
   {
-    id: 2,
-    img: headerRodzinne,
-    imgM: headerRodzinneM,
+    id: 4,
+    img: offerNoworodkowe2,
+    imgM: offerNoworodkowe1,
+    shortTitle: "sesje noworodkowe",
+    longTitle: "Zdjęcia pierwszych dni życia waszego dziecka",
+    category: "noworodkowe",
+  },
+  {
+    id: 5,
+    img: offerChrzest2,
+    imgM: offerChrzest1,
+    shortTitle: "chrzty święte",
+    longTitle: "Zdjęcia z Chrztu Świętego",
+    category: "chrzest",
+  },
+  {
+    id: 6,
+    img: offerRodzinna2,
+    imgM: offerRodzinna1,
     shortTitle: "sesje rodzinne",
     longTitle: "Sesja zdjęciowa z Twoimi najbliższymi",
     category: "rodzinne",
   },
-  {
-    id: 3,
-    img: headerSlub,
-    imgM: headerSlubM,
-    shortTitle: "sesje ślubne",
-    longTitle: "Romantyczna sesja ślubna",
-    category: "ślubne",
-  },
-  // {
-  //   id: 4,
-  //   img: portret4,
-  //   imgM: headerPortfolioM,
-  //   shortTitle: "zdjęcia portretowe",
-  //   longTitle: "Zdjęcia do Twojego CV i portfolio",
-  //   category: "portrety",
-  // },
-  // {
-  //   id: 5,
-  //   img: moda3,
-  //   imgM: headerModaM,
-  //   shortTitle: "sesje mody",
-  //   longTitle: "Pokaż siebie i swój styl",
-  //   category: "moda",
-  // },
 ];
