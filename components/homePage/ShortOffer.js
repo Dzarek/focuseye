@@ -16,6 +16,7 @@ import SingleOffer from "../SingleOffer";
 import DetailsOffer from "../DetailsOffer";
 
 import { TiArrowRightOutline } from "react-icons/ti";
+import { TiCamera } from "react-icons/ti";
 
 const ShortOffer = ({ showDetails, setShowDetails }) => {
   const oneOffer = offers.find((item) => item.category === showDetails);
@@ -27,33 +28,33 @@ const ShortOffer = ({ showDetails, setShowDetails }) => {
       <div className="shortOfferContainer">
         <div className="textContainer">
           <h2 className="shortTitle">Oferta</h2>
-          <p className="shortText">
+          <h3 className="shortText">
             Moja oferta składa się z następujących sesji zdjęciowych:
-          </p>
+          </h3>
           <ul data-aos="fade-right" data-aos-duration="1500">
             <li>
-              <TiArrowRightOutline className="icon" />
-              <p>sesje noworodkowe lifestyle</p>
+              <TiCamera className="icon" />
+              sesje noworodkowe lifestyle
             </li>
             <li>
-              <TiArrowRightOutline className="icon" />
-              <p>sesje rodzinne lifestyle</p>
+              <TiCamera className="icon" />
+              sesje rodzinne lifestyle
             </li>
             <li>
-              <TiArrowRightOutline className="icon" />
-              <p>sesje brzuszkowe</p>
+              <TiCamera className="icon" />
+              sesje brzuszkowe
             </li>
             <li>
-              <TiArrowRightOutline className="icon" />
-              <p>chrzty święte</p>
+              <TiCamera className="icon" />
+              chrzty święte
             </li>
             <li>
-              <TiArrowRightOutline className="icon" />
-              <p>śluby</p>
+              <TiCamera className="icon" />
+              śluby
             </li>
             <li>
-              <TiArrowRightOutline className="icon" />
-              <p>sesje miłosne</p>
+              <TiCamera className="icon" />
+              sesje miłosne
             </li>
           </ul>
           <button>zobacz oferty</button>
@@ -105,24 +106,32 @@ const Wrapper = styled.div`
   .shortOfferContainer {
     margin: 0 auto;
     width: 90vw;
-    max-width: 1360px;
+    max-width: 1440px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .textContainer {
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     h2 {
-      margin-bottom: 7vh;
+      margin-bottom: 5vh;
+      font-size: 3.5rem;
+      font-family: var(--titleFont);
+      font-weight: 800;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
       color: #fff;
-      font-size: 4rem;
+      text-shadow: 3px 3px 3px var(--secondaryColor3);
     }
-    p {
-      margin-bottom: 3vh;
+    h3 {
+      margin-bottom: 5vh;
       font-weight: 700;
+      color: var(--secondaryColor);
     }
     ul {
       list-style: none;
@@ -131,15 +140,20 @@ const Wrapper = styled.div`
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        margin-bottom: 3vh;
+        font-size: 1.4rem;
+        font-weight: 500;
         .icon {
-          font-size: 1.3rem;
-          margin-top: -17px;
+          /* font-size: 1.3rem; */
+          margin-top: 4px;
+          margin-right: 10px;
+          color: var(--secondaryColor);
         }
-        p {
+        /* p {
+          margin-bottom: 3vh;
           font-size: 1.4rem;
-          /* font-style: italic; */
           font-weight: 500;
-        }
+        } */
       }
     }
     button {

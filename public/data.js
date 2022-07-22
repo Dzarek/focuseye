@@ -59,6 +59,30 @@ const headerPortfolioM = "./images/header/headerPortfolioM.jpg";
 const headerRodzinneM = "./images/header/headerRodzinneM.jpg";
 const headerSlubM = "./images/header/headerSlubM.jpg";
 
+const instaImg1 = "./images/instagramImg/1.jpg";
+const instaImg2 = "./images/instagramImg/2.jpg";
+const instaImg3 = "./images/instagramImg/3.jpg";
+const instaImg4 = "./images/instagramImg/4.jpg";
+const instaImg5 = "./images/instagramImg/5.jpg";
+const instaImg6 = "./images/instagramImg/6.jpg";
+const instaImg7 = "./images/instagramImg/7.jpg";
+const instaImg8 = "./images/instagramImg/8.jpg";
+const instaImg9 = "./images/instagramImg/9.jpg";
+const instaImg10 = "./images/instagramImg/10.jpg";
+
+export const galleryInstagram = [
+  instaImg1,
+  instaImg2,
+  instaImg3,
+  instaImg4,
+  instaImg5,
+  instaImg6,
+  instaImg7,
+  instaImg8,
+  instaImg9,
+  instaImg10,
+];
+
 export const gallery = [
   {
     id: 1,

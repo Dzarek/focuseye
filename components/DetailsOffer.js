@@ -73,7 +73,7 @@ const Wrapper = styled.div`
   z-index: 9999;
 
   .details {
-    background-color: var(--singleOfferBgColor);
+    background-color: var(--sectionBgColor);
     width: 55vw;
     height: 80vh;
     position: absolute;
@@ -144,7 +144,7 @@ const Wrapper = styled.div`
           margin-bottom: 3vh;
           font-size: 1.2rem;
           span {
-            color: var(--secondaryColor2);
+            color: var(--secondaryColor3);
             margin-right: 5px;
           }
         }
@@ -171,7 +171,7 @@ const Wrapper = styled.div`
         }
         h3 {
           font-family: var(--titleFont);
-          color: var(--secondaryColor2);
+          color: var(--secondaryColor3);
           font-size: 2rem;
           margin-bottom: 2vh;
         }

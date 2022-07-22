@@ -14,6 +14,13 @@
 @import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 /* 'K2D', sans-serif; */
 
+
+/* NOWE */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+/* font-family: 'EB Garamond', serif; */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+
 * {
   margin: 0;
   padding: 0;
@@ -48,25 +55,30 @@ body {
 
 
 .app {
-  --secondaryColor: #8c472e;
-  --secondaryColor2: #292624;
-  --secondaryColor3: #47352b;
+  /* --secondaryColor: #8c472e; */
+  --secondaryColor: #94693c;
+  /* --secondaryColor2: #4c3f36; */
+  --secondaryColor3: #3b1806;
   --primaryColor: rgb(10, 10, 10);
   --appBgColor: #fff;
-  --navbarBgColor: #997e71;
-  --sectionBgColor: #e2d6d1;
-  --sectionBgColor: #edcba1;
-  --singleOfferBgColor: #837772;
-  --aboutMeBgColor: rgb(112, 93, 86);
-  --aboutMeBgColor: #d0a076;
-  --navigationBgColor: #281711;
-  --navigationBgColor: #4b2912;
-  --footerBgColor: #54331b;
+  /* --navbarBgColor: #997e71; */
+  /* --sectionBgColor: #f6dfc3; */
+  --sectionBgColor: #fcf0e5;
+  --singleOfferBgColor: #d3a591;
+  /* --aboutMeBgColor: #d0a076;
+  --aboutMeBgColor: #dcc5a8; */
+  --aboutMeBgColor: #f6dfc3;
+  --navigationBgColor: #3c2d25;
+  --activeNavLink: #d9b89c;
+  /* --footerBgColor: #dcc5a8;
+  --footerBgColor: #d5bca9; */
+  --footerBgColor: #eee6e0;
   --galleryContentColor: #111;
   --galleryBtnBg: rgb(30, 30, 30);
   --logoBgMobile: rgba(0, 0, 0, 0.7);
-  --textFont: 'Darker Grotesque', sans-serif;
-  --titleFont: 'K2D', sans-serif;
+  /* --textFont: 'Poppins', sans-serif; */
+  --textFont: 'EB Garamond', serif;
+  --titleFont: 'Poppins', sans-serif;
   width: 100vw;
   min-height: 100vh;
   background-color: var(--appBgColor);
@@ -78,7 +90,7 @@ body {
 
 .mainPage {
   width: 90vw;
-  max-width: 1360px;
+  max-width: 1440px;
   min-height: 100vh;
   margin: 0 auto;
   padding-top: 10vh;
@@ -101,20 +113,14 @@ body {
 .title h2 {
   font-family: var(--titleFont);
   font-size: 2.7rem;
+  font-weight: 800;
   color: var(--navbarBgColor);
   text-transform: uppercase;
   letter-spacing: 5px;
   margin-bottom: 10vh;
 }
 
-.shortTitle {
-  font-family: var(--titleFont);
-  font-weight: 700;
-  font-size: 2rem;
-  text-align: center;
-  text-transform: uppercase;
-  color: var(--secondaryColor);
-}
+
 
 .shortText {
   font-size: 1.5rem;

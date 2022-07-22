@@ -88,13 +88,18 @@ const ShortFaqContact = () => {
 
 const Wrapper = styled.div`
   width: 100vw;
-  min-height: 80vh;
+  min-height: 70vh;
   margin: 0vh auto;
-  padding: 10vh 0;
+  padding: 5vh 0 0;
   position: relative;
   background: url(${qBg});
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   .faqContainer {
     width: 80vw;
     margin: 0 auto;
@@ -184,9 +189,9 @@ const Wrapper = styled.div`
     }
   }
   .contactShort {
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
-    left: 0;
+    left: 0; */
     width: 100vw;
     height: 20vh;
     background: #fff;

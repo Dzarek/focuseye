@@ -91,8 +91,8 @@ const Wrapper = styled.div`
     h2 {
       margin-bottom: 7vh;
       font-family: var(--titleFont);
-      font-weight: 700;
-      font-size: 1.6rem;
+      font-weight: 600;
+      font-size: 1.7rem;
       text-align: center;
       text-transform: uppercase;
       color: var(--secondaryColor);
@@ -100,7 +100,6 @@ const Wrapper = styled.div`
     p {
       font-size: 1.5rem;
       font-weight: 500;
-      letter-spacing: 1px;
       margin-bottom: 5vh;
     }
     button {
@@ -108,10 +107,10 @@ const Wrapper = styled.div`
       border: none;
       font-size: 4rem;
       cursor: pointer;
-      color: var(--navbarBgColor);
+      color: var(--secondaryColor);
       transition: 0.5s;
       :hover {
-        color: var(--secondaryColor);
+        color: var(--secondaryColor3);
       }
     }
   }

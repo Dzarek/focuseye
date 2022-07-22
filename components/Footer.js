@@ -66,7 +66,7 @@ const Wrapper = styled.div`
   background-size: cover;
   font-family: var(--titleFont);
   font-size: 1.3rem;
-  color: #fff;
+  color: var(--secondaryColor2);
   @media screen and (max-width: 800px) {
     margin-bottom: 10vh;
     height: 12vh;
@@ -101,7 +101,8 @@ const Wrapper = styled.div`
       justify-content: center;
       font-size: 1.3rem;
       margin-bottom: 1vh;
-      color: white;
+      color: var(--secondaryColor3);
+      color: #fff;
       font-family: var(--textFont);
       transition: 0.4s;
       cursor: pointer;
@@ -112,7 +113,7 @@ const Wrapper = styled.div`
     .iconFooter {
       margin-right: 15px;
       margin-top: 3px;
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
   }
   .thirdSection {
@@ -126,7 +127,7 @@ const Wrapper = styled.div`
       margin-bottom: 3vh;
     }
     span {
-      color: white;
+      color: var(--secondaryColor3);
       font-family: var(--textFont);
       font-size: 0.9rem;
     }

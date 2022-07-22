@@ -36,7 +36,6 @@ const Wrapper = styled.div`
     top: 0;
     left: 0;
     border-radius: 5px;
-
     background-size: cover;
     background-position: center;
     filter: brightness(0.7);
@@ -55,7 +54,7 @@ const Wrapper = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: "Kanit", sans-serif;
+    font-family: var(--titleFont);
     color: white;
     .title {
       text-transform: uppercase;
@@ -63,27 +62,29 @@ const Wrapper = styled.div`
       border-bottom: 2px solid white;
       padding-bottom: 15px;
       font-size: 2rem;
-      text-shadow: 3px 3px 3px black;
+      text-shadow: 2px 2px 2px black;
     }
     .price {
       font-size: 2rem;
       margin-top: 50%;
       text-shadow: 3px 3px 3px black;
+      font-family: var(--textFont);
     }
     .detailsBtn {
       background-color: transparent;
       padding: 5px 20px;
       font-size: 1.5rem;
-      font-family: "Kanit", sans-serif;
+      font-family: var(--titleFont);
       color: white;
       border: 2px solid white;
       border-radius: 5px;
       text-shadow: 3px 3px 3px black;
       transition: 0.3s;
+      font-weight: 500;
       cursor: pointer;
       :hover {
         background-color: white;
-        color: #222;
+        color: var(--secondaryColor3);
         text-shadow: none;
       }
     }

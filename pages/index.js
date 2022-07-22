@@ -51,7 +51,6 @@ export const getStaticProps = async () => {
     const smallImg = image.media_details.sizes.thumbnail.source_url;
     return smallImg;
   });
-
   return {
     props: {
       thumbnails,

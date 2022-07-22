@@ -11,8 +11,6 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { MdOutlinePhoneAndroid } from "react-icons/md";
 import { IoHome } from "react-icons/io5";
 
-const backgroundImg = "../images/backgroundNav.jpg";
-
 const Navbar = () => {
   const [offset, setOffset] = useState(0);
 
@@ -212,7 +210,7 @@ const Wrapper = styled.div`
 
     h5,
     a {
-      font-weight: 800;
+      font-weight: 600;
       font-size: 1.1rem;
       letter-spacing: 1px;
       font-family: var(--titleFont);
@@ -220,13 +218,15 @@ const Wrapper = styled.div`
       text-transform: uppercase;
       transition: 0.4s;
       cursor: pointer;
-      color: var(--navbarBgColor);
-      text-shadow: 0.1px 0.1px 0.1px black;
+      /* color: var(--navbarBgColor); */
+      color: var(--secondaryColor);
+      /* text-shadow: 0.1px 0.1px 0.1px black; */
       &.active {
-        color: var(--secondaryColor);
+        color: var(--secondaryColor3);
+        font-size: 1.2rem;
       }
       :hover {
-        color: var(--secondaryColor);
+        color: var(--secondaryColor3);
         font-size: 1.2rem;
       }
     }
@@ -234,7 +234,6 @@ const Wrapper = styled.div`
       margin: 0 4vw;
       cursor: pointer;
       h2 {
-        /* font-family: var(--titleFont); */
         font-family: "Genos", sans-serif;
         font-size: 1.7rem;
         letter-spacing: 2px;
@@ -247,7 +246,7 @@ const Wrapper = styled.div`
           height: 1.5rem;
           width: 3px;
           background: #999;
-          background: var(--navbarBgColor);
+          background: var(--secondaryColor);
           animation: logoR 4s linear infinite;
           @keyframes logoR {
             20% {
@@ -280,43 +279,37 @@ const Wrapper = styled.div`
           }
         }
         span {
-          color: var(--secondaryColor2);
           color: var(--primaryColor);
         }
       }
     }
   }
   .navbarBg {
-    /* background: url(${backgroundImg}); */
     background: var(--navigationBgColor);
-    background-size: cover;
-    /* background-position: center; */
     color: #fff;
     transition: 1s;
-    border-bottom: 2px solid var(--navbarBgColor);
+    border-bottom: 2px solid var(--secondaryColor2);
     h5,
     a {
       color: #fff;
-      text-shadow: 1px 1px 1px black;
+      /* text-shadow: 1px 1px 1px black; */
       &.active {
-        color: var(--sectionBgColor);
+        color: var(--activeNavLink);
+        font-size: 1.2rem;
       }
       :hover {
-        color: var(--sectionBgColor);
+        color: var(--activeNavLink);
         font-size: 1.2rem;
       }
     }
     .logo {
       h2 {
-        /* color: var(--secondaryColor); */
         color: var(--sectionBgColor);
-        /* font-family: "Genos", sans-serif; */
         text-shadow: 2px 2px 2px black;
         .logoLine {
           background: #fff;
         }
         span {
-          /* color: var(--secondaryColor); */
           color: var(--sectionBgColor);
         }
       }
@@ -329,11 +322,11 @@ const Wrapper = styled.div`
     font-size: 2rem;
     background: transparent;
     border: none;
-    color: var(--secondaryColor);
+    color: var(--navigationBgColor);
     transition: 0.5s;
     cursor: pointer;
     :hover {
-      color: var(--secondaryColor2);
+      color: var(--secondaryColor);
     }
   }
   .upBtnNone {

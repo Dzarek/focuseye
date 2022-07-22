@@ -70,11 +70,13 @@ const Wrapper = styled.div`
       margin-bottom: 7vh;
       font-size: 2rem;
       text-transform: uppercase;
+      font-weight: 600;
+      color: var(--secondaryColor3);
+      /* color: var(--navigationBgColor); */
     }
     p {
       font-size: 1.4rem;
-      font-weight: 600;
-      /* font-style: italic; */
+      font-weight: 400;
       font-family: var(--textFont);
     }
   }

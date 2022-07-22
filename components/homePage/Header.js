@@ -126,12 +126,17 @@ const Wrapper = styled.div`
         font-size: 1rem;
       }
       .fbInIcon {
-        color: var(--navbarBgColor);
+        transition: 0.4s;
+        color: var(--secondaryColor);
         font-size: 1.4rem;
+      }
+      :hover .fbInIcon {
+        transform: scale(1.2);
       }
     }
   }
   .phoneAndMail {
+    width: 100vw;
     position: absolute;
     bottom: 2.5%;
     left: 50%;
@@ -139,7 +144,6 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 5vw; */
     @media screen and (max-width: 800px) {
       display: none;
     }
@@ -156,8 +160,12 @@ const Wrapper = styled.div`
         font-size: 1rem;
       }
       .fbInIcon {
-        color: var(--navbarBgColor);
+        transition: 0.4s;
+        color: var(--secondaryColor);
         font-size: 1.4rem;
+      }
+      :hover .fbInIcon {
+        transform: scale(1.2);
       }
     }
   }
@@ -176,7 +184,7 @@ const Wrapper = styled.div`
       color: white;
       transition: 0.3s;
       :hover {
-        color: #aaa;
+        color: var(--activeNavLink);
       }
     }
     .arrowLeft {
@@ -237,36 +245,37 @@ const Wrapper = styled.div`
       width: 60%;
       h1 {
         font-family: var(--textFont);
-        letter-spacing: 1px;
+        /* letter-spacing: 1px; */
         font-size: 2.5rem;
+        font-weight: 800;
+        text-shadow: 1px 1px 1px #000;
         margin: 1vh 0 4vh 0;
         color: white;
       }
       p {
         font-family: var(--titleFont);
-        font-weight: 800;
+        font-weight: 700;
         font-size: 1.1rem;
-        /* text-transform: uppercase; */
-        color: #ccc;
+        color: var(--sectionBgColor);
       }
       a {
-        font-family: "Genos", sans-serif;
-        font-size: 1.3rem;
+        font-family: var(--titleFont);
+        font-size: 1rem;
         color: var(--secondaryColor);
         text-decoration: none;
         text-transform: uppercase;
         font-weight: 700;
-        border: 1px solid white;
-        border-radius: 5px;
-        width: 25%;
-        padding: 5px 0;
+        /* border: 1px solid white; */
+        border-radius: 10px;
+        max-width: 25%;
+        padding: 7px 0;
         text-align: center;
         background: whitesmoke;
         transition: 0.4s;
         cursor: pointer;
         :hover {
-          background: var(--secondaryColor);
-          color: var(--primaryColor);
+          background: var(--activeNavLink);
+          color: var(--secondaryColor3);
         }
       }
       @media screen and (max-width: 800px) {

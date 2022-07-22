@@ -1,32 +1,10 @@
 import styled from "styled-components";
-// import { useEffect, useState } from "react";
-import { gallery } from "../../public/data";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import { FaInstagramSquare } from "react-icons/fa";
+import { galleryInstagram } from "../../public/data";
 
 const ShortInstagram = ({ thumbnails }) => {
-  // const [instaImg, setInstaImg] = useState(thumbnails);
-
-  // const fetchImages = async () => {
-  //   const response = await fetch(
-  //     "https://focuseye.pl/wp-json/wp/v2/media?media_folder=59"
-  //   );
-  //   const data = await response.json();
-  //   const thumbnails = data.map((image) => {
-  //     const smallImg = image.media_details.sizes.full.source_url;
-  //     return smallImg;
-  //   });
-  //   setInstaImg(thumbnails);
-  // };
-  // useEffect(() => {
-  //   fetchImages();
-  // }, []);
-
-  const galleryCategory = gallery.filter(
-    (item) => item.category === "rodzinne"
-  );
-  const galleryInsta = galleryCategory[0].img;
   return (
     <Wrapper>
       <Carousel
@@ -36,15 +14,23 @@ const ShortInstagram = ({ thumbnails }) => {
         animationSpeed={1000}
         slidesPerPage={7}
       >
-        {thumbnails.map((item, index) => {
-          return <img key={index} src={item} alt="" />;
-        })}
+        {thumbnails && thumbnails.length > 9
+          ? thumbnails.map((item, index) => {
+              return <img key={index} src={item} alt="instagram" />;
+            })
+          : galleryInstagram.map((item, index) => {
+              return <img key={index} src={item} alt="instagram" />;
+            })}
       </Carousel>
 
-      <button>
+      <a
+        href="https://www.instagram.com/focuseye_sylwiasajdak/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {" "}
         <FaInstagramSquare className="fbInIcon" /> Obserwuj
-      </button>
+      </a>
     </Wrapper>
   );
 };
@@ -64,7 +50,7 @@ const Wrapper = styled.div`
       object-fit: cover;
     }
   }
-  button {
+  a {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -83,6 +69,7 @@ const Wrapper = styled.div`
     text-transform: uppercase;
     padding: 5px 10px;
     transition: 0.4s;
+    text-decoration: none;
     cursor: pointer;
     :hover {
       background: var(--sectionBgColor);
