@@ -78,10 +78,10 @@ const offerCiazowe1 = "./images/ofertaImg/ciazowe1.jpg";
 const offerCiazowe2 = "./images/ofertaImg/ciazowe2.jpg";
 const offerNoworodkowe1 = "./images/ofertaImg/noworodkowe1.jpg";
 const offerNoworodkowe2 = "./images/ofertaImg/noworodkowe2.jpg";
-const offerRodzinna1 = "./images/ofertaImg/rodzinna1.jpg";
-const offerRodzinna2 = "./images/ofertaImg/rodzinna2.jpg";
+const offerRodzinna1 = "./images/ofertaImg/rodzinna1.JPG";
+const offerRodzinna2 = "./images/ofertaImg/rodzinna2.JPG";
 const offerSlub1 = "./images/ofertaImg/slub1.jpg";
-const offerSlub2 = "./images/ofertaImg/slub2.jpg";
+const offerSlub2 = "./images/ofertaImg/slub2.JPG";
 const offerZakochani1 = "./images/ofertaImg/zakochani1.jpg";
 const offerZakochani2 = "./images/ofertaImg/zakochani2.jpg";
 

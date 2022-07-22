@@ -22,11 +22,11 @@ const FirstInfo = () => {
       <div className="textContainer">
         <h1>Sesje fotograficzne - FocusEye</h1>
         <p>
-          Każde ważne wydarzenie powinno zostać uwietrznione na zdjęciach...
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
-          quas perspiciatis nisi corrupti deleniti pariatur corporis laboriosam
-          minus atque. Nostrum distinctio iusto impedit veniam beatae delectus
-          hic, molestiae vero deleniti!
+          W fotografii zależy mi na tym aby oddać naturalność i pokazać Waszą
+          miłość. Za każdym zaproszeniem mnie na sesję kryje się głęboka radość
+          i wzruszenie. Domowe sesje lifestyle to jest to co kocham najbardziej,
+          a fotografia reportażowa to ludzie! którzy mnie inspirują, poruszają i
+          rozbudzają wyobraźnię.
         </p>
       </div>
     </Wrapper>
@@ -76,8 +76,9 @@ const Wrapper = styled.div`
     }
     p {
       font-size: 1.4rem;
-      font-weight: 400;
+      font-weight: 500;
       font-family: var(--textFont);
+      line-height: 1.7;
     }
   }
 `;
