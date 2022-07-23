@@ -100,6 +100,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  /* opacity: 0.2; */
   .faqContainer {
     width: 80vw;
     margin: 0 auto;
@@ -116,6 +117,7 @@ const Wrapper = styled.div`
       margin-top: 10vh;
       span {
         color: var(--secondaryColor);
+        font-weight: 700;
         font-size: 2rem;
         cursor: pointer;
         transition: 0.4s;
