@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import { offers } from "../../public/data";
 
-const OneOffer = ({ oneOffer }) => {
-  const offer = oneOffer;
-  const { imgs, title } = offer;
-  const bg = imgs[1];
-
-  if (!offer) {
+const OneOffer = (props) => {
+  // const offer = oneOffer;
+  // const { imgs, title } = offer;
+  const { title, headerImg } = props;
+  if (!title) {
     return (
       <Wrapper>
         {" "}
@@ -24,7 +23,7 @@ const OneOffer = ({ oneOffer }) => {
       {" "}
       <header className="headerTitle">
         <div className="title">
-          <img src={bg} alt="" />
+          <img src={headerImg} alt="" />
           <h2>{title}</h2>
         </div>
       </header>
@@ -68,16 +67,19 @@ const Wrapper = styled.div`
 
 export const getStaticProps = async (context) => {
   const category = context.params.category;
-  const oneOffer = await offers.find((item) => item.category === category);
+  const oneOffer = offers.find((item) => item.category === category);
+  const { title, imgs } = oneOffer;
+  const headerImg = imgs[1];
   return {
     props: {
-      oneOffer: oneOffer,
+      headerImg,
+      title,
     },
     revalidate: 30,
   };
 };
 export const getStaticPaths = async () => {
-  const paths = await offers.map((offer) => ({
+  const paths = offers.map((offer) => ({
     params: { category: offer.category },
   }));
 
