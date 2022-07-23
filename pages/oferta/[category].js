@@ -1,14 +1,8 @@
 import styled from "styled-components";
-import { useRouter } from "next/router";
 import { offers } from "../../public/data";
 
-const OneOffer = () => {
-  const router = useRouter();
-  const category = router.query.category;
-  const oneOffer = offers.find((item) => item.category === category);
+const OneOffer = ({ oneOffer }) => {
   const { imgs, title } = oneOffer;
-  console.log(imgs);
-  // const { imgs } = oneOffer;
   const bg = imgs[1];
   return (
     <Wrapper>
@@ -56,5 +50,26 @@ const Wrapper = styled.div`
     }
   }
 `;
+
+export const getStaticProps = async (context) => {
+  const category = context.params.category;
+  const oneOffer = offers.find((item) => item.category === category);
+  return {
+    props: {
+      oneOffer: oneOffer,
+    },
+    revalidate: 30,
+  };
+};
+export const getStaticPaths = async () => {
+  const paths = offers.map((offer) => ({
+    params: { category: offer.category },
+  }));
+
+  return {
+    paths,
+    fallback: true,
+  };
+};
 
 export default OneOffer;
