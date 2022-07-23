@@ -5,7 +5,7 @@ import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
-
+import Link from "next/link";
 import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle,
@@ -15,7 +15,6 @@ import { offers } from "../../public/data";
 import SingleOffer from "../SingleOffer";
 import DetailsOffer from "../DetailsOffer";
 
-import { TiArrowRightOutline } from "react-icons/ti";
 import { TiCamera } from "react-icons/ti";
 
 const ShortOffer = ({ showDetails, setShowDetails }) => {
@@ -57,7 +56,9 @@ const ShortOffer = ({ showDetails, setShowDetails }) => {
               sesje miłosne
             </li>
           </ul>
-          <button>zobacz oferty</button>
+          <Link href="/oferta">
+            <button>zobacz oferty</button>
+          </Link>
         </div>
         <div className="offerContainer">
           <Carousel

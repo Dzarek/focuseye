@@ -81,6 +81,12 @@ const Offer = () => {
         <DetailsOffer oneOffer={oneOffer} setShowDetails={setShowDetails} />
       )}
       {/* {showSmallDetails && <SmallDetails oneOffer2={oneOffer2} />  } */}
+      <section className="albums">
+        <h2>Albumy...</h2>
+      </section>
+      <section className="importantInfo">
+        <h2>Ważne info spójne dla wszystkich ofert...</h2>
+      </section>
     </Wrapper>
   );
 };
@@ -256,6 +262,22 @@ const Wrapper = styled.div`
         filter: none;
       }
     }
+  }
+  .albums {
+    margin: 0 auto;
+    width: 80vw;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .importantInfo {
+    margin: 0 auto;
+    width: 80vw;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
