@@ -68,7 +68,7 @@ const Wrapper = styled.div`
 
 export const getStaticProps = async (context) => {
   const category = context.params.category;
-  const oneOffer = offers.find((item) => item.category === category);
+  const oneOffer = await offers.find((item) => item.category === category);
   return {
     props: {
       oneOffer: oneOffer,
@@ -77,7 +77,7 @@ export const getStaticProps = async (context) => {
   };
 };
 export const getStaticPaths = async () => {
-  const paths = offers.map((offer) => ({
+  const paths = await offers.map((offer) => ({
     params: { category: offer.category },
   }));
 
