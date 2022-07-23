@@ -76,14 +76,15 @@ const Wrapper = styled.div`
     background-color: var(--singleOfferBgColor);
     width: 60vw;
     height: 80vh;
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -50%);
     color: var(--secondaryColor3);
     overflow: auto;
     border-radius: 5px;
     border: 3px solid var(--secondaryColor);
+
     @media screen and (max-width: 800px) {
       width: 100vw;
       height: 100vh;
@@ -146,7 +147,7 @@ const Wrapper = styled.div`
           font-size: 1.2rem;
           span {
             text-transform: uppercase;
-            font-family: var(--titleFont);
+            /* font-family: var(--titleFont); */
             color: #fff;
             text-shadow: 1px 1px 1px black;
             margin-right: 5px;

@@ -7,7 +7,7 @@ import ReactLoading from "react-loading";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const galleryHeaderImg = "../images/gallery/galleryHeaderImg.jpg";
+// const galleryHeaderImg = "../images/gallery/galleryHeaderImg.jpg";
 const galleryHeaderImg2 = "../images/gallery/galleryHeader.png";
 
 const allCategories = [
@@ -106,7 +106,7 @@ const GalleryPage = () => {
         {/* <div className="headerBg"></div> */}
         {/* <div className="headerContent"> */}
         <div className="title">
-          <h2>Galeria</h2>
+          <h2 data-aos="fade-right">Galeria</h2>
           <img src={galleryHeaderImg2} alt="gallery title" />
         </div>
       </header>
@@ -187,7 +187,6 @@ const Wrapper = styled.div`
   header {
     position: relative;
     width: 100vw;
-    /* height: 70vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -219,7 +218,8 @@ const Wrapper = styled.div`
       align-items: center;
       justify-content: center;
       img {
-        width: 25vw;
+        /* width: 25vw; */
+        height: 50vh;
         margin-left: 5vw;
       }
       h2 {
