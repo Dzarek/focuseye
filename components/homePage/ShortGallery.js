@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-
+import Link from "next/link";
 import styled from "styled-components";
 import { TbSlideshow } from "react-icons/tb";
 import Aos from "aos";
@@ -32,7 +32,9 @@ const ShortGallery = () => {
             że w tej galerii znajdą się również Twoje zdjęcia.
           </p>
           <button>
-            <TbSlideshow />
+            <Link href="/galeria">
+              <TbSlideshow />
+            </Link>
           </button>
         </div>
       </div>

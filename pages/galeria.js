@@ -8,6 +8,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 const galleryHeaderImg = "../images/gallery/galleryHeaderImg.jpg";
+const galleryHeaderImg2 = "../images/gallery/galleryHeader.png";
 
 const allCategories = [
   ...new Set(gallery.map((item) => item.category)),
@@ -20,7 +21,6 @@ const GalleryPage = () => {
   const [menuItems, setMenuItems] = useState(galleryCategory);
   const [categories] = useState(allCategories);
   const [activeBtn, setActiveBtn] = useState("miłosne");
-  // const [currentPage, setCurrentPage] = useState(1);
   const [currentPage] = useState(1);
   const [imagesPerPage, setImagesPerPage] = useState(10);
   const [loading, setLoading] = useState(true);
@@ -61,7 +61,6 @@ const GalleryPage = () => {
       />
     );
   });
-  // console.log(galleryArraysFinal);
 
   const indexOfLastImage = currentPage * imagesPerPage;
   const indexOfFirstImage = indexOfLastImage - imagesPerPage;
@@ -69,7 +68,6 @@ const GalleryPage = () => {
     indexOfFirstImage,
     indexOfLastImage
   );
-  // console.log(galleryImages[0]);
 
   const currentImages2 = galleryArraysFinal.slice(
     indexOfFirstImage,
@@ -105,28 +103,29 @@ const GalleryPage = () => {
   return (
     <Wrapper>
       <header>
-        <div className="headerBg"></div>
-        <div className="headerContent">
-          <div className="title">
-            <h2>Galeria</h2>
-          </div>
-          <div data-aos="fade-up" className="galleryCategory">
-            {categories.map((category, index) => {
-              return (
-                <button
-                  key={index}
-                  onClick={() => filterItems(category)}
-                  className={activeBtn === category ? "activeBtn" : null}
-                >
-                  {category}
-                </button>
-              );
-            })}
-          </div>
+        {/* <div className="headerBg"></div> */}
+        {/* <div className="headerContent"> */}
+        <div className="title">
+          <h2>Galeria</h2>
+          <img src={galleryHeaderImg2} alt="gallery title" />
         </div>
       </header>
-      <SRLWrapper>
-        <div className="galleryContent">
+      <div data-aos="fade-up" className="galleryCategory">
+        {categories.map((category, index) => {
+          return (
+            <button
+              key={index}
+              onClick={() => filterItems(category)}
+              className={activeBtn === category ? "activeBtn" : null}
+            >
+              {category}
+            </button>
+          );
+        })}
+      </div>
+      {/* </div> */}
+      <div className="galleryContent">
+        <SRLWrapper>
           <Masonry
             breakpointCols={breakpointColumnsObj}
             className="my-masonry-grid"
@@ -137,32 +136,33 @@ const GalleryPage = () => {
             {/* {menuItems === gallery ? galleryImages : currentImages} */}
             {menuItems === gallery ? currentImages2 : currentImages}
           </Masonry>
-          {(menuItems === gallery &&
-            currentImages2.length !== galleryArraysFinal.length) ||
-          (menuItems !== gallery &&
-            currentImages.length !== galleryImages[0].length) ? (
-            <>
-              {loading ? (
-                <button
-                  // onClick={() => setImagesPerPage(imagesPerPage + 10)}
-                  onClick={loadImages}
-                  className="loadImagesBtn"
-                >
-                  Zobacz Więcej
-                </button>
-              ) : (
-                <ReactLoading
-                  className="loadingImg"
-                  bubbles
-                  color={"#4f7e52"}
-                  height={"6%"}
-                  width={"6%"}
-                />
-              )}
-            </>
-          ) : null}
-        </div>
-      </SRLWrapper>
+        </SRLWrapper>
+
+        {(menuItems === gallery &&
+          currentImages2.length !== galleryArraysFinal.length) ||
+        (menuItems !== gallery &&
+          currentImages.length !== galleryImages[0].length) ? (
+          <>
+            {loading ? (
+              <button
+                // onClick={() => setImagesPerPage(imagesPerPage + 10)}
+                onClick={loadImages}
+                className="loadImagesBtn"
+              >
+                Zobacz Więcej
+              </button>
+            ) : (
+              <ReactLoading
+                className="loadingImg"
+                bubbles
+                color={"#94693c"}
+                height={"6%"}
+                width={"6%"}
+              />
+            )}
+          </>
+        ) : null}
+      </div>
     </Wrapper>
   );
 };
@@ -180,36 +180,52 @@ const Wrapper = styled.div`
     /* margin-top: 5vh; */
     .title {
       /* padding-top: 8vh; */
-      margin-top: -5vh;
+      /* margin-top: -5vh; */
     }
   }
 
   header {
     position: relative;
     width: 100vw;
-    height: 60vh;
+    /* height: 70vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .headerBg {
+    margin-top: 2vh;
+    background: var(--sectionBgColor);
+    /* border-bottom: 1px solid var(--secondaryColor); */
+    /* .headerBg {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: url(${galleryHeaderImg});
-      background-size: cover;
+      background: url(${galleryHeaderImg2});
+      background-size: contain;
+      background-repeat: no-repeat;
       background-attachment: fixed;
       background-position: center;
-      opacity: 0.2;
-    }
-    .headerContent {
+    } */
+    /* .headerContent {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 1;
+    } */
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 25vw;
+        margin-left: 5vw;
+      }
+      h2 {
+        font-weight: 800;
+        font-size: 3rem;
+      }
     }
   }
 
@@ -217,28 +233,30 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 80vw;
-    margin: 0 auto;
+    width: 70vw;
+    margin: 5vh auto 0;
 
     @media screen and (max-width: 800px) {
       width: 90vw;
       flex-wrap: wrap;
     }
     button {
-      padding: 10px;
+      padding: 8px 12px;
       background: transparent;
       color: var(--primaryColor);
-      border: none;
+      border: 2px solid #fff;
       border-bottom: 2px solid var(--secondaryColor);
-      border-radius: 5px;
+      border-radius: 10px;
       font-size: 1.2rem;
       /* text-transform: uppercase; */
       cursor: pointer;
       font-weight: 400;
       font-family: "Kanit", sans-serif;
-      transition: background 0.5s;
+      transition: 0.5s;
+      background: #fff;
       :hover {
         background: var(--sectionBgColor);
+        border-color: var(--secondaryColor);
       }
       @media screen and (max-width: 800px) {
         margin: 2vh 2vw;
@@ -299,21 +317,22 @@ const Wrapper = styled.div`
   }
   .loadImagesBtn {
     margin: 10vh auto;
-    text-align: center;
-    padding: 10px 20px;
-    font-size: 1rem;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-family: var(--titleFont);
     text-transform: uppercase;
+    padding: 10px 0px;
+    width: 180px;
+    font-weight: 700;
+    color: #fff;
     background: var(--secondaryColor);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-family: "Genos", sans-serif;
-    font-family: "Kanit", sans-serif;
-    cursor: pointer;
     transition: 0.4s;
+    cursor: pointer;
     :hover {
-      /* color: var(--secondaryColor); */
-      background: var(--primaryColor);
+      background: #fff;
+      border: 2px solid var(--secondaryColor);
+      color: var(--secondaryColor);
     }
   }
   .loadingImg {
