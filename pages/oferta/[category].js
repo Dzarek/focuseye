@@ -2,8 +2,23 @@ import styled from "styled-components";
 import { offers } from "../../public/data";
 
 const OneOffer = ({ oneOffer }) => {
-  const { imgs, title } = oneOffer;
+  const offer = oneOffer;
+  const { imgs, title } = offer;
   const bg = imgs[1];
+
+  if (!offer) {
+    return (
+      <Wrapper>
+        {" "}
+        <header className="headerTitle">
+          <div className="title">
+            <h2>Loading...</h2>
+          </div>
+        </header>
+      </Wrapper>
+    );
+  }
+
   return (
     <Wrapper>
       {" "}
