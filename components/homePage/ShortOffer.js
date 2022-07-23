@@ -23,7 +23,7 @@ const ShortOffer = ({ showDetails, setShowDetails }) => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <Wrapper>
+    <Wrapper id="shortOffer">
       <div className="shortOfferContainer">
         <div className="textContainer">
           <h2 className="shortTitle">Oferta</h2>

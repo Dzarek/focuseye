@@ -6,12 +6,14 @@ import { useEffect, useState } from "react";
 import { offers } from "../../public/data";
 import SingleOffer from "../../components/SingleOffer";
 import DetailsOffer from "../../components/DetailsOffer";
+import ImportantInfoOffer from "../../components/offerPage/ImportantInfoOffer";
+
 // import SmallDetails from "../../components/SmallDetails";
 import { GiPhotoCamera } from "react-icons/gi";
 import { BsPersonCheckFill } from "react-icons/bs";
 import { IoIosEye } from "react-icons/io";
 import { GiFlowers } from "react-icons/gi";
-
+import { GrDocumentPdf } from "react-icons/gr";
 const ofertaHeader = "../images/ofertaImg/header/ofertaHeader.png";
 
 const Offer = () => {
@@ -84,8 +86,17 @@ const Offer = () => {
       <section className="albums">
         <h2>Albumy...</h2>
       </section>
-      <section className="importantInfo">
-        <h2>Ważne info spójne dla wszystkich ofert...</h2>
+      <ImportantInfoOffer />
+      <section className="regulations">
+        <h2>Pobierz regulamin</h2>
+        <a
+          href="/regulamin.pdf"
+          alt="alt text"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GrDocumentPdf className="icon" />
+        </a>
       </section>
     </Wrapper>
   );
@@ -271,13 +282,29 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
   }
-  .importantInfo {
-    margin: 0 auto;
-    width: 80vw;
-    height: 50vh;
+  .regulations {
+    width: 100vw;
+    height: 25vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    h2 {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      color: var(--secondaryColor);
+      margin-bottom: 3vh;
+    }
+    a {
+      cursor: pointer;
+      transition: 0.4s;
+      .icon {
+        font-size: 2.5rem;
+      }
+      :hover {
+        transform: scale(1.1);
+      }
+    }
   }
 `;
 

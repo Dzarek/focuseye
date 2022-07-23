@@ -68,12 +68,13 @@ const HomePage = ({ setShowDetails }) => {
                   </div>
                   <h1>{longTitle}</h1>
                   <Link
-                    to="offer"
+                    to="shortOffer"
                     smooth={true}
                     duration={1000}
-                    activeClass="active"
+                    // activeClass="active"
                     spy={true}
                     onClick={() => handleShowDetails(category)}
+                    offset={-100}
                   >
                     Zobacz więcej
                   </Link>

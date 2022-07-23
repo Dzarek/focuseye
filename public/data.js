@@ -298,7 +298,7 @@ export const headerData = [
     imgM: offerCiazowe1,
     shortTitle: "sesje brzuszkowe",
     longTitle: "Sesja ciążowa dla Ciebie i Twojego brzuszka",
-    category: "ciążowe",
+    category: "brzuszkowe",
   },
   {
     id: 4,
