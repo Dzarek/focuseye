@@ -111,7 +111,6 @@ const Wrapper = styled.div`
   margin: 0 auto;
   padding-top: 10vh;
   position: relative;
-  overflow: hidden;
   .headerTitle {
     position: relative;
     width: 100vw;

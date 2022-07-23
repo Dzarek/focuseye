@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import { FaEye } from "react-icons/fa";
+import Link from "next/link";
 
 const SingleOffer = ({ offer, setShowDetails, setShowSmallDetails }) => {
   const router = useRouter();
@@ -27,9 +28,18 @@ const SingleOffer = ({ offer, setShowDetails, setShowSmallDetails }) => {
           </button>
         ) : ( */}
         {/* )} */}
-        <button onClick={() => setShowDetails(category)} className="detailsBtn">
-          szczegóły
-        </button>
+        {router.pathname == "/oferta" ? (
+          <Link href={`/oferta/${category}`}>
+            <button className="detailsBtn">szczegóły</button>
+          </Link>
+        ) : (
+          <button
+            onClick={() => setShowDetails(category)}
+            className="detailsBtn"
+          >
+            szczegóły
+          </button>
+        )}
       </div>
     </Wrapper>
   );

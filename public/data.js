@@ -72,18 +72,18 @@ const instaImg8 = "./images/instagramImg/8.jpg";
 const instaImg9 = "./images/instagramImg/9.jpg";
 const instaImg10 = "./images/instagramImg/10.jpg";
 
-const offerChrzest1 = "./images/ofertaImg/chrzest1.jpg";
-const offerChrzest2 = "./images/ofertaImg/chrzest2.jpg";
-const offerCiazowe1 = "./images/ofertaImg/ciazowe1.jpg";
-const offerCiazowe2 = "./images/ofertaImg/ciazowe2.jpg";
-const offerNoworodkowe1 = "./images/ofertaImg/noworodkowe1.jpg";
-const offerNoworodkowe2 = "./images/ofertaImg/noworodkowe2.jpg";
-const offerRodzinna1 = "./images/ofertaImg/rodzinna1.JPG";
-const offerRodzinna2 = "./images/ofertaImg/rodzinna2.JPG";
-const offerSlub1 = "./images/ofertaImg/slub1.jpg";
-const offerSlub2 = "./images/ofertaImg/slub2.JPG";
-const offerZakochani1 = "./images/ofertaImg/zakochani1.jpg";
-const offerZakochani2 = "./images/ofertaImg/zakochani2.jpg";
+const offerChrzest1 = "/images/ofertaImg/chrzest1.jpg";
+const offerChrzest2 = "/images/ofertaImg/chrzest2.jpg";
+const offerCiazowe1 = "/images/ofertaImg/ciazowe1.jpg";
+const offerCiazowe2 = "/images/ofertaImg/ciazowe2.jpg";
+const offerNoworodkowe1 = "/images/ofertaImg/noworodkowe1.jpg";
+const offerNoworodkowe2 = "/images/ofertaImg/noworodkowe2.jpg";
+const offerRodzinna1 = "/images/ofertaImg/rodzinna1.JPG";
+const offerRodzinna2 = "/images/ofertaImg/rodzinna2.JPG";
+const offerSlub1 = "/images/ofertaImg/slub1.jpg";
+const offerSlub2 = "/images/ofertaImg/slub2.JPG";
+const offerZakochani1 = "/images/ofertaImg/zakochani1.jpg";
+const offerZakochani2 = "/images/ofertaImg/zakochani2.jpg";
 
 export const galleryInstagram = [
   instaImg1,
