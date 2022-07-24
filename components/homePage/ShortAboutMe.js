@@ -4,7 +4,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { BsPeopleFill } from "react-icons/bs";
 
-const aboutImg = "../images/meImg.jpg";
+const aboutImg = "../images/aboutMeImg/meImg.jpg";
 
 const AboutPage = () => {
   useEffect(() => {

@@ -16,7 +16,7 @@ import { GiFlowers } from "react-icons/gi";
 import { GrDocumentPdf } from "react-icons/gr";
 const ofertaHeader = "../images/ofertaImg/header/ofertaHeader.png";
 
-const Offer = () => {
+const OfferPage = () => {
   const [showDetails, setShowDetails] = useState("");
   // const [showSmallDetails, setShowSmallDetails] = useState("");
   const oneOffer = offers.find((item) => item.category === showDetails);
@@ -307,4 +307,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default Offer;
+export default OfferPage;
