@@ -28,9 +28,12 @@ const OfferPage = () => {
   return (
     <Wrapper>
       <header className="headerTitle">
+        <img src={ofertaHeader} alt="gallery title" />
         <div className="title">
-          <img src={ofertaHeader} alt="gallery title" />
-          <h2 data-aos="fade-left">Oferta</h2>
+          <h2>Oferta</h2>
+          <p data-aos="fade-left">
+            Nie pozwól aby Twoje piękne chwile uległy zapomnieniu.
+          </p>
         </div>
       </header>
       <section className="offerFeatures">
@@ -115,24 +118,31 @@ const Wrapper = styled.div`
     position: relative;
     width: 100vw;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-top: 2vh;
-    background: var(--activeNavLink);
+    background: var(--aboutMeBgColor);
     .title {
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
       justify-content: center;
-      img {
-        height: 50vh;
-        margin-right: 5vw;
-      }
       h2 {
         font-weight: 800;
         font-size: 3rem;
-        color: var(--secondaryColor3);
+        margin-bottom: 3vh;
+        margin-top: 3vh;
       }
+      p {
+        font-size: 1rem;
+        font-weight: 400;
+        font-family: var(--titleFont);
+      }
+    }
+    img {
+      height: 50vh;
+      margin-right: 5vw;
     }
   }
   .offerFeatures {

@@ -106,9 +106,12 @@ const GalleryPage = () => {
         {/* <div className="headerBg"></div> */}
         {/* <div className="headerContent"> */}
         <div className="title">
-          <h2 data-aos="fade-right">Galeria</h2>
-          <img src={galleryHeaderImg2} alt="gallery title" />
+          <h2>Galeria </h2>
+          <p data-aos="fade-right">
+            Twoja codzienność uchwycona lekko i naturalnie.
+          </p>
         </div>
+        <img src={galleryHeaderImg2} alt="gallery title" />
       </header>
       <div data-aos="fade-up" className="galleryCategory">
         {categories.map((category, index) => {
@@ -188,7 +191,7 @@ const Wrapper = styled.div`
     position: relative;
     width: 100vw;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-top: 2vh;
@@ -215,17 +218,24 @@ const Wrapper = styled.div`
     } */
     .title {
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-end;
       justify-content: center;
-      img {
-        /* width: 25vw; */
-        height: 50vh;
-        margin-left: 5vw;
-      }
       h2 {
         font-weight: 800;
         font-size: 3rem;
+        margin-bottom: 3vh;
+        margin-top: 3vh;
       }
+      p {
+        font-size: 1rem;
+        font-weight: 400;
+        font-family: var(--titleFont);
+      }
+    }
+    img {
+      height: 50vh;
+      margin-left: 5vw;
     }
   }
 
