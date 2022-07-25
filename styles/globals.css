@@ -65,10 +65,12 @@ body {
   /* --sectionBgColor: #f6dfc3; */
   --sectionBgColor: #fcf0e5;
   --singleOfferBgColor: #cdb596;
+  --faqHeaderBgColor: #e2c298;
   /* --aboutMeBgColor: #d0a076;
   --aboutMeBgColor: #dcc5a8; */
   --aboutMeBgColor: #f6dfc3;
   --aboutMeHeaderBgColor: #f4ede4;
+  --contactHeaderBgColor: #f2d3b7;
   --navigationBgColor: #3c2d25;
   --activeNavLink: #d9b89c;
   /* --footerBgColor: #dcc5a8;

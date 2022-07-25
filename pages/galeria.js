@@ -7,7 +7,6 @@ import ReactLoading from "react-loading";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-// const galleryHeaderImg = "../images/gallery/galleryHeaderImg.jpg";
 const galleryHeaderImg2 = "../images/gallery/galleryHeader.png";
 
 const allCategories = [
@@ -103,8 +102,6 @@ const GalleryPage = () => {
   return (
     <Wrapper>
       <header>
-        {/* <div className="headerBg"></div> */}
-        {/* <div className="headerContent"> */}
         <div className="title">
           <h2>Galeria </h2>
           <p data-aos="fade-right">
@@ -173,8 +170,6 @@ const GalleryPage = () => {
 const Wrapper = styled.div`
   width: 100vw;
   max-width: 100vw;
-  /* width: 90vw;
-  max-width: 1440px; */
   min-height: 100vh;
   margin: 0 auto;
   padding-top: 10vh;
@@ -196,26 +191,6 @@ const Wrapper = styled.div`
     align-items: center;
     margin-top: 2vh;
     background: var(--sectionBgColor);
-    /* border-bottom: 1px solid var(--secondaryColor); */
-    /* .headerBg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url(${galleryHeaderImg2});
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: center;
-    } */
-    /* .headerContent {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-    } */
     .title {
       display: flex;
       flex-direction: column;
