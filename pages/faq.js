@@ -47,7 +47,7 @@ const Wrapper = styled.div`
         font-size: 3rem;
         margin-bottom: 3vh;
         margin-top: 3vh;
-        /* color: var(--aboutMeHeaderBgColor); */
+        color: var(--secondaryColor3);
         letter-spacing: 20px;
       }
       p {

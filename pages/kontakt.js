@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import MyForm from "../components/MyForm";
 
 const contactHeaderImg = "../images/contact/contactHeader.png";
 
@@ -12,6 +13,14 @@ const BlogPage = () => {
           <p data-aos="fade-up">Fomularz, Email, Telefon, Social Media</p>
         </div>
       </header>
+      <div className="contactContainer">
+        <section className="contactForm">
+          <h3>Napisz do mnie przez formularz kontaktowy!</h3>
+          <MyForm />
+        </section>
+        <div className="separateLine"></div>
+        <section className="contactSocialMedia"></section>
+      </div>
     </Wrapper>
   );
 };
@@ -53,6 +62,32 @@ const Wrapper = styled.div`
     img {
       height: 50vh;
       margin-right: 5vw;
+    }
+  }
+  .contactContainer {
+    width: 90vw;
+    margin: 15vh auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    section {
+      width: 50%;
+    }
+    .separateLine {
+      width: 2px;
+      background: var(--secondaryColor);
+      height: 30vh;
+      align-self: center;
+    }
+    .contactForm {
+      h3 {
+        color: var(--secondaryColor);
+        font-size: 1.3rem;
+        text-align: center;
+        font-family: var(--titleFont);
+        font-weight: 500;
+        margin-bottom: 5vh;
+      }
     }
   }
 `;
