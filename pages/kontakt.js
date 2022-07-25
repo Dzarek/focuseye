@@ -15,11 +15,30 @@ const BlogPage = () => {
       </header>
       <div className="contactContainer">
         <section className="contactForm">
-          <h3>Napisz do mnie przez formularz kontaktowy!</h3>
+          <h3>Napisz do mnie przez formularz kontaktowy</h3>
           <MyForm />
         </section>
         <div className="separateLine"></div>
-        <section className="contactSocialMedia"></section>
+        <section className="contactSocialMedia">
+          <h3>Kontakt bezpośredni</h3>
+          <div className="socialMediaWrapper">
+            <h4>
+              Telefon: <span>798 698 605</span>
+            </h4>
+            <h4>
+              Email: <span>kontakt.focuseye@gmail.com</span>
+            </h4>
+            <h4>
+              Instagram: <span>focuseye_sylwiasajdak</span>
+            </h4>
+            <h4>
+              Facebook: <span>sylwiasajdakfotografia</span>
+            </h4>
+            <h4>
+              Nr konta: <span>00 0000 0000 0000 0000 0000 0000</span>
+            </h4>
+          </div>
+        </section>
       </div>
     </Wrapper>
   );
@@ -66,27 +85,44 @@ const Wrapper = styled.div`
   }
   .contactContainer {
     width: 90vw;
-    margin: 15vh auto;
+    margin: 20vh auto;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     section {
-      width: 50%;
+      width: 47%;
     }
     .separateLine {
       width: 2px;
-      background: var(--secondaryColor);
-      height: 30vh;
+      background: var(--secondaryColor3);
+      height: 50vh;
       align-self: center;
     }
-    .contactForm {
+    .contactForm,
+    .contactSocialMedia {
       h3 {
-        color: var(--secondaryColor);
-        font-size: 1.3rem;
+        color: var(--secondaryColor3);
+        font-size: 1.2rem;
         text-align: center;
         font-family: var(--titleFont);
         font-weight: 500;
         margin-bottom: 5vh;
+      }
+    }
+  }
+  .socialMediaWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-self: center;
+    margin-top: 8vh;
+    h4 {
+      font-size: 1.3rem;
+      margin: 2vh auto;
+      font-weight: 500;
+      span {
+        color: var(--secondaryColor);
       }
     }
   }

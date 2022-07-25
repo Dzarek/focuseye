@@ -80,9 +80,10 @@ const MyForm = () => {
     <>
       <Wrapper onSubmit={(e) => handleWowSubmit(e)}>
         <input
+          className="inputName"
           type="text"
           name="name"
-          placeholder="Imię i nazwisko"
+          placeholder="Imię i Nazwisko"
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -151,7 +152,7 @@ const MyForm = () => {
                 onChange={() => setBox(!box)}
               />
               Wyrażam zgodę na przetwarzanie danych osobowych w celu odpowiedzi
-              na mojego e-maila.
+              na mojego e-maila
               <span
                 onClick={() => setVisibleCookie(true)}
                 className="cookieLink"
@@ -213,44 +214,61 @@ const Wrapper = styled.form`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /* color: var(--primaryColor); */
-  height: 66vh;
-  width: 90%;
+  /* height: 65vh; */
+  width: 80%;
   margin: 0 auto;
   @media screen and (max-width: 800px) {
     width: 100%;
     height: auto;
   }
-  .inputContainer {
+  input,
+  select {
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid var(--secondaryColor);
+    font-family: var(--textFont);
+    @media screen and (max-width: 800px) {
+      font-size: 1rem;
+      width: 47%;
+      padding: 8px 10px;
+    }
+  }
+  .inputName {
+    width: 100%;
+    margin-bottom: 2vh;
+  }
+  .inputs {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2vh;
     input {
-      border-radius: 5px;
       width: 45%;
-      padding: 10px 20px;
-      font-size: 1rem;
-      /* background: var(--roomDetailBg); */
-      border: 2px solid var(--secondaryColor);
-      /* color: var(--primaryColor); */
-      font-family: var(--textFont);
-      @media screen and (max-width: 800px) {
-        font-size: 1rem;
-        width: 47%;
-        padding: 8px 10px;
+    }
+    .chooseInput {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2vh;
+      input,
+      select {
+        width: 100%;
       }
     }
   }
   textarea {
     width: 100%;
-    min-height: 30vh;
-    padding: 20px 20px;
+    /* min-height: 15vh; */
+    padding: 10px 20px 0;
     border-radius: 5px;
     font-size: 1rem;
-    /* background: var(--roomDetailBg); */
-    border: 2px solid var(--secondaryColor);
-    /* color: var(--primaryColor); */
+    border: none;
+    border-bottom: 2px solid var(--secondaryColor);
     font-family: var(--textFont);
     line-height: 1.2;
     @media screen and (max-width: 800px) {
@@ -284,24 +302,22 @@ const Wrapper = styled.form`
   }
   button {
     width: 30%;
-    font-size: 1.1rem;
-    padding: 10px 0;
-    background: transparent;
-    /* color: var(--primaryColor); */
-    letter-spacing: 1px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.5s;
-    border: 2px solid var(--secondaryColor);
-    margin-top: 3vh;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    font-size: 1rem;
     font-family: var(--titleFont);
+    text-transform: uppercase;
+    padding: 10px 0px;
+    margin: 5vh auto 0;
+    font-weight: 600;
+    color: #fff;
+    background: var(--secondaryColor);
+    transition: 0.4s;
+    cursor: pointer;
     :hover {
-      background: var(--secondaryColor);
-      color: #fff;
-    }
-    @media screen and (max-width: 800px) {
-      width: 50%;
-      /* background: rgb(197, 103, 40); */
+      background: #fff;
+      border: 2px solid var(--secondaryColor);
+      color: var(--secondaryColor);
     }
   }
   .messageAlert {
