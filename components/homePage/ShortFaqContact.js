@@ -12,32 +12,11 @@ import {
 import { TiArrowSortedDown } from "react-icons/ti";
 import { BsFillQuestionOctagonFill } from "react-icons/bs";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { questions } from "../../public/data";
 
 const qBg = "../../images/Qbg.jpg";
 
-const questions = [
-  {
-    id: 1,
-    title: "Co to lifestyle w plenerze? Jak się przygotować?",
-    info: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ut, repellendus assumenda delectus autem sapiente.",
-  },
-
-  {
-    id: 2,
-    title: "Ile to kosztuje i dlaczego tak drogo?",
-    info: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ut, repellendus assumenda delectus autem sapiente.",
-  },
-  {
-    id: 3,
-    title: "Jak przebiega sesja lifestyle?",
-    info: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ut, repellendus assumenda delectus autem sapiente.Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ut, repellendus assumenda delectus autem sapiente.",
-  },
-  {
-    id: 4,
-    title: "Coś tam jeszcze innego do zapytania?",
-    info: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ut, repellendus assumenda delectus autem sapiente.",
-  },
-];
+const shortFaqQuestions = questions.slice(0, 4);
 
 const ShortFaqContact = () => {
   useEffect(() => {
@@ -51,7 +30,7 @@ const ShortFaqContact = () => {
           odpowiedzi na najczęściej zadawane pytania.
         </h2>
         <Accordion allowZeroExpanded={true}>
-          {questions.map((question) => {
+          {shortFaqQuestions.map((question) => {
             const { title, info, id } = question;
             return (
               <AccordionItem key={id}>
@@ -166,7 +145,7 @@ const Wrapper = styled.div`
   .singleQuestion {
     margin: 2vh auto;
     padding: 10px 20px;
-    width: 35vw;
+    width: 40vw;
     background: #fff;
     color: var(--secondaryColor2);
     border-radius: 5px;
@@ -189,9 +168,12 @@ const Wrapper = styled.div`
     h3 {
       font-family: var(--textFont);
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       font-size: 1.3rem;
       font-weight: 600;
+      .icon {
+        margin-top: 3px;
+      }
     }
   }
   .contactShort {

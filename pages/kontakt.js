@@ -4,7 +4,6 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 const contactHeaderImg = "../images/contact/contactHeader.png";
-// const contactPersonImg = "../images/contact/contactPerson.png";
 const contactPersonImg2 = "../images/contact/contactPerson2.png";
 
 const BlogPage = () => {

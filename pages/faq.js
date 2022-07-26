@@ -1,5 +1,16 @@
 import styled from "styled-components";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemButton,
+  AccordionItemHeading,
+  AccordionItemPanel,
+} from "react-accessible-accordion";
+import { TiArrowSortedDown } from "react-icons/ti";
+import { BsFillQuestionOctagonFill } from "react-icons/bs";
+import { questions } from "../public/data";
 
+const faqPersonImg = "../images/faq/faqPerson.png";
 const faqHeaderImg = "../images/faq/faqHeader.png";
 
 const BlogPage = () => {
@@ -12,6 +23,48 @@ const BlogPage = () => {
           <p>Odpowiedzi na najczęściej zadawane pytania.</p>
         </div>
       </header>
+      <h4 className="faqSubTitle">
+        Jeśli rodzą Ci się w głowie pytania dotyczące moich ofert, może
+        znajdziesz odpowiedź na nie poniżej...
+      </h4>
+      <div className="faqContainer">
+        <Accordion allowZeroExpanded={true}>
+          {questions.map((question) => {
+            const { title, info, id } = question;
+            return (
+              <AccordionItem key={id}>
+                <div className="singleQuestion">
+                  <section className="headerQuesiton">
+                    <h3>
+                      <BsFillQuestionOctagonFill className="icon" /> {title}
+                    </h3>
+                    <AccordionItemHeading>
+                      <AccordionItemButton>
+                        <button className="btn">
+                          <TiArrowSortedDown />
+                        </button>
+                      </AccordionItemButton>
+                    </AccordionItemHeading>
+                  </section>
+                  <AccordionItemPanel>
+                    <p>{info}</p>
+                  </AccordionItemPanel>
+                </div>
+              </AccordionItem>
+            );
+          })}
+        </Accordion>
+        <img
+          data-aos="zoom-out"
+          className="faqPersonImg"
+          src={faqPersonImg}
+          alt=""
+        />
+      </div>
+      <h4 className="faqSubTitle2">
+        Nie znalazłaś/eś opowiedzi na nurtujące Cię pytania? Zadzwoń do mnie lub
+        napisz!
+      </h4>
     </Wrapper>
   );
 };
@@ -66,6 +119,104 @@ const Wrapper = styled.div`
         }
         100% {
           transform: translateX(0);
+        }
+      }
+    }
+  }
+  .faqSubTitle {
+    width: 80vw;
+    text-align: left;
+    margin: 15vh auto 0;
+    font-family: var(--titleFont);
+    color: var(--secondaryColor);
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+  .faqSubTitle2 {
+    width: 80vw;
+    text-align: right;
+    margin: 10vh auto 15vh;
+    font-family: var(--titleFont);
+    color: var(--secondaryColor);
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+  .faqContainer {
+    width: 90vw;
+    margin: 10vh auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    .faqPersonImg {
+      width: 22vw;
+      opacity: 0.5;
+      margin-top: 20vh;
+    }
+    .accordion__panel {
+      animation: fadein 0.5s ease-in;
+      overflow: hidden;
+    }
+    @keyframes fadein {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .btn {
+      background: transparent;
+      border: none;
+      font-size: 2rem;
+      color: var(--secondaryColor);
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.4s;
+      @media screen and (max-width: 800px) {
+        font-size: 1.8rem;
+      }
+      :hover {
+        color: var(--secondaryColor3);
+      }
+    }
+    .icon {
+      margin-right: 10px;
+      color: var(--secondaryColor);
+    }
+
+    .singleQuestion {
+      margin: 2vh auto;
+      padding: 10px 20px;
+      width: 50vw;
+      background: #fff;
+      border-radius: 5px;
+      border: 1px solid var(--secondaryColor3);
+      font-family: var(--buttonFont);
+      @media screen and (max-width: 800px) {
+        width: 100%;
+      }
+      p {
+        margin-top: 4vh;
+        font-family: var(--textFont);
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+      .headerQuesiton {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h3 {
+          font-family: var(--textFont);
+          display: flex;
+          align-items: flex-start;
+          font-size: 1.3rem;
+          font-weight: 600;
+          .icon {
+            margin-top: 3px;
+          }
         }
       }
     }

@@ -325,3 +325,48 @@ export const headerData = [
     category: "rodzinne",
   },
 ];
+
+export const questions = [
+  {
+    id: 1,
+    title: "O co chodzi w sesji lifestyle?",
+    info: "Chodzi o zabawę, wspólne spędzenie czasu, wyciągnięcie ulubionej albo właśnie zapomnianej planszówki. To czas w którym możecie popatrzeć i pouśmiechać się do siebie nawzajem. W plenerze możemy zorganizować mini piknik, podziwiać zachód słońca z bagażnika samochodu, przejść się po mieście, a w kolejce po lody z najlepszej lodziarni w okolicy z uśmiechem na twarzy przypozować mi do czaderskiego zdjęcia ☺️. Zrodził się w Twojej głowie pomysł na taką sesje ? Obstawiam, że tak! Opowiedz mi o nim ☺️.",
+  },
+  {
+    id: 2,
+    title: "Lifestyle w plenerze i w domu? Można tak?",
+    info: "Niezależnie od miejsca jakie wybierzesz gwarantuje Ci fotografie pełne czułości, wzruszeń, radości, naturalności. Subtelnie doradzam, pokazuje ale nie ustawiam. W domu nie potrzebujemy wielkich przestrzeni, okno, sofa, łóżko lub fotel i Wy! To Wy nadajecie tym fotografiom esencji, to czas w którym jesteście w 200% dla siebie. Ja jestem cichym obserwatorem, wyłapię dla Was najpiękniejsze momenty :)",
+  },
+  {
+    id: 3,
+    title:
+      "Nie mam pomysłu na sesje w plenerze, nie znam fajnych miejsc, pomożesz?",
+    info: "Nic nie szkodzi! pomogę wybrać miejsce odpowiednie dla Waszych wspomnień i możliwości logistycznych. Sesje plenerowe wykonuję w promieniu 20 km od Tuchowa w pięknych i niezatłoczonych miejscach.",
+  },
+  {
+    id: 4,
+    title: "Czy zgoda na publikację zdjęć jest konieczna?",
+    info: "Jest mi bardzo miło kiedy mogę podzielić się ze światem efektami sesji z Waszym udziałem, jednak nie mam oczywiście problemu jeżeli tak rodzinne wspomnienia chcecie zachować tylko dla siebie. Jeśli jednak w dowolnym czasie zmienisz zdanie to będzie dla mnie przemiłe!",
+  },
+  {
+    id: 5,
+    title: "Nie czuję się dobrze pozując do zdjęć...",
+    info: "Jeśli myślisz, że będzie drętwo i sztywnie to jesteście w błędzie :) każdy z nas ma obawy stając przed obiektywem, natomiast to jaki klimat stworzycie na sesji jest odzwierciedleniem samych Was! nie ma nic gorszego niż udawanie dlatego nic nie szkodzi jeśli na co dzień nie jesteście hulaj duszą - poinstruuję Was tak abyście czuli się wyjątkowo a do naszej sesji będziecie po latach wracać z utęsknieniem! ",
+  },
+  {
+    id: 6,
+    title: "O co chodzi w sesji lifestyle?",
+    info: "Chodzi o zabawę, wspólne spędzenie czasu, wyciągnięcie ulubionej albo właśnie zapomnianej planszówki. To czas w którym możecie popatrzeć i pouśmiechać się do siebie nawzajem. W plenerze możemy zorganizować mini piknik, podziwiać zachód słońca z bagażnika samochodu, przejść się po mieście, a w kolejce po lody z najlepszej lodziarni w okolicy z uśmiechem na twarzy przypozować mi do czaderskiego zdjęcia ☺️. Zrodził się w Twojej głowie pomysł na taką sesje ? Obstawiam, że tak! Opowiedz mi o nim ☺️.",
+  },
+  {
+    id: 7,
+    title: "Lifestyle w plenerze i w domu? Można tak?",
+    info: "Niezależnie od miejsca jakie wybierzesz gwarantuje Ci fotografie pełne czułości, wzruszeń, radości, naturalności. Subtelnie doradzam, pokazuje ale nie ustawiam. W domu nie potrzebujemy wielkich przestrzeni, okno, sofa, łóżko lub fotel i Wy! To Wy nadajecie tym fotografiom esencji, to czas w którym jesteście w 200% dla siebie. Ja jestem cichym obserwatorem, wyłapię dla Was najpiękniejsze momenty :)",
+  },
+  {
+    id: 8,
+    title:
+      "Nie mam pomysłu na sesje w plenerze, nie znam fajnych miejsc, pomożesz?",
+    info: "Nic nie szkodzi! pomogę wybrać miejsce odpowiednie dla Waszych wspomnień i możliwości logistycznych. Sesje plenerowe wykonuję w promieniu 20 km od Tuchowa w pięknych i niezatłoczonych miejscach.",
+  },
+];
