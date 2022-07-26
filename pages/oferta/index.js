@@ -14,6 +14,7 @@ import { BsPersonCheckFill } from "react-icons/bs";
 import { IoIosEye } from "react-icons/io";
 import { GiFlowers } from "react-icons/gi";
 import { GrDocumentPdf } from "react-icons/gr";
+import Albums from "../../components/offerPage/Albums";
 const ofertaHeader = "../images/ofertaImg/header/ofertaHeader.png";
 
 const OfferPage = () => {
@@ -86,9 +87,8 @@ const OfferPage = () => {
         <DetailsOffer oneOffer={oneOffer} setShowDetails={setShowDetails} />
       )}
       {/* {showSmallDetails && <SmallDetails oneOffer2={oneOffer2} />  } */}
-      <section className="albums">
-        <h2>Albumy...</h2>
-      </section>
+
+      <Albums />
       <ImportantInfoOffer />
       <section className="regulations">
         <h2>Pobierz regulamin</h2>
@@ -283,14 +283,7 @@ const Wrapper = styled.div`
       }
     }
   }
-  .albums {
-    margin: 0 auto;
-    width: 80vw;
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+
   .regulations {
     width: 100vw;
     height: 25vh;
