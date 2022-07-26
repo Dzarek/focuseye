@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import MyForm from "../components/MyForm";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const contactHeaderImg = "../images/contact/contactHeader.png";
 // const contactPersonImg = "../images/contact/contactPerson.png";
@@ -21,7 +23,12 @@ const BlogPage = () => {
           <MyForm />
         </section>
         {/* <div className="separateLine"></div> */}
-        <img src={contactPersonImg2} alt="" className="separateImg" />
+        <img
+          data-aos="zoom-out"
+          src={contactPersonImg2}
+          alt=""
+          className="separateImg"
+        />
         <section className="contactSocialMedia">
           <h3>Kontakt bezpośredni</h3>
           <div className="socialMediaWrapper">
