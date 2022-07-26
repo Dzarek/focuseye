@@ -1,9 +1,23 @@
 import styled from "styled-components";
+import { IoEnter } from "react-icons/io5";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import Link from "next/link";
 
 const blogHeaderImg = "../images/blog/blogHeader.png";
 const articleImg = "../images/ofertaImg/zakochani2.jpg";
 
+const text = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+quo id repellat illum error totam dicta temporibus quam
+exercitationem officiis.`;
+
+const shortText = text.slice(0, 100) + "...";
+
 const BlogPage = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <Wrapper>
       <header>
@@ -17,48 +31,74 @@ const BlogPage = () => {
       </header>
       <h2 className="blogSubtitle">Lista Artykułów</h2>
       <div className="blogContent">
-        <article>
-          <section className="articleImg">
-            <img src={articleImg} alt="title" />
-          </section>
-          <section className="articleInfo">
-            <h3>Jak przebiega sesja lifestyle?</h3>
-            <span>26.07.2022</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-              quo id repellat illum error totam dicta temporibus quam
-              exercitationem officiis.
-            </p>
-          </section>
-        </article>
-        <article>
-          <section className="articleImg">
-            <img src={articleImg} alt="title" />
-          </section>
-          <section className="articleInfo">
-            <h3>Jak przebiega sesja lifestyle?</h3>
-            <span>26.07.2022</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-              quo id repellat illum error totam dicta temporibus quam
-              exercitationem officiis.
-            </p>
-          </section>
-        </article>
-        <article>
-          <section className="articleImg">
-            <img src={articleImg} alt="title" />
-          </section>
-          <section className="articleInfo">
-            <h3>Jak przebiega sesja lifestyle?</h3>
-            <span>26.07.2022</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-              quo id repellat illum error totam dicta temporibus quam
-              exercitationem officiis.
-            </p>
-          </section>
-        </article>
+        <Link href="/blog/title">
+          <article
+            data-aos="flip-left"
+            data-aos-duration="1000"
+            data-aos-offset="300"
+          >
+            <section className="articleImg">
+              <img src={articleImg} alt="title" />
+              <span>26.07.2022</span>
+            </section>
+            <section className="articleInfo">
+              <h3>Jak przebiega sesja lifestyle?</h3>
+              <p>{shortText}</p>
+              <IoEnter className="icon" />
+            </section>
+          </article>
+        </Link>
+        <Link href="/blog/title">
+          <article
+            data-aos="flip-left"
+            data-aos-duration="1000"
+            data-aos-offset="300"
+          >
+            <section className="articleImg">
+              <img src={articleImg} alt="title" />
+              <span>26.07.2022</span>
+            </section>
+            <section className="articleInfo">
+              <h3>Jak przebiega sesja lifestyle?</h3>
+              <p>{shortText}</p>
+              <IoEnter className="icon" />
+            </section>
+          </article>
+        </Link>
+        <Link href="/blog/title">
+          <article
+            data-aos="flip-left"
+            data-aos-duration="1000"
+            data-aos-offset="300"
+          >
+            <section className="articleImg">
+              <img src={articleImg} alt="title" />
+              <span>26.07.2022</span>
+            </section>
+            <section className="articleInfo">
+              <h3>Jak przebiega sesja lifestyle?</h3>
+              <p>{shortText}</p>
+              <IoEnter className="icon" />
+            </section>
+          </article>
+        </Link>
+        <Link href="/blog/title">
+          <article
+            data-aos="flip-left"
+            data-aos-duration="1000"
+            data-aos-offset="300"
+          >
+            <section className="articleImg">
+              <img src={articleImg} alt="title" />
+              <span>26.07.2022</span>
+            </section>
+            <section className="articleInfo">
+              <h3>Jak przebiega sesja lifestyle?</h3>
+              <p>{shortText}</p>
+              <IoEnter className="icon" />
+            </section>
+          </article>
+        </Link>
       </div>
     </Wrapper>
   );
@@ -118,10 +158,10 @@ const Wrapper = styled.div`
     margin: 0 auto 20vh;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     flex-wrap: wrap;
     article {
-      margin-bottom: 10vh;
+      /* margin-bottom: 10vh; */
       width: 45%;
       height: 60vh;
       display: flex;
@@ -129,23 +169,52 @@ const Wrapper = styled.div`
       justify-content: center;
       align-items: center;
       border: 2px solid var(--secondaryColor3);
-      border-radius: 5px;
+      border-radius: 10px;
       cursor: pointer;
       transition: 0.4s;
+      :nth-of-type(even) {
+        margin-top: 15vh;
+      }
       .articleImg {
         transition: 0.4s;
         height: 60%;
         width: 100%;
         overflow: hidden;
+        position: relative;
         filter: saturate(0.4);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
         img {
           object-fit: cover;
           height: 100%;
           width: 100%;
         }
+        span {
+          position: absolute;
+          top: 0;
+          right: 0;
+          background: var(--sectionBgColor);
+          padding: 15px;
+          border-radius: 0 0 0 15px;
+          font-size: 1.1rem;
+          font-weight: 500;
+        }
+      }
+      .icon {
+        /* position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%); */
+        color: var(--secondaryColor);
+        font-size: 3rem;
+        opacity: 0.6;
+        transition: 0.4s;
       }
       :hover .articleImg {
         filter: saturate(1);
+      }
+      :hover .icon {
+        opacity: 1;
       }
       :hover {
         border: 2px solid var(--secondaryColor);
@@ -159,18 +228,21 @@ const Wrapper = styled.div`
         align-items: center;
         background: var(--sectionBgColor);
         padding: 10px 20px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
         h3 {
-          margin-bottom: 2vh;
+          margin-bottom: 4vh;
           color: var(--secondaryColor);
           font-size: 1.5rem;
         }
-        span {
+        /* span {
           font-size: 1rem;
           margin-bottom: 2vh;
-        }
+        } */
         p {
           font-size: 1.1rem;
           text-align: center;
+          margin-bottom: 2vh;
         }
       }
     }

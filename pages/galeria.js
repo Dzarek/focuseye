@@ -236,7 +236,7 @@ const Wrapper = styled.div`
       /* text-transform: uppercase; */
       cursor: pointer;
       font-weight: 400;
-      font-family: "Kanit", sans-serif;
+      font-family: var(--textFont);
       transition: 0.5s;
       background: #fff;
       :hover {

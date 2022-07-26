@@ -44,6 +44,7 @@ body {
 .app {
   --secondaryColor: #94693c;
   --secondaryColor3: #3b1806;
+  --secondaryColor3: #5a270d;
   --primaryColor: rgb(10, 10, 10);
   --appBgColor: #fff;
   --sectionBgColor: #fcf0e5;
