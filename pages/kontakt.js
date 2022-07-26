@@ -2,6 +2,8 @@ import styled from "styled-components";
 import MyForm from "../components/MyForm";
 
 const contactHeaderImg = "../images/contact/contactHeader.png";
+// const contactPersonImg = "../images/contact/contactPerson.png";
+const contactPersonImg2 = "../images/contact/contactPerson2.png";
 
 const BlogPage = () => {
   return (
@@ -18,7 +20,8 @@ const BlogPage = () => {
           <h3>Napisz do mnie przez formularz kontaktowy</h3>
           <MyForm />
         </section>
-        <div className="separateLine"></div>
+        {/* <div className="separateLine"></div> */}
+        <img src={contactPersonImg2} alt="" className="separateImg" />
         <section className="contactSocialMedia">
           <h3>Kontakt bezpośredni</h3>
           <div className="socialMediaWrapper">
@@ -98,6 +101,12 @@ const Wrapper = styled.div`
       height: 50vh;
       align-self: center;
     }
+    .separateImg {
+      width: 10vw;
+      align-self: center;
+      opacity: 0.5;
+      /* transform: rotateY(180deg); */
+    }
     .contactForm,
     .contactSocialMedia {
       h3 {
@@ -114,12 +123,12 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     align-self: center;
     margin-top: 8vh;
     h4 {
       font-size: 1.3rem;
-      margin: 2vh auto;
+      margin: 2vh 5vw;
       font-weight: 500;
       span {
         color: var(--secondaryColor);
