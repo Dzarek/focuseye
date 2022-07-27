@@ -13,10 +13,10 @@ import {
 
 const coversStandard = "./images/ofertaImg/albums/okładkiStandard.jpg";
 const coversEcovelvet = "./images/ofertaImg/albums/okładkiEcovelvet.jpg";
-const albumImg1 = "./images/ofertaImg/albums/album1.jpg";
+const albumImg1 = "./images/ofertaImg/albums/album1.JPG";
 const albumImg2 = "./images/ofertaImg/albums/album2.jpg";
 const albumImg3 = "./images/ofertaImg/albums/album3.jpg";
-const albumImg4 = "./images/ofertaImg/albums/album4.jpg";
+const albumImg4 = "./images/ofertaImg/albums/album4.JPG";
 const albumImg5 = "./images/ofertaImg/albums/album5.jpg";
 
 const Albums = () => {
