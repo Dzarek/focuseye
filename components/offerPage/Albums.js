@@ -73,7 +73,7 @@ const Albums = () => {
               </div>
             </div>
           </div>
-          <div className="oneAlbum oneAlbum2">
+          <div className="oneAlbum2">
             <h3>Fotoalbum</h3>
             <div className="oneAlbumContent">
               <div className="info ">
@@ -105,6 +105,45 @@ const Albums = () => {
                 <p>16 zł</p>
                 <h4>Interesuje Cię większy rozmiar? Zapytaj o szczegóły!</h4>
               </div>
+            </div>
+          </div>
+          <div className="oneAlbum3">
+            <div className="oneSection">
+              <h3>Album Eko (malutka książeczka)</h3>
+              <div className="oneAlbumContent">
+                <div className="table">
+                  <p>Objętość:</p>
+                  <p>20 x 20 cm</p>
+                  <p>5 rozkładówek</p>
+                  <p>80 zł</p>
+                  <p>10 rozkładówek</p>
+                  <p>120 zł</p>
+                </div>
+              </div>
+            </div>
+            <div className="oneSection">
+              <h3>Wyjątkowy kieszonkowy albumik</h3>
+              <div className="oneAlbumContent">
+                <div className="table">
+                  <p>Objętość:</p>
+                  <p>15 x 15 cm</p>
+                  <p>5 rozkładówek</p>
+                  <p>120 zł</p>
+                </div>
+              </div>
+            </div>
+            <div className="info">
+              <ul>
+                <h5>
+                  Idealny na prezent dla dziadków i najbliższych przyjaciół
+                  rodziny.
+                </h5>
+                <li>- okładka płócienna / eco velvet ze złotym serduszkiem,</li>
+                <li>
+                  - brak rozbiegówek (kontrokładek) - pierwsza i ostatnia strona
+                  przylega do okładki.
+                </li>
+              </ul>
             </div>
           </div>
         </Carousel>
@@ -221,38 +260,7 @@ const Wrapper = styled.section`
             }
           }
         }
-        .table2 {
-          width: 55%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-wrap: wrap;
-          h4 {
-            margin-top: 2vh;
-          }
-          p {
-            background: white;
-            padding: 5px 10px;
-            font-size: 1rem;
-            border: 1px solid var(--primaryColor);
-            border-bottom: none;
-            font-weight: 500;
-            width: 30%;
-            :nth-last-child(2),
-            :nth-last-child(3) {
-              border-bottom: 1px solid var(--primaryColor);
-            }
-            :nth-of-type(1),
-            :nth-of-type(4),
-            :nth-of-type(7) {
-              width: 40%;
-            }
-            /* :nth-of-type(even) {
-              width: 35%;
-              border-left: none;
-            } */
-          }
-        }
+
         .info {
           width: 55%;
           ul {
@@ -275,13 +283,165 @@ const Wrapper = styled.section`
             }
           }
         }
-        .info2 {
-          width: 40%;
-        }
       }
     }
     .oneAlbum2 {
+      width: 95%;
+      min-height: 55vh;
+      background: var(--aboutMeBgColor);
+      padding: 2vw;
+      border: 2px solid var(--secondaryColor3);
+      border-radius: 10px;
+      display: flex;
       flex-direction: column;
+
+      h3 {
+        color: var(--secondaryColor3);
+        font-size: 1.4rem;
+        margin: 0 auto 2vh;
+        text-align: center;
+      }
+      .oneAlbumContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .table2 {
+          width: 70%;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          h4 {
+            margin-top: 2vh;
+          }
+          p {
+            background: white;
+            padding: 5px 10px;
+            font-size: 1rem;
+            border: 1px solid var(--primaryColor);
+            border-bottom: none;
+            font-weight: 500;
+            width: 30%;
+            :nth-last-child(2),
+            :nth-last-child(3),
+            :nth-last-child(4) {
+              border-bottom: 1px solid var(--primaryColor);
+            }
+            :nth-of-type(1),
+            :nth-of-type(4),
+            :nth-of-type(7) {
+              width: 40%;
+            }
+          }
+        }
+        .info {
+          width: 85%;
+          margin-bottom: 1vh;
+          ul {
+            list-style: none;
+            li {
+              font-size: 1.1rem;
+              margin-bottom: 1vh;
+              display: flex;
+              align-items: center;
+              font-weight: 500;
+              .iconA {
+                color: var(--secondaryColor);
+                margin-right: 5px;
+              }
+            }
+            h5 {
+              margin-top: 1vh;
+              margin-bottom: 1vh;
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+    .oneAlbum3 {
+      width: 95%;
+      min-height: 55vh;
+      background: var(--aboutMeBgColor);
+      padding: 2vw;
+      border: 2px solid var(--secondaryColor3);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .oneSection {
+        width: 45%;
+      }
+      h3 {
+        color: var(--secondaryColor3);
+        font-size: 1.2rem;
+        margin: 0 auto 5vh;
+        text-align: center;
+      }
+      .oneAlbumContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .table {
+          width: 90%;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          h4 {
+            margin-top: 2vh;
+          }
+          p {
+            background: white;
+            padding: 5px 10px;
+            font-size: 1rem;
+            border: 1px solid var(--primaryColor);
+            border-bottom: none;
+            font-weight: 500;
+            width: 40%;
+            :nth-last-child(2),
+            :nth-last-child(1) {
+              border-bottom: 1px solid var(--primaryColor);
+            }
+            :nth-of-type(1),
+            :nth-of-type(3),
+            :nth-of-type(5) {
+              width: 60%;
+            }
+          }
+        }
+      }
+      .info {
+        width: 85%;
+        margin-bottom: 1vh;
+        ul {
+          list-style: none;
+          li {
+            font-size: 1.1rem;
+            margin-bottom: 1vh;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            .iconA {
+              color: var(--secondaryColor);
+              margin-right: 5px;
+            }
+          }
+          h5 {
+            margin-top: 1vh;
+            margin-bottom: 3vh;
+            font-size: 1.2rem;
+          }
+        }
+      }
     }
     .covers {
       width: 25vw;
@@ -334,6 +494,7 @@ const Wrapper = styled.section`
       }
     }
   }
+
   .images {
     width: 85vw;
     margin: 15vh auto;
