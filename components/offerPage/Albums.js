@@ -1,30 +1,153 @@
 import styled from "styled-components";
+import {
+  ReactCompareSlider,
+  ReactCompareSliderHandle,
+} from "react-compare-slider";
+import { SRLWrapper } from "simple-react-lightbox";
+import Carousel from "@brainhubeu/react-carousel";
+import "@brainhubeu/react-carousel/lib/style.css";
+import {
+  IoIosArrowDropleftCircle,
+  IoIosArrowDroprightCircle,
+} from "react-icons/io";
+
+const coversStandard = "./images/ofertaImg/albums/okładkiStandard.jpg";
+const coversEcovelvet = "./images/ofertaImg/albums/okładkiEcovelvet.jpg";
+const albumImg1 = "./images/ofertaImg/albums/album1.jpg";
+const albumImg2 = "./images/ofertaImg/albums/album2.jpg";
+const albumImg3 = "./images/ofertaImg/albums/album3.jpg";
+const albumImg4 = "./images/ofertaImg/albums/album4.jpg";
+const albumImg5 = "./images/ofertaImg/albums/album5.jpg";
 
 const Albums = () => {
   return (
     <Wrapper>
       <h2>Albumy</h2>
       <section className="albumsAndCovers">
-        <div className="oneAlbum">
-          <h3>Album tradycyjny do wyklejania zdjęć</h3>
-          <div className="oneAlbumContent">
-            <div className="table">
-              <p>Objętość:</p>
-              <p>25 x 25 cm</p>
-              <p>20 kart (40 stron)</p>
-              <p>140 zł</p>
-              <p>30 kart (60 stron)</p>
-              <p>160 zł</p>
-              <p>40 kart (80 stron)</p>
-              <p>180 zł</p>
-              <p>50 kart (100 stron)</p>
-              <p>200 zł</p>
+        <Carousel
+          className="carousel"
+          infinite
+          autoPlay={5000}
+          animationSpeed={1000}
+          slidesPerPage={1}
+          addArrowClickHandler
+          stopAutoPlayOnHover
+          arrowLeft={<IoIosArrowDropleftCircle className="arrow arrowLeft" />}
+          arrowRight={
+            <IoIosArrowDroprightCircle className="arrow arrowRight" />
+          }
+        >
+          <div className="oneAlbum">
+            <h3>Album tradycyjny do wyklejania zdjęć</h3>
+            <div className="oneAlbumContent">
+              <div className="info">
+                <ul>
+                  <li>- czarne karty przełożone białym pergaminem,</li>
+                  <li>
+                    - album nie zawiera w cenie odbitek papierowych oraz
+                    przylepców do zdjęć,
+                  </li>
+                  <li>- czas realizacji 8-14 dni roboczych,</li>
+                  <h5>Dodatki:</h5>
+                  <li>
+                    - grawerowanie (napis lub grafika z przodu lub z tyłu
+                    okładki): 25 zł
+                  </li>
+                  <li>
+                    - tłoczenie na złoto (dotyczy jednej linijki tekstu): 30 zł
+                  </li>
+                </ul>
+              </div>
+              <div className="table">
+                <p>Objętość:</p>
+                <p>25 x 25 cm</p>
+                <p>20 kart (40 stron)</p>
+                <p>140 zł</p>
+                <p>30 kart (60 stron)</p>
+                <p>160 zł</p>
+                <p>40 kart (80 stron)</p>
+                <p>180 zł</p>
+                <p>50 kart (100 stron)</p>
+                <p>200 zł</p>
+                <h4>Interesuje Cię większy rozmiar? Zapytaj o szczegóły!</h4>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="covers"></div>
+          <div className="oneAlbum oneAlbum2">
+            <h3>Fotoalbum</h3>
+            <div className="oneAlbumContent">
+              <div className="info ">
+                <ul>
+                  <li>- czas realizacji 8-14 dni roboczych,</li>
+                  <h5>Dodatki:</h5>
+                  <li>
+                    - grawerowanie (napis lub grafika z przodu lub z tyłu
+                    okładki): 25 zł
+                  </li>
+                  <li>
+                    - tłoczenie na złoto (dotyczy jednej linijki tekstu): 30 zł
+                  </li>
+                  <li>
+                    - rozbiegówki (czyste karty na początku i na końcu): w cenie
+                    następnej karty
+                  </li>
+                </ul>
+              </div>
+              <div className="table2">
+                <p>Objętość:</p>
+                <p>20 x 20 cm</p>
+                <p>25 x 25 cm</p>
+                <p>10 kart (20 stron)</p>
+                <p>330 zł</p>
+                <p>380 zł</p>
+                <p>następna karta</p>
+                <p>12 zł</p>
+                <p>16 zł</p>
+                <h4>Interesuje Cię większy rozmiar? Zapytaj o szczegóły!</h4>
+              </div>
+            </div>
+          </div>
+        </Carousel>
+        <ReactCompareSlider
+          className="covers"
+          portrait={true}
+          handle={
+            <ReactCompareSliderHandle
+              portrait={true}
+              buttonStyle={{
+                background: "#5a270d",
+                color: "white",
+                transform: "rotate(90deg)",
+                height: "3vw",
+                width: "3vw",
+              }}
+              linesStyle={{ background: "#5a270d", height: "1px" }}
+            />
+          }
+          itemOne={
+            <div className="oneSliderA">
+              <h3>Okładki Standard</h3>
+              <img className="img1" src={coversStandard} alt="" />
+            </div>
+          }
+          itemTwo={
+            <div className="oneSliderB">
+              <img className="img2" src={coversEcovelvet} alt="" />
+              <h3>Okładki EcoVelvet</h3>
+              <p>eco velvet to miziasty materiał</p>
+            </div>
+          }
+        />
       </section>
-      <div className="images"></div>
+      <SRLWrapper>
+        <div className="images">
+          <img src={albumImg1} alt="album 1" />
+          <img src={albumImg2} alt="album 2" />
+          <img src={albumImg3} alt="album 3" />
+          <img src={albumImg4} alt="album 4" />
+          <img src={albumImg5} alt="album 5" />
+        </div>
+      </SRLWrapper>
     </Wrapper>
   );
 };
@@ -32,7 +155,7 @@ const Albums = () => {
 const Wrapper = styled.section`
   margin: 0 auto;
   width: 100vw;
-  min-height: 70vh;
+  min-height: 80vh;
   /* padding: 2vh 12vw; */
   h2 {
     margin-left: 12vw;
@@ -42,52 +165,192 @@ const Wrapper = styled.section`
     margin-bottom: 5vh;
   }
   .albumsAndCovers {
-    width: 80%;
+    width: 80vw;
     margin: 5vh auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .carousel {
+      width: 55vw;
+      min-height: 55vh;
+    }
     .oneAlbum {
-      width: 60%;
-      height: 50vh;
+      width: 95%;
+      min-height: 55vh;
       background: var(--aboutMeBgColor);
       padding: 2vw;
+      border: 2px solid var(--secondaryColor3);
+      border-radius: 10px;
       h3 {
         color: var(--secondaryColor3);
         font-size: 1.4rem;
         margin: 0 auto 5vh;
         text-align: center;
       }
-      .table {
-        width: 50%;
+      .oneAlbumContent {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        p {
-          padding: 5px 10px;
-          font-size: 1rem;
-          border: 1px solid var(--primaryColor);
-          border-bottom: none;
-          :nth-last-child(1),
-          :nth-last-child(2) {
-            border-bottom: 1px solid var(--primaryColor);
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .table {
+          width: 40%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          h4 {
+            margin-top: 2vh;
           }
-          :nth-of-type(odd) {
-            width: 65%;
+          p {
+            background: white;
+            padding: 5px 10px;
+            font-size: 1rem;
+            border: 1px solid var(--primaryColor);
+            border-bottom: none;
+            font-weight: 500;
+            :nth-last-child(2),
+            :nth-last-child(3) {
+              border-bottom: 1px solid var(--primaryColor);
+            }
+            :nth-of-type(odd) {
+              width: 65%;
+            }
+            :nth-of-type(even) {
+              width: 35%;
+              border-left: none;
+            }
           }
-          :nth-of-type(even) {
-            width: 35%;
-            border-left: none;
+        }
+        .table2 {
+          width: 55%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          h4 {
+            margin-top: 2vh;
           }
+          p {
+            background: white;
+            padding: 5px 10px;
+            font-size: 1rem;
+            border: 1px solid var(--primaryColor);
+            border-bottom: none;
+            font-weight: 500;
+            width: 30%;
+            :nth-last-child(2),
+            :nth-last-child(3) {
+              border-bottom: 1px solid var(--primaryColor);
+            }
+            :nth-of-type(1),
+            :nth-of-type(4),
+            :nth-of-type(7) {
+              width: 40%;
+            }
+            /* :nth-of-type(even) {
+              width: 35%;
+              border-left: none;
+            } */
+          }
+        }
+        .info {
+          width: 55%;
+          ul {
+            list-style: none;
+            li {
+              font-size: 1.1rem;
+              margin-bottom: 1vh;
+              display: flex;
+              align-items: center;
+              font-weight: 500;
+              .iconA {
+                color: var(--secondaryColor);
+                margin-right: 5px;
+              }
+            }
+            h5 {
+              margin-top: 3vh;
+              margin-bottom: 1vh;
+              font-size: 1.2rem;
+            }
+          }
+        }
+        .info2 {
+          width: 40%;
         }
       }
     }
-    .covers {
-      width: 30%;
-      height: 50vh;
-      background: var(--aboutMeBgColor);
+    .oneAlbum2 {
+      flex-direction: column;
     }
+    .covers {
+      width: 25vw;
+      height: 55vh;
+      background: var(--aboutMeBgColor);
+      border: 2px solid var(--secondaryColor3);
+      border-radius: 10px;
+      .oneSliderA {
+        width: 100%;
+        height: 55vh;
+        background: var(--aboutMeBgColor);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        img {
+          width: 100%;
+          height: 85%;
+        }
+        h3 {
+          margin-top: 2vh;
+          text-align: center;
+          text-transform: uppercase;
+        }
+        p {
+          text-align: center;
+        }
+      }
+      .oneSliderB {
+        width: 100%;
+        height: 55vh;
+        background: var(--aboutMeBgColor);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        img {
+          width: 100%;
+          height: 85%;
+        }
+        h3 {
+          text-align: center;
+          text-transform: uppercase;
+          margin-top: 1vh;
+        }
+        p {
+          text-align: center;
+          margin-bottom: 2vh;
+        }
+      }
+    }
+  }
+  .images {
+    width: 85vw;
+    margin: 15vh auto;
+    display: flex;
+    justify-content: space-between;
+    img {
+      width: 30vh;
+      height: 20vh;
+      cursor: pointer;
+      :nth-child(even) {
+        margin-top: 10vh;
+      }
+    }
+  }
+  .arrow {
+    font-size: 1.5rem;
+    color: var(--secondaryColor3);
   }
 `;
 
