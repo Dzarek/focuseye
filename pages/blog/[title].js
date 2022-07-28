@@ -1,9 +1,9 @@
+// dodać like i komentarze
+
 import styled from "styled-components";
 import Link from "next/link";
 import { SRLWrapper } from "simple-react-lightbox";
 import { IoChevronBackCircle } from "react-icons/io5";
-
-const articleImg = "../images/ofertaImg/zakochani2.jpg";
 
 const articleImg2 = "../images/ofertaImg/zakochani2.jpg";
 const articleImg3 = "../images/ofertaImg/zakochani2.jpg";
@@ -12,9 +12,22 @@ const articleImg4 = "../images/ofertaImg/zakochani2.jpg";
 const images = [articleImg2, articleImg3, articleImg4];
 
 const SingleArticleBlog = () => {
+  const articleImg = "../images/ofertaImg/zakochani2.jpg";
   return (
     <Wrapper>
-      <div className="bgArticle"></div>
+      <div
+        className="bgArticle"
+        style={{
+          background: `url(${articleImg})`,
+          width: "100vw",
+          height: "100vh",
+          position: "fixed",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundAttachment: "fixed",
+          filter: "saturate(0.5) brightness(0.7)",
+        }}
+      ></div>
       <div className="articleContainer">
         <div className="titleContainer">
           <h1>
@@ -88,7 +101,7 @@ const Wrapper = styled.div`
   /* padding-bottom: 5vh; */
   position: relative;
 
-  .bgArticle {
+  /* .bgArticle {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -97,12 +110,11 @@ const Wrapper = styled.div`
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    opacity: 0.8;
-    filter: saturate(0.5);
-  }
+    filter: saturate(0.5) brightness(0.7);
+  } */
   .backToBlog {
     position: relative;
-    margin: 5vh auto 15vh;
+    margin: 15vh auto 15vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -130,7 +142,7 @@ const Wrapper = styled.div`
   .articleContainer {
     position: relative;
     width: 60vw;
-    margin: 10vh auto 10vh;
+    margin: 15vh auto 10vh;
     min-height: 80vh;
     background: var(--sectionBgColor);
     padding: 5vh 5vw;
