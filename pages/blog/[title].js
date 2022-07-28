@@ -14,6 +14,7 @@ const images = [articleImg2, articleImg3, articleImg4];
 const SingleArticleBlog = () => {
   return (
     <Wrapper>
+      <div className="bgArticle"></div>
       <div className="articleContainer">
         <div className="titleContainer">
           <h1>
@@ -84,8 +85,23 @@ const Wrapper = styled.div`
   max-width: 100vw;
   margin: 0 auto;
   padding-top: 10vh;
+  /* padding-bottom: 5vh; */
   position: relative;
+
+  .bgArticle {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 0;
+    background: url(${articleImg});
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 0.8;
+    filter: saturate(0.5);
+  }
   .backToBlog {
+    position: relative;
     margin: 5vh auto 15vh;
     display: flex;
     align-items: center;
@@ -112,7 +128,8 @@ const Wrapper = styled.div`
     }
   }
   .articleContainer {
-    width: 80vw;
+    position: relative;
+    width: 60vw;
     margin: 10vh auto 10vh;
     min-height: 80vh;
     background: var(--sectionBgColor);
@@ -169,6 +186,7 @@ const Wrapper = styled.div`
     img {
       width: 30%;
       margin: 10px;
+      cursor: pointer;
     }
   }
 `;

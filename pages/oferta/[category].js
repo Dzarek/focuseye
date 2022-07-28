@@ -27,6 +27,10 @@ const OneOffer = (props) => {
           <h2>{title}</h2>
         </div>
       </header>
+      <section className="longInfo"></section>
+      <section className="smallGallery"></section>
+      <section className="shortInfo"></section>
+      <section className="opinion"></section>
     </Wrapper>
   );
 };

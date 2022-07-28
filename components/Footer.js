@@ -72,6 +72,7 @@ const Wrapper = styled.div`
   font-weight: 500;
   font-size: 1.3rem;
   color: var(--secondaryColor3);
+  position: relative;
   @media screen and (max-width: 800px) {
     margin-bottom: 10vh;
     height: 12vh;

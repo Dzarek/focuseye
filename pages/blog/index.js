@@ -10,9 +10,11 @@ const articleImg = "../images/ofertaImg/zakochani2.jpg";
 
 const text = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
 quo id repellat illum error totam dicta temporibus quam
+exercitationem officiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+quo id repellat illum error totam dicta temporibus quam
 exercitationem officiis.`;
 
-const shortText = text.slice(0, 100) + "...";
+const shortText = text.slice(0, 250) + "...";
 
 const BlogPage = () => {
   useEffect(() => {
@@ -111,6 +113,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
   padding-top: 10vh;
   position: relative;
+
   header {
     position: relative;
     width: 100vw;
@@ -157,18 +160,18 @@ const Wrapper = styled.div`
     width: 70vw;
     margin: 0 auto 20vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     /* align-items: center; */
     flex-wrap: wrap;
     article {
       /* margin-bottom: 10vh; */
-      width: 45%;
-      height: 60vh;
+      width: 35%;
+      height: 70vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      border: 2px solid var(--secondaryColor3);
+      border: 2px solid #fff;
       border-radius: 10px;
       cursor: pointer;
       transition: 0.4s;
@@ -177,7 +180,7 @@ const Wrapper = styled.div`
       }
       .articleImg {
         transition: 0.4s;
-        height: 60%;
+        height: 40%;
         width: 100%;
         overflow: hidden;
         position: relative;
@@ -221,7 +224,7 @@ const Wrapper = styled.div`
       }
       .articleInfo {
         width: 100%;
-        height: 40%;
+        height: 60%;
         display: flex;
         flex-direction: column;
         justify-content: center;

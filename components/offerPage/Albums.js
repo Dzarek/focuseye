@@ -10,6 +10,9 @@ import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle,
 } from "react-icons/io";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const coversStandard = "./images/ofertaImg/albums/okładkiStandard.jpg";
 const coversEcovelvet = "./images/ofertaImg/albums/okładkiEcovelvet.jpg";
@@ -20,6 +23,9 @@ const albumImg4 = "./images/ofertaImg/albums/album4.JPG";
 const albumImg5 = "./images/ofertaImg/albums/album5.jpg";
 
 const Albums = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <Wrapper>
       <h2>Albumy</h2>
@@ -180,11 +186,11 @@ const Albums = () => {
       </section>
       <SRLWrapper>
         <div className="images">
-          <img src={albumImg1} alt="album 1" />
-          <img src={albumImg2} alt="album 2" />
-          <img src={albumImg3} alt="album 3" />
-          <img src={albumImg4} alt="album 4" />
-          <img src={albumImg5} alt="album 5" />
+          <img data-aos="fade-up" src={albumImg1} alt="album 1" />
+          <img data-aos="fade-up" src={albumImg2} alt="album 2" />
+          <img data-aos="fade-up" src={albumImg3} alt="album 3" />
+          <img data-aos="fade-up" src={albumImg4} alt="album 4" />
+          <img data-aos="fade-up" src={albumImg5} alt="album 5" />
         </div>
       </SRLWrapper>
     </Wrapper>

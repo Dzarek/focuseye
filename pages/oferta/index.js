@@ -69,7 +69,7 @@ const OfferPage = () => {
           <h2>Sesje zdjęciowe</h2>
           <span></span>
         </div>
-        <div className="offerContent">
+        <div data-aos="fade-up" className="offerContent">
           {offers.map((item) => {
             return (
               <SingleOffer
