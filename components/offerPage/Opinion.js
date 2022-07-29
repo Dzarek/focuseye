@@ -67,7 +67,7 @@ const Wrapper = styled.section`
   margin: 10vh auto;
   .horizontalLine2 {
     width: 100vw;
-    height: 1px;
+    height: 2px;
     background: #ddd;
   }
   .horizontalLine {
@@ -77,7 +77,7 @@ const Wrapper = styled.section`
     align-items: center;
     .oneLine {
       width: 45vw;
-      height: 1px;
+      height: 2px;
       background: #ddd;
     }
     span {
