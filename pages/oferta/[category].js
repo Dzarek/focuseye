@@ -1,7 +1,10 @@
+import Link from "next/link";
 import styled from "styled-components";
 import { offers } from "../../public/data";
 import { SRLWrapper } from "simple-react-lightbox";
 import PakietSingleOffer from "../../components/offerPage/PakietSingleOffer";
+import Opinion from "../../components/offerPage/Opinion";
+import { IoChevronBackCircle } from "react-icons/io5";
 
 const rodzinaGrafika = "../images/ofertaImg/singleOffer/rodzinaGrafika.png";
 const zakochaniGrafika = "../images/ofertaImg/singleOffer/zakochaniGrafika.png";
@@ -113,7 +116,13 @@ const OneOffer = (props) => {
       </SRLWrapper>
       <PakietSingleOffer />
       <h3 className="cennik">Powyższy cennik obowiązuje od 01.08.2022 r.</h3>
-      <section className="opinion"></section>
+      <Opinion />
+      <Link href="/oferta">
+        <button className="backToBlog">
+          <IoChevronBackCircle className="icon" />
+          powrót do listy ofert
+        </button>
+      </Link>
     </Wrapper>
   );
 };
@@ -190,6 +199,33 @@ const Wrapper = styled.div`
       margin-top: 5vh;
       width: 22%;
       cursor: pointer;
+    }
+  }
+  .backToBlog {
+    position: relative;
+    margin: 10vh auto 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-family: var(--titleFont);
+    text-transform: uppercase;
+    padding: 10px 10px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--secondaryColor);
+    transition: 0.4s;
+    cursor: pointer;
+    :hover {
+      background: #fff;
+      border: 2px solid var(--secondaryColor);
+      color: var(--secondaryColor);
+    }
+    .icon {
+      margin-right: 10px;
+      font-size: 1.2rem;
     }
   }
 `;
