@@ -1,16 +1,26 @@
-const ciaza1 = "./images/gallery/ciążowe/1.jpg";
-const ciaza2 = "./images/gallery/ciążowe/2.jpg";
-const ciaza3 = "./images/gallery/ciążowe/3.jpg";
-const ciaza4 = "./images/gallery/ciążowe/4.jpg";
-const ciaza5 = "./images/gallery/ciążowe/5.jpg";
-const ciaza6 = "./images/gallery/ciążowe/6.jpg";
-const ciaza7 = "./images/gallery/ciążowe/7.jpg";
-const ciaza8 = "./images/gallery/ciążowe/8.jpg";
-const ciaza9 = "./images/gallery/ciążowe/9.jpg";
-const ciaza10 = "./images/gallery/ciążowe/10.jpg";
-const ciaza11 = "./images/gallery/ciążowe/11.jpg";
-const ciaza12 = "./images/gallery/ciążowe/12.jpg";
-const ciaza13 = "./images/gallery/ciążowe/13.jpg";
+const ciaza1 = "./images/gallery/ciazowe/1.jpg";
+const ciaza2 = "./images/gallery/ciazowe/2.jpg";
+const ciaza3 = "./images/gallery/ciazowe/3.jpg";
+const ciaza4 = "./images/gallery/ciazowe/4.jpg";
+const ciaza5 = "./images/gallery/ciazowe/5.jpg";
+const ciaza6 = "./images/gallery/ciazowe/6.jpg";
+const ciaza7 = "./images/gallery/ciazowe/7.jpg";
+const ciaza8 = "./images/gallery/ciazowe/8.jpg";
+const ciaza9 = "./images/gallery/ciazowe/9.jpg";
+const ciaza10 = "./images/gallery/ciazowe/10.jpg";
+const ciaza11 = "./images/gallery/ciazowe/11.jpg";
+const ciaza12 = "./images/gallery/ciazowe/12.jpg";
+const ciaza13 = "./images/gallery/ciazowe/13.jpg";
+const ciaza14 = "./images/gallery/ciazowe/14.jpg";
+const ciaza15 = "./images/gallery/ciazowe/15.jpg";
+const ciaza16 = "./images/gallery/ciazowe/16.jpg";
+const ciaza17 = "./images/gallery/ciazowe/17.jpg";
+const ciaza18 = "./images/gallery/ciazowe/18.jpg";
+const ciaza19 = "./images/gallery/ciazowe/19.jpg";
+const ciaza20 = "./images/gallery/ciazowe/20.jpg";
+const ciaza21 = "./images/gallery/ciazowe/21.jpg";
+const ciaza22 = "./images/gallery/ciazowe/22.jpg";
+const ciaza23 = "./images/gallery/ciazowe/23.jpg";
 
 const moda1 = "./images/gallery/moda/62.jpg";
 const moda2 = "./images/gallery/moda/63.jpg";
@@ -115,8 +125,18 @@ export const gallery = [
       ciaza11,
       ciaza12,
       ciaza13,
+      ciaza14,
+      ciaza15,
+      ciaza16,
+      ciaza17,
+      ciaza18,
+      ciaza19,
+      ciaza20,
+      ciaza21,
+      ciaza22,
+      ciaza23,
     ],
-    category: "miłosne",
+    category: "brzuszkowe",
   },
   {
     id: 2,
@@ -126,7 +146,7 @@ export const gallery = [
   {
     id: 3,
     img: [portret1, portret2, portret3, portret4, portret5],
-    category: "brzuszkowe",
+    category: "miłosne",
   },
   {
     id: 4,
