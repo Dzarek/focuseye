@@ -5,20 +5,22 @@ import Link from "next/link";
 import { SRLWrapper } from "simple-react-lightbox";
 import { IoChevronBackCircle } from "react-icons/io5";
 
-const articleImg2 = "../images/ofertaImg/zakochani2.jpg";
-const articleImg3 = "../images/ofertaImg/zakochani2.jpg";
-const articleImg4 = "../images/ofertaImg/zakochani2.jpg";
+const articleImg3 = "../images/blog/zakochani2.jpg";
+const articleImg4 = "../images/blog/zakochani3.jpg";
+const articleImg5 = "../images/blog/zakochani4.jpg";
 
-const images = [articleImg2, articleImg3, articleImg4];
+const images = [articleImg5, articleImg3, articleImg4];
 
 const SingleArticleBlog = () => {
   const articleImg = "../images/ofertaImg/zakochani2.jpg";
+  const articleImg2 = "../images/blog/zakochani1.jpg";
+
   return (
     <Wrapper>
       <div
         className="bgArticle"
         style={{
-          background: `url(${articleImg})`,
+          background: `url(${articleImg2})`,
           width: "100vw",
           height: "100vh",
           position: "fixed",

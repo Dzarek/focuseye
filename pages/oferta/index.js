@@ -8,20 +8,18 @@ import SingleOffer from "../../components/SingleOffer";
 import DetailsOffer from "../../components/DetailsOffer";
 import ImportantInfoOffer from "../../components/offerPage/ImportantInfoOffer";
 
-// import SmallDetails from "../../components/SmallDetails";
 import { GiPhotoCamera } from "react-icons/gi";
 import { BsPersonCheckFill } from "react-icons/bs";
 import { IoIosEye } from "react-icons/io";
 import { GiFlowers } from "react-icons/gi";
 import { GrDocumentPdf } from "react-icons/gr";
 import Albums from "../../components/offerPage/Albums";
+import Mirror from "../../components/offerPage/Mirror";
 const ofertaHeader = "../images/ofertaImg/header/ofertaHeader.png";
 
 const OfferPage = () => {
   const [showDetails, setShowDetails] = useState("");
-  // const [showSmallDetails, setShowSmallDetails] = useState("");
   const oneOffer = offers.find((item) => item.category === showDetails);
-  // const oneOffer2 = offers.find((item) => item.category === showSmallDetails);
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
@@ -76,7 +74,6 @@ const OfferPage = () => {
                 key={item.id}
                 offer={item}
                 setShowDetails={setShowDetails}
-                // setShowSmallDetails={setShowSmallDetails}
                 className="singleOffer"
               />
             );
@@ -86,8 +83,7 @@ const OfferPage = () => {
       {showDetails && (
         <DetailsOffer oneOffer={oneOffer} setShowDetails={setShowDetails} />
       )}
-      {/* {showSmallDetails && <SmallDetails oneOffer2={oneOffer2} />  } */}
-
+      <Mirror />
       <Albums />
       <ImportantInfoOffer />
       <section className="regulations">
