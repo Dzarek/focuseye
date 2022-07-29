@@ -26,9 +26,9 @@ const Mirror = () => {
 
 const Wrapper = styled.div`
   width: 100vw;
-  height: 50vh;
+  height: 60vh;
   background: var(--activeNavLink);
-  margin: 15vh auto;
+  margin: 20vh auto;
   padding: 2vh 0;
   position: relative;
   h2 {
@@ -43,7 +43,7 @@ const Wrapper = styled.div`
     left: 0%;
     top: 50%;
     transform: translateY(-50%);
-    height: 50vh;
+    height: 60vh;
     opacity: 0.8;
   }
 
