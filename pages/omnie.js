@@ -2,7 +2,8 @@ import styled from "styled-components";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { FaLaughBeam, FaGrinHearts } from "react-icons/fa";
+import { FaGrinHearts, FaMedal } from "react-icons/fa";
+import { MdDirectionsBike } from "react-icons/md";
 
 const aboutMeHeaderImg = "../images/aboutMeImg/aboutMeHeader.png";
 const meImg2 = "../images/aboutMeImg/meImg2.jpg";
@@ -11,6 +12,11 @@ const OmniePage = () => {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
+
+  const numberOfExperience = new Date().getFullYear() - 2019;
+  const numberOfSesion = (new Date().getFullYear() - 2019) * 70;
+  const numberOfPeople = (new Date().getFullYear() - 2019) * 40;
+
   return (
     <Wrapper>
       <header>
@@ -28,57 +34,70 @@ const OmniePage = () => {
           <p data-aos="zoom-in" data-aos-delay="1500">
             szczęśliwa żona
           </p>
+          <p data-aos="zoom-in" data-aos-delay="3000">
+            miłośniczka podróży, Hiszpanii oraz dziewiczej Oliwy
+          </p>
           <p data-aos="zoom-in" data-aos-delay="2000">
             kochająca mama
           </p>
           <p data-aos="zoom-in" data-aos-delay="2500">
-            fajna
+            pani domu
           </p>
         </div>
       </header>
-      <h2 className="aboutTitle">Drobna fotografka z wrażliwym sercem</h2>
+      <h2 className="aboutTitle">
+        Jestem Fotografem - Dla mnie to zaszczyt i ogromne szczęście
+      </h2>
       <div className="aboutMeContent">
-        <img src={meImg2} alt="ja z rodziną" />
+        <img data-aos="fade-right" src={meImg2} alt="ja z rodziną" />
         <section>
+          <p>Niezmiernie mi miło, że do mnie trafiliście!</p>
           <p>
-            Chodząc jeszcze do liceum, byłam przekonana, że kura ma 4 nogi i
-            jakież było moje zdziwienie gdy nieopodal przystanku autobusowego
-            zobaczyłam biedną kurę o dwóch nogach… wyobraźcie sobie minę mojej
-            koleżanki Elizy <FaLaughBeam />.
-          </p>
-          <p>
-            We wczesnym dzieciństwie chowałam się pod Fiatem 126P taplając się w
-            błotku! Z perspektywy czasu sądzę, że już wtedy miałam zadatki na
-            fotografa outdoorowego…
-          </p>
-          <p>
+            Swoją przygodę z aparatem zaczynałam uwieczniając kolarską
+            rywalizację. Dzisiaj to dalej pasja, która stała się moją pracą.
             Uważam, że lepszej drugiej połówki niż mój mąż, nie mogłam sobie
-            wymarzyć. Od lat wspieramy się w swoich pasjach. Można by
-            powiedzieć, że rower i aparat to takie nasze drugie małżeństwo{" "}
-            <FaGrinHearts />.
+            wymarzyć, od lat wspieramy się w swoich pasjach. W naszym życiu
+            pojawiła się Marcelinka, której chcemy pokazać jak najwięcej świata
+            - podróże w trójkę są dla nas celebracją czasu wolnego!{" "}
+            <MdDirectionsBike />
           </p>
           <p>
-            W fotografii zależy mi na tym aby oddawać Waszą naturalną
-            wrażliwość, delikatność i subtelność. Cudnie gdy zapraszacie mnie do
-            swoich domów, sesje lifestylowe to jest to co kocham najbardziej, a
-            fotografia plenerowa to dla mnie przysłowiowa wisienka na torcie!
+            W fotografii zależy mi na tym aby na zdjęciach oddać Waszą
+            naturalność, rejestrować uczucia i emocje jakie towarzyszą Wam
+            podczas naszych spotkań. Jako fotograf mam to ogromne szczęście, że
+            spotykam wspaniałych ludzi. Uwielbiam gdy zapraszacie mnie do swoich
+            domów bo jak już wiecie sesje lifestylowe po prostu kocham.{" "}
+            <FaGrinHearts />
+          </p>
+          <p>
+            Dotychczas szlifowałam swój warsztat u wyjątkowych fotografów: Adam
+            Trzcionka, Aleksandra Błaszkowska, Marika Wrońska, Katarzyna Budzik.{" "}
+            <br />
+            Ślubne warszataty plenerowe w których brałam udział: NoWedding
+            workshop. <br /> Moje zdjęcia niejednokrotnie zostały wyróżnione
+            przez fotograf Martę Woźną - Pani Woźna oraz Niezłe Aparaty w
+            rankingu najlepszych fotografii miesiąca. <FaMedal />
+          </p>
+          <p>
+            Do zobaczenia! <br />
+            Sylwia Sajdak
           </p>
         </section>
       </div>
       <div className="aboutNumbers">
         <section data-aos="fade-right">
-          <span>150</span>
+          <span>{numberOfSesion}</span>
           <h4>sesji zdjęciowych</h4>
         </section>
         <div className="lineNumber"></div>
         <section data-aos="fade-up">
-          <span>360</span>
+          <span>{numberOfPeople}</span>
           <h4>zadowolonych klientów</h4>
         </section>
         <div className="lineNumber"></div>
         <section data-aos="fade-left">
-          <span>10</span>
-          <h4>lat doświadczenia</h4>
+          <span>{numberOfExperience}</span>
+          <h4>{numberOfExperience < 5 ? "lata" : "lat"} doświadczenia</h4>
         </section>
       </div>
     </Wrapper>
@@ -144,33 +163,37 @@ const Wrapper = styled.div`
         left: 10%;
       }
       p:nth-of-type(3) {
-        top: 40%;
+        top: 25%;
         left: 80%;
       }
       p:nth-of-type(4) {
-        top: 75%;
-        left: 60%;
+        top: 80%;
+        left: 45%;
       }
       p:nth-of-type(5) {
         top: 25%;
-        left: 25%;
+        left: 15%;
+      }
+      p:nth-of-type(6) {
+        top: 50%;
+        left: 75%;
       }
     }
   }
   .aboutTitle {
     color: var(--secondaryColor);
     font-size: 1.8rem;
-    margin: 15vh auto 7vh;
+    margin: 15vh auto 10vh;
     text-align: center;
     text-transform: uppercase;
     font-weight: 500;
   }
   .aboutMeContent {
-    width: 90vw;
+    width: 100vw;
     margin: 0 auto 15vh;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
     img {
       width: 50%;
     }
@@ -181,13 +204,16 @@ const Wrapper = styled.div`
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-start;
+      margin-right: 6vw;
       p {
         font-size: 1.2rem;
         margin-bottom: 3vh;
+        line-height: 1.5;
+
         svg {
           color: var(--secondaryColor);
           margin-left: 5px;
-          font-size: 1.1rem;
+          font-size: 1.2rem;
         }
         :nth-last-of-type(1) {
           margin-bottom: 0;

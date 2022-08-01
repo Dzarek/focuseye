@@ -60,15 +60,6 @@ const slubne9 = "./images/gallery/ślubne/9.jpg";
 const slubne10 = "./images/gallery/ślubne/10.jpg";
 const slubne11 = "./images/gallery/ślubne/11.jpg";
 
-const headerCiaza = "./images/header/headerCiaza.jpg";
-const headerRodzinne = "./images/header/headerRodzinne.jpg";
-const headerSlub = "./images/header/headerSlub.jpg";
-const headerCiazaM = "./images/header/headerCiazaM.jpg";
-const headerModaM = "./images/header/headerModaM.jpg";
-const headerPortfolioM = "./images/header/headerPortfolioM.jpg";
-const headerRodzinneM = "./images/header/headerRodzinneM.jpg";
-const headerSlubM = "./images/header/headerSlubM.jpg";
-
 // od Fotografa
 
 const instaImg1 = "./images/instagramImg/1.jpg";
@@ -355,7 +346,7 @@ export const questions = [
   {
     id: 2,
     title: "Lifestyle w plenerze i w domu? Można tak?",
-    info: "Niezależnie od miejsca jakie wybierzesz gwarantuje Ci fotografie pełne czułości, wzruszeń, radości, naturalności. Subtelnie doradzam, pokazuje ale nie ustawiam. W domu nie potrzebujemy wielkich przestrzeni, okno, sofa, łóżko lub fotel i Wy! To Wy nadajecie tym fotografiom esencji, to czas w którym jesteście w 200% dla siebie. Ja jestem cichym obserwatorem, wyłapię dla Was najpiękniejsze momenty :)",
+    info: "Niezależnie od miejsca jakie wybierzesz gwarantuje Ci fotografie pełne czułości, wzruszeń, radości, naturalności. Subtelnie doradzam, pokazuje ale nie ustawiam. W domu nie potrzebujemy wielkich przestrzeni, okno, sofa, łóżko lub fotel i Wy! To Wy nadajecie tym fotografiom esencji, to czas w którym jesteście w 200% dla siebie. Ja jestem cichym obserwatorem, wyłapię dla Was najpiękniejsze momenty ☺️.",
   },
   {
     id: 3,
@@ -371,22 +362,33 @@ export const questions = [
   {
     id: 5,
     title: "Nie czuję się dobrze pozując do zdjęć...",
-    info: "Jeśli myślisz, że będzie drętwo i sztywnie to jesteście w błędzie :) każdy z nas ma obawy stając przed obiektywem, natomiast to jaki klimat stworzycie na sesji jest odzwierciedleniem samych Was! nie ma nic gorszego niż udawanie dlatego nic nie szkodzi jeśli na co dzień nie jesteście hulaj duszą - poinstruuję Was tak abyście czuli się wyjątkowo a do naszej sesji będziecie po latach wracać z utęsknieniem! ",
+    info: "Jeśli myślisz, że będzie drętwo i sztywnie to jesteście w błędzie ☺️ każdy z nas ma obawy stając przed obiektywem, natomiast to jaki klimat stworzycie na sesji jest odzwierciedleniem samych Was! nie ma nic gorszego niż udawanie dlatego nic nie szkodzi jeśli na co dzień nie jesteście hulaj duszą - poinstruuję Was tak abyście czuli się wyjątkowo a do naszej sesji będziecie po latach wracać z utęsknieniem!",
   },
   {
     id: 6,
-    title: "O co chodzi w sesji lifestyle?",
-    info: "Chodzi o zabawę, wspólne spędzenie czasu, wyciągnięcie ulubionej albo właśnie zapomnianej planszówki. To czas w którym możecie popatrzeć i pouśmiechać się do siebie nawzajem. W plenerze możemy zorganizować mini piknik, podziwiać zachód słońca z bagażnika samochodu, przejść się po mieście, a w kolejce po lody z najlepszej lodziarni w okolicy z uśmiechem na twarzy przypozować mi do czaderskiego zdjęcia ☺️. Zrodził się w Twojej głowie pomysł na taką sesje ? Obstawiam, że tak! Opowiedz mi o nim ☺️.",
+    title: "Czy możemy umówić się na sesję roczkową? Czy takie wykonujesz?",
+    info: "Tak, jak najbardziej. Sesje na roczek dziecka wykonuję w Waszym domu lub w plenerze. Taka sesja to 100% naturalnych emocji, niepozowane zdjęcia, ruch, podskoki na łóżku, bitwa na poduszki, przytulaski z rodzicami, rodzeństwem i/lub zwierzakami jeśli takowe macie ☺️. Nie zabieram ze sobą żadnych gadżetów z motywem roczku, ale mogę zorganizować balon napełniony helem w kształcie cyfry 1 ☺️.",
   },
   {
     id: 7,
-    title: "Lifestyle w plenerze i w domu? Można tak?",
-    info: "Niezależnie od miejsca jakie wybierzesz gwarantuje Ci fotografie pełne czułości, wzruszeń, radości, naturalności. Subtelnie doradzam, pokazuje ale nie ustawiam. W domu nie potrzebujemy wielkich przestrzeni, okno, sofa, łóżko lub fotel i Wy! To Wy nadajecie tym fotografiom esencji, to czas w którym jesteście w 200% dla siebie. Ja jestem cichym obserwatorem, wyłapię dla Was najpiękniejsze momenty :)",
+    title: "W którym miesiącu ciąży najlepiej wybrać się na sesję?",
+    info: "Najlepszy moment do fotografowania ciążowego brzuszka to przełom 7/8 miesiąca ciąży. W tym czasie brzuszek jest wyraźnie widoczny, nie jest za duży, a w lecie w czasie upalnych dni przyszła mama czuje się na tyle dobrze, że śmiało może powyginać się przed aparatem (oczywiście jeśli nie ma do tego przeciwwskazań lekarskich ☺️).",
   },
   {
     id: 8,
     title:
-      "Nie mam pomysłu na sesje w plenerze, nie znam fajnych miejsc, pomożesz?",
-    info: "Nic nie szkodzi! pomogę wybrać miejsce odpowiednie dla Waszych wspomnień i możliwości logistycznych. Sesje plenerowe wykonuję w promieniu 20 km od Tuchowa w pięknych i niezatłoczonych miejscach.",
+      "Czy w sesji mogą wziąć udział nasze zwierzątka (kot, pies, królik)?",
+    info: "Świetne pytanie! Takiej sesji zawsze mówię TAK! Będzie mi bardzo miło uwiecznić całą Waszą rodzinkę na zdjęciach ☺️.",
+  },
+  {
+    id: 9,
+    title: "Czy dostaniemy wszystkie zdjęcia, nawet te bez obróbki?",
+    info: "Dziękuję Ci za to pytanie. Po wybraniu przez Was zdjęć zgodnie z wybranym pakietem oddaję wyłącznie zdjęcia które odpowiednio przygotowuję w postprodukcji. To połowa mojej pracy i efektu końcowego na który czekacie. W razie potrzeby rozjaśniam lub ściemniam ujęcia, nadaję im szczyptę magii używając kolorów zgodnych z moim stylem. Nie mogę oddać zdjęcia, które nie będzie przeze mnie finalnie dopieszczone, zakładam, że nie chcielibyście otrzymać surowych ziemniaków i kotleta bez panierki w restauracji, którą uwielbiacie ☺️.",
+  },
+  {
+    id: 10,
+    title:
+      "Wybraliśmy najmniejszy pakiet, ale bardzo podobają się nam pozostałe ujęcia. Czy możemy je dokupić?",
+    info: "Naturalnie! W zakładce oferta podaję informację nt. dodatkowych ujęć do wybranego pakietu.",
   },
 ];
