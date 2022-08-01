@@ -1,3 +1,30 @@
+// INSTAGRAM
+const instaImg1 = "./images/instagramImg/1.jpg";
+const instaImg2 = "./images/instagramImg/2.jpg";
+const instaImg3 = "./images/instagramImg/3.jpg";
+const instaImg4 = "./images/instagramImg/4.jpg";
+const instaImg5 = "./images/instagramImg/5.jpg";
+const instaImg6 = "./images/instagramImg/6.jpg";
+const instaImg7 = "./images/instagramImg/7.jpg";
+const instaImg8 = "./images/instagramImg/8.jpg";
+const instaImg9 = "./images/instagramImg/9.jpg";
+const instaImg10 = "./images/instagramImg/10.jpg";
+
+// HEADER
+const offerChrzest1 = "/images/ofertaImg/chrzest1.jpg";
+const offerChrzest2 = "/images/ofertaImg/chrzest2.jpg";
+const offerCiazowe1 = "/images/ofertaImg/ciazowe1.jpg";
+const offerCiazowe2 = "/images/ofertaImg/ciazowe2.jpg";
+const offerNoworodkowe1 = "/images/ofertaImg/noworodkowe1.jpg";
+const offerNoworodkowe2 = "/images/ofertaImg/noworodkowe2.jpg";
+const offerRodzinna1 = "/images/ofertaImg/rodzinna1.JPG";
+const offerRodzinna2 = "/images/ofertaImg/rodzinna2.JPG";
+const offerSlub1 = "/images/ofertaImg/slub1.jpg";
+const offerSlub2 = "/images/ofertaImg/slub2.JPG";
+const offerZakochani1 = "/images/ofertaImg/zakochani1.jpg";
+const offerZakochani2 = "/images/ofertaImg/zakochani2.jpg";
+
+// GALERIA - CIĄŻA
 const ciaza1 = "./images/gallery/ciazowe/1.jpg";
 const ciaza2 = "./images/gallery/ciazowe/2.jpg";
 const ciaza3 = "./images/gallery/ciazowe/3.jpg";
@@ -21,70 +48,83 @@ const ciaza20 = "./images/gallery/ciazowe/20.jpg";
 const ciaza21 = "./images/gallery/ciazowe/21.jpg";
 const ciaza22 = "./images/gallery/ciazowe/22.jpg";
 const ciaza23 = "./images/gallery/ciazowe/23.jpg";
+// GALERIA - CHRZEST
+const chrzest1 = "./images/gallery/chrzest/1.jpg";
+const chrzest2 = "./images/gallery/chrzest/2.jpg";
+const chrzest3 = "./images/gallery/chrzest/3.jpg";
+const chrzest4 = "./images/gallery/chrzest/4.jpg";
+const chrzest5 = "./images/gallery/chrzest/5.jpg";
+const chrzest6 = "./images/gallery/chrzest/6.jpg";
+const chrzest7 = "./images/gallery/chrzest/7.jpg";
+const chrzest8 = "./images/gallery/chrzest/8.jpg";
+const chrzest9 = "./images/gallery/chrzest/9.jpg";
+const chrzest10 = "./images/gallery/chrzest/10.jpg";
+const chrzest11 = "./images/gallery/chrzest/11.jpg";
+const chrzest12 = "./images/gallery/chrzest/12.jpg";
+const chrzest13 = "./images/gallery/chrzest/13.jpg";
+const chrzest14 = "./images/gallery/chrzest/14.jpg";
+const chrzest15 = "./images/gallery/chrzest/15.jpg";
+const chrzest16 = "./images/gallery/chrzest/16.jpg";
+const chrzest17 = "./images/gallery/chrzest/17.jpg";
+const chrzest18 = "./images/gallery/chrzest/18.jpg";
+const chrzest19 = "./images/gallery/chrzest/19.jpg";
+const chrzest20 = "./images/gallery/chrzest/20.jpg";
+const chrzest21 = "./images/gallery/chrzest/21.jpg";
+const chrzest22 = "./images/gallery/chrzest/22.jpg";
+const chrzest23 = "./images/gallery/chrzest/23.jpg";
+const chrzest24 = "./images/gallery/chrzest/24.jpg";
+const chrzest25 = "./images/gallery/chrzest/25.jpg";
+const chrzest26 = "./images/gallery/chrzest/26.jpg";
+const chrzest27 = "./images/gallery/chrzest/27.jpg";
+const chrzest28 = "./images/gallery/chrzest/28.jpg";
+const chrzest29 = "./images/gallery/chrzest/29.jpg";
+const chrzest30 = "./images/gallery/chrzest/30.jpg";
+const chrzest31 = "./images/gallery/chrzest/31.jpg";
+const chrzest32 = "./images/gallery/chrzest/32.jpg";
+const chrzest33 = "./images/gallery/chrzest/33.jpg";
+const chrzest34 = "./images/gallery/chrzest/34.jpg";
+const chrzest35 = "./images/gallery/chrzest/35.jpg";
+const chrzest36 = "./images/gallery/chrzest/36.jpg";
+const chrzest37 = "./images/gallery/chrzest/37.jpg";
+const chrzest38 = "./images/gallery/chrzest/38.jpg";
+const chrzest39 = "./images/gallery/chrzest/39.jpg";
+const chrzest40 = "./images/gallery/chrzest/40.jpg";
+const chrzest41 = "./images/gallery/chrzest/41.jpg";
+const chrzest42 = "./images/gallery/chrzest/42.jpg";
+const chrzest43 = "./images/gallery/chrzest/43.jpg";
+const chrzest44 = "./images/gallery/chrzest/44.jpg";
+const chrzest45 = "./images/gallery/chrzest/45.jpg";
+const chrzest46 = "./images/gallery/chrzest/46.jpg";
 
-const moda1 = "./images/gallery/moda/62.jpg";
-const moda2 = "./images/gallery/moda/63.jpg";
-const moda3 = "./images/gallery/moda/64.jpg";
-const moda4 = "./images/gallery/moda/65.jpg";
-const moda5 = "./images/gallery/moda/66.jpg";
-const moda6 = "./images/gallery/moda/67.jpg";
-
-const portret1 = "./images/gallery/portety/92.jpg";
-const portret2 = "./images/gallery/portety/94.jpg";
-const portret3 = "./images/gallery/portety/96.jpg";
-const portret4 = "./images/gallery/portety/112.jpg";
-const portret5 = "./images/gallery/portety/116.jpg";
-
-const rodzinne1 = "./images/gallery/rodzinne/98.jpg";
-const rodzinne2 = "./images/gallery/rodzinne/99.jpg";
-const rodzinne3 = "./images/gallery/rodzinne/100.jpg";
-const rodzinne4 = "./images/gallery/rodzinne/101.jpg";
-const rodzinne5 = "./images/gallery/rodzinne/102.jpg";
-const rodzinne6 = "./images/gallery/rodzinne/103.jpg";
-const rodzinne7 = "./images/gallery/rodzinne/104.jpg";
-const rodzinne8 = "./images/gallery/rodzinne/105.jpg";
-const rodzinne9 = "./images/gallery/rodzinne/106.jpg";
-const rodzinne10 = "./images/gallery/rodzinne/107.jpg";
-const rodzinne11 = "./images/gallery/rodzinne/108.jpg";
-const rodzinne12 = "./images/gallery/rodzinne/109.jpg";
-
-const slubne1 = "./images/gallery/ślubne/1.jpg";
-const slubne2 = "./images/gallery/ślubne/2.jpg";
-const slubne3 = "./images/gallery/ślubne/3.jpg";
-const slubne4 = "./images/gallery/ślubne/4.jpg";
-const slubne5 = "./images/gallery/ślubne/5.jpg";
-const slubne6 = "./images/gallery/ślubne/7.jpg";
-const slubne7 = "./images/gallery/ślubne/6.jpg";
-const slubne8 = "./images/gallery/ślubne/8.jpg";
-const slubne9 = "./images/gallery/ślubne/9.jpg";
-const slubne10 = "./images/gallery/ślubne/10.jpg";
-const slubne11 = "./images/gallery/ślubne/11.jpg";
-
-// od Fotografa
-
-const instaImg1 = "./images/instagramImg/1.jpg";
-const instaImg2 = "./images/instagramImg/2.jpg";
-const instaImg3 = "./images/instagramImg/3.jpg";
-const instaImg4 = "./images/instagramImg/4.jpg";
-const instaImg5 = "./images/instagramImg/5.jpg";
-const instaImg6 = "./images/instagramImg/6.jpg";
-const instaImg7 = "./images/instagramImg/7.jpg";
-const instaImg8 = "./images/instagramImg/8.jpg";
-const instaImg9 = "./images/instagramImg/9.jpg";
-const instaImg10 = "./images/instagramImg/10.jpg";
-
-const offerChrzest1 = "/images/ofertaImg/chrzest1.jpg";
-const offerChrzest2 = "/images/ofertaImg/chrzest2.jpg";
-const offerCiazowe1 = "/images/ofertaImg/ciazowe1.jpg";
-const offerCiazowe2 = "/images/ofertaImg/ciazowe2.jpg";
-const offerNoworodkowe1 = "/images/ofertaImg/noworodkowe1.jpg";
-const offerNoworodkowe2 = "/images/ofertaImg/noworodkowe2.jpg";
-const offerRodzinna1 = "/images/ofertaImg/rodzinna1.JPG";
-const offerRodzinna2 = "/images/ofertaImg/rodzinna2.JPG";
-const offerSlub1 = "/images/ofertaImg/slub1.jpg";
-const offerSlub2 = "/images/ofertaImg/slub2.JPG";
-const offerZakochani1 = "/images/ofertaImg/zakochani1.jpg";
-const offerZakochani2 = "/images/ofertaImg/zakochani2.jpg";
+const noworodkowe1 = "./images/gallery/noworodkowe/1.jpg";
+const noworodkowe2 = "./images/gallery/noworodkowe/2.jpg";
+const noworodkowe3 = "./images/gallery/noworodkowe/3.jpg";
+const noworodkowe4 = "./images/gallery/noworodkowe/4.jpg";
+const noworodkowe5 = "./images/gallery/noworodkowe/5.jpg";
+const noworodkowe6 = "./images/gallery/noworodkowe/6.jpg";
+const noworodkowe7 = "./images/gallery/noworodkowe/7.jpg";
+const noworodkowe8 = "./images/gallery/noworodkowe/8.jpg";
+const noworodkowe9 = "./images/gallery/noworodkowe/9.jpg";
+const noworodkowe10 = "./images/gallery/noworodkowe/10.jpg";
+const noworodkowe11 = "./images/gallery/noworodkowe/11.jpg";
+const noworodkowe12 = "./images/gallery/noworodkowe/12.jpg";
+const noworodkowe13 = "./images/gallery/noworodkowe/13.jpg";
+const noworodkowe14 = "./images/gallery/noworodkowe/14.jpg";
+const noworodkowe15 = "./images/gallery/noworodkowe/15.jpg";
+const noworodkowe16 = "./images/gallery/noworodkowe/16.jpg";
+const noworodkowe17 = "./images/gallery/noworodkowe/17.jpg";
+const noworodkowe18 = "./images/gallery/noworodkowe/18.jpg";
+const noworodkowe19 = "./images/gallery/noworodkowe/19.jpg";
+const noworodkowe20 = "./images/gallery/noworodkowe/20.jpg";
+const noworodkowe21 = "./images/gallery/noworodkowe/21.jpg";
+const noworodkowe22 = "./images/gallery/noworodkowe/22.jpg";
+const noworodkowe23 = "./images/gallery/noworodkowe/23.jpg";
+const noworodkowe24 = "./images/gallery/noworodkowe/24.jpg";
+const noworodkowe25 = "./images/gallery/noworodkowe/25.jpg";
+const noworodkowe26 = "./images/gallery/noworodkowe/26.jpg";
+const noworodkowe27 = "./images/gallery/noworodkowe/27.jpg";
+const noworodkowe28 = "./images/gallery/noworodkowe/28.jpg";
+1;
 
 export const galleryInstagram = [
   instaImg1,
@@ -129,68 +169,119 @@ export const gallery = [
     ],
     category: "brzuszkowe",
   },
-  {
-    id: 2,
-    img: [moda1, moda2, moda3, moda4, moda5, moda6],
-    category: "ślubne",
-  },
-  {
-    id: 3,
-    img: [portret1, portret2, portret3, portret4, portret5],
-    category: "miłosne",
-  },
+  // {
+  //   id: 2,
+  //   img: [moda1, moda2, moda3, moda4, moda5, moda6],
+  //   category: "ślubne",
+  // },
+  // {
+  //   id: 3,
+  //   img: [portret1, portret2, portret3, portret4, portret5],
+  //   category: "miłosne",
+  // },
   {
     id: 4,
     img: [
-      rodzinne1,
-      rodzinne2,
-      rodzinne3,
-      rodzinne4,
-      rodzinne5,
-      rodzinne6,
-      rodzinne7,
-      rodzinne8,
-      rodzinne9,
-      rodzinne10,
-      rodzinne11,
-      rodzinne12,
+      noworodkowe1,
+      noworodkowe2,
+      noworodkowe3,
+      noworodkowe4,
+      noworodkowe5,
+      noworodkowe6,
+      noworodkowe7,
+      noworodkowe8,
+      noworodkowe9,
+      noworodkowe10,
+      noworodkowe11,
+      noworodkowe12,
+      noworodkowe13,
+      noworodkowe14,
+      noworodkowe15,
+      noworodkowe16,
+      noworodkowe17,
+      noworodkowe18,
+      noworodkowe19,
+      noworodkowe20,
+      noworodkowe21,
+      noworodkowe22,
+      noworodkowe23,
+      noworodkowe24,
+      noworodkowe25,
+      noworodkowe26,
+      noworodkowe27,
+      noworodkowe28,
     ],
     category: "noworodkowe",
   },
   {
     id: 5,
     img: [
-      slubne1,
-      slubne2,
-      slubne3,
-      slubne4,
-      slubne5,
-      slubne6,
-      slubne7,
-      slubne8,
-      slubne9,
-      slubne10,
-      slubne11,
+      chrzest1,
+      chrzest2,
+      chrzest3,
+      chrzest4,
+      chrzest5,
+      chrzest6,
+      chrzest7,
+      chrzest8,
+      chrzest9,
+      chrzest10,
+      chrzest11,
+      chrzest12,
+      chrzest13,
+      chrzest14,
+      chrzest15,
+      chrzest16,
+      chrzest17,
+      chrzest18,
+      chrzest19,
+      chrzest20,
+      chrzest21,
+      chrzest22,
+      chrzest23,
+      chrzest24,
+      chrzest25,
+      chrzest26,
+      chrzest27,
+      chrzest28,
+      chrzest29,
+      chrzest30,
+      chrzest31,
+      chrzest32,
+      chrzest33,
+      chrzest34,
+      chrzest35,
+      chrzest36,
+      chrzest37,
+      chrzest38,
+      chrzest39,
+      chrzest40,
+      chrzest41,
+      chrzest42,
+      chrzest43,
+      chrzest44,
+      chrzest45,
+      chrzest46,
     ],
     category: "chrzciny",
   },
-  {
-    id: 6,
-    img: [
-      slubne1,
-      slubne2,
-      slubne3,
-      slubne4,
-      slubne5,
-      slubne6,
-      slubne7,
-      slubne8,
-      slubne9,
-      slubne10,
-      slubne11,
-    ],
-    category: "rodzinne",
-  },
+  // {
+  //   id: 6,
+  //   img: [
+  //     slubne1,
+  //     slubne2,
+  //     slubne3,
+  //     slubne4,
+  //     slubne5,
+  //     slubne6,
+  //     slubne7,
+  //     slubne8,
+  //     slubne9,
+  //     slubne10,
+  //     slubne11,
+  //   ],
+  //   category: "rodzinne",
+  // },
 ];
 
 export const offers = [

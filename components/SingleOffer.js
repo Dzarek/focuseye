@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { useRouter } from "next/router";
-import { FaEye } from "react-icons/fa";
 import Link from "next/link";
 
-const SingleOffer = ({ offer, setShowDetails, setShowSmallDetails }) => {
+const SingleOffer = ({ offer, setShowDetails }) => {
   const router = useRouter();
-  const { category, price, imgs } = offer;
-  // console.log(imgs[0]);
+  const { category, imgs } = offer;
   return (
     <Wrapper className="singleOffer">
       <div
@@ -16,18 +14,6 @@ const SingleOffer = ({ offer, setShowDetails, setShowSmallDetails }) => {
       ></div>
       <div className="singleContent">
         <h3 className="title">{category}</h3>
-        <h2 className="price">od {price} zł</h2>
-        {/* 
-        {router.pathname == "/oferta" ? (
-          <button
-            onMouseOver={() => setShowSmallDetails(category)}
-            onMouseLeave={() => setShowSmallDetails(null)}
-            className="detailsBtn2"
-          >
-            <FaEye />
-          </button>
-        ) : ( */}
-        {/* )} */}
         {router.pathname == "/oferta" ? (
           <Link href={`/oferta/${category}`}>
             <button className="detailsBtn">szczegóły</button>
@@ -88,14 +74,14 @@ const Wrapper = styled.div`
       font-size: 2rem;
       text-shadow: 2px 2px 2px black;
     }
-    .price {
+    /* .price {
       font-size: 2rem;
       margin-top: 50%;
       text-shadow: 3px 3px 3px black;
       font-family: var(--textFont);
       color: white;
       text-transform: lowercase;
-    }
+    } */
 
     .detailsBtn {
       background-color: transparent;
@@ -108,26 +94,13 @@ const Wrapper = styled.div`
       text-shadow: 3px 3px 3px black;
       transition: 0.3s;
       font-weight: 500;
+      margin-bottom: 3vh;
 
       cursor: pointer;
       :hover {
         background-color: white;
         color: var(--secondaryColor3);
         text-shadow: none;
-      }
-    }
-    .detailsBtn2 {
-      background-color: transparent;
-      border: none;
-      padding: 10px 20px;
-      font-size: 2rem;
-      color: white;
-      transition: 0.3s;
-      margin-top: 50%;
-      cursor: pointer;
-      :hover {
-        font-size: 3rem;
-        /* color: var(--activeNavLink); */
       }
     }
   }

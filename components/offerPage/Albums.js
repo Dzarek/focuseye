@@ -10,17 +10,19 @@ import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle,
 } from "react-icons/io";
+import { IoEnterOutline } from "react-icons/io5";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 const coversStandard = "./images/ofertaImg/albums/okładkiStandard.jpg";
 const coversEcovelvet = "./images/ofertaImg/albums/okładkiEcovelvet.jpg";
-const albumImg1 = "./images/ofertaImg/albums/album1.JPG";
+const albumImg1 = "./images/ofertaImg/albums/album1.jpg";
 const albumImg2 = "./images/ofertaImg/albums/album2.jpg";
 const albumImg3 = "./images/ofertaImg/albums/album3.jpg";
-const albumImg4 = "./images/ofertaImg/albums/album4.JPG";
+const albumImg4 = "./images/ofertaImg/albums/album4.jpg";
 const albumImg5 = "./images/ofertaImg/albums/album5.jpg";
+const crystalAlbums = "./images/ofertaImg/albums/crystalAlbums.png";
 
 const Albums = () => {
   useEffect(() => {
@@ -29,20 +31,19 @@ const Albums = () => {
   return (
     <Wrapper>
       <h2>Albumy</h2>
-      <section className="albumsAndCovers">
-        <Carousel
-          className="carousel"
-          infinite
-          autoPlay={5000}
-          animationSpeed={1000}
-          slidesPerPage={1}
-          addArrowClickHandler
-          stopAutoPlayOnHover
-          arrowLeft={<IoIosArrowDropleftCircle className="arrow arrowLeft" />}
-          arrowRight={
-            <IoIosArrowDroprightCircle className="arrow arrowRight" />
-          }
-        >
+      <Carousel
+        className="carousel"
+        infinite
+        draggable={false}
+        autoPlay={5000}
+        animationSpeed={1000}
+        slidesPerPage={1}
+        addArrowClickHandler
+        stopAutoPlayOnHover
+        arrowLeft={<IoIosArrowDropleftCircle className="arrow arrowLeft" />}
+        arrowRight={<IoIosArrowDroprightCircle className="arrow arrowRight" />}
+      >
+        <section className="albumsAndCovers">
           <div className="oneAlbum">
             <h3>Album tradycyjny do wyklejania zdjęć</h3>
             <div className="oneAlbumContent">
@@ -79,6 +80,17 @@ const Albums = () => {
               </div>
             </div>
           </div>
+          <a
+            href="https://drive.google.com/file/d/1PvyfEHDFwzFFs2D7EfX-9JtSKsk09mUo/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="covers crystalAlbums"
+          >
+            <h3>wzorniki opraw</h3>
+            <IoEnterOutline />
+          </a>
+        </section>
+        <section className="albumsAndCovers">
           <div className="oneAlbum2">
             <h3>Fotoalbum</h3>
             <div className="oneAlbumContent">
@@ -113,6 +125,17 @@ const Albums = () => {
               </div>
             </div>
           </div>
+          <a
+            href="https://drive.google.com/file/d/1PvyfEHDFwzFFs2D7EfX-9JtSKsk09mUo/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="covers crystalAlbums"
+          >
+            <h3>wzorniki opraw</h3>
+            <IoEnterOutline />
+          </a>
+        </section>
+        <section className="albumsAndCovers">
           <div className="oneAlbum3">
             <div className="oneSection">
               <h3>Album Eko (malutka książeczka)</h3>
@@ -152,38 +175,38 @@ const Albums = () => {
               </ul>
             </div>
           </div>
-        </Carousel>
-        <ReactCompareSlider
-          className="covers"
-          portrait={true}
-          handle={
-            <ReactCompareSliderHandle
-              portrait={true}
-              buttonStyle={{
-                background: "#5a270d",
-                color: "white",
-                transform: "rotate(90deg)",
-                height: "3vw",
-                width: "3vw",
-              }}
-              linesStyle={{ background: "#5a270d", height: "1px" }}
-            />
-          }
-          itemOne={
-            <div className="oneSliderA">
-              <h3>Okładki Standard</h3>
-              <img className="img1" src={coversStandard} alt="" />
-            </div>
-          }
-          itemTwo={
-            <div className="oneSliderB">
-              <img className="img2" src={coversEcovelvet} alt="" />
-              <h3>Okładki EcoVelvet</h3>
-              <p>eco velvet to miziasty materiał</p>
-            </div>
-          }
-        />
-      </section>
+          <ReactCompareSlider
+            className="covers"
+            portrait={true}
+            handle={
+              <ReactCompareSliderHandle
+                portrait={true}
+                buttonStyle={{
+                  background: "#5a270d",
+                  color: "white",
+                  transform: "rotate(90deg)",
+                  height: "3vw",
+                  width: "3vw",
+                }}
+                linesStyle={{ background: "#5a270d", height: "1px" }}
+              />
+            }
+            itemOne={
+              <div className="oneSliderA">
+                <h3>Okładki Standard</h3>
+                <img className="img1" src={coversStandard} alt="" />
+              </div>
+            }
+            itemTwo={
+              <div className="oneSliderB">
+                <img className="img2" src={coversEcovelvet} alt="" />
+                <h3>Okładki EcoVelvet</h3>
+                <p>eco velvet to miziasty materiał</p>
+              </div>
+            }
+          />
+        </section>
+      </Carousel>
       <SRLWrapper>
         <div className="images">
           <img data-aos="fade-up" src={albumImg1} alt="album 1" />
@@ -209,18 +232,20 @@ const Wrapper = styled.section`
     font-size: 2rem;
     margin-bottom: 5vh;
   }
+  .carousel {
+    width: 90vw;
+    margin: 0 auto;
+    min-height: 55vh;
+  }
+
   .albumsAndCovers {
     width: 80vw;
     margin: 5vh auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    .carousel {
-      width: 55vw;
-      min-height: 55vh;
-    }
     .oneAlbum {
-      width: 95%;
+      width: 65%;
       min-height: 55vh;
       background: var(--aboutMeBgColor);
       padding: 2vw;
@@ -292,7 +317,7 @@ const Wrapper = styled.section`
       }
     }
     .oneAlbum2 {
-      width: 95%;
+      width: 65%;
       min-height: 55vh;
       background: var(--aboutMeBgColor);
       padding: 2vw;
@@ -369,7 +394,7 @@ const Wrapper = styled.section`
       }
     }
     .oneAlbum3 {
-      width: 95%;
+      width: 65%;
       min-height: 55vh;
       background: var(--aboutMeBgColor);
       padding: 2vw;
@@ -450,9 +475,9 @@ const Wrapper = styled.section`
       }
     }
     .covers {
-      width: 25vw;
+      width: 27%;
       height: 55vh;
-      background: var(--aboutMeBgColor);
+      /* background: var(--aboutMeBgColor); */
       border: 2px solid var(--secondaryColor3);
       border-radius: 10px;
       .oneSliderA {
@@ -499,6 +524,35 @@ const Wrapper = styled.section`
         }
       }
     }
+    .crystalAlbums {
+      background-image: url(${crystalAlbums});
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      filter: sepia(0.5);
+
+      h3 {
+        text-transform: uppercase;
+        color: white;
+        font-size: 1.5rem;
+        margin-bottom: 5vh;
+        font-family: var(--titleFont);
+        text-shadow: 1px 1px 1px black;
+      }
+      svg {
+        color: white;
+        font-size: 3.5rem;
+        transition: 0.4s;
+      }
+      :hover svg {
+        font-size: 4.5rem;
+      }
+    }
   }
 
   .images {
@@ -516,7 +570,7 @@ const Wrapper = styled.section`
     }
   }
   .arrow {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: var(--secondaryColor3);
   }
 `;

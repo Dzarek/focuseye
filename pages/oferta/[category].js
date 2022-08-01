@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useState } from "react";
 import styled from "styled-components";
 import { offers } from "../../public/data";
 import { SRLWrapper } from "simple-react-lightbox";
@@ -23,8 +24,6 @@ const ciaza7 = "../images/ofertaImg/singleOffer/ciaza/poradnikCiaza3.jpg";
 const ciaza8 = "../images/ofertaImg/singleOffer/ciaza/poradnikCiaza4.jpg";
 
 const OneOffer = (props) => {
-  // const offer = oneOffer;
-  // const { imgs, title } = offer;
   const smallGallery = [
     ciaza1,
     ciaza2,
@@ -168,12 +167,13 @@ const Wrapper = styled.div`
   .infoAndGraphic {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     width: 80vw;
     margin: 15vh auto 10vh;
     img {
       width: 25%;
       opacity: 0.8;
+      margin-bottom: -10vh;
     }
   }
   .longInfo {

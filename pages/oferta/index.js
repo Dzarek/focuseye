@@ -5,10 +5,8 @@ import { useEffect, useState } from "react";
 
 import { offers } from "../../public/data";
 import SingleOffer from "../../components/SingleOffer";
-import DetailsOffer from "../../components/DetailsOffer";
 import ImportantInfoOffer from "../../components/offerPage/ImportantInfoOffer";
 
-import { GiPhotoCamera } from "react-icons/gi";
 import { BsPersonCheckFill } from "react-icons/bs";
 import { IoIosEye } from "react-icons/io";
 import { GiFlowers } from "react-icons/gi";
@@ -19,7 +17,6 @@ const ofertaHeader = "../images/ofertaImg/header/ofertaHeader.png";
 
 const OfferPage = () => {
   const [showDetails, setShowDetails] = useState("");
-  const oneOffer = offers.find((item) => item.category === showDetails);
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
@@ -54,12 +51,6 @@ const OfferPage = () => {
           </span>
           <h4>unikalna wizja</h4>
         </div>
-        <div>
-          <span>
-            <GiPhotoCamera />
-          </span>
-          <h4>dobry sprzęt</h4>
-        </div>
       </section>
       <section className="sesjeContent">
         <div className="sesjeTitle">
@@ -80,9 +71,6 @@ const OfferPage = () => {
           })}
         </div>
       </section>
-      {showDetails && (
-        <DetailsOffer oneOffer={oneOffer} setShowDetails={setShowDetails} />
-      )}
       <Mirror />
       <Albums />
       <ImportantInfoOffer />
@@ -143,9 +131,8 @@ const Wrapper = styled.div`
   }
   .offerFeatures {
     height: 50vh;
-    width: 70vw;
+    width: 60vw;
     margin: 0 auto;
-    /* padding-bottom: 5vh; */
     display: flex;
     justify-content: space-between;
     align-items: center;

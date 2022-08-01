@@ -14,8 +14,8 @@ const ImportantInfoOffer = () => {
             <TiCamera className="icon" />
           </p>
           <p>
-            Zdjęcia są wykonywane profesionalnym sprzętem fotograficznym,
-            odpowiednim do scenerii oraz typu sesji zdjęciowej.
+            Sesje plenerowe wykonuję w promieniu 20 km od Tuchowa, maksymalnie
+            1,5 h przed zachodem słońca.
           </p>
         </article>
         <article>
@@ -23,9 +23,9 @@ const ImportantInfoOffer = () => {
             <TiCamera className="icon" />
           </p>
           <p>
-            Cena uwzględnia samą sesję zdjęciową i nie obejmuje ona ceny
-            ewentualnego albumu oraz kosztów dojazdu. Ostateczna kwota jest
-            uzgodniona podpisując umowę.
+            Sesje domowe wykonuję pomiędzy godziną 10-13. W sezonie
+            jesienno-zimowym o tej porze mamy najwięcej naturalnego światła w
+            mieszkaniach ☺️.
           </p>
         </article>
         <article>
@@ -33,24 +33,8 @@ const ImportantInfoOffer = () => {
             <TiCamera className="icon" />
           </p>
           <p>
-            Umowę można zawrzeć podczas spotkania lub korespondencyjnie.
-            Zawarcie umowy wymaga wpłacenia zaliczki. Wysokość zaliczki jest
-            równa 50% całkowitej ceny.
-          </p>
-        </article>
-        <article>
-          <p>
-            <TiCamera className="icon" />
-          </p>
-          <p>Działam na terenie powiatu krakowskiego oraz brzeskiego.</p>
-        </article>
-        <article>
-          <p>
-            <TiCamera className="icon" />
-          </p>
-          <p>
-            Zdjęcia są wykonywane profesionalnym sprzętem fotograficznym,
-            odpowiednim do scenerii oraz typu sesji zdjęciowej.
+            Lokalizację wysyłam w wiadomości przez Instagram bądź Facebook w
+            dniu sesji.
           </p>
         </article>
         <article>
@@ -58,9 +42,10 @@ const ImportantInfoOffer = () => {
             <TiCamera className="icon" />
           </p>
           <p>
-            Cena uwzględnia samą sesję zdjęciową i nie obejmuje ona ceny
-            ewentualnego albumu oraz kosztów dojazdu. Ostateczna kwota jest
-            uzgodniona podpisując umowę.
+            Decyzję o przeniesieniu sesji na inny termin w przypadku
+            niekorzystnych warunków pogodowych podejmujemy maksymalnie 1,5 h
+            przed rozpoczęciem sesji. Pogoda zmienną jest, może się okazać, że w
+            okolicach zachodu słońca pięknie Nam zaświeci.
           </p>
         </article>
         <article>
@@ -68,16 +53,41 @@ const ImportantInfoOffer = () => {
             <TiCamera className="icon" />
           </p>
           <p>
-            Umowę można zawrzeć podczas spotkania lub korespondencyjnie.
-            Zawarcie umowy wymaga wpłacenia zaliczki. Wysokość zaliczki jest
-            równa 50% całkowitej ceny.
+            Proszę o punktualne przybycie na sesje, w przypadku zakładanego
+            spóźnienia się więcej niż 5 minut proszę z wyprzedzeniem o krótką
+            informację SMS.
           </p>
         </article>
         <article>
           <p>
             <TiCamera className="icon" />
           </p>
-          <p>Działam na terenie powiatu krakowskiego oraz brzeskiego.</p>
+          <p>
+            Na każdą sesje zabieram koc, a do sesji ciążowej po wcześniejszym
+            ustaleniu mogę zabrać ze sobą sukienkę dla przyszłej Mamusi.
+          </p>
+        </article>
+        <article>
+          <p>
+            <TiCamera className="icon" />
+          </p>
+          <p>
+            Płatność za sesję następuje w dniu sesji, najpóźniej w następnym
+            dniu przelewem na konto.
+          </p>
+        </article>
+        <article>
+          <p>
+            <TiCamera className="icon" />
+          </p>
+          <p>
+            Na cenę sesji składają się : czas pracy na sesji i przed komputerem,
+            doświadczenie i umiejętności fotografa, dojazd na sesję w promieniu
+            20 km od Tuchowa, opłaty prowadzenia firmy i podatek, wydruki zdjęć
+            oraz inne produkty zawarte w ofercie, opłaty związane z utrzymaniem
+            galerii internetowych, pakowanie zdjęć i ich ewentualna wysyłka. Do
+            powyższego dochodzą warsztaty i szkolenia 1-2 razy w roku ☺️.
+          </p>
         </article>
       </div>
     </Wrapper>

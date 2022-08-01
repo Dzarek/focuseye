@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Link from "next/link";
 
 const mirrorImg1 = "../images/ofertaImg/fotolustro/fotolustro2.jpg";
-// const mirrorImg2 = "../images/ofertaImg/fotolustro/fotolustro5.jpg";
 
 const Mirror = () => {
   return (
@@ -30,7 +29,9 @@ const Wrapper = styled.div`
   background: var(--activeNavLink);
   margin: 20vh auto;
   padding: 2vh 0;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   h2 {
     text-transform: uppercase;
     color: var(--secondaryColor3);
@@ -39,23 +40,16 @@ const Wrapper = styled.div`
     text-align: center;
   }
   .leftMirror {
-    position: absolute;
-    left: 0%;
-    top: 50%;
-    transform: translateY(-50%);
     height: 60vh;
     opacity: 0.8;
   }
 
   .mirrorText {
-    position: absolute;
-    top: 50%;
-    left: 70%;
-    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-right: 5vw;
   }
   p {
     font-size: 1.3rem;
