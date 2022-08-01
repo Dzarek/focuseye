@@ -26,14 +26,22 @@ const HomePage = ({ setShowDetails }) => {
   return (
     <Wrapper id="home">
       <div className="fbAndInst">
-        <div>
+        <a
+          href="https://www.facebook.com/sylwiasajdakfotografia/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaFacebookSquare className="fbInIcon" />
           <p>facebook</p>
-        </div>
-        <div>
+        </a>
+        <a
+          href="https://www.instagram.com/focuseye_sylwiasajdak/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaInstagramSquare className="fbInIcon" />
           <p>instagram</p>
-        </div>
+        </a>
       </div>
       <div className="headerImages">
         <Carousel
@@ -85,10 +93,10 @@ const HomePage = ({ setShowDetails }) => {
         </Carousel>
       </div>
       <div className="phoneAndMail">
-        <div>
+        <a href="tel:+48798698605">
           <FaPhoneSquare className="fbInIcon" />
           <p>798 698 605</p>
-        </div>
+        </a>
         <div>
           <ImMail className="fbInIcon" />
           <p>kontakt.focuseye@gmail.com</p>
@@ -115,13 +123,16 @@ const Wrapper = styled.div`
       display: none;
     }
 
-    div {
+    div,
+    a {
       display: flex;
       align-items: center;
       justify-content: space-around;
       margin: 0 2rem;
       font-family: var(--titleFont);
       cursor: pointer;
+      color: var(--primaryColor);
+      text-decoration: none;
       p {
         margin: 0 10px;
         font-size: 1rem;
@@ -149,12 +160,15 @@ const Wrapper = styled.div`
       display: none;
     }
 
-    div {
+    div,
+    a {
       display: flex;
       align-items: center;
       justify-content: space-around;
       margin: 0 5rem;
       font-family: var(--titleFont);
+      color: var(--primaryColor);
+      text-decoration: none;
       cursor: pointer;
       p {
         margin: 0 10px;

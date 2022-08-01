@@ -2,11 +2,15 @@ import styled from "styled-components";
 import MyForm from "../components/MyForm";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const contactHeaderImg = "../images/contact/contactHeader.png";
 const contactPersonImg2 = "../images/contact/contactPerson2.png";
 
 const BlogPage = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <Wrapper>
       <header>
@@ -21,7 +25,6 @@ const BlogPage = () => {
           <h3>Napisz do mnie przez formularz kontaktowy</h3>
           <MyForm />
         </section>
-        {/* <div className="separateLine"></div> */}
         <img
           data-aos="zoom-out"
           src={contactPersonImg2}
@@ -31,20 +34,34 @@ const BlogPage = () => {
         <section className="contactSocialMedia">
           <h3>Kontakt bezpośredni</h3>
           <div className="socialMediaWrapper">
-            <h4>
+            <a href="tel:+48798698605">
               Telefon: <span>798 698 605</span>
-            </h4>
+            </a>
             <h4>
               Email: <span>kontakt.focuseye@gmail.com</span>
             </h4>
-            <h4>
+            <a
+              href="https://www.instagram.com/focuseye_sylwiasajdak/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Instagram: <span>focuseye_sylwiasajdak</span>
-            </h4>
-            <h4>
+            </a>
+            <a
+              href="https://www.facebook.com/sylwiasajdakfotografia/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Facebook: <span>sylwiasajdakfotografia</span>
+            </a>
+          </div>
+          <div className="bankInfo">
+            <h3>Dane do przelewu:</h3>
+            <h4 className="bankInfoName">
+              FocusEye Mobilne Studio Fotografii - Sylwia Sajdak
             </h4>
             <h4>
-              Nr konta: <span>00 0000 0000 0000 0000 0000 0000</span>
+              Nr konta: <span>91 1140 2004 0000 3102 7985 0369</span>
             </h4>
           </div>
         </section>
@@ -93,7 +110,7 @@ const Wrapper = styled.div`
     }
   }
   .contactContainer {
-    width: 90vw;
+    width: 95vw;
     margin: 20vh auto;
     display: flex;
     justify-content: space-between;
@@ -131,7 +148,21 @@ const Wrapper = styled.div`
     justify-content: space-around;
     align-items: flex-start;
     align-self: center;
-    margin-top: 8vh;
+    margin-top: 3vh;
+    a,
+    h4 {
+      font-size: 1.3rem;
+      margin: 2vh 5vw;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--primaryColor);
+      span {
+        color: var(--secondaryColor);
+      }
+    }
+  }
+  .bankInfo {
+    margin-top: 4vh;
     h4 {
       font-size: 1.3rem;
       margin: 2vh 5vw;
@@ -139,6 +170,9 @@ const Wrapper = styled.div`
       span {
         color: var(--secondaryColor);
       }
+    }
+    .bankInfoName {
+      font-weight: 600;
     }
   }
 `;

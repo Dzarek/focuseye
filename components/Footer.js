@@ -27,18 +27,26 @@ const Footer = () => {
       </section>
       <section className="secondSection">
         <h3>Kontakt:</h3>
-        <p>
+        <a href="tel:+48798698605">
           <FaPhoneSquare className="iconFooter" /> 798 698 605
-        </p>
+        </a>
         <p>
           <ImMail className="iconFooter" /> kontakt.focuseye@gmail.com
         </p>
-        <p>
+        <a
+          href="https://www.instagram.com/focuseye_sylwiasajdak/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaInstagramSquare className="iconFooter" /> focuseye_sylwiasajdak
-        </p>
-        <p>
+        </a>
+        <a
+          href="https://www.facebook.com/sylwiasajdakfotografia/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaFacebookSquare className="iconFooter" /> sylwiasajdakfotografia
-        </p>
+        </a>
       </section>
       <section className="thirdSection">
         <img src={dotacjaImg} alt="dotacja" />
@@ -112,7 +120,8 @@ const Wrapper = styled.div`
       font-weight: 600;
       text-transform: uppercase;
     }
-    p {
+    p,
+    a {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -123,6 +132,7 @@ const Wrapper = styled.div`
       font-weight: 500;
       transition: 0.4s;
       letter-spacing: 1px;
+      text-decoration: none;
       cursor: pointer;
       :hover .iconFooter {
         transform: scale(1.1);
