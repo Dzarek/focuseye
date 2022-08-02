@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import styled from "styled-components";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import Link from "next/link";
 
 const ShortBlog = () => {
   useEffect(() => {
@@ -13,7 +14,9 @@ const ShortBlog = () => {
         Jeśli interesują Cię ciekawostki na temat fotografii zapraszam do
         zakładki BLOG. <br /> Znajdziesz tam artykuły takie jak:
       </h3>
-      <h2 className="blogTitle">BLOG</h2>
+      <Link href="/blog">
+        <h2 className="blogTitle">BLOG</h2>
+      </Link>
       <p data-aos="zoom-in-right">Jak przebiega sesja lifestyle?</p>
       <p data-aos="zoom-in-left" data-aos-delay="500">
         Lorem ipsum dolor sit amet?

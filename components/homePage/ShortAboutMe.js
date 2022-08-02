@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { BsPeopleFill } from "react-icons/bs";
+import Link from "next/link";
 
 const aboutImg = "../images/aboutMeImg/meImg.jpg";
 
@@ -18,15 +19,27 @@ const AboutPage = () => {
           <div data-aos="fade-left" data-aos-offset="200" className="aboutInfo">
             <h2 className="shortTitle">Poznaj mnie!</h2>
             <p className="shortText">
-              Jak to się stało że jestem fotografem? Co robię na
-              codzień?...Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Similique quos, hic voluptatum nihil mollitia incidunt, sunt
-              fugit alias cumque dolor,
+              Jak to jest, że jestem Fotografem ? Historia ta przywołuje we mnie
+              wiele wzruszeń, a ciarki na ciele pojawiają się zawsze gdy o niej
+              opowiadam... <br />
+              Fotografując jak co weekend zawody kolarskie, mama jednego z
+              zawodników zapytała mnie o wolny termin na reportaż ślubny w lipcu
+              kolejnego roku. Miał to być ślub jej córki, a mój pierwszy
+              reportaż w życiu. I właśnie rok później w okolicy g. 21:30
+              niesamowite emocje zawładnęły moje serce. Szczęście mieszało się z
+              niedowierzaniem, fotografowałam pełen parkiet tańczących i
+              roześmianych gości weselnych, moje oczy zrobiły się w sekundzie
+              zaszklone, a serce krzyczało TO JEST WŁAŚNIE TO CO BĘDZIESZ ROBIĆ
+              W ŻYCIU. I tak właśnie jest. <br />
+              Jeśli moje fotografie są Ci bliskie, zapraszam, stworzymy razem
+              Twoją historię. Piękną. Emocjonalną. Magiczną.
             </p>
-            <button>
-              Czytaj więcej
-              <BsPeopleFill className="icon" />
-            </button>
+            <Link href="/omnie">
+              <button>
+                Czytaj więcej
+                <BsPeopleFill className="icon" />
+              </button>
+            </Link>
           </div>
         </div>
       </Wrapper>
@@ -37,14 +50,14 @@ const AboutPage = () => {
 const Wrapper = styled.div`
   background: var(--aboutMeBgColor);
   width: 100vw;
-  min-height: 80vh;
+  min-height: 85vh;
   margin: 0 auto;
   padding-top: 10vh;
   position: relative;
 
   .aboutMeContainer {
     max-width: 1440px;
-    width: 75%;
+    width: 85%;
     margin: 0vh auto;
     display: flex;
     justify-content: space-between;
@@ -59,13 +72,13 @@ const Wrapper = styled.div`
       box-shadow: 5px 0 0 0 var(--secondaryColor3);
     }
     .aboutInfo {
-      width: 50%;
+      width: 60%;
       display: flex;
       flex-direction: column;
       h2 {
         color: #fff;
         text-align: left;
-        margin-bottom: 10vh;
+        margin-bottom: 5vh;
         letter-spacing: 3px;
         font-family: var(--titleFont);
         font-size: 2rem;
@@ -74,7 +87,7 @@ const Wrapper = styled.div`
       p {
         color: var(--secondaryColor3);
         font-weight: 400;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
       }
     }
     @media screen and (max-width: 800px) {

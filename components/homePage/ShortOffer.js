@@ -27,9 +27,7 @@ const ShortOffer = ({ showDetails, setShowDetails }) => {
       <div className="shortOfferContainer">
         <div className="textContainer">
           <h2 className="shortTitle">Oferta</h2>
-          <h3 className="shortText">
-            Moja oferta składa się z następujących sesji zdjęciowych:
-          </h3>
+          <h3 className="shortText">W czym się specjalizuję:</h3>
           <ul data-aos="fade-right" data-aos-duration="1500">
             <li>
               <TiCamera className="icon" />
@@ -179,7 +177,7 @@ const Wrapper = styled.div`
     }
   }
   .offerContainer {
-    width: 40%;
+    width: 35%;
   }
   .allOffer {
     width: 100%;

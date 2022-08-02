@@ -5,10 +5,10 @@ import { TbSlideshow } from "react-icons/tb";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const rodzinne1 = "../../images/gallery/rodzinne/98.jpg";
-const rodzinne2 = "../../images/gallery/rodzinne/101.jpg";
-const rodzinne3 = "../../images/gallery/rodzinne/104.jpg";
-const rodzinne4 = "../../images/gallery/rodzinne/103.jpg";
+const shortGallery1 = "../../images/gallery/rodzinne/13.jpg";
+const shortGallery2 = "../../images/gallery/ciazowe/8.jpg";
+const shortGallery3 = "../../images/gallery/sluby/30.jpg";
+const shortGallery4 = "../../images/gallery/zakochani/31.jpg";
 
 const ShortGallery = () => {
   useEffect(() => {
@@ -18,10 +18,10 @@ const ShortGallery = () => {
     <Wrapper className="mainPage">
       <div className="pageContainer">
         <div data-aos="zoom-in-up" className="imgContainer">
-          <img src={rodzinne1} alt="" />
-          <img src={rodzinne2} alt="" />
-          <img src={rodzinne3} alt="" />
-          <img src={rodzinne4} alt="" />
+          <img src={shortGallery1} alt="" />
+          <img src={shortGallery2} alt="" />
+          <img src={shortGallery3} alt="" />
+          <img src={shortGallery4} alt="" />
         </div>
         <div className="textContainer">
           <h2>

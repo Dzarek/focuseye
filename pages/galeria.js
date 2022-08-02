@@ -126,7 +126,6 @@ const GalleryPage = () => {
           );
         })}
       </div>
-      {/* </div> */}
       <div className="galleryContent">
         <SRLWrapper>
           <Masonry
@@ -134,9 +133,6 @@ const GalleryPage = () => {
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column"
           >
-            {/* {galleryImages} */}
-            {/* {currentImages} */}
-            {/* {menuItems === gallery ? galleryImages : currentImages} */}
             {menuItems === gallery ? currentImages2 : currentImages}
           </Masonry>
         </SRLWrapper>
@@ -147,11 +143,7 @@ const GalleryPage = () => {
           currentImages.length !== galleryImages[0].length) ? (
           <>
             {loading ? (
-              <button
-                // onClick={() => setImagesPerPage(imagesPerPage + 10)}
-                onClick={loadImages}
-                className="loadImagesBtn"
-              >
+              <button onClick={loadImages} className="loadImagesBtn">
                 Zobacz Więcej
               </button>
             ) : (

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
+import Link from "next/link";
 
 import { headerData } from "../../public/data";
 
@@ -75,17 +76,17 @@ const HomePage = ({ setShowDetails }) => {
                     <div className="oneline"></div>
                   </div>
                   <h1>{longTitle}</h1>
-                  <Link
+                  {/* <Link
                     to="shortOffer"
                     smooth={true}
                     duration={1000}
-                    // activeClass="active"
                     spy={true}
                     onClick={() => handleShowDetails(category)}
                     offset={-100}
                   >
                     Zobacz więcej
-                  </Link>
+                  </Link> */}
+                  <Link href={`/oferta/${category}`}>Zobacz więcej</Link>
                 </section>
               </div>
             );

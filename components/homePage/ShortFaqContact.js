@@ -13,6 +13,7 @@ import { TiArrowSortedDown } from "react-icons/ti";
 import { BsFillQuestionOctagonFill } from "react-icons/bs";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { questions } from "../../public/data";
+import Link from "next/link";
 
 const qBg = "../../images/Qbg.jpg";
 
@@ -59,7 +60,9 @@ const ShortFaqContact = () => {
       <div className="contactShort">
         <h2>Jeśli interesują Cię moje usługi przejdź do kontaktu</h2>
         <FaLongArrowAltRight className="icon" />
-        <button>Kontakt</button>
+        <Link href="/kontakt">
+          <button>Kontakt</button>
+        </Link>
       </div>
     </Wrapper>
   );
