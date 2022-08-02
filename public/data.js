@@ -95,7 +95,7 @@ const chrzest43 = "./images/gallery/chrzest/43.jpg";
 const chrzest44 = "./images/gallery/chrzest/44.jpg";
 const chrzest45 = "./images/gallery/chrzest/45.jpg";
 const chrzest46 = "./images/gallery/chrzest/46.jpg";
-
+// GALERIA - NOWORODKOWE
 const noworodkowe1 = "./images/gallery/noworodkowe/1.jpg";
 const noworodkowe2 = "./images/gallery/noworodkowe/2.jpg";
 const noworodkowe3 = "./images/gallery/noworodkowe/3.jpg";
@@ -124,7 +124,137 @@ const noworodkowe25 = "./images/gallery/noworodkowe/25.jpg";
 const noworodkowe26 = "./images/gallery/noworodkowe/26.jpg";
 const noworodkowe27 = "./images/gallery/noworodkowe/27.jpg";
 const noworodkowe28 = "./images/gallery/noworodkowe/28.jpg";
-1;
+// GALERIA - RODZINNE
+const rodzinne1 = "./images/gallery/rodzinne/1.jpg";
+const rodzinne2 = "./images/gallery/rodzinne/2.jpg";
+const rodzinne3 = "./images/gallery/rodzinne/3.jpg";
+const rodzinne4 = "./images/gallery/rodzinne/4.jpg";
+const rodzinne5 = "./images/gallery/rodzinne/5.jpg";
+const rodzinne6 = "./images/gallery/rodzinne/6.jpg";
+const rodzinne7 = "./images/gallery/rodzinne/7.jpg";
+const rodzinne8 = "./images/gallery/rodzinne/8.jpg";
+const rodzinne9 = "./images/gallery/rodzinne/9.jpg";
+const rodzinne10 = "./images/gallery/rodzinne/10.jpg";
+const rodzinne11 = "./images/gallery/rodzinne/11.jpg";
+const rodzinne12 = "./images/gallery/rodzinne/12.jpg";
+const rodzinne13 = "./images/gallery/rodzinne/13.jpg";
+// GALERIA - ŚLUBY
+const sluby1 = "./images/gallery/sluby/1.jpg";
+const sluby2 = "./images/gallery/sluby/2.jpg";
+const sluby3 = "./images/gallery/sluby/3.jpg";
+const sluby4 = "./images/gallery/sluby/4.jpg";
+const sluby5 = "./images/gallery/sluby/5.jpg";
+const sluby6 = "./images/gallery/sluby/6.jpg";
+const sluby7 = "./images/gallery/sluby/7.jpg";
+const sluby8 = "./images/gallery/sluby/8.jpg";
+const sluby9 = "./images/gallery/sluby/9.jpg";
+const sluby10 = "./images/gallery/sluby/10.jpg";
+const sluby11 = "./images/gallery/sluby/11.jpg";
+const sluby12 = "./images/gallery/sluby/12.jpg";
+const sluby13 = "./images/gallery/sluby/13.jpg";
+const sluby14 = "./images/gallery/sluby/14.jpg";
+const sluby15 = "./images/gallery/sluby/15.jpg";
+const sluby16 = "./images/gallery/sluby/16.jpg";
+const sluby17 = "./images/gallery/sluby/17.jpg";
+const sluby18 = "./images/gallery/sluby/18.jpg";
+const sluby19 = "./images/gallery/sluby/19.jpg";
+const sluby20 = "./images/gallery/sluby/20.jpg";
+const sluby21 = "./images/gallery/sluby/21.jpg";
+const sluby22 = "./images/gallery/sluby/22.jpg";
+const sluby23 = "./images/gallery/sluby/23.jpg";
+const sluby24 = "./images/gallery/sluby/24.jpg";
+const sluby25 = "./images/gallery/sluby/25.jpg";
+const sluby26 = "./images/gallery/sluby/26.jpg";
+const sluby27 = "./images/gallery/sluby/27.jpg";
+const sluby28 = "./images/gallery/sluby/28.jpg";
+const sluby29 = "./images/gallery/sluby/29.jpg";
+const sluby30 = "./images/gallery/sluby/30.jpg";
+const sluby31 = "./images/gallery/sluby/31.jpg";
+const sluby32 = "./images/gallery/sluby/32.jpg";
+const sluby33 = "./images/gallery/sluby/33.jpg";
+const sluby34 = "./images/gallery/sluby/34.jpg";
+const sluby35 = "./images/gallery/sluby/35.jpg";
+const sluby36 = "./images/gallery/sluby/36.jpg";
+const sluby37 = "./images/gallery/sluby/37.jpg";
+const sluby38 = "./images/gallery/sluby/38.jpg";
+const sluby39 = "./images/gallery/sluby/39.jpg";
+const sluby40 = "./images/gallery/sluby/40.jpg";
+const sluby41 = "./images/gallery/sluby/41.jpg";
+const sluby42 = "./images/gallery/sluby/42.jpg";
+const sluby43 = "./images/gallery/sluby/43.jpg";
+const sluby44 = "./images/gallery/sluby/44.jpg";
+const sluby45 = "./images/gallery/sluby/45.jpg";
+const sluby46 = "./images/gallery/sluby/46.jpg";
+const sluby47 = "./images/gallery/sluby/47.jpg";
+const sluby48 = "./images/gallery/sluby/48.jpg";
+const sluby49 = "./images/gallery/sluby/49.jpg";
+const sluby50 = "./images/gallery/sluby/50.jpg";
+const sluby51 = "./images/gallery/sluby/51.jpg";
+const sluby52 = "./images/gallery/sluby/52.jpg";
+const sluby53 = "./images/gallery/sluby/53.jpg";
+const sluby54 = "./images/gallery/sluby/54.jpg";
+const sluby55 = "./images/gallery/sluby/55.jpg";
+const sluby56 = "./images/gallery/sluby/56.jpg";
+const sluby57 = "./images/gallery/sluby/57.jpg";
+const sluby58 = "./images/gallery/sluby/58.jpg";
+const sluby59 = "./images/gallery/sluby/59.jpg";
+const sluby60 = "./images/gallery/sluby/60.jpg";
+const sluby61 = "./images/gallery/sluby/61.jpg";
+const sluby62 = "./images/gallery/sluby/62.jpg";
+const sluby63 = "./images/gallery/sluby/63.jpg";
+const sluby64 = "./images/gallery/sluby/64.jpg";
+const sluby65 = "./images/gallery/sluby/65.jpg";
+const sluby66 = "./images/gallery/sluby/66.jpg";
+const sluby67 = "./images/gallery/sluby/67.jpg";
+const sluby68 = "./images/gallery/sluby/68.jpg";
+const sluby69 = "./images/gallery/sluby/69.jpg";
+const sluby70 = "./images/gallery/sluby/70.jpg";
+const sluby71 = "./images/gallery/sluby/71.jpg";
+const sluby72 = "./images/gallery/sluby/72.jpg";
+const sluby73 = "./images/gallery/sluby/73.jpg";
+const sluby74 = "./images/gallery/sluby/74.jpg";
+const sluby75 = "./images/gallery/sluby/75.jpg";
+const sluby76 = "./images/gallery/sluby/76.jpg";
+const sluby77 = "./images/gallery/sluby/77.jpg";
+const sluby78 = "./images/gallery/sluby/78.jpg";
+const sluby79 = "./images/gallery/sluby/79.jpg";
+// GALERIA - MIŁOSNE
+const zakochani1 = "./images/gallery/zakochani/1.jpg";
+const zakochani2 = "./images/gallery/zakochani/2.jpg";
+const zakochani3 = "./images/gallery/zakochani/3.jpg";
+const zakochani4 = "./images/gallery/zakochani/4.jpg";
+const zakochani5 = "./images/gallery/zakochani/5.jpg";
+const zakochani6 = "./images/gallery/zakochani/6.jpg";
+const zakochani7 = "./images/gallery/zakochani/7.jpg";
+const zakochani8 = "./images/gallery/zakochani/8.jpg";
+const zakochani9 = "./images/gallery/zakochani/9.jpg";
+const zakochani10 = "./images/gallery/zakochani/10.jpg";
+const zakochani11 = "./images/gallery/zakochani/11.jpg";
+const zakochani12 = "./images/gallery/zakochani/12.jpg";
+const zakochani13 = "./images/gallery/zakochani/13.jpg";
+const zakochani14 = "./images/gallery/zakochani/14.jpg";
+const zakochani15 = "./images/gallery/zakochani/15.jpg";
+const zakochani16 = "./images/gallery/zakochani/16.jpg";
+const zakochani17 = "./images/gallery/zakochani/17.jpg";
+const zakochani18 = "./images/gallery/zakochani/18.jpg";
+const zakochani19 = "./images/gallery/zakochani/19.jpg";
+const zakochani20 = "./images/gallery/zakochani/20.jpg";
+const zakochani21 = "./images/gallery/zakochani/21.jpg";
+const zakochani22 = "./images/gallery/zakochani/22.jpg";
+const zakochani23 = "./images/gallery/zakochani/23.jpg";
+const zakochani24 = "./images/gallery/zakochani/24.jpg";
+const zakochani25 = "./images/gallery/zakochani/25.jpg";
+const zakochani26 = "./images/gallery/zakochani/26.jpg";
+const zakochani27 = "./images/gallery/zakochani/27.jpg";
+const zakochani28 = "./images/gallery/zakochani/28.jpg";
+const zakochani29 = "./images/gallery/zakochani/29.jpg";
+const zakochani30 = "./images/gallery/zakochani/30.jpg";
+const zakochani31 = "./images/gallery/zakochani/31.jpg";
+const zakochani32 = "./images/gallery/zakochani/32.jpg";
+const zakochani33 = "./images/gallery/zakochani/33.jpg";
+const zakochani34 = "./images/gallery/zakochani/34.jpg";
+const zakochani35 = "./images/gallery/zakochani/35.jpg";
+const zakochani36 = "./images/gallery/zakochani/36.jpg";
 
 export const galleryInstagram = [
   instaImg1,
@@ -169,16 +299,133 @@ export const gallery = [
     ],
     category: "brzuszkowe",
   },
-  // {
-  //   id: 2,
-  //   img: [moda1, moda2, moda3, moda4, moda5, moda6],
-  //   category: "ślubne",
-  // },
-  // {
-  //   id: 3,
-  //   img: [portret1, portret2, portret3, portret4, portret5],
-  //   category: "miłosne",
-  // },
+  {
+    id: 2,
+    img: [
+      sluby1,
+      sluby2,
+      sluby3,
+      sluby4,
+      sluby5,
+      sluby6,
+      sluby7,
+      sluby8,
+      sluby9,
+      sluby10,
+      sluby11,
+      sluby12,
+      sluby13,
+      sluby14,
+      sluby15,
+      sluby16,
+      sluby17,
+      sluby18,
+      sluby19,
+      sluby20,
+      sluby21,
+      sluby22,
+      sluby23,
+      sluby24,
+      sluby25,
+      sluby26,
+      sluby27,
+      sluby28,
+      sluby29,
+      sluby30,
+      sluby31,
+      sluby32,
+      sluby33,
+      sluby34,
+      sluby35,
+      sluby36,
+      sluby37,
+      sluby38,
+      sluby39,
+      sluby40,
+      sluby41,
+      sluby42,
+      sluby43,
+      sluby44,
+      sluby45,
+      sluby46,
+      sluby47,
+      sluby48,
+      sluby49,
+      sluby50,
+      sluby51,
+      sluby52,
+      sluby53,
+      sluby54,
+      sluby55,
+      sluby56,
+      sluby57,
+      sluby58,
+      sluby59,
+      sluby60,
+      sluby61,
+      sluby62,
+      sluby63,
+      sluby64,
+      sluby65,
+      sluby66,
+      sluby67,
+      sluby68,
+      sluby69,
+      sluby70,
+      sluby71,
+      sluby72,
+      sluby73,
+      sluby74,
+      sluby75,
+      sluby76,
+      sluby77,
+      sluby78,
+      sluby79,
+    ],
+    category: "ślubne",
+  },
+  {
+    id: 3,
+    img: [
+      zakochani1,
+      zakochani2,
+      zakochani3,
+      zakochani4,
+      zakochani5,
+      zakochani6,
+      zakochani7,
+      zakochani8,
+      zakochani9,
+      zakochani10,
+      zakochani11,
+      zakochani12,
+      zakochani13,
+      zakochani14,
+      zakochani15,
+      zakochani16,
+      zakochani17,
+      zakochani18,
+      zakochani19,
+      zakochani20,
+      zakochani21,
+      zakochani22,
+      zakochani23,
+      zakochani24,
+      zakochani25,
+      zakochani26,
+      zakochani27,
+      zakochani28,
+      zakochani29,
+      zakochani30,
+      zakochani31,
+      zakochani32,
+      zakochani33,
+      zakochani34,
+      zakochani35,
+      zakochani36,
+    ],
+    category: "miłosne",
+  },
   {
     id: 4,
     img: [
@@ -265,23 +512,25 @@ export const gallery = [
     ],
     category: "chrzciny",
   },
-  // {
-  //   id: 6,
-  //   img: [
-  //     slubne1,
-  //     slubne2,
-  //     slubne3,
-  //     slubne4,
-  //     slubne5,
-  //     slubne6,
-  //     slubne7,
-  //     slubne8,
-  //     slubne9,
-  //     slubne10,
-  //     slubne11,
-  //   ],
-  //   category: "rodzinne",
-  // },
+  {
+    id: 6,
+    img: [
+      rodzinne1,
+      rodzinne2,
+      rodzinne3,
+      rodzinne4,
+      rodzinne5,
+      rodzinne6,
+      rodzinne7,
+      rodzinne8,
+      rodzinne9,
+      rodzinne10,
+      rodzinne11,
+      rodzinne12,
+      rodzinne13,
+    ],
+    category: "rodzinne",
+  },
 ];
 
 export const offers = [

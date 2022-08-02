@@ -14,12 +14,14 @@ const allCategories = [
   "wszystkie",
 ];
 
-const galleryCategory = gallery.filter((item) => item.category === "miłosne");
+const galleryCategory = gallery.filter(
+  (item) => item.category === "brzuszkowe"
+);
 
 const GalleryPage = () => {
   const [menuItems, setMenuItems] = useState(galleryCategory);
   const [categories] = useState(allCategories);
-  const [activeBtn, setActiveBtn] = useState("miłosne");
+  const [activeBtn, setActiveBtn] = useState("brzuszkowe");
   const [currentPage] = useState(1);
   const [imagesPerPage, setImagesPerPage] = useState(10);
   const [loading, setLoading] = useState(true);
@@ -48,6 +50,7 @@ const GalleryPage = () => {
     ...allImages[2],
     ...allImages[3],
     ...allImages[4],
+    ...allImages[5],
   ];
   const galleryArraysFinal = galleryArrays.map((item, index) => {
     return (
