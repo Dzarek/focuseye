@@ -56,7 +56,8 @@ const Wrapper = styled.div`
       height: 100%;
       position: relative;
       img {
-        height: 190px;
+        /* height: 190px; */
+        height: 25vh;
         position: absolute;
         top: 0;
         left: 0;
@@ -73,7 +74,7 @@ const Wrapper = styled.div`
       }
       img:nth-of-type(3) {
         top: 45%;
-        left: 55%;
+        left: 57%;
         transform: rotate(2deg);
       }
       img:nth-of-type(4) {

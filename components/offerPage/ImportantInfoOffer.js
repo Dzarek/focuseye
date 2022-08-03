@@ -54,7 +54,7 @@ const ImportantInfoOffer = () => {
           </p>
           <p>
             Proszę o punktualne przybycie na sesje, w przypadku zakładanego
-            spóźnienia się więcej niż 5 minut proszę z wyprzedzeniem o krótką
+            spóźnienia więcej niż 5 minut proszę z wyprzedzeniem o krótką
             informację SMS.
           </p>
         </article>
@@ -72,8 +72,8 @@ const ImportantInfoOffer = () => {
             <TiCamera className="icon" />
           </p>
           <p>
-            Płatność za sesję następuje w dniu sesji, najpóźniej w następnym
-            dniu przelewem na konto.
+            Płatność za sesję następuje gotówką w dniu sesji, najpóźniej w
+            następnym dniu przelewem na konto.
           </p>
         </article>
         <article>

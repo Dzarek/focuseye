@@ -72,7 +72,6 @@ const BlogPage = () => {
 
 const Wrapper = styled.div`
   width: 100vw;
-  max-width: 100vw;
   min-height: 100vh;
   margin: 0 auto;
   padding-top: 10vh;
@@ -142,6 +141,7 @@ const Wrapper = styled.div`
       }
     }
   }
+
   .socialMediaWrapper {
     display: flex;
     flex-direction: column;

@@ -84,7 +84,7 @@ const Wrapper = styled.div`
   align-items: center;
   /* opacity: 0.2; */
   .faqContainer {
-    width: 80vw;
+    width: 85vw;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;

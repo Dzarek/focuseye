@@ -18,10 +18,9 @@ const ShortInstagram = ({ thumbnails }) => {
           ? thumbnails.map((item, index) => {
               return <img key={index} src={item} alt="instagram" />;
             })
-          : null}
-        {/* : galleryInstagram.map((item, index) => {
+          : galleryInstagram.map((item, index) => {
               return <img key={index} src={item} alt="instagram" />;
-            })} */}
+            })}
       </Carousel>
 
       <a

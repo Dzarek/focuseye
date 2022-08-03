@@ -19,18 +19,14 @@ const AboutPage = () => {
           <div data-aos="fade-left" data-aos-offset="200" className="aboutInfo">
             <h2 className="shortTitle">Poznaj mnie!</h2>
             <p className="shortText">
-              Jak to jest, że jestem Fotografem ? Historia ta przywołuje we mnie
-              wiele wzruszeń, a ciarki na ciele pojawiają się zawsze gdy o niej
-              opowiadam... <br />
+              Jak to jest, że jestem Fotografem ? <br /> <br />
               Fotografując jak co weekend zawody kolarskie, mama jednego z
               zawodników zapytała mnie o wolny termin na reportaż ślubny w lipcu
-              kolejnego roku. Miał to być ślub jej córki, a mój pierwszy
-              reportaż w życiu. I właśnie rok później w okolicy g. 21:30
-              niesamowite emocje zawładnęły moje serce. Szczęście mieszało się z
-              niedowierzaniem, fotografowałam pełen parkiet tańczących i
-              roześmianych gości weselnych, moje oczy zrobiły się w sekundzie
-              zaszklone, a serce krzyczało TO JEST WŁAŚNIE TO CO BĘDZIESZ ROBIĆ
-              W ŻYCIU. I tak właśnie jest. <br />
+              kolejnego roku. I właśnie rok później niesamowite emocje
+              zawładnęły moje serce. Fotografowałam pełen parkiet tańczących i
+              roześmianych gości weselnych, a moje serce krzyczało TO JEST
+              WŁAŚNIE TO CO BĘDZIESZ ROBIĆ W ŻYCIU. I tak właśnie jest. <br />{" "}
+              <br />
               Jeśli moje fotografie są Ci bliskie, zapraszam, stworzymy razem
               Twoją historię. Piękną. Emocjonalną. Magiczną.
             </p>
@@ -56,7 +52,6 @@ const Wrapper = styled.div`
   position: relative;
 
   .aboutMeContainer {
-    max-width: 1440px;
     width: 85%;
     margin: 0vh auto;
     display: flex;
@@ -72,7 +67,7 @@ const Wrapper = styled.div`
       box-shadow: 5px 0 0 0 var(--secondaryColor3);
     }
     .aboutInfo {
-      width: 60%;
+      width: 55%;
       display: flex;
       flex-direction: column;
       h2 {

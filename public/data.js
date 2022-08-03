@@ -200,7 +200,6 @@ const sluby58 = "./images/gallery/sluby/58.jpg";
 const sluby59 = "./images/gallery/sluby/59.jpg";
 const sluby60 = "./images/gallery/sluby/60.jpg";
 const sluby61 = "./images/gallery/sluby/61.jpg";
-const sluby62 = "./images/gallery/sluby/62.jpg";
 const sluby63 = "./images/gallery/sluby/63.jpg";
 const sluby64 = "./images/gallery/sluby/64.jpg";
 const sluby65 = "./images/gallery/sluby/65.jpg";
@@ -363,7 +362,6 @@ export const gallery = [
       sluby59,
       sluby60,
       sluby61,
-      sluby62,
       sluby63,
       sluby64,
       sluby65,
@@ -546,7 +544,7 @@ export const offers = [
     album: "za dodatkową opłatą",
     quality: "Full HD",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti?",
+      "9 miesięcy oczekiwania na poznanie maleńkiego człowieczka. Szczęście, którego nie można porównać z niczym innym. To czas kiedy rysuje się nowa historia, rodziny i dziecka. Daj mu poznać to szczęście jakim obdarzył Was rodziców kiedy był w mamusi brzuszku i pozostaw mu pamiątkę z tego okresu :)",
     imgs: [offerCiazowe1, offerCiazowe2],
   },
   {
@@ -561,7 +559,7 @@ export const offers = [
     album: "za dodatkową opłatą",
     quality: "Full HD",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti?",
+      "Kiedy widzisz po raz pierwszy maleńkie stopki swojej córeczki, swojego synka, masz ochotę je zacałować i najlepiej żeby na zawsze już takie słodziutkie zostały :) Mam dla Ciebie wspaniałą wiadomość, to się da zrobić :) Wystarczy, że pozwolisz mi zachować pierwsze dni z życia Twojego bobaska, a ja gwarantuję Ci, że te chwile zostaną z Wami na zawsze!",
     imgs: [offerNoworodkowe1, offerNoworodkowe2],
   },
   {
@@ -576,7 +574,7 @@ export const offers = [
     album: "za dodatkową opłatą",
     quality: "Full HD",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti?",
+      "Pierwsze Ważne wydarzenie w życiu Twojego dziecka, które zasługuje na pamiątkę. To tez świetna okazja do rodzinnych ujęć. Dziadkowie, ciocie i wujkowie będą szczęśliwi jeśli podarujcie im wspólne zdjęcie z najmłodszym członkiem rodziny :)",
     imgs: [offerChrzest1, offerChrzest2],
   },
   {
@@ -591,7 +589,7 @@ export const offers = [
     album: "za dodatkową opłatą",
     quality: "Full HD",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti?",
+      "To chwila z Waszego życia. Czas tak szybko ucieka, dzieci rosną i zmieniają się z prędkością światła. Każdy rok niesie ze sobą zmiany, warto kolekcjonować momenty by cieszyć się nimi na każdym etapie życia.",
     imgs: [offerRodzinna1, offerRodzinna2],
   },
   {
@@ -606,7 +604,7 @@ export const offers = [
     album: "za dodatkową opłatą",
     quality: "Full HD",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti?",
+      "Jeden a tak wspaniały dzień w życiu dwójki ludzi zasługuje na uwiecznienie magicznych chwil. Pozwól mi opowiedzieć Waszą cudowną historię z tego dnia.",
     imgs: [offerSlub1, offerSlub2],
   },
   {
@@ -621,7 +619,7 @@ export const offers = [
     album: "za dodatkową opłatą",
     quality: "Full HD",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti?",
+      "Każdy etap w związku to jeszcze większa miłość. Pozwól mi zatroszczyć się o Wasze miłosne wspomnienia jako zalążek dla dalszej wspólnej drogi życia.",
     imgs: [offerZakochani1, offerZakochani2],
   },
 ];

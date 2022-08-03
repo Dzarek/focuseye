@@ -24,7 +24,8 @@ const DetailsOffer = ({ oneOffer, setShowDetails }) => {
           </button>
         </header>
         <h2 className="detailsTitle">{title}</h2>
-        <div className="detailsContent">
+        <p>{description}</p>
+        {/* <div className="detailsContent">
           <div className="firstPart">
             <h3 className="detailsPrice">
               <span>Cena:</span> od {price} zł
@@ -57,7 +58,7 @@ const DetailsOffer = ({ oneOffer, setShowDetails }) => {
             <h3>Opis:</h3>
             <p>{description}</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </Wrapper>
   );

@@ -105,7 +105,6 @@ const Wrapper = styled.div`
   .shortOfferContainer {
     margin: 0 auto;
     width: 90vw;
-    max-width: 1440px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,7 +176,7 @@ const Wrapper = styled.div`
     }
   }
   .offerContainer {
-    width: 35%;
+    width: 40%;
   }
   .allOffer {
     width: 100%;

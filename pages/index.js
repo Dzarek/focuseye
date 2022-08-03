@@ -12,7 +12,6 @@ import ShortInstagram from "../components/homePage/ShortInstagram";
 
 const Home = ({ thumbnails }) => {
   const [showDetails, setShowDetails] = useState("");
-  console.log(thumbnails);
   return (
     <>
       <Head>
@@ -47,7 +46,7 @@ export const getStaticProps = async () => {
   );
   const data = await response.json();
   const thumbnails = data.map((image) => {
-    const smallImg = image.media_details.sizes.thumbnail.source_url;
+    const smallImg = image.media_details.sizes.full.source_url;
     return smallImg;
   });
   return {
