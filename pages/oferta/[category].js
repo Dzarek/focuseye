@@ -61,7 +61,7 @@ const OneOffer = (props) => {
             backgroundImage: `url(${headerImg})`,
             backgroundPosition: "center",
             backgroundSize: "cover",
-            animation: "singleOfferHeader 7s linear 1 forwards",
+            animation: "singleOfferHeader 5s linear 1 forwards",
             width: "100vw",
             height: "80vh",
             filter: "brightness(0.8)",
