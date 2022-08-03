@@ -13,7 +13,7 @@ import { GiFlowers } from "react-icons/gi";
 import { GrDocumentPdf } from "react-icons/gr";
 import Albums from "../../components/offerPage/Albums";
 import Mirror from "../../components/offerPage/Mirror";
-const ofertaHeader = "../images/ofertaImg/header/ofertaHeader.png";
+const ofertaHeader = "/images/ofertaImg/header/ofertaHeader.png";
 
 const OfferPage = () => {
   const [showDetails, setShowDetails] = useState("");

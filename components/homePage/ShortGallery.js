@@ -5,10 +5,10 @@ import { TbSlideshow } from "react-icons/tb";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const shortGallery1 = "../../images/gallery/rodzinne/13.jpg";
-const shortGallery2 = "../../images/gallery/ciazowe/8.jpg";
-const shortGallery3 = "../../images/gallery/sluby/30.jpg";
-const shortGallery4 = "../../images/gallery/zakochani/31.jpg";
+const shortGallery1 = "/images/gallery/rodzinne/13.jpg";
+const shortGallery2 = "/images/gallery/ciazowe/8.jpg";
+const shortGallery3 = "/images/gallery/sluby/30.jpg";
+const shortGallery4 = "/images/gallery/zakochani/31.jpg";
 
 const ShortGallery = () => {
   useEffect(() => {

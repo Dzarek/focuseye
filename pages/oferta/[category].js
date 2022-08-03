@@ -7,21 +7,21 @@ import PakietSingleOffer from "../../components/offerPage/PakietSingleOffer";
 import Opinion from "../../components/offerPage/Opinion";
 import { IoChevronBackCircle } from "react-icons/io5";
 
-const rodzinaGrafika = "../images/ofertaImg/singleOffer/rodzinaGrafika.png";
-const zakochaniGrafika = "../images/ofertaImg/singleOffer/zakochaniGrafika.png";
-const ciazaGrafika = "../images/ofertaImg/singleOffer/ciazaGrafika.png";
-const noworodekGrafika = "../images/ofertaImg/singleOffer/noworodekGrafika.png";
-const slubGrafika = "../images/ofertaImg/singleOffer/slubGrafika.png";
-const chrzcinyGrafika = "../images/ofertaImg/singleOffer/chrzcinyGrafika.png";
+const rodzinaGrafika = "/images/ofertaImg/singleOffer/rodzinaGrafika.png";
+const zakochaniGrafika = "/images/ofertaImg/singleOffer/zakochaniGrafika.png";
+const ciazaGrafika = "/images/ofertaImg/singleOffer/ciazaGrafika.png";
+const noworodekGrafika = "/images/ofertaImg/singleOffer/noworodekGrafika.png";
+const slubGrafika = "/images/ofertaImg/singleOffer/slubGrafika.png";
+const chrzcinyGrafika = "/images/ofertaImg/singleOffer/chrzcinyGrafika.png";
 
-const ciaza1 = "../images/gallery/ciazowe/1.jpg";
-const ciaza2 = "../images/gallery/ciazowe/8.jpg";
-const ciaza3 = "../images/gallery/ciazowe/19.jpg";
-const ciaza4 = "../images/gallery/ciazowe/11.jpg";
-const ciaza5 = "../images/ofertaImg/singleOffer/ciaza/poradnikCiaza1.jpg";
-const ciaza6 = "../images/ofertaImg/singleOffer/ciaza/poradnikCiaza2.jpg";
-const ciaza7 = "../images/ofertaImg/singleOffer/ciaza/poradnikCiaza3.jpg";
-const ciaza8 = "../images/ofertaImg/singleOffer/ciaza/poradnikCiaza4.jpg";
+const ciaza1 = "/images/gallery/ciazowe/1.jpg";
+const ciaza2 = "/images/gallery/ciazowe/8.jpg";
+const ciaza3 = "/images/gallery/ciazowe/19.jpg";
+const ciaza4 = "/images/gallery/ciazowe/11.jpg";
+const ciaza5 = "/images/ofertaImg/singleOffer/ciaza/poradnikCiaza1.jpg";
+const ciaza6 = "/images/ofertaImg/singleOffer/ciaza/poradnikCiaza2.jpg";
+const ciaza7 = "/images/ofertaImg/singleOffer/ciaza/poradnikCiaza3.jpg";
+const ciaza8 = "/images/ofertaImg/singleOffer/ciaza/poradnikCiaza4.jpg";
 
 const OneOffer = (props) => {
   const smallGallery = [

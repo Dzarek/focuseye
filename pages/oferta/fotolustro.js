@@ -2,10 +2,10 @@ import styled from "styled-components";
 import Link from "next/link";
 import { IoChevronBackCircle } from "react-icons/io5";
 
-const mirrorHeader = "../images/ofertaImg/fotolustro/fotolustro4.jpg";
-const mirrorImg1 = "../images/ofertaImg/fotolustro/fotolustro3.jpg";
-const mirrorImg2 = "../images/ofertaImg/fotolustro/fotolustro5.jpg";
-const mirrorImg3 = "../images/ofertaImg/fotolustro/fotolustro1.jpg";
+const mirrorHeader = "/images/ofertaImg/fotolustro/fotolustro4.jpg";
+const mirrorImg1 = "/images/ofertaImg/fotolustro/fotolustro3.jpg";
+const mirrorImg2 = "/images/ofertaImg/fotolustro/fotolustro5.jpg";
+const mirrorImg3 = "/images/ofertaImg/fotolustro/fotolustro1.jpg";
 
 const Fotolustro = () => {
   return (

@@ -9,8 +9,8 @@ import { ImMail } from "react-icons/im";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const bgImg = "../images/logoBg2.png";
-const dotacjaImg = "../images/dotacjaImg.png";
+const bgImg = "/images/logoBg2.png";
+const dotacjaImg = "/images/dotacjaImg.png";
 
 const Footer = () => {
   useEffect(() => {

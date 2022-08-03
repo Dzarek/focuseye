@@ -10,8 +10,8 @@ import { TiArrowSortedDown } from "react-icons/ti";
 import { BsFillQuestionOctagonFill } from "react-icons/bs";
 import { questions } from "../public/data";
 
-const faqPersonImg = "../images/faq/faqPerson.png";
-const faqHeaderImg = "../images/faq/faqHeader.png";
+const faqPersonImg = "/images/faq/faqPerson.png";
+const faqHeaderImg = "/images/faq/faqHeader.png";
 
 const BlogPage = () => {
   return (

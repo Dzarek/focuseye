@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 import { BsPeopleFill } from "react-icons/bs";
 import Link from "next/link";
 
-const aboutImg = "../images/aboutMeImg/meImg.jpg";
+const aboutImg = "/images/aboutMeImg/meImg.jpg";
 
 const AboutPage = () => {
   useEffect(() => {

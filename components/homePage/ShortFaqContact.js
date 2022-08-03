@@ -15,7 +15,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { questions } from "../../public/data";
 import Link from "next/link";
 
-const qBg = "../../images/Qbg.jpg";
+const qBg = "/images/Qbg.jpg";
 
 const shortFaqQuestions = questions.slice(0, 4);
 

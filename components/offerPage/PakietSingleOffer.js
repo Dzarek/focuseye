@@ -5,8 +5,8 @@ import { FaMoneyBillWave, FaCarAlt } from "react-icons/fa";
 import { RiImageAddLine } from "react-icons/ri";
 import { BiPhotoAlbum } from "react-icons/bi";
 
-const ciazaGrafika2 = "../images/ofertaImg/singleOffer/ciazaGrafika2.png";
-const ciazaGrafika3 = "../images/ofertaImg/singleOffer/ciazaGrafika3.png";
+const ciazaGrafika2 = "/images/ofertaImg/singleOffer/ciazaGrafika2.png";
+const ciazaGrafika3 = "/images/ofertaImg/singleOffer/ciazaGrafika3.png";
 
 const PakietSingleOffer = () => {
   return (

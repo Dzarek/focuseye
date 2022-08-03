@@ -7,7 +7,7 @@ import ReactLoading from "react-loading";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const galleryHeaderImg2 = "../images/gallery/galleryHeader.png";
+const galleryHeaderImg2 = "/images/gallery/galleryHeader.png";
 
 const allCategories = [
   ...new Set(gallery.map((item) => item.category)),

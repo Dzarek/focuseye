@@ -5,8 +5,8 @@ import { useEffect } from "react";
 import { FaGrinHearts, FaMedal } from "react-icons/fa";
 import { MdDirectionsBike } from "react-icons/md";
 
-const aboutMeHeaderImg = "../images/aboutMeImg/aboutMeHeader.png";
-const meImg2 = "../images/aboutMeImg/meImg2.jpg";
+const aboutMeHeaderImg = "/images/aboutMeImg/aboutMeHeader.png";
+const meImg2 = "/images/aboutMeImg/meImg2.jpg";
 
 const OmniePage = () => {
   useEffect(() => {

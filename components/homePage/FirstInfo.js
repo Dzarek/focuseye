@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const bgImg = "../../images/logoBg.png";
+const bgImg = "/images/logoBg.png";
 
 const FirstInfo = () => {
   useEffect(() => {

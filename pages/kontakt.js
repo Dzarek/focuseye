@@ -4,8 +4,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 
-const contactHeaderImg = "../images/contact/contactHeader.png";
-const contactPersonImg2 = "../images/contact/contactPerson2.png";
+const contactHeaderImg = "/images/contact/contactHeader.png";
+const contactPersonImg2 = "/images/contact/contactPerson2.png";
 
 const BlogPage = () => {
   useEffect(() => {

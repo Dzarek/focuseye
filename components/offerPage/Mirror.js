@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-const mirrorImg1 = "../images/ofertaImg/fotolustro/fotolustro2.jpg";
+const mirrorImg1 = "/images/ofertaImg/fotolustro/fotolustro2.jpg";
 
 const Mirror = () => {
   return (

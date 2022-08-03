@@ -5,8 +5,8 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Link from "next/link";
 
-const blogHeaderImg = "../images/blog/blogHeader.png";
-const articleImg = "../images/ofertaImg/zakochani2.jpg";
+const blogHeaderImg = "/images/blog/blogHeader.png";
+const articleImg = "/images/ofertaImg/zakochani2.jpg";
 
 const text = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
 quo id repellat illum error totam dicta temporibus quam
