@@ -1,20 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { ImCross } from "react-icons/im";
+import Link from "next/link";
 
 const DetailsOffer = ({ oneOffer, setShowDetails }) => {
-  const {
-    title,
-    price,
-    numberOfImages,
-    time,
-    place,
-    ready,
-    album,
-    quality,
-    description,
-    imgs,
-  } = oneOffer;
+  const { title, category, description, imgs } = oneOffer;
   return (
     <Wrapper className="detailsBG">
       <div className="details">
@@ -24,7 +14,12 @@ const DetailsOffer = ({ oneOffer, setShowDetails }) => {
           </button>
         </header>
         <h2 className="detailsTitle">{title}</h2>
-        <p>{description}</p>
+        <div className="detailsContent">
+          <p>{description}</p>
+          <Link href={`/oferta/${category}`}>
+            <button className="detailsBtn">szczegóły</button>
+          </Link>
+        </div>
         {/* <div className="detailsContent">
           <div className="firstPart">
             <h3 className="detailsPrice">
@@ -127,68 +122,41 @@ const Wrapper = styled.div`
     }
     .detailsContent {
       margin: 5vh auto;
-      width: 90%;
+      width: 80%;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
       align-items: flex-start;
       font-family: var(--textFont);
       @media screen and (max-width: 800px) {
         flex-direction: column;
       }
-      .firstPart {
-        width: 40%;
-        display: flex;
-        flex-direction: column;
-        @media screen and (max-width: 800px) {
-          width: 90%;
-          margin: 0 auto;
-        }
-        h3 {
-          margin-bottom: 2vh;
-          font-size: 1.2rem;
-          span {
-            text-transform: uppercase;
-            /* font-family: var(--titleFont); */
-            color: #fff;
-            text-shadow: 1px 1px 1px black;
-            margin-right: 5px;
-          }
-        }
+      p {
+        font-size: 1.3rem;
+        line-height: 1.5;
+        margin-bottom: 5vh;
+        text-align: center;
       }
-      .detailsBorder {
-        background: var(--secondaryColor3);
-        width: 2px;
-        height: 40vh;
-        justify-self: center;
-        @media screen and (max-width: 800px) {
-          width: 70vw;
-          height: 2px;
-          margin: 5vh auto;
-        }
-      }
-      .secondPart {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        @media screen and (max-width: 800px) {
-          width: 90%;
-          margin: 0 auto;
-        }
-        h3 {
-          text-transform: uppercase;
-          font-family: var(--titleFont);
-          color: #fff;
-          text-shadow: 2px 2px 2px black;
-          font-size: 2rem;
-          margin-bottom: 2vh;
-        }
-        p {
-          margin-bottom: 3vh;
-          font-size: 1.3rem;
-          font-weight: 400;
-        }
-      }
+    }
+  }
+  .detailsBtn {
+    border: 2px solid #fff;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: var(--titleFont);
+    text-transform: uppercase;
+    padding: 10px 0px;
+    width: 160px;
+    margin: 2vh auto;
+    font-weight: 800;
+    color: #fff;
+    background: var(--secondaryColor);
+    transition: 0.4s;
+    cursor: pointer;
+    :hover {
+      background: #fff;
+      border: 2px solid var(--secondaryColor);
+      color: var(--secondaryColor);
     }
   }
 `;

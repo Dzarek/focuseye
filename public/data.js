@@ -545,7 +545,7 @@ export const offers = [
     quality: "Full HD",
     description:
       "9 miesięcy oczekiwania na poznanie maleńkiego człowieczka. Szczęście, którego nie można porównać z niczym innym. To czas kiedy rysuje się nowa historia, rodziny i dziecka. Daj mu poznać to szczęście jakim obdarzył Was rodziców kiedy był w mamusi brzuszku i pozostaw mu pamiątkę z tego okresu :)",
-    imgs: [offerCiazowe1, offerCiazowe2],
+    imgs: [offerCiazowe1, ciaza19],
   },
   {
     id: 2,
@@ -560,7 +560,7 @@ export const offers = [
     quality: "Full HD",
     description:
       "Kiedy widzisz po raz pierwszy maleńkie stopki swojej córeczki, swojego synka, masz ochotę je zacałować i najlepiej żeby na zawsze już takie słodziutkie zostały :) Mam dla Ciebie wspaniałą wiadomość, to się da zrobić :) Wystarczy, że pozwolisz mi zachować pierwsze dni z życia Twojego bobaska, a ja gwarantuję Ci, że te chwile zostaną z Wami na zawsze!",
-    imgs: [offerNoworodkowe1, offerNoworodkowe2],
+    imgs: [offerNoworodkowe1, noworodkowe22],
   },
   {
     id: 3,
@@ -575,7 +575,7 @@ export const offers = [
     quality: "Full HD",
     description:
       "Pierwsze Ważne wydarzenie w życiu Twojego dziecka, które zasługuje na pamiątkę. To tez świetna okazja do rodzinnych ujęć. Dziadkowie, ciocie i wujkowie będą szczęśliwi jeśli podarujcie im wspólne zdjęcie z najmłodszym członkiem rodziny :)",
-    imgs: [offerChrzest1, offerChrzest2],
+    imgs: [offerChrzest1, chrzest5],
   },
   {
     id: 4,
@@ -590,7 +590,7 @@ export const offers = [
     quality: "Full HD",
     description:
       "To chwila z Waszego życia. Czas tak szybko ucieka, dzieci rosną i zmieniają się z prędkością światła. Każdy rok niesie ze sobą zmiany, warto kolekcjonować momenty by cieszyć się nimi na każdym etapie życia.",
-    imgs: [offerRodzinna1, offerRodzinna2],
+    imgs: [offerRodzinna1, rodzinne3],
   },
   {
     id: 5,
@@ -605,7 +605,7 @@ export const offers = [
     quality: "Full HD",
     description:
       "Jeden a tak wspaniały dzień w życiu dwójki ludzi zasługuje na uwiecznienie magicznych chwil. Pozwól mi opowiedzieć Waszą cudowną historię z tego dnia.",
-    imgs: [offerSlub1, offerSlub2],
+    imgs: [offerSlub1, sluby30],
   },
   {
     id: 6,
@@ -620,14 +620,14 @@ export const offers = [
     quality: "Full HD",
     description:
       "Każdy etap w związku to jeszcze większa miłość. Pozwól mi zatroszczyć się o Wasze miłosne wspomnienia jako zalążek dla dalszej wspólnej drogi życia.",
-    imgs: [offerZakochani1, offerZakochani2],
+    imgs: [offerZakochani1, zakochani34],
   },
 ];
 
 export const headerData = [
   {
     id: 1,
-    img: offerZakochani2,
+    img: zakochani2,
     imgM: offerZakochani1,
     shortTitle: "sesje miłosne",
     longTitle: "Romantyczna sesja zakochanych",

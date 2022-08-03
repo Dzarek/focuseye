@@ -68,7 +68,7 @@ const Wrapper = styled.div`
     color: white;
     .title {
       text-transform: uppercase;
-      width: 80%;
+      width: 90%;
       border-bottom: 2px solid white;
       padding-bottom: 15px;
       font-size: 2rem;

@@ -35,6 +35,7 @@ const OneOffer = (props) => {
     ciaza8,
   ];
   const { title, headerImg } = props;
+  console.log(headerImg);
   if (!title) {
     return (
       <Wrapper>
