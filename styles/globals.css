@@ -39,8 +39,6 @@ body {
 }
 
 
-
-
 .app {
   --secondaryColor: #94693c;
   /* --secondaryColor3: #3b1806; */
@@ -49,7 +47,7 @@ body {
   --appBgColor: #fff;
   --sectionBgColor: #fcf0e5;
   --singleOfferBgColor: #cdb596;
-  --singleOfferTitle: #4624146f;
+  /* --singleOfferTitle: #4624146f; */
   --singleOfferTitle: #d8af7d55;
   --faqHeaderBgColor: #e2c298;
   --aboutMeBgColor: #f6dfc3;
@@ -59,7 +57,6 @@ body {
   --activeNavLink: #d9b89c;
   --footerBgColor: #eee6e0;
   --galleryContentColor: #111;
-  --galleryBtnBg: rgb(30, 30, 30);
   --logoBgMobile: rgba(0, 0, 0, 0.7);
   --textFont: 'EB Garamond', serif;
   --titleFont: 'Poppins', sans-serif;
@@ -167,8 +164,10 @@ body {
 .cookieLink {
   margin-left: 10px;
   cursor: pointer;
-  color: var(--secondaryColor);
+  color: var(--activeNavLink);
 }
+
+
 
 @keyframes singleOfferHeader {
   0% {

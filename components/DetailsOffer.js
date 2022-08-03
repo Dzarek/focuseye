@@ -4,7 +4,7 @@ import { ImCross } from "react-icons/im";
 import Link from "next/link";
 
 const DetailsOffer = ({ oneOffer, setShowDetails }) => {
-  const { title, category, description, imgs } = oneOffer;
+  const { title, category, shortDescription, imgs } = oneOffer;
   return (
     <Wrapper className="detailsBG">
       <div className="details">
@@ -15,7 +15,7 @@ const DetailsOffer = ({ oneOffer, setShowDetails }) => {
         </header>
         <h2 className="detailsTitle">{title}</h2>
         <div className="detailsContent">
-          <p>{description}</p>
+          <p>{shortDescription}</p>
           <Link href={`/oferta/${category}`}>
             <button className="detailsBtn">szczegóły</button>
           </Link>

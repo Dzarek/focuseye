@@ -1,12 +1,10 @@
 import { useState } from "react";
 import styled from "styled-components";
-// import Cookie from "./CookiePage";
-// import CookieConsent from "react-cookie-consent";
 import { offers } from "../public/data";
 
 let minDate = new Date().toISOString().slice(0, 10);
 
-const MyForm = () => {
+const MyForm = ({ setVisibleCookie }) => {
   const [status, setStatus] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -15,7 +13,6 @@ const MyForm = () => {
   const [box, setBox] = useState(false);
   const [category, setCategory] = useState("---");
   const [date, setDate] = useState(minDate);
-  // const [visibleCookie, setVisibleCookie] = useState(false);
 
   const mailBody =
     `IMIĘ I NAZWISKO:  ` +
@@ -173,38 +170,6 @@ const MyForm = () => {
           )}
         </>
       </Wrapper>
-      {/* <CookieConsent
-        buttonText="Akceptuje"
-        cookieName="myAwesomeCookieName2"
-        className="cookieInfo"
-        style={{
-          background: "rgba(0,0,0, .8)",
-          fontSize: "18px",
-          display: "flex",
-          justifyContent: "space-around",
-          alignItems: "center",
-          zIndex: 999999,
-        }}
-        buttonStyle={{
-          color: "white",
-          fontSize: "18px",
-          backgroundColor: "#4f7e52",
-          padding: "10px",
-          borderRadius: "5px",
-        }}
-        expires={7}
-      >
-        Strona korzysta z plików cookies. Pozostając na niej wyrażasz zgodę na
-        ich używanie. <br /> Ze szczegółowymi informacjami dotyczącymi cookies
-        na tej stronie można się zapoznać tutaj:
-        <span
-          onClick={() => this.setState({ visibleCookie: true })}
-          className="cookieLink"
-        >
-          (Polityka Prywatności)
-        </span>
-        .
-      </CookieConsent> */}
     </>
   );
 };

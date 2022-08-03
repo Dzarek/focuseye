@@ -303,7 +303,7 @@ const Wrapper = styled.div`
   }
   .upBtn {
     position: fixed;
-    bottom: 7vh;
+    bottom: 3vh;
     right: 3vw;
     font-size: 2rem;
     background: transparent;

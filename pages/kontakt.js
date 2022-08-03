@@ -7,7 +7,7 @@ import { useEffect } from "react";
 const contactHeaderImg = "/images/contact/contactHeader.png";
 const contactPersonImg2 = "/images/contact/contactPerson2.png";
 
-const BlogPage = () => {
+const KontaktPage = ({ setVisibleCookie }) => {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
@@ -23,7 +23,7 @@ const BlogPage = () => {
       <div className="contactContainer">
         <section className="contactForm">
           <h3>Napisz do mnie przez formularz kontaktowy</h3>
-          <MyForm />
+          <MyForm setVisibleCookie={setVisibleCookie} />
         </section>
         <img
           data-aos="zoom-out"
@@ -177,4 +177,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default BlogPage;
+export default KontaktPage;

@@ -5,86 +5,124 @@ import { FaMoneyBillWave, FaCarAlt } from "react-icons/fa";
 import { RiImageAddLine } from "react-icons/ri";
 import { BiPhotoAlbum } from "react-icons/bi";
 
-const ciazaGrafika2 = "/images/ofertaImg/singleOffer/ciazaGrafika2.png";
-const ciazaGrafika3 = "/images/ofertaImg/singleOffer/ciazaGrafika3.png";
-
-const PakietSingleOffer = () => {
+const PakietSingleOffer = ({ pakiety, smallGraphic }) => {
+  const { basic, premium } = pakiety;
   return (
     <Wrapper>
       <div className="pakiet basic">
-        <h2>Pakiet BASIC - w sam raz na początek</h2>
-        <img src={ciazaGrafika2} alt="" />
+        <h2>{basic.name}</h2>
+        <img src={smallGraphic[0]} alt="" />
         <div className="infoContent">
           <article>
             <TiCamera className="icon" />
-            <p>15 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm</p>
+            <p>{basic.numberOfImages}</p>
           </article>
           <article>
             <TiTime className="icon" />
-            <p>czas: 1h</p>
+            <p>{basic.time}</p>
           </article>
           <article>
             <TiLocation className="icon" />
-            <p>miejsce: plener lub dom</p>
+            <p>{basic.place}</p>
           </article>
           <article>
             <MdOutlinePhotoSizeSelectLarge className="icon" />
-            <p>rozdzielczość: pełna + wersja pod publikację w Internecie</p>
+            <p>{basic.quality}</p>
           </article>
           <article>
             <FaMoneyBillWave className="icon" />
-            <p>inwestujesz: 500 zł</p>
+            <p>{basic.price}</p>
           </article>
           <article>
             <RiImageAddLine className="icon" />
-            <p>dodatkowe ujęcie: 35 zł/szt</p>
+            <p>{basic.extraImg}</p>
           </article>
           <article>
             <FaCarAlt className="icon" />
-            <p>dojazd powyżej 20 km od Tuchowa: 1zł/1km</p>
+            <p>{basic.drive}</p>
           </article>
           <article>
             <BiPhotoAlbum className="icon" />
-            <p>gotowe zdjęcia: do 3 tygodni</p>
+            <p>{basic.ready}</p>
           </article>
         </div>
       </div>
       <div className="separateLine"></div>
+      {pakiety.special && (
+        <div className="pakiet">
+          <img src={smallGraphic[1]} alt="" />
+          <h2>{pakiety.special.name}</h2>
+          <div className="infoContent">
+            <article>
+              <TiCamera className="icon" />
+              <p>{pakiety.special.numberOfImages}</p>
+            </article>
+            <article>
+              <TiTime className="icon" />
+              <p>{premium.time}</p>
+            </article>
+            <article>
+              <TiLocation className="icon" />
+              <p>{premium.place}</p>
+            </article>
+            <article>
+              <MdOutlinePhotoSizeSelectLarge className="icon" />
+              <p>{premium.quality}</p>
+            </article>
+            <article>
+              <FaMoneyBillWave className="icon" />
+              <p>{premium.price}</p>
+            </article>
+            <article>
+              <RiImageAddLine className="icon" />
+              <p>{premium.extraImg}</p>
+            </article>
+            <article>
+              <FaCarAlt className="icon" />
+              <p>{premium.drive}</p>
+            </article>
+            <article>
+              <BiPhotoAlbum className="icon" />
+              <p>{premium.ready}</p>
+            </article>
+          </div>
+        </div>
+      )}
       <div className="pakiet pro">
-        <img src={ciazaGrafika3} alt="" />
-        <h2>Pakiet PRO - wszystko czego potrzebujesz</h2>
+        <img src={smallGraphic[1]} alt="" />
+        <h2>{premium.name}</h2>
         <div className="infoContent">
           <article>
             <TiCamera className="icon" />
-            <p>30 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm</p>
+            <p>{premium.numberOfImages}</p>
           </article>
           <article>
             <TiTime className="icon" />
-            <p>czas: 1-1,5h</p>
+            <p>{premium.time}</p>
           </article>
           <article>
             <TiLocation className="icon" />
-            <p>miejsce: plener lub dom</p>
+            <p>{premium.place}</p>
           </article>
           <article>
             <MdOutlinePhotoSizeSelectLarge className="icon" />
-            <p>rozdzielczość: pełna + wersja pod publikację w Internecie</p>
+            <p>{premium.quality}</p>
           </article>
           <article>
             <FaMoneyBillWave className="icon" />
-            <p>inwestujesz: 800 zł</p>
+            <p>{premium.price}</p>
           </article>
           <article>
             <RiImageAddLine className="icon" />
-            <p>dodatkowe ujęcie: 30 zł/szt</p>
+            <p>{premium.extraImg}</p>
           </article>
           <article>
             <FaCarAlt className="icon" />
-            <p>dojazd powyżej 20 km od Tuchowa: 1zł/1km</p>
+            <p>{premium.drive}</p>
           </article>
           <article>
             <BiPhotoAlbum className="icon" />
-            <p>gotowe zdjęcia: do 3 tygodni</p>
+            <p>{premium.ready}</p>
           </article>
         </div>
       </div>
@@ -98,6 +136,7 @@ const Wrapper = styled.section`
   justify-content: space-between;
   align-items: center;
   margin: 10vh auto;
+  flex-wrap: wrap;
 
   .separateLine {
     height: 50vh;

@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { ImCross } from "react-icons/im";
 
-const Cookie = ({ handleVisibleCookie }) => {
+const Cookie = ({ setVisibleCookie }) => {
   return (
     <>
       <Wrapper>
-        <button onClick={handleVisibleCookie}>
+        <button onClick={() => setVisibleCookie(false)}>
           <ImCross />
         </button>
         <h1>Polityka Prywatności i Cookies</h1>
@@ -20,8 +20,9 @@ const Cookie = ({ handleVisibleCookie }) => {
         </p>
         <p>
           {" "}
-          Administratorem Pani/Pana danych osobowych jest Kamil Łach, 30-200
-          Kraków, adres e-mail: aaaaa@gmail.com tel. 123 456 789.{" "}
+          Administratorem Pani/Pana danych osobowych jest FocusEye Mobilne
+          Studio Fotografii - Sylwia Sajdak, adres e-mail:
+          kontakt.focuseye@gmail.com tel. 798 698 605.{" "}
         </p>
         <p>
           {" "}
@@ -34,14 +35,14 @@ const Cookie = ({ handleVisibleCookie }) => {
           nazwisko, adres korespondencyjny, mail, numer telefonu, adres
           rozliczeniowy, NIP) mogą być przekazane Administratorowi za pomocą
           podanego numeru telefonu, adresu e-mail, oraz formularza dostępnego na
-          stronie internetowej kamilfotograf.pl. Dane mogą być zbierane także
-          podczas firmowych eventów jak wystawy, targi, pokazy.{" "}
+          stronie internetowej focuseye.pl. Dane mogą być zbierane także podczas
+          firmowych eventów jak wystawy, targi, pokazy.{" "}
         </p>
         <p>
           {" "}
-          Nasza strona internetowa robert-telefony.pl nie zbiera w sposób
-          automatyczny żadnych informacji, z wyjątkiem informacji zawartych w
-          plikach cookies. Więcej o plikach cookies (tzw. „ciasteczka”) w naszej
+          Nasza strona internetowa focuseye.pl nie zbiera w sposób automatyczny
+          żadnych informacji, z wyjątkiem informacji zawartych w plikach
+          cookies. Więcej o plikach cookies (tzw. „ciasteczka”) w naszej
           Polityce cookies.{" "}
         </p>
         <p>
@@ -106,11 +107,9 @@ const Cookie = ({ handleVisibleCookie }) => {
           RODO.{" "}
         </p>
         <p>
-          <strong>
-            Dane osobowe pozostawione w serwisie nie zostaną sprzedane ani
-            udostępnione osobom trzecim, zgodnie z przepisami Ustawy o ochronie
-            danych osobowych.
-          </strong>
+          Dane osobowe pozostawione w serwisie nie zostaną sprzedane ani
+          udostępnione osobom trzecim, zgodnie z przepisami Ustawy o ochronie
+          danych osobowych.
         </p>
         <h2>Polityka Cookies</h2>
         <p>
@@ -126,7 +125,7 @@ const Cookie = ({ handleVisibleCookie }) => {
         <p>
           Podmiotem zamieszczającym na urządzeniu końcowym Użytkownika Serwisu
           pliki cookies oraz uzyskującym do nich dostęp jest operator Serwisu –
-          Kamil Łach.
+          FocusEye Mobilne Studio Fotografii - Sylwia Sajdak.
         </p>
         <p>
           Pliki cookies wykorzystywane są w celu: <br /> 1. Dostosowania
@@ -186,7 +185,7 @@ const Wrapper = styled.div`
   padding: 30px;
   border-radius: 5px;
   border: 3px solid var(--secondaryColor);
-  box-shadow: 0 0 8vw 5vw black;
+  box-shadow: 3vw 3vw 3vw 15vw var(--aboutMeBgColor);
   h2,
   h1 {
     text-align: center;
@@ -196,6 +195,7 @@ const Wrapper = styled.div`
   h2 {
     color: var(--secondaryColor);
     text-transform: uppercase;
+    margin: 5vh auto;
   }
   button {
     position: absolute;

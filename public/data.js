@@ -27,8 +27,22 @@ const offerSlub1 = "/images/ofertaImg/slub1.jpg";
 const offerSlub2 = "/images/ofertaImg/slub2.jpg";
 const offerSlub3 = "/images/ofertaImg/slub3.jpg";
 const offerZakochani1 = "/images/ofertaImg/zakochani1.jpg";
-// const offerZakochani2 = "/images/ofertaImg/zakochani2.jpg";
 const offerZakochani3 = "/images/ofertaImg/zakochani3.jpg";
+
+//SINGLE OFFER - GRAPHIC
+const rodzinaGrafika = "/images/ofertaImg/singleOffer/rodzinaGrafika.png";
+
+const zakochaniGrafika = "/images/ofertaImg/singleOffer/zakochaniGrafika.png";
+
+const ciazaGrafika = "/images/ofertaImg/singleOffer/ciazaGrafika.png";
+const ciazaGrafika2 = "/images/ofertaImg/singleOffer/ciazaGrafika2.png";
+const ciazaGrafika3 = "/images/ofertaImg/singleOffer/ciazaGrafika3.png";
+
+const noworodekGrafika = "/images/ofertaImg/singleOffer/noworodekGrafika.png";
+
+const slubGrafika = "/images/ofertaImg/singleOffer/slubGrafika.png";
+
+const chrzcinyGrafika = "/images/ofertaImg/singleOffer/chrzcinyGrafika.png";
 
 // GALERIA - CIĄŻA
 const ciaza1 = "/images/gallery/ciazowe/1.jpg";
@@ -54,6 +68,12 @@ const ciaza20 = "/images/gallery/ciazowe/20.jpg";
 const ciaza21 = "/images/gallery/ciazowe/21.jpg";
 const ciaza22 = "/images/gallery/ciazowe/22.jpg";
 const ciaza23 = "/images/gallery/ciazowe/23.jpg";
+
+const ciazaP1 = "/images/ofertaImg/singleOffer/ciaza/poradnikCiaza1.jpg";
+const ciazaP2 = "/images/ofertaImg/singleOffer/ciaza/poradnikCiaza2.jpg";
+const ciazaP3 = "/images/ofertaImg/singleOffer/ciaza/poradnikCiaza3.jpg";
+const ciazaP4 = "/images/ofertaImg/singleOffer/ciaza/poradnikCiaza4.jpg";
+
 // GALERIA - CHRZEST
 const chrzest1 = "/images/gallery/chrzest/1.jpg";
 const chrzest2 = "/images/gallery/chrzest/2.jpg";
@@ -541,92 +561,274 @@ export const offers = [
   {
     id: 1,
     category: "brzuszkowe",
-    title: "Sesje Brzuszkowe",
-    price: 200,
-    numberOfImages: 20,
-    time: "2h",
-    place: "plener,dom",
-    ready: "do 3 tygodni",
-    album: "za dodatkową opłatą",
-    quality: "Full HD",
-    description:
+    title: "Sesje Brzuszkowe Lifestyle",
+    pakiety: {
+      basic: {
+        name: "Pakiet BASIC w sam raz na początek:",
+        numberOfImages:
+          "15 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
+        time: "czas: 1h",
+        place: "miejsce: plener lub dom",
+        quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
+        price: "inwestujesz: 500 zł",
+        extraImg: "dodatkowe ujęcie: 35 zł/szt",
+        drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
+        ready: "gotowe zdjęcia: do 3 tygodni",
+      },
+      premium: {
+        name: "Pakiet PRO wszystko czego potrzebujesz:",
+        numberOfImages:
+          "30 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
+        time: "czas: 1-1,5h",
+        place: "miejsce: plener lub dom",
+        quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
+        price: "inwestujesz: 800 zł",
+        extraImg: "dodatkowe ujęcie: 30 zł/szt",
+        drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
+        ready: "gotowe zdjęcia: do 3 tygodni",
+      },
+    },
+    shortDescription:
       "9 miesięcy oczekiwania na poznanie maleńkiego człowieczka. Szczęście, którego nie można porównać z niczym innym. To czas kiedy rysuje się nowa historia, rodziny i dziecka. Daj mu poznać to szczęście jakim obdarzył Was rodziców kiedy był w mamusi brzuszku i pozostaw mu pamiątkę z tego okresu :)",
+    longDescription: [
+      "To jest ten moment! Przyznasz, że duma z rosnącego brzuszka zachęca do fotografowania go każdego dnia? Też tak miałam <3 Łap więc kilka porad przed sesją ciążową!",
+      "Sesje dobrze jest wykonać na przełomie 7/8 miesiąca ciąży, kiedy brzuszek jest już ładnie zaokrąglony Na dzień przed sesją przede wszystkim odpocznij, wyśpij się, a kilka dni wcześniej możesz zafundować swojej cerze peeling enzymatyczny (jeśli już taki robiłaś w czasie ciąży). Jeżeli masz dylemat w co się ubrać to podeślij mi swoje propozycje, pomogę Ci w doborze garderoby. Od siebie dodam, że świetnie sprawdzają się sukienki podkreślające brzuszek lub jeansowe ogrodniczki, fajnie też prezentują się krótkie bluzki lub topy odkrywające ciążowy brzuszek i jeansy do tego Warto założyć białą lub cielistą bieliznę pod sukienkę. Jeśli na sesji będzie Twój mąż to idźcie w jeden styl, np. elegancki, sielankowy lub sportowy.",
+      "Na sesje zabierz tylko najpotrzebniejsze rzeczy, tj. szczotka do włosów, sukienka na przebranie, coś na komary i kleszcze, małą wodę. Możesz też zabrać dodatki tj. kapelusz (ja też zawsze mam go przy sobie ;p), wianek, buciki dla dziecka lub drobną zabawkę. Jeśli masz ochotę możesz umówić się do swojej kosmetyczki na makijaż.",
+      "Spotykamy się maksymalnie 1,5 h przed zachodem słońca. Sesje w zimie wykonuję w zaciszu Twojego domu w godzinach 10-13.",
+      "Zerknij jak ułożyć ciążowy brzuszek, poćwicz w domu przed lustrem, sama lub z drugą połówką. Pamiętaj by być wyprostowaną i ściągać łopatki. Zawsze przypominam o tym na sesji, ale ćwicząc w domu pozy łatwiej będzie nam pracować już w trakcie sesji.",
+    ],
     imgs: [offerCiazowe1, offerCiazowe2],
+    graphic: ciazaGrafika,
+    smallGraphic: [ciazaGrafika2, ciazaGrafika3],
+    smallGallery: [
+      ciaza1,
+      ciaza8,
+      ciaza19,
+      ciaza11,
+      ciazaP1,
+      ciazaP2,
+      ciazaP3,
+      ciazaP4,
+    ],
   },
   {
     id: 2,
     category: "noworodkowe",
     title: "Sesje Noworodkowe Lifestyle",
-    price: 300,
-    numberOfImages: 30,
-    time: "3h",
-    place: "plener,dom",
-    ready: "do 5 tygodni",
-    album: "za dodatkową opłatą",
-    quality: "Full HD",
-    description:
+    pakiety: {
+      basic: {
+        name: "Pakiet BASIC w sam raz na początek:",
+        numberOfImages:
+          "10 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
+        time: "czas: 1h",
+        place: "miejsce: dom",
+        quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
+        price: "inwestujesz: 500 zł",
+        extraImg: "dodatkowe ujęcie: 35 zł/szt",
+        drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
+        ready: "gotowe zdjęcia: do 3 tygodni",
+      },
+      premium: {
+        name: "Pakiet PRO wszystko czego potrzebujesz:",
+        numberOfImages:
+          "20 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
+        time: "czas: 1-1,5h",
+        place: "miejsce: dom",
+        quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
+        price: "inwestujesz: 750 zł",
+        extraImg: "dodatkowe ujęcie: 30 zł/szt",
+        drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
+        ready: "gotowe zdjęcia: do 3 tygodni",
+      },
+    },
+    shortDescription:
       "Kiedy widzisz po raz pierwszy maleńkie stopki swojej córeczki, swojego synka, masz ochotę je zacałować i najlepiej żeby na zawsze już takie słodziutkie zostały :) Mam dla Ciebie wspaniałą wiadomość, to się da zrobić :) Wystarczy, że pozwolisz mi zachować pierwsze dni z życia Twojego bobaska, a ja gwarantuję Ci, że te chwile zostaną z Wami na zawsze!",
+    longDescription: [
+      "Pierwsze dni życia to szczególny czas, który zatrzymam dla Was najpiękniej jak potrafię.",
+      "Maleńkie stópki, najsłodsze minki, czułe gesty, to Wasz cały świat, prawda?",
+      "Podaruję Wam piękne kadry wypełnione po brzegi miłością :)",
+      "Sesje noworodkową warto wykonać do 14 dnia życia dziecka. ",
+    ],
     imgs: [offerNoworodkowe1, offerNoworodkowe3],
+    graphic: noworodekGrafika,
+    smallGraphic: [ciazaGrafika2, ciazaGrafika3],
+    smallGallery: [noworodkowe9, noworodkowe3, noworodkowe26, noworodkowe22],
   },
   {
     id: 3,
     category: "chrzty święte",
     title: "Chrzty Święte",
-    price: 100,
-    numberOfImages: 10,
-    time: "1h",
-    place: "plener,dom",
-    ready: "do 2 tygodni",
-    album: "za dodatkową opłatą",
-    quality: "Full HD",
-    description:
+    pakiety: {
+      basic: {
+        name: "Pakiet BASIC w sam raz na początek:",
+        numberOfImages:
+          "30 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
+        // time: "czas: do ustalenia",
+        place: "Kościół + plener w pobliżu kościoła",
+        quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
+        webGallery: "galeria internetowa dla gości: TAK",
+        price: "inwestujesz: 450 zł",
+        // extraImg: "dodatkowe ujęcie: 35 zł/szt",
+        drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
+        ready: "gotowe zdjęcia: do 3 tygodni",
+      },
+      special: {
+        name: "Pakiet SPECIAL:",
+        numberOfImages:
+          "90-100 zdjęć elektronicznych i 30 papierowych w rozmiarze 15x23 cm",
+        // time: "czas: 1-1,5h",
+        place: "przygotowania w domu, Kościół, przyjęcie max 1,5h",
+        quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
+        webGallery: "galeria internetowa dla gości: TAK",
+        price: "inwestujesz: 850 zł",
+        drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
+        ready: "gotowe zdjęcia: do 3 tygodni",
+      },
+      premium: {
+        name: "Pakiet PRO wszystko czego potrzebujesz:",
+        numberOfImages:
+          "wszystkie najlepsze ujęcia z dnia oraz 50 zdjęć w wersji papierowej w rozmiarze 15x23 cm",
+        // time: "czas: 1-1,5h",
+        place: "przygotowania w domu, Kościół, przyjęcie max 1,5h",
+        quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
+        webGallery: "galeria internetowa dla gości: TAK",
+        album: "Album: TAK, 20-stronicowy z personalizowanym grawerem",
+        price: "inwestujesz: 1300 zł",
+        extraImg: "dodatkowe ujęcie: 30 zł/szt",
+        drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
+        ready: "gotowe zdjęcia: do 3 tygodni",
+      },
+    },
+    shortDescription:
       "Pierwsze Ważne wydarzenie w życiu Twojego dziecka, które zasługuje na pamiątkę. To tez świetna okazja do rodzinnych ujęć. Dziadkowie, ciocie i wujkowie będą szczęśliwi jeśli podarujcie im wspólne zdjęcie z najmłodszym członkiem rodziny :)",
+    longDescription: [
+      "Pierwszy sakrament to wielkie wydarzenie. Pozwól mi stworzyć reportaż z tak pięknego dnia dla Waszej rodziny. Zobacz jakie przygotowałam na tę okazję pakiety :)",
+    ],
     imgs: [offerChrzest1, offerChrzest3],
+    graphic: chrzcinyGrafika,
+    smallGraphic: [ciazaGrafika2, ciazaGrafika3],
+    smallGallery: [chrzest2, chrzest28, chrzest41, chrzest12],
   },
   {
     id: 4,
     category: "rodzinne",
     title: "Sesje Rodzinne Lifestyle",
-    price: 300,
-    numberOfImages: 30,
-    time: "2h",
-    place: "plener,dom",
-    ready: "do 4 tygodni",
-    album: "za dodatkową opłatą",
-    quality: "Full HD",
-    description:
+    pakiety: {
+      basic: {
+        name: "Pakiet BASIC w sam raz na początek:",
+        numberOfImages:
+          "15 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
+        time: "czas: 1h",
+        place: "miejsce: plener lub dom",
+        quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
+        price: "inwestujesz: 500 zł",
+        extraImg: "dodatkowe ujęcie: 35 zł/szt",
+        drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
+        ready: "gotowe zdjęcia: do 3 tygodni",
+      },
+      premium: {
+        name: "Pakiet PRO wszystko czego potrzebujesz:",
+        numberOfImages:
+          "30 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
+        time: "czas: 1-1,5h",
+        place: "miejsce: plener lub dom",
+        quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
+        price: "inwestujesz: 800 zł",
+        extraImg: "dodatkowe ujęcie: 30 zł/szt",
+        drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
+        ready: "gotowe zdjęcia: do 3 tygodni",
+      },
+    },
+    shortDescription:
       "To chwila z Waszego życia. Czas tak szybko ucieka, dzieci rosną i zmieniają się z prędkością światła. Każdy rok niesie ze sobą zmiany, warto kolekcjonować momenty by cieszyć się nimi na każdym etapie życia.",
+    longDescription: [
+      "Rodzinna Sesja lifestyle to chwila, ułamek Waszego życia, która pozostanie z Wami na zawsze. Z nieskrywaną radością zadbam o spontaniczne, ciepłe, emocjonalne zdjęcia ! :) ",
+    ],
     imgs: [offerRodzinna1, offerRodzinna3],
+    graphic: rodzinaGrafika,
+    smallGraphic: [ciazaGrafika2, ciazaGrafika3],
+    smallGallery: [rodzinne3, rodzinne13, rodzinne7, rodzinne9],
   },
   {
     id: 5,
     category: "ślubne",
     title: "Sesja Ślubna",
-    price: 500,
-    numberOfImages: 100,
-    time: "4h",
-    place: "plener",
-    ready: "do 6 tygodni",
-    album: "za dodatkową opłatą",
-    quality: "Full HD",
-    description:
+    pakiety: {
+      basic: {
+        name: "Pakiet BASIC w sam raz na początek:",
+        numberOfImages:
+          "15 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
+        time: "czas: 1h",
+        place: "miejsce: plener lub dom",
+        quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
+        price: "inwestujesz: 500 zł",
+        extraImg: "dodatkowe ujęcie: 35 zł/szt",
+        drive: "dojazd powyżej 20 km od Tuchowa : 1zł/1km",
+        ready: "gotowe zdjęcia : do 3 tygodni",
+      },
+      premium: {
+        name: "Pakiet PRO wszystko czego potrzebujesz:",
+        numberOfImages:
+          "30 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
+        time: "czas: 1-1,5h",
+        place: "miejsce: plener lub dom",
+        quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
+        price: "inwestujesz: 800 zł",
+        extraImg: "dodatkowe ujęcie: 30 zł/szt",
+        drive: "dojazd powyżej 20 km od Tuchowa : 1zł/1km",
+        ready: "gotowe zdjęcia : do 3 tygodni",
+      },
+    },
+    shortDescription:
       "Jeden a tak wspaniały dzień w życiu dwójki ludzi zasługuje na uwiecznienie magicznych chwil. Pozwól mi opowiedzieć Waszą cudowną historię z tego dnia.",
+    longDescription: [
+      "Jeden wyjątkowy dzień. Opowiem Waszą historię w reportażu tworzonego z potrzeby serca. Każdy ślub jest dla mnie wyjątkowy, piękny, przeżywam go razem z Wami:). Opiszcie mi jak chcecie aby wyglądał :).",
+      "Zapisy na rok 2023 i 2024 już trwają :)",
+    ],
     imgs: [offerSlub1, offerSlub3],
+    graphic: slubGrafika,
+    smallGraphic: [ciazaGrafika2, ciazaGrafika3],
+    smallGallery: [sluby11, sluby33, sluby41, sluby68],
   },
   {
     id: 6,
     category: "miłosne",
     title: "Sesje Miłosne",
-    price: 500,
-    numberOfImages: 100,
-    time: "4h",
-    place: "plener",
-    ready: "do 6 tygodni",
-    album: "za dodatkową opłatą",
-    quality: "Full HD",
-    description:
+    pakiety: {
+      basic: {
+        name: "Pakiet BASIC w sam raz na początek:",
+        numberOfImages:
+          "15 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
+        time: "czas: 1h",
+        place: "miejsce: plener lub dom",
+        quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
+        price: "inwestujesz: 500 zł",
+        extraImg: "dodatkowe ujęcie: 35 zł/szt",
+        drive: "dojazd powyżej 20 km od Tuchowa : 1zł/1km",
+        ready: "gotowe zdjęcia : do 3 tygodni",
+      },
+      premium: {
+        name: "Pakiet PRO wszystko czego potrzebujesz:",
+        numberOfImages:
+          "30 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
+        time: "czas: 1-1,5h",
+        place: "miejsce: plener lub dom",
+        quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
+        price: "inwestujesz: 800 zł",
+        extraImg: "dodatkowe ujęcie: 30 zł/szt",
+        drive: "dojazd powyżej 20 km od Tuchowa : 1zł/1km",
+        ready: "gotowe zdjęcia : do 3 tygodni",
+      },
+    },
+    shortDescription:
       "Każdy etap w związku to jeszcze większa miłość. Pozwól mi zatroszczyć się o Wasze miłosne wspomnienia jako zalążek dla dalszej wspólnej drogi życia.",
+    longDescription: [
+      "Nie reżyseruję sesji, efekty to nasza wspólna praca od pierwszych wymienionych wiadomości. Opiszcie mi swoje pasje, sposób na spędzanie wolnego czasu, stwórzmy magiczny klimat tej sesji. ",
+    ],
     imgs: [offerZakochani1, offerZakochani3],
+    graphic: zakochaniGrafika,
+    smallGraphic: [ciazaGrafika2, ciazaGrafika3],
+    smallGallery: [zakochani4, zakochani12, zakochani35, zakochani15],
   },
 ];
 
