@@ -7,6 +7,7 @@ import { BiPhotoAlbum } from "react-icons/bi";
 
 const PakietSingleOffer = ({ pakiety, smallGraphic }) => {
   const { basic, premium } = pakiety;
+  console.log(pakiety.special);
   return (
     <Wrapper>
       <div className="pakiet basic">
@@ -144,17 +145,18 @@ const Wrapper = styled.section`
     background: var(--secondaryColor3);
   }
   .pakiet {
-    width: 50%;
+    width: 49%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
+    margin-bottom: 7vh;
 
     img {
       position: absolute;
       bottom: 0;
-      right: 10%;
+      right: 5%;
       width: 15%;
       opacity: 0.6;
     }
