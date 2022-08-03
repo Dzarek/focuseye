@@ -12,7 +12,7 @@ import ShortInstagram from "../components/homePage/ShortInstagram";
 
 const Home = ({ thumbnails }) => {
   const [showDetails, setShowDetails] = useState("");
-
+  console.log(thumbnails);
   return (
     <>
       <Head>
