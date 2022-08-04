@@ -4,9 +4,14 @@ import { SRLWrapper } from "simple-react-lightbox";
 import { IoChevronBackCircle } from "react-icons/io5";
 import { blogData } from "../../public/data";
 import Head from "next/head";
+import Loading from "../../components/Loading";
 
 const SingleArticleBlog = (props) => {
   const { title, date, text, images, headerImg, bgImg } = props;
+
+  if (!title) {
+    return <Loading />;
+  }
 
   return (
     <>

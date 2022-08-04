@@ -40,7 +40,7 @@ body {
 
 
 .app {
-  --secondaryColor: rgb(148, 105, 60);
+  --secondaryColor: #94693c;
   --secondaryColor3: #5a270d;
   --primaryColor: rgb(10, 10, 10);
   --appBgColor: #fff;
@@ -175,4 +175,21 @@ body {
   100% {
     transform: scale(1);
   }
+}
+
+.loading {
+  margin: 30vh auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading img {
+  margin-bottom: 5vh;
+}
+
+.loading h2 {
+  font-family: var(--titleFont);
+  font-weight: 600;
 }

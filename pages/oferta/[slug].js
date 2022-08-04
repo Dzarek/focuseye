@@ -6,6 +6,7 @@ import PakietSingleOffer from "../../components/offerPage/PakietSingleOffer";
 import Opinion from "../../components/offerPage/Opinion";
 import { IoChevronBackCircle } from "react-icons/io5";
 import Head from "next/head";
+import Loading from "../../components/Loading";
 
 const OneOffer = (props) => {
   const {
@@ -19,16 +20,7 @@ const OneOffer = (props) => {
   } = props;
 
   if (!title) {
-    return (
-      <Wrapper>
-        {" "}
-        <header className="headerTitle">
-          <div className="title">
-            <h2>Loading...</h2>
-          </div>
-        </header>
-      </Wrapper>
-    );
+    return <Loading />;
   }
 
   return (
