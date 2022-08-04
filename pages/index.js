@@ -17,7 +17,10 @@ const Home = ({ thumbnails, fourTitle }) => {
     <>
       <Head>
         <title>FocusEye</title>
-        <meta name="description" content="Fotografia..." />
+        <meta
+          name="description"
+          content="W fotografii zależy mi na tym aby oddać naturalność i pokazać Waszą miłość. Za każdym zaproszeniem mnie na sesję kryje się głęboka radość i wzruszenie. Domowe sesje lifestyle to jest to co kocham najbardziej, a fotografia reportażowa to ludzie! którzy mnie inspirują, poruszają i rozbudzają wyobraźnię."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* <meta
           name="google-site-verification"

@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Link from "next/link";
 import { blogData } from "../../public/data";
+import Head from "next/head";
 
 const blogHeaderImg = "/images/blog/blogHeader.png";
 
@@ -13,42 +14,55 @@ const BlogPage = () => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <Wrapper>
-      <header>
-        <div className="title">
-          <h2>Blog </h2>
-          <p data-aos="fade-up">
-            Artykuły na temat fotografii i sesji zdjęciowych.
-          </p>
+    <>
+      <Head>
+        <title>FocusEye | Blog</title>
+        <meta
+          name="description"
+          content="Artykuły na temat fotografii i sesji zdjęciowych."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo192.png" />
+        <link rel="shortcut icon" href="/logo192.png" />
+      </Head>
+      <Wrapper>
+        <header>
+          <div className="title">
+            <h2>Blog </h2>
+            <p data-aos="fade-up">
+              Artykuły na temat fotografii i sesji zdjęciowych.
+            </p>
+          </div>
+          <img src={blogHeaderImg} alt="gallery title" />
+        </header>
+        <h2 className="blogSubtitle">Lista Artykułów</h2>
+        <div className="blogContent">
+          {blogData.map((article) => {
+            const { id, slug, title, text, headerImg, date } = article;
+            return (
+              <Link key={id} href={`/blog/${slug}`}>
+                <article
+                  data-aos="flip-left"
+                  data-aos-duration="1000"
+                  data-aos-offset="300"
+                >
+                  <section className="articleImg">
+                    <img src={headerImg} alt="zdjęcie" />
+                    <span>{date}</span>
+                  </section>
+                  <section className="articleInfo">
+                    <h3>{title}</h3>
+                    <p>{text[0].slice(0, 250) + "..."}</p>
+                    <IoEnter className="icon" />
+                  </section>
+                </article>
+              </Link>
+            );
+          })}
         </div>
-        <img src={blogHeaderImg} alt="gallery title" />
-      </header>
-      <h2 className="blogSubtitle">Lista Artykułów</h2>
-      <div className="blogContent">
-        {blogData.map((article) => {
-          const { id, slug, title, text, headerImg, date } = article;
-          return (
-            <Link key={id} href={`/blog/${slug}`}>
-              <article
-                data-aos="flip-left"
-                data-aos-duration="1000"
-                data-aos-offset="300"
-              >
-                <section className="articleImg">
-                  <img src={headerImg} alt="zdjęcie" />
-                  <span>{date}</span>
-                </section>
-                <section className="articleInfo">
-                  <h3>{title}</h3>
-                  <p>{text[0].slice(0, 250) + "..."}</p>
-                  <IoEnter className="icon" />
-                </section>
-              </article>
-            </Link>
-          );
-        })}
-      </div>
-    </Wrapper>
+      </Wrapper>
+    </>
   );
 };
 

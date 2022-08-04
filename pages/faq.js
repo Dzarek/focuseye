@@ -9,63 +9,77 @@ import {
 import { TiArrowSortedDown } from "react-icons/ti";
 import { BsFillQuestionOctagonFill } from "react-icons/bs";
 import { questions } from "../public/data";
+import Head from "next/head";
 
 const faqPersonImg = "/images/faq/faqPerson.png";
 const faqHeaderImg = "/images/faq/faqHeader.png";
 
 const BlogPage = () => {
   return (
-    <Wrapper>
-      <header>
-        <img src={faqHeaderImg} alt="gallery title" />
-        <div className="title">
-          <h2>FAQ </h2>
-          <p>Odpowiedzi na najczęściej zadawane pytania.</p>
-        </div>
-      </header>
-      <h4 className="faqSubTitle">
-        Jeśli rodzą Ci się w głowie pytania dotyczące moich ofert, może
-        znajdziesz odpowiedź na nie poniżej...
-      </h4>
-      <div className="faqContainer">
-        <Accordion allowZeroExpanded={true}>
-          {questions.map((question) => {
-            const { title, info, id } = question;
-            return (
-              <AccordionItem key={id}>
-                <div className="singleQuestion">
-                  <section className="headerQuesiton">
-                    <h3>
-                      <BsFillQuestionOctagonFill className="icon" /> {title}
-                    </h3>
-                    <AccordionItemHeading>
-                      <AccordionItemButton>
-                        <button className="btn">
-                          <TiArrowSortedDown />
-                        </button>
-                      </AccordionItemButton>
-                    </AccordionItemHeading>
-                  </section>
-                  <AccordionItemPanel>
-                    <p>{info}</p>
-                  </AccordionItemPanel>
-                </div>
-              </AccordionItem>
-            );
-          })}
-        </Accordion>
-        <img
-          data-aos="zoom-out"
-          className="faqPersonImg"
-          src={faqPersonImg}
-          alt=""
+    <>
+      <Head>
+        <title>FocusEye | FAQ</title>
+        <meta
+          name="description"
+          content="Odpowiedzi na najczęściej zadawane pytania."
         />
-      </div>
-      <h4 className="faqSubTitle2">
-        Nie znalazłaś/eś opowiedzi na nurtujące Cię pytania? Zadzwoń do mnie lub
-        napisz!
-      </h4>
-    </Wrapper>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo192.png" />
+        <link rel="shortcut icon" href="/logo192.png" />
+      </Head>
+      <Wrapper>
+        <header>
+          <img src={faqHeaderImg} alt="gallery title" />
+          <div className="title">
+            <h2>FAQ </h2>
+            <p>Odpowiedzi na najczęściej zadawane pytania.</p>
+          </div>
+        </header>
+        <h4 className="faqSubTitle">
+          Jeśli rodzą Ci się w głowie pytania dotyczące moich ofert, może
+          znajdziesz odpowiedź na nie poniżej...
+        </h4>
+        <div className="faqContainer">
+          <Accordion allowZeroExpanded={true}>
+            {questions.map((question) => {
+              const { title, info, id } = question;
+              return (
+                <AccordionItem key={id}>
+                  <div className="singleQuestion">
+                    <section className="headerQuesiton">
+                      <h3>
+                        <BsFillQuestionOctagonFill className="icon" /> {title}
+                      </h3>
+                      <AccordionItemHeading>
+                        <AccordionItemButton>
+                          <button className="btn">
+                            <TiArrowSortedDown />
+                          </button>
+                        </AccordionItemButton>
+                      </AccordionItemHeading>
+                    </section>
+                    <AccordionItemPanel>
+                      <p>{info}</p>
+                    </AccordionItemPanel>
+                  </div>
+                </AccordionItem>
+              );
+            })}
+          </Accordion>
+          <img
+            data-aos="zoom-out"
+            className="faqPersonImg"
+            src={faqPersonImg}
+            alt=""
+          />
+        </div>
+        <h4 className="faqSubTitle2">
+          Nie znalazłaś/eś opowiedzi na nurtujące Cię pytania? Zadzwoń do mnie
+          lub napisz!
+        </h4>
+      </Wrapper>
+    </>
   );
 };
 

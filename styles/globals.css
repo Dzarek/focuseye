@@ -41,13 +41,11 @@ body {
 
 .app {
   --secondaryColor: rgb(148, 105, 60);
-  /* --secondaryColor3: #3b1806; */
   --secondaryColor3: #5a270d;
   --primaryColor: rgb(10, 10, 10);
   --appBgColor: #fff;
   --sectionBgColor: #fcf0e5;
   --singleOfferBgColor: #cdb596;
-  /* --singleOfferTitle: #4624146f; */
   --singleOfferTitle: #d8af7d55;
   --faqHeaderBgColor: #e2c298;
   --aboutMeBgColor: #f6dfc3;

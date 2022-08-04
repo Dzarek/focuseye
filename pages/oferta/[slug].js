@@ -5,6 +5,7 @@ import { SRLWrapper } from "simple-react-lightbox";
 import PakietSingleOffer from "../../components/offerPage/PakietSingleOffer";
 import Opinion from "../../components/offerPage/Opinion";
 import { IoChevronBackCircle } from "react-icons/io5";
+import Head from "next/head";
 
 const OneOffer = (props) => {
   const {
@@ -31,61 +32,74 @@ const OneOffer = (props) => {
   }
 
   return (
-    <Wrapper>
-      <header className="headerTitle" style={{ overflow: "hidden" }}>
-        <div
-          className="headerBg"
-          style={{
-            backgroundImage: `url(${headerImg})`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            animation: "singleOfferHeader 5s linear 1 forwards",
-            width: "100vw",
-            height: "80vh",
-            filter: "brightness(0.8)",
-          }}
-        ></div>
-        <div className="title">
-          <h2>{title}</h2>
-        </div>
-      </header>
-      {category === "brzuszkowe" ? (
-        <div className="infoAndGraphic">
-          <section className="longInfo">
-            {longDescription.map((text, index) => {
-              return <p key={index}>{text}</p>;
+    <>
+      <Head>
+        <title>FocusEye | Oferta</title>
+        <meta
+          name="description"
+          content="Nie pozwól aby Twoje piękne chwile uległy zapomnieniu."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo192.png" />
+        <link rel="shortcut icon" href="/logo192.png" />
+      </Head>
+      <Wrapper>
+        <header className="headerTitle" style={{ overflow: "hidden" }}>
+          <div
+            className="headerBg"
+            style={{
+              backgroundImage: `url(${headerImg})`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+              animation: "singleOfferHeader 5s linear 1 forwards",
+              width: "100vw",
+              height: "80vh",
+              filter: "brightness(0.8)",
+            }}
+          ></div>
+          <div className="title">
+            <h2>{title}</h2>
+          </div>
+        </header>
+        {category === "brzuszkowe" ? (
+          <div className="infoAndGraphic">
+            <section className="longInfo">
+              {longDescription.map((text, index) => {
+                return <p key={index}>{text}</p>;
+              })}
+            </section>
+            <img src={graphic[0]} alt="grafika" />
+          </div>
+        ) : (
+          <div className="infoAndGraphic2">
+            <img src={graphic[0]} alt="grafika" />
+            <section className="longInfo">
+              {longDescription.map((text, index) => {
+                return <p key={index}>{text}</p>;
+              })}
+            </section>
+            <img src={graphic[1]} alt="grafika" />
+          </div>
+        )}
+        <SRLWrapper>
+          <section className="smallGallery">
+            {smallGallery.map((image, index) => {
+              return <img key={index} src={image} />;
             })}
           </section>
-          <img src={graphic[0]} alt="grafika" />
-        </div>
-      ) : (
-        <div className="infoAndGraphic2">
-          <img src={graphic[0]} alt="grafika" />
-          <section className="longInfo">
-            {longDescription.map((text, index) => {
-              return <p key={index}>{text}</p>;
-            })}
-          </section>
-          <img src={graphic[1]} alt="grafika" />
-        </div>
-      )}
-      <SRLWrapper>
-        <section className="smallGallery">
-          {smallGallery.map((image, index) => {
-            return <img key={index} src={image} />;
-          })}
-        </section>
-      </SRLWrapper>
-      <PakietSingleOffer pakiety={pakiety} />
-      <h3 className="cennik">Powyższy cennik obowiązuje od 01.08.2022 r.</h3>
-      <Opinion />
-      <Link href="/oferta">
-        <button className="backToBlog">
-          <IoChevronBackCircle className="icon" />
-          powrót do listy ofert
-        </button>
-      </Link>
-    </Wrapper>
+        </SRLWrapper>
+        <PakietSingleOffer pakiety={pakiety} />
+        <h3 className="cennik">Powyższy cennik obowiązuje od 01.08.2022 r.</h3>
+        <Opinion />
+        <Link href="/oferta">
+          <button className="backToBlog">
+            <IoChevronBackCircle className="icon" />
+            powrót do listy ofert
+          </button>
+        </Link>
+      </Wrapper>
+    </>
   );
 };
 

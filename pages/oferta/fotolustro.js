@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 import { IoChevronBackCircle } from "react-icons/io5";
+import Head from "next/head";
 
 const mirrorHeader = "/images/ofertaImg/fotolustro/fotolustro4.jpg";
 const mirrorImg1 = "/images/ofertaImg/fotolustro/fotolustro3.jpg";
@@ -9,117 +10,130 @@ const mirrorImg3 = "/images/ofertaImg/fotolustro/fotolustro1.jpg";
 
 const Fotolustro = () => {
   return (
-    <Wrapper>
-      <header>
-        <h2>Fotolustro</h2>
-      </header>
-      <section className="info">
-        <div className="text">
-          <h3>Co to jest?</h3>
-          <p>
-            Fotolustro to unowocześniona wersja klasycznej fotobudki z dużym
-            lustrem na frontowej ścianie. <br /> Lustro jest dotykowe, pozwala
-            na wchodzenie w interakcję uczestnikom zabawy, można je dotykać i
-            dokonywać wyborów, można po nim rysować, podpisywać zdjęcia.
-            <br />
-            Fotolustro to idealny pomysł na imprezową atrakcję PREMIUM -
-            nowoczesna pamiątka, świetna zabawa!
-          </p>
-          <h3>Jak działa magia?</h3>
-          <p>
-            Obsługa urządzenia to sama przyjemność. <br /> Podczas pracy
-            fotolustra uczestnicy zabawy widzą swoje odbicia w lustrze, a z
-            głośników rozlega się dźwięk lektora wydającego instrukcje zabawy
-            np. odliczanie do kolejnego ujęcia. <br /> Zza dotykowego lustra -
-            niejako na tafli lustra - widać magicznie wyświetlane animacje.{" "}
-            <br /> Wystarczy kilka przesunięć palcem po lustrze i zdjęcie
-            gotowe!
-          </p>
-        </div>
-        <div className="images">
-          <img src={mirrorImg1} alt="fotolustro 1" />
-          <img src={mirrorImg2} alt="fotolustro 2" />
-          <img src={mirrorImg3} alt="fotolustro 3" />
-        </div>
-      </section>
-      <section className="pakietyWrapper">
-        <h2>Pakiety</h2>
-        <div className="pakietyMirror">
-          <div className="onePakiet">
-            <div className="pakietTitle">
-              <h3>ZWIERCIADEŁKO</h3>
-              <h5>do 2h, zalecane do 60 gości</h5>
-              <ul>
-                <li>nielimitowana ilość zdjęć</li>
-                <li>różne układy zdjęć</li>
-                <li>zabawne gadżety</li>
-                <li>personalizowana grafika wydruków</li>
-                <li>
-                  tła graficzne do wyboru z przeznaczeniem pod Twoją imprezę
-                </li>
-                <li>asystent do pomocy</li>
-                <li>podpisywanie zdjęć palcem na lustrze</li>
-                <li>dojazd do 30 km od Tuchowa Gratis</li>
-              </ul>
-            </div>
-
-            <span>700 zł</span>
+    <>
+      <Head>
+        <title>FocusEye | Oferta</title>
+        <meta
+          name="description"
+          content="Nie pozwól aby Twoje piękne chwile uległy zapomnieniu."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo192.png" />
+        <link rel="shortcut icon" href="/logo192.png" />
+      </Head>
+      <Wrapper>
+        <header>
+          <h2>Fotolustro</h2>
+        </header>
+        <section className="info">
+          <div className="text">
+            <h3>Co to jest?</h3>
+            <p>
+              Fotolustro to unowocześniona wersja klasycznej fotobudki z dużym
+              lustrem na frontowej ścianie. <br /> Lustro jest dotykowe, pozwala
+              na wchodzenie w interakcję uczestnikom zabawy, można je dotykać i
+              dokonywać wyborów, można po nim rysować, podpisywać zdjęcia.
+              <br />
+              Fotolustro to idealny pomysł na imprezową atrakcję PREMIUM -
+              nowoczesna pamiątka, świetna zabawa!
+            </p>
+            <h3>Jak działa magia?</h3>
+            <p>
+              Obsługa urządzenia to sama przyjemność. <br /> Podczas pracy
+              fotolustra uczestnicy zabawy widzą swoje odbicia w lustrze, a z
+              głośników rozlega się dźwięk lektora wydającego instrukcje zabawy
+              np. odliczanie do kolejnego ujęcia. <br /> Zza dotykowego lustra -
+              niejako na tafli lustra - widać magicznie wyświetlane animacje.{" "}
+              <br /> Wystarczy kilka przesunięć palcem po lustrze i zdjęcie
+              gotowe!
+            </p>
           </div>
-          <div className="separateLine"></div>
-          <div className="onePakiet">
-            <div className="pakietTitle">
-              <h3>ZWIERCIADŁO</h3>
-              <h5>do 3h, zalecane do 150 gości</h5>
-              <ul>
-                <li>nielimitowana ilość zdjęć</li>
-                <li>różne układy zdjęć</li>
-                <li>zabawne gadżety</li>
-                <li>personalizowana grafika wydruków</li>
-                <li>
-                  tła graficzne do wyboru z przeznaczeniem pod Twoją imprezę
-                </li>
-                <li>asystent do pomocy</li>
-                <li>podpisywanie zdjęć palcem na lustrze</li>
-                <li>galeria internetowa dla gości</li>
-                <li>album do wklejania zdjęć</li>
-                <li>dojazd do 50 km od Tuchowa Gratis</li>
-              </ul>
-            </div>
-
-            <span>900 zł</span>
+          <div className="images">
+            <img src={mirrorImg1} alt="fotolustro 1" />
+            <img src={mirrorImg2} alt="fotolustro 2" />
+            <img src={mirrorImg3} alt="fotolustro 3" />
           </div>
-          <div className="separateLine"></div>
-          <div className="onePakiet">
-            <div className="pakietTitle">
-              <h3>LUSTRO</h3>
-              <h5>do 4h, zalecane do 250 gości</h5>
-              <ul>
-                <li>nielimitowana ilość zdjęć</li>
-                <li>różne układy zdjęć</li>
-                <li>zabawne gadżety</li>
-                <li>personalizowana grafika wydruków</li>
-                <li>
-                  tła graficzne do wyboru z przeznaczeniem pod Twoją imprezę
-                </li>
-                <li>asystent do pomocy</li>
-                <li>podpisywanie zdjęć palcem na lustrze</li>
-                <li>galeria internetowa dla gości</li>
-                <li>album do wklejania zdjęć</li>
-                <li>dojazd do 50 km od Tuchowa Gratis</li>
-              </ul>
-            </div>
+        </section>
+        <section className="pakietyWrapper">
+          <h2>Pakiety</h2>
+          <div className="pakietyMirror">
+            <div className="onePakiet">
+              <div className="pakietTitle">
+                <h3>ZWIERCIADEŁKO</h3>
+                <h5>do 2h, zalecane do 60 gości</h5>
+                <ul>
+                  <li>nielimitowana ilość zdjęć</li>
+                  <li>różne układy zdjęć</li>
+                  <li>zabawne gadżety</li>
+                  <li>personalizowana grafika wydruków</li>
+                  <li>
+                    tła graficzne do wyboru z przeznaczeniem pod Twoją imprezę
+                  </li>
+                  <li>asystent do pomocy</li>
+                  <li>podpisywanie zdjęć palcem na lustrze</li>
+                  <li>dojazd do 30 km od Tuchowa Gratis</li>
+                </ul>
+              </div>
 
-            <span>1100 zł</span>
+              <span>700 zł</span>
+            </div>
+            <div className="separateLine"></div>
+            <div className="onePakiet">
+              <div className="pakietTitle">
+                <h3>ZWIERCIADŁO</h3>
+                <h5>do 3h, zalecane do 150 gości</h5>
+                <ul>
+                  <li>nielimitowana ilość zdjęć</li>
+                  <li>różne układy zdjęć</li>
+                  <li>zabawne gadżety</li>
+                  <li>personalizowana grafika wydruków</li>
+                  <li>
+                    tła graficzne do wyboru z przeznaczeniem pod Twoją imprezę
+                  </li>
+                  <li>asystent do pomocy</li>
+                  <li>podpisywanie zdjęć palcem na lustrze</li>
+                  <li>galeria internetowa dla gości</li>
+                  <li>album do wklejania zdjęć</li>
+                  <li>dojazd do 50 km od Tuchowa Gratis</li>
+                </ul>
+              </div>
+
+              <span>900 zł</span>
+            </div>
+            <div className="separateLine"></div>
+            <div className="onePakiet">
+              <div className="pakietTitle">
+                <h3>LUSTRO</h3>
+                <h5>do 4h, zalecane do 250 gości</h5>
+                <ul>
+                  <li>nielimitowana ilość zdjęć</li>
+                  <li>różne układy zdjęć</li>
+                  <li>zabawne gadżety</li>
+                  <li>personalizowana grafika wydruków</li>
+                  <li>
+                    tła graficzne do wyboru z przeznaczeniem pod Twoją imprezę
+                  </li>
+                  <li>asystent do pomocy</li>
+                  <li>podpisywanie zdjęć palcem na lustrze</li>
+                  <li>galeria internetowa dla gości</li>
+                  <li>album do wklejania zdjęć</li>
+                  <li>dojazd do 50 km od Tuchowa Gratis</li>
+                </ul>
+              </div>
+
+              <span>1100 zł</span>
+            </div>
           </div>
-        </div>
-      </section>
-      <Link href="/oferta">
-        <button className="backToBlog">
-          <IoChevronBackCircle className="icon" />
-          powrót do listy ofert
-        </button>
-      </Link>
-    </Wrapper>
+        </section>
+        <Link href="/oferta">
+          <button className="backToBlog">
+            <IoChevronBackCircle className="icon" />
+            powrót do listy ofert
+          </button>
+        </Link>
+      </Wrapper>
+    </>
   );
 };
 

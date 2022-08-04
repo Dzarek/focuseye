@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { FaGrinHearts, FaMedal } from "react-icons/fa";
 import { MdDirectionsBike } from "react-icons/md";
+import Head from "next/head";
 
 const aboutMeHeaderImg = "/images/aboutMeImg/aboutMeHeader.png";
 const meImg2 = "/images/aboutMeImg/meImg2.jpg";
@@ -18,89 +19,102 @@ const OmniePage = () => {
   const numberOfPeople = (new Date().getFullYear() - 2019) * 40;
 
   return (
-    <Wrapper>
-      <header>
-        <div className="title">
-          <h2 data-aos="fade-right">O mnie</h2>
-          <img src={aboutMeHeaderImg} alt="gallery title" />
+    <>
+      <Head>
+        <title>FocusEye | O mnie</title>
+        <meta
+          name="description"
+          content="Jestem Fotografem - Dla mnie to zaszczyt i ogromne szczęście."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo192.png" />
+        <link rel="shortcut icon" href="/logo192.png" />
+      </Head>
+      <Wrapper>
+        <header>
+          <div className="title">
+            <h2 data-aos="fade-right">O mnie</h2>
+            <img src={aboutMeHeaderImg} alt="gallery title" />
+          </div>
+          <div className="myFeatures">
+            <p data-aos="zoom-in" data-aos-delay="500">
+              marzycielka
+            </p>
+            <p data-aos="zoom-in" data-aos-delay="1000">
+              pasjonatka fotografii
+            </p>
+            <p data-aos="zoom-in" data-aos-delay="1500">
+              szczęśliwa żona
+            </p>
+            <p data-aos="zoom-in" data-aos-delay="3000">
+              miłośniczka podróży, Hiszpanii oraz dziewiczej Oliwy
+            </p>
+            <p data-aos="zoom-in" data-aos-delay="2000">
+              kochająca mama
+            </p>
+            <p data-aos="zoom-in" data-aos-delay="2500">
+              pani domu
+            </p>
+          </div>
+        </header>
+        <h2 className="aboutTitle">
+          Jestem Fotografem - Dla mnie to zaszczyt i ogromne szczęście
+        </h2>
+        <div className="aboutMeContent">
+          <img data-aos="fade-right" src={meImg2} alt="ja z rodziną" />
+          <section>
+            <p>Niezmiernie mi miło, że do mnie trafiliście!</p>
+            <p>
+              Swoją przygodę z aparatem zaczynałam uwieczniając kolarską
+              rywalizację. Dzisiaj to dalej pasja, która stała się moją pracą.
+              Uważam, że lepszej drugiej połówki niż mój mąż, nie mogłam sobie
+              wymarzyć, od lat wspieramy się w swoich pasjach. W naszym życiu
+              pojawiła się Marcelinka, której chcemy pokazać jak najwięcej
+              świata - podróże w trójkę są dla nas celebracją czasu wolnego!{" "}
+              <MdDirectionsBike />
+            </p>
+            <p>
+              W fotografii zależy mi na tym aby na zdjęciach oddać Waszą
+              naturalność, rejestrować uczucia i emocje jakie towarzyszą Wam
+              podczas naszych spotkań. Jako fotograf mam to ogromne szczęście,
+              że spotykam wspaniałych ludzi. Uwielbiam gdy zapraszacie mnie do
+              swoich domów bo jak już wiecie sesje lifestylowe po prostu kocham.{" "}
+              <FaGrinHearts />
+            </p>
+            <p>
+              Dotychczas szlifowałam swój warsztat u wyjątkowych fotografów:
+              Adam Trzcionka, Aleksandra Błaszkowska, Marika Wrońska, Katarzyna
+              Budzik. <br />
+              Ślubne warszataty plenerowe w których brałam udział: NoWedding
+              workshop. <br /> Moje zdjęcia niejednokrotnie zostały wyróżnione
+              przez fotograf Martę Woźną - Pani Woźna oraz Niezłe Aparaty w
+              rankingu najlepszych fotografii miesiąca. <FaMedal />
+            </p>
+            <p>
+              Do zobaczenia! <br />
+              Sylwia Sajdak
+            </p>
+          </section>
         </div>
-        <div className="myFeatures">
-          <p data-aos="zoom-in" data-aos-delay="500">
-            marzycielka
-          </p>
-          <p data-aos="zoom-in" data-aos-delay="1000">
-            pasjonatka fotografii
-          </p>
-          <p data-aos="zoom-in" data-aos-delay="1500">
-            szczęśliwa żona
-          </p>
-          <p data-aos="zoom-in" data-aos-delay="3000">
-            miłośniczka podróży, Hiszpanii oraz dziewiczej Oliwy
-          </p>
-          <p data-aos="zoom-in" data-aos-delay="2000">
-            kochająca mama
-          </p>
-          <p data-aos="zoom-in" data-aos-delay="2500">
-            pani domu
-          </p>
+        <div className="aboutNumbers">
+          <section data-aos="fade-right">
+            <span>{numberOfSesion}</span>
+            <h4>sesji zdjęciowych</h4>
+          </section>
+          <div className="lineNumber"></div>
+          <section data-aos="fade-up">
+            <span>{numberOfPeople}</span>
+            <h4>zadowolonych klientów</h4>
+          </section>
+          <div className="lineNumber"></div>
+          <section data-aos="fade-left">
+            <span>{numberOfExperience}</span>
+            <h4>{numberOfExperience < 5 ? "lata" : "lat"} doświadczenia</h4>
+          </section>
         </div>
-      </header>
-      <h2 className="aboutTitle">
-        Jestem Fotografem - Dla mnie to zaszczyt i ogromne szczęście
-      </h2>
-      <div className="aboutMeContent">
-        <img data-aos="fade-right" src={meImg2} alt="ja z rodziną" />
-        <section>
-          <p>Niezmiernie mi miło, że do mnie trafiliście!</p>
-          <p>
-            Swoją przygodę z aparatem zaczynałam uwieczniając kolarską
-            rywalizację. Dzisiaj to dalej pasja, która stała się moją pracą.
-            Uważam, że lepszej drugiej połówki niż mój mąż, nie mogłam sobie
-            wymarzyć, od lat wspieramy się w swoich pasjach. W naszym życiu
-            pojawiła się Marcelinka, której chcemy pokazać jak najwięcej świata
-            - podróże w trójkę są dla nas celebracją czasu wolnego!{" "}
-            <MdDirectionsBike />
-          </p>
-          <p>
-            W fotografii zależy mi na tym aby na zdjęciach oddać Waszą
-            naturalność, rejestrować uczucia i emocje jakie towarzyszą Wam
-            podczas naszych spotkań. Jako fotograf mam to ogromne szczęście, że
-            spotykam wspaniałych ludzi. Uwielbiam gdy zapraszacie mnie do swoich
-            domów bo jak już wiecie sesje lifestylowe po prostu kocham.{" "}
-            <FaGrinHearts />
-          </p>
-          <p>
-            Dotychczas szlifowałam swój warsztat u wyjątkowych fotografów: Adam
-            Trzcionka, Aleksandra Błaszkowska, Marika Wrońska, Katarzyna Budzik.{" "}
-            <br />
-            Ślubne warszataty plenerowe w których brałam udział: NoWedding
-            workshop. <br /> Moje zdjęcia niejednokrotnie zostały wyróżnione
-            przez fotograf Martę Woźną - Pani Woźna oraz Niezłe Aparaty w
-            rankingu najlepszych fotografii miesiąca. <FaMedal />
-          </p>
-          <p>
-            Do zobaczenia! <br />
-            Sylwia Sajdak
-          </p>
-        </section>
-      </div>
-      <div className="aboutNumbers">
-        <section data-aos="fade-right">
-          <span>{numberOfSesion}</span>
-          <h4>sesji zdjęciowych</h4>
-        </section>
-        <div className="lineNumber"></div>
-        <section data-aos="fade-up">
-          <span>{numberOfPeople}</span>
-          <h4>zadowolonych klientów</h4>
-        </section>
-        <div className="lineNumber"></div>
-        <section data-aos="fade-left">
-          <span>{numberOfExperience}</span>
-          <h4>{numberOfExperience < 5 ? "lata" : "lat"} doświadczenia</h4>
-        </section>
-      </div>
-    </Wrapper>
+      </Wrapper>
+    </>
   );
 };
 

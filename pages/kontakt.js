@@ -3,6 +3,7 @@ import MyForm from "../components/MyForm";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Head from "next/head";
 
 const contactHeaderImg = "/images/contact/contactHeader.png";
 const contactPersonImg2 = "/images/contact/contactPerson2.png";
@@ -12,61 +13,74 @@ const KontaktPage = ({ setVisibleCookie }) => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <Wrapper>
-      <header>
-        <img src={contactHeaderImg} alt="gallery title" />
-        <div className="title">
-          <h2>Kontakt </h2>
-          <p data-aos="fade-up">Fomularz, Email, Telefon, Social Media</p>
-        </div>
-      </header>
-      <div className="contactContainer">
-        <section className="contactForm">
-          <h3>Napisz do mnie przez formularz kontaktowy</h3>
-          <MyForm setVisibleCookie={setVisibleCookie} />
-        </section>
-        <img
-          data-aos="zoom-out"
-          src={contactPersonImg2}
-          alt=""
-          className="separateImg"
+    <>
+      <Head>
+        <title>FocusEye | Kontakt</title>
+        <meta
+          name="description"
+          content="Fomularz, Email, Telefon, Social Media."
         />
-        <section className="contactSocialMedia">
-          <h3>Kontakt bezpośredni</h3>
-          <div className="socialMediaWrapper">
-            <a href="tel:+48798698605">
-              Telefon: <span>798 698 605</span>
-            </a>
-            <h4>
-              Email: <span>kontakt.focuseye@gmail.com</span>
-            </h4>
-            <a
-              href="https://www.instagram.com/focuseye_sylwiasajdak/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram: <span>focuseye_sylwiasajdak</span>
-            </a>
-            <a
-              href="https://www.facebook.com/sylwiasajdakfotografia/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Facebook: <span>sylwiasajdakfotografia</span>
-            </a>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo192.png" />
+        <link rel="shortcut icon" href="/logo192.png" />
+      </Head>
+      <Wrapper>
+        <header>
+          <img src={contactHeaderImg} alt="gallery title" />
+          <div className="title">
+            <h2>Kontakt </h2>
+            <p data-aos="fade-up">Fomularz, Email, Telefon, Social Media</p>
           </div>
-          <div className="bankInfo">
-            <h3>Dane do przelewu:</h3>
-            <h4 className="bankInfoName">
-              FocusEye Mobilne Studio Fotografii - Sylwia Sajdak
-            </h4>
-            <h4>
-              Nr konta: <span>91 1140 2004 0000 3102 7985 0369</span>
-            </h4>
-          </div>
-        </section>
-      </div>
-    </Wrapper>
+        </header>
+        <div className="contactContainer">
+          <section className="contactForm">
+            <h3>Napisz do mnie przez formularz kontaktowy</h3>
+            <MyForm setVisibleCookie={setVisibleCookie} />
+          </section>
+          <img
+            data-aos="zoom-out"
+            src={contactPersonImg2}
+            alt=""
+            className="separateImg"
+          />
+          <section className="contactSocialMedia">
+            <h3>Kontakt bezpośredni</h3>
+            <div className="socialMediaWrapper">
+              <a href="tel:+48798698605">
+                Telefon: <span>798 698 605</span>
+              </a>
+              <h4>
+                Email: <span>kontakt.focuseye@gmail.com</span>
+              </h4>
+              <a
+                href="https://www.instagram.com/focuseye_sylwiasajdak/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram: <span>focuseye_sylwiasajdak</span>
+              </a>
+              <a
+                href="https://www.facebook.com/sylwiasajdakfotografia/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Facebook: <span>sylwiasajdakfotografia</span>
+              </a>
+            </div>
+            <div className="bankInfo">
+              <h3>Dane do przelewu:</h3>
+              <h4 className="bankInfoName">
+                FocusEye Mobilne Studio Fotografii - Sylwia Sajdak
+              </h4>
+              <h4>
+                Nr konta: <span>91 1140 2004 0000 3102 7985 0369</span>
+              </h4>
+            </div>
+          </section>
+        </div>
+      </Wrapper>
+    </>
   );
 };
 

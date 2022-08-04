@@ -3,54 +3,68 @@ import Link from "next/link";
 import { SRLWrapper } from "simple-react-lightbox";
 import { IoChevronBackCircle } from "react-icons/io5";
 import { blogData } from "../../public/data";
+import Head from "next/head";
 
 const SingleArticleBlog = (props) => {
   const { title, date, text, images, headerImg, bgImg } = props;
 
   return (
-    <Wrapper>
-      <div
-        className="bgArticle"
-        style={{
-          background: `url(${bgImg})`,
-          width: "100vw",
-          height: "100vh",
-          position: "fixed",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundAttachment: "fixed",
-          filter: "saturate(0.5) brightness(0.7)",
-        }}
-      ></div>
-      <div className="articleContainer">
-        <div className="titleContainer">
-          <h1>
-            {title}
-            <span>Data publikacji: {date}</span>
-          </h1>
-          <img src={headerImg} alt="title" />
-        </div>
-        <div className="separateLine"></div>
-        <section className="infoContent">
-          {text.map((item, index) => {
-            return <p key={index}>{item}</p>;
-          })}
-        </section>
-        <SRLWrapper>
-          <section className="images">
-            {images.map((img, index) => {
-              return <img key={index} src={img} alt="name" />;
+    <>
+      <Head>
+        <title>FocusEye | Blog</title>
+        <meta
+          name="description"
+          content="Artykuły na temat fotografii i sesji zdjęciowych."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo192.png" />
+        <link rel="shortcut icon" href="/logo192.png" />
+      </Head>
+      <Wrapper>
+        <div
+          className="bgArticle"
+          style={{
+            background: `url(${bgImg})`,
+            width: "100vw",
+            height: "100vh",
+            position: "fixed",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundAttachment: "fixed",
+            filter: "saturate(0.5) brightness(0.7)",
+          }}
+        ></div>
+        <div className="articleContainer">
+          <div className="titleContainer">
+            <h1>
+              {title}
+              <span>Data publikacji: {date}</span>
+            </h1>
+            <img src={headerImg} alt="title" />
+          </div>
+          <div className="separateLine"></div>
+          <section className="infoContent">
+            {text.map((item, index) => {
+              return <p key={index}>{item}</p>;
             })}
           </section>
-        </SRLWrapper>
-      </div>
-      <Link href="/blog">
-        <button className="backToBlog">
-          <IoChevronBackCircle className="icon" />
-          powrót do listy artykułów
-        </button>
-      </Link>
-    </Wrapper>
+          <SRLWrapper>
+            <section className="images">
+              {images.map((img, index) => {
+                return <img key={index} src={img} alt="name" />;
+              })}
+            </section>
+          </SRLWrapper>
+        </div>
+        <Link href="/blog">
+          <button className="backToBlog">
+            <IoChevronBackCircle className="icon" />
+            powrót do listy artykułów
+          </button>
+        </Link>
+      </Wrapper>
+    </>
   );
 };
 

@@ -13,6 +13,7 @@ import { GiFlowers } from "react-icons/gi";
 import { GrDocumentPdf } from "react-icons/gr";
 import Albums from "../../components/offerPage/Albums";
 import Mirror from "../../components/offerPage/Mirror";
+import Head from "next/head";
 const ofertaHeader = "/images/ofertaImg/header/ofertaHeader.png";
 
 const OfferPage = () => {
@@ -22,70 +23,83 @@ const OfferPage = () => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <Wrapper>
-      <header className="headerTitle">
-        <img src={ofertaHeader} alt="gallery title" />
-        <div className="title">
-          <h2>Oferta</h2>
-          <p data-aos="fade-left">
-            Nie pozwól aby Twoje piękne chwile uległy zapomnieniu.
-          </p>
-        </div>
-      </header>
-      <section className="offerFeatures">
-        <div>
-          <span>
-            <GiFlowers />
-          </span>
-          <h4>dbałość o szczegóły</h4>
-        </div>
-        <div>
-          <span>
-            <BsPersonCheckFill />
-          </span>
-          <h4>profesionalizm</h4>
-        </div>
-        <div>
-          <span>
-            <IoIosEye />
-          </span>
-          <h4>unikalna wizja</h4>
-        </div>
-      </section>
-      <section className="sesjeContent">
-        <div className="sesjeTitle">
-          <span></span>
-          <h2>Sesje zdjęciowe</h2>
-          <span></span>
-        </div>
-        <div data-aos="fade-up" className="offerContent">
-          {offers.map((item) => {
-            return (
-              <SingleOffer
-                key={item.id}
-                offer={item}
-                setShowDetails={setShowDetails}
-                className="singleOffer"
-              />
-            );
-          })}
-        </div>
-      </section>
-      <Mirror />
-      <Albums />
-      <ImportantInfoOffer />
-      <section className="regulations">
-        <h2>Pobierz regulamin</h2>
-        <a
-          href="/regulamin.pdf"
-          alt="alt text"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <GrDocumentPdf className="icon" />
-        </a>
-      </section>
-    </Wrapper>
+    <>
+      <Head>
+        <title>FocusEye | Oferta</title>
+        <meta
+          name="description"
+          content="Nie pozwól aby Twoje piękne chwile uległy zapomnieniu."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo192.png" />
+        <link rel="shortcut icon" href="/logo192.png" />
+      </Head>
+      <Wrapper>
+        <header className="headerTitle">
+          <img src={ofertaHeader} alt="gallery title" />
+          <div className="title">
+            <h2>Oferta</h2>
+            <p data-aos="fade-left">
+              Nie pozwól aby Twoje piękne chwile uległy zapomnieniu.
+            </p>
+          </div>
+        </header>
+        <section className="offerFeatures">
+          <div>
+            <span>
+              <GiFlowers />
+            </span>
+            <h4>dbałość o szczegóły</h4>
+          </div>
+          <div>
+            <span>
+              <BsPersonCheckFill />
+            </span>
+            <h4>profesionalizm</h4>
+          </div>
+          <div>
+            <span>
+              <IoIosEye />
+            </span>
+            <h4>unikalna wizja</h4>
+          </div>
+        </section>
+        <section className="sesjeContent">
+          <div className="sesjeTitle">
+            <span></span>
+            <h2>Sesje zdjęciowe</h2>
+            <span></span>
+          </div>
+          <div data-aos="fade-up" className="offerContent">
+            {offers.map((item) => {
+              return (
+                <SingleOffer
+                  key={item.id}
+                  offer={item}
+                  setShowDetails={setShowDetails}
+                  className="singleOffer"
+                />
+              );
+            })}
+          </div>
+        </section>
+        <Mirror />
+        <Albums />
+        <ImportantInfoOffer />
+        <section className="regulations">
+          <h2>Pobierz regulamin</h2>
+          <a
+            href="/regulamin.pdf"
+            alt="alt text"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GrDocumentPdf className="icon" />
+          </a>
+        </section>
+      </Wrapper>
+    </>
   );
 };
 

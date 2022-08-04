@@ -6,6 +6,7 @@ import { SRLWrapper } from "simple-react-lightbox";
 import ReactLoading from "react-loading";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import Head from "next/head";
 
 const galleryHeaderImg2 = "/images/gallery/galleryHeader.png";
 
@@ -103,62 +104,75 @@ const GalleryPage = () => {
   };
 
   return (
-    <Wrapper>
-      <header>
-        <div className="title">
-          <h2>Galeria </h2>
-          <p data-aos="fade-right">
-            Twoja codzienność uchwycona lekko i naturalnie.
-          </p>
-        </div>
-        <img src={galleryHeaderImg2} alt="gallery title" />
-      </header>
-      <div data-aos="fade-up" className="galleryCategory">
-        {categories.map((category, index) => {
-          return (
-            <button
-              key={index}
-              onClick={() => filterItems(category)}
-              className={activeBtn === category ? "activeBtn" : null}
-            >
-              {category}
-            </button>
-          );
-        })}
-      </div>
-      <div className="galleryContent">
-        <SRLWrapper>
-          <Masonry
-            breakpointCols={breakpointColumnsObj}
-            className="my-masonry-grid"
-            columnClassName="my-masonry-grid_column"
-          >
-            {menuItems === gallery ? currentImages2 : currentImages}
-          </Masonry>
-        </SRLWrapper>
-
-        {(menuItems === gallery &&
-          currentImages2.length !== galleryArraysFinal.length) ||
-        (menuItems !== gallery &&
-          currentImages.length !== galleryImages[0].length) ? (
-          <>
-            {loading ? (
-              <button onClick={loadImages} className="loadImagesBtn">
-                Zobacz Więcej
+    <>
+      <Head>
+        <title>FocusEye | Galeria</title>
+        <meta
+          name="description"
+          content="Twoja codzienność uchwycona lekko i naturalnie."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo192.png" />
+        <link rel="shortcut icon" href="/logo192.png" />
+      </Head>
+      <Wrapper>
+        <header>
+          <div className="title">
+            <h2>Galeria </h2>
+            <p data-aos="fade-right">
+              Twoja codzienność uchwycona lekko i naturalnie.
+            </p>
+          </div>
+          <img src={galleryHeaderImg2} alt="gallery title" />
+        </header>
+        <div data-aos="fade-up" className="galleryCategory">
+          {categories.map((category, index) => {
+            return (
+              <button
+                key={index}
+                onClick={() => filterItems(category)}
+                className={activeBtn === category ? "activeBtn" : null}
+              >
+                {category}
               </button>
-            ) : (
-              <ReactLoading
-                className="loadingImg"
-                bubbles
-                color={"#94693c"}
-                height={"6%"}
-                width={"6%"}
-              />
-            )}
-          </>
-        ) : null}
-      </div>
-    </Wrapper>
+            );
+          })}
+        </div>
+        <div className="galleryContent">
+          <SRLWrapper>
+            <Masonry
+              breakpointCols={breakpointColumnsObj}
+              className="my-masonry-grid"
+              columnClassName="my-masonry-grid_column"
+            >
+              {menuItems === gallery ? currentImages2 : currentImages}
+            </Masonry>
+          </SRLWrapper>
+
+          {(menuItems === gallery &&
+            currentImages2.length !== galleryArraysFinal.length) ||
+          (menuItems !== gallery &&
+            currentImages.length !== galleryImages[0].length) ? (
+            <>
+              {loading ? (
+                <button onClick={loadImages} className="loadImagesBtn">
+                  Zobacz Więcej
+                </button>
+              ) : (
+                <ReactLoading
+                  className="loadingImg"
+                  bubbles
+                  color={"#94693c"}
+                  height={"6%"}
+                  width={"6%"}
+                />
+              )}
+            </>
+          ) : null}
+        </div>
+      </Wrapper>
+    </>
   );
 };
 

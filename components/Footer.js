@@ -11,6 +11,7 @@ import "aos/dist/aos.css";
 
 const bgImg = "/images/logoBg2.png";
 const dotacjaImg = "/images/dotacjaImg.png";
+const logoJarek = "/images/logoJarek.png";
 
 const Footer = () => {
   useEffect(() => {
@@ -63,6 +64,12 @@ const Footer = () => {
           Rozwoju Obszarów Wiejskich na lata 2014 – 2020.
         </span>
       </section>
+      <span className="logoJarek">
+        <p>projekt i wykonanie</p>
+        <a href="https://www.jarekjanas.com">
+          <img src={logoJarek} alt="logo Jarosław Janas" />
+        </a>{" "}
+      </span>
     </Wrapper>
   );
 };
@@ -81,6 +88,7 @@ const Wrapper = styled.div`
   font-size: 1.3rem;
   color: var(--secondaryColor3);
   position: relative;
+  overflow: hidden;
   @media screen and (max-width: 800px) {
     margin-bottom: 10vh;
     height: 12vh;
@@ -161,6 +169,36 @@ const Wrapper = styled.div`
       color: var(--secondaryColor3);
       font-family: var(--textFont);
       font-size: 0.9rem;
+    }
+  }
+  .logoJarek {
+    position: absolute;
+    bottom: 4%;
+    left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      width: 25px;
+      height: 25px;
+      margin-left: 10px;
+      img {
+        width: 100%;
+        height: 100%;
+        transition: 0.3s;
+        opacity: 0.8;
+        :hover {
+          filter: invert(100%);
+        }
+      }
+    }
+    p {
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    @media screen and (max-width: 800px) {
+      top: 80%;
+      left: 3%;
     }
   }
 `;
