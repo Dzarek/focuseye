@@ -52,7 +52,7 @@ const Wrapper = styled.div`
   position: relative;
 
   .aboutMeContainer {
-    width: 85%;
+    width: 80%;
     margin: 0vh auto;
     display: flex;
     justify-content: space-between;

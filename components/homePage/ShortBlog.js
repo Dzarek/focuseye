@@ -4,7 +4,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
 
-const ShortBlog = () => {
+const ShortBlog = ({ fourTitle }) => {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
@@ -17,16 +17,22 @@ const ShortBlog = () => {
       <Link href="/blog">
         <h2 className="blogTitle">BLOG</h2>
       </Link>
-      <p data-aos="zoom-in-right">Jak przebiega sesja lifestyle?</p>
-      <p data-aos="zoom-in-left" data-aos-delay="500">
-        Lorem ipsum dolor sit amet?
-      </p>
-      <p data-aos="zoom-in-right" data-aos-delay="1000">
-        Lorem ipsum dolor sit amet?
-      </p>
-      <p data-aos="zoom-in-left" data-aos-delay="1500">
-        Lorem ipsum dolor sit amet?
-      </p>
+      {fourTitle[0] && <p data-aos="zoom-in-right">{fourTitle[0]}</p>}
+      {fourTitle[1] && (
+        <p data-aos="zoom-in-left" data-aos-delay="500">
+          {fourTitle[1]}
+        </p>
+      )}
+      {fourTitle[2] && (
+        <p data-aos="zoom-in-right" data-aos-delay="1000">
+          {fourTitle[2]}
+        </p>
+      )}
+      {fourTitle[3] && (
+        <p data-aos="zoom-in-left" data-aos-delay="1500">
+          {fourTitle[3]}
+        </p>
+      )}
       <h3 className="lasth3">oraz wiele innych...</h3>
     </Wrapper>
   );
@@ -34,10 +40,8 @@ const ShortBlog = () => {
 
 const Wrapper = styled.div`
   width: 90vw;
-  max-width: 1360px;
   min-height: 60vh;
   margin: 10vh auto;
-  /* padding: 10vh 0; */
   position: relative;
   .blogTitle {
     position: absolute;
@@ -81,24 +85,20 @@ const Wrapper = styled.div`
     color: var(--secondaryColor3);
   }
   p:nth-of-type(1) {
-    top: 30%;
-    left: 10%;
-    /* transform: rotate(-5deg); */
+    top: 25%;
+    left: 5%;
   }
   p:nth-of-type(2) {
-    top: 30%;
-    right: 10%;
-    /* transform: rotate(5deg); */
+    top: 25%;
+    right: 5%;
   }
   p:nth-of-type(3) {
-    bottom: 30%;
-    left: 10%;
-    /* transform: rotate(5deg); */
+    bottom: 25%;
+    left: 5%;
   }
   p:nth-of-type(4) {
-    bottom: 30%;
-    right: 10%;
-    /* transform: rotate(-5deg); */
+    bottom: 25%;
+    right: 5%;
   }
 `;
 

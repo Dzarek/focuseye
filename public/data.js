@@ -931,3 +931,22 @@ export const questions = [
     info: "Naturalnie! W zakładce oferta podaję informację nt. dodatkowych ujęć do wybranego pakietu.",
   },
 ];
+
+export const blogData = [
+  {
+    id: 1,
+    title: "Sesja lifestyle? Zobacz dla kogo ona jest i jak przebiega.",
+    slug: "jak-przebiega-sesja-lifestyle",
+    date: "04.08.2022",
+    text: [
+      "Myślisz o spontanicznej i pełnej śmiechów sesji? Obawiasz się, że to nie dla Ciebie bo nie umiesz pozować do zdjęć? Coś wspaniałego, w sesji lifestyle chodzi o wyłapanie wyjątkowych chwil tu i teraz. Skupiacie się na sobie, u mnie nie ma nudy, biegacie, skaczecie, gonicie się, podrzucacie, dotykacie, całujecie, przytulacie:)",
+      "Jeśli wybierzecie sesję w plenerze to najpiękniejsze kadry powstaną w okolicach wschodu i zachodu słońca, światło jest złociste, miękkie i co najważniejsze nie mrużymy oczu. A miejsce? Wiem, że mielibyście nie mały problem ze znalezieniem oryginalnego i bogatego w przyrodę miejsca, dlatego to ja Was zapraszam w swoje sprawdzone i niezatłoczone zakątki Tuchowa i najbliższych okolic. Od czego zaczynamy ? Wiem, że pierwsze minuty przed aparatem bywają stresujące, ale wszystko mija już po pierwszych ujęciach. Sesja jaką Ci proponuję to głównie spacer, a dzięki temu, że wykorzystuję obiektyw 35 mm mam szeroki kadr, dopiero z upływem czasu podchodzę coraz bliżej by uchwycić Wasze czułe spojrzenia i gesty. Nie ustawiam, subtelnie doradzam, nie zostawiam Was samych sobie. Sesja trwa max 1 h.",
+      "Pamiętajcie, że kluczem do udanej sesji jest współpraca pomiędzy Wami a fotografem, dlatego im większe będzie zaangażowanie z Waszej strony tym piękniejsze uzyskamy efekty :) Warto już przed sesją powiedzieć mi jak widzicie taką sesję by wspólnie stworzyć wyjątkowe wspomnienia.",
+      "Co mogę doradzić - dużo się uśmiechajcie, nie patrzcie w obiektyw, chyba, że Was o to poproszę, nie garbcie się, trzymajcie ręce, dłonie blisko ciała, nie opuszczajcie ich bezwładnie, jeśli nie wiesz co z nimi zrobić, włóż je do kieszeni, obejmij dziewczynę, chłopaka, żonę, przytul dziecko, jeśli nie lubicie czegoś w swoim wyglądzie to proszę powiedźcie mi o tym przed sesją, pracujcie dłońmi, rękoma, bawcie się swoimi włosami, dużo się dotykajcie, głaskajcie, możecie się gonić, wygłupiać, nosić na plecach, podrzucać, łaskotać. Brzmi zachęcająco? :)",
+      "A po sesji, w ciągu kilku dni od naszego spotkania wybieracie swoje ulubione zdjęcia w galerii on-line zgodnie z wybranym wcześniej pakietem. Jeśli Wasze serca zakrzyczą o więcej ujęć niż w wybranym pakiecie, możecie je śmiało dokupić, informacje znajdziecie przy pakiecie w zakładce oferta. Jeśli wybór mamy za sobą, to proszę Was o jeszcze chwilę cierpliwości, wybrane zdjęcia poddam ostatecznej obróbce kolorystycznej i zamówię do druku odbitki:) Jeśli nie ma tutaj odpowiedzi na nurtujące Cię pytanie, obowiązkowo zajrzyj do działu FAQ :D",
+    ],
+    images: [ciaza2, rodzinne9, zakochani12],
+    headerImg: zakochani35,
+    bgImg: zakochani29,
+  },
+];

@@ -2,23 +2,17 @@ import styled from "styled-components";
 import Link from "next/link";
 import { SRLWrapper } from "simple-react-lightbox";
 import { IoChevronBackCircle } from "react-icons/io5";
+import { blogData } from "../../public/data";
 
-const articleImg3 = "/images/blog/zakochani2.jpg";
-const articleImg4 = "/images/blog/zakochani3.jpg";
-const articleImg5 = "/images/blog/zakochani4.jpg";
-
-const images = [articleImg5, articleImg3, articleImg4];
-
-const SingleArticleBlog = () => {
-  const articleImg = "/images/ofertaImg/zakochani2.jpg";
-  const articleImg2 = "/images/blog/zakochani1.jpg";
+const SingleArticleBlog = (props) => {
+  const { title, date, text, images, headerImg, bgImg } = props;
 
   return (
     <Wrapper>
       <div
         className="bgArticle"
         style={{
-          background: `url(${articleImg2})`,
+          background: `url(${bgImg})`,
           width: "100vw",
           height: "100vh",
           position: "fixed",
@@ -31,49 +25,16 @@ const SingleArticleBlog = () => {
       <div className="articleContainer">
         <div className="titleContainer">
           <h1>
-            Jak przebiega sesja lifestyle?
-            <span>
-              Data publikacji: 25.07.2022
-              {/* <br /> Długość czytania: 5 min */}
-            </span>
+            {title}
+            <span>Data publikacji: {date}</span>
           </h1>
-          <img src={articleImg} alt="title" />
+          <img src={headerImg} alt="title" />
         </div>
         <div className="separateLine"></div>
         <section className="infoContent">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            magni eligendi dolorum molestias sequi quae expedita magnam
-            mollitia, minima voluptatem sit natus aliquid alias temporibus modi?
-            Odio repellendus praesentium modi distinctio ea dolorem debitis
-            omnis. At tempora sapiente, harum, odit ducimus molestias est nihil
-            laborum facere excepturi iure pariatur aut reprehenderit inventore
-            incidunt repellat, eveniet molestiae? Doloremque quod omnis, maxime
-            dolorum voluptatem laborum? At reiciendis in non est rerum numquam
-            amet, asperiores perferendis ipsum.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            magni eligendi dolorum molestias sequi quae expedita magnam
-            mollitia, minima voluptatem sit natus aliquid alias temporibus modi?
-            Odio repellendus praesentium modi distinctio ea dolorem debitis
-            omnis. At tempora sapiente, harum, odit ducimus molestias est nihil
-            laborum facere excepturi iure pariatur aut reprehenderit inventore
-            incidunt repellat, eveniet molestiae? Doloremque quod omnis, maxime
-            dolorum voluptatem laborum? At reiciendis in non est rerum numquam
-            amet, asperiores perferendis ipsum.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            magni eligendi dolorum molestias sequi quae expedita magnam
-            mollitia, minima voluptatem sit natus aliquid alias temporibus modi?
-            Odio repellendus praesentium modi distinctio ea dolorem debitis
-            omnis. At tempora sapiente, harum, odit ducimus molestias est nihil
-            laborum facere excepturi iure pariatur aut reprehenderit inventore
-            incidunt repellat, eveniet molestiae? Doloremque quod omnis, maxime
-            dolorum voluptatem laborum? At reiciendis in non est rerum numquam
-            amet, asperiores perferendis ipsum.
-          </p>
+          {text.map((item, index) => {
+            return <p key={index}>{item}</p>;
+          })}
         </section>
         <SRLWrapper>
           <section className="images">
@@ -202,5 +163,32 @@ const Wrapper = styled.div`
     }
   }
 `;
+
+export const getStaticProps = async (context) => {
+  const slug = context.params.slug;
+  const oneArticle = blogData.find((item) => item.slug === slug);
+  const { title, date, text, images, headerImg, bgImg } = oneArticle;
+  return {
+    props: {
+      title,
+      date,
+      text,
+      images,
+      headerImg,
+      bgImg,
+    },
+    revalidate: 30,
+  };
+};
+export const getStaticPaths = async () => {
+  const paths = blogData.map((item) => ({
+    params: { slug: item.slug },
+  }));
+
+  return {
+    paths,
+    fallback: true,
+  };
+};
 
 export default SingleArticleBlog;

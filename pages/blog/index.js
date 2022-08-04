@@ -4,17 +4,9 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Link from "next/link";
+import { blogData } from "../../public/data";
 
 const blogHeaderImg = "/images/blog/blogHeader.png";
-const articleImg = "/images/ofertaImg/zakochani2.jpg";
-
-const text = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-quo id repellat illum error totam dicta temporibus quam
-exercitationem officiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-quo id repellat illum error totam dicta temporibus quam
-exercitationem officiis.`;
-
-const shortText = text.slice(0, 250) + "...";
 
 const BlogPage = () => {
   useEffect(() => {
@@ -33,74 +25,28 @@ const BlogPage = () => {
       </header>
       <h2 className="blogSubtitle">Lista Artykułów</h2>
       <div className="blogContent">
-        <Link href="/blog/title">
-          <article
-            data-aos="flip-left"
-            data-aos-duration="1000"
-            data-aos-offset="300"
-          >
-            <section className="articleImg">
-              <img src={articleImg} alt="title" />
-              <span>26.07.2022</span>
-            </section>
-            <section className="articleInfo">
-              <h3>Jak przebiega sesja lifestyle?</h3>
-              <p>{shortText}</p>
-              <IoEnter className="icon" />
-            </section>
-          </article>
-        </Link>
-        <Link href="/blog/title">
-          <article
-            data-aos="flip-left"
-            data-aos-duration="1000"
-            data-aos-offset="300"
-          >
-            <section className="articleImg">
-              <img src={articleImg} alt="title" />
-              <span>26.07.2022</span>
-            </section>
-            <section className="articleInfo">
-              <h3>Jak przebiega sesja lifestyle?</h3>
-              <p>{shortText}</p>
-              <IoEnter className="icon" />
-            </section>
-          </article>
-        </Link>
-        <Link href="/blog/title">
-          <article
-            data-aos="flip-left"
-            data-aos-duration="1000"
-            data-aos-offset="300"
-          >
-            <section className="articleImg">
-              <img src={articleImg} alt="title" />
-              <span>26.07.2022</span>
-            </section>
-            <section className="articleInfo">
-              <h3>Jak przebiega sesja lifestyle?</h3>
-              <p>{shortText}</p>
-              <IoEnter className="icon" />
-            </section>
-          </article>
-        </Link>
-        <Link href="/blog/title">
-          <article
-            data-aos="flip-left"
-            data-aos-duration="1000"
-            data-aos-offset="300"
-          >
-            <section className="articleImg">
-              <img src={articleImg} alt="title" />
-              <span>26.07.2022</span>
-            </section>
-            <section className="articleInfo">
-              <h3>Jak przebiega sesja lifestyle?</h3>
-              <p>{shortText}</p>
-              <IoEnter className="icon" />
-            </section>
-          </article>
-        </Link>
+        {blogData.map((article) => {
+          const { id, slug, title, text, headerImg, date } = article;
+          return (
+            <Link key={id} href={`/blog/${slug}`}>
+              <article
+                data-aos="flip-left"
+                data-aos-duration="1000"
+                data-aos-offset="300"
+              >
+                <section className="articleImg">
+                  <img src={headerImg} alt="zdjęcie" />
+                  <span>{date}</span>
+                </section>
+                <section className="articleInfo">
+                  <h3>{title}</h3>
+                  <p>{text[0].slice(0, 250) + "..."}</p>
+                  <IoEnter className="icon" />
+                </section>
+              </article>
+            </Link>
+          );
+        })}
       </div>
     </Wrapper>
   );

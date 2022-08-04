@@ -9,8 +9,9 @@ import ShortBlog from "../components/homePage/ShortBlog";
 import ShortAboutMe from "../components/homePage/ShortAboutMe";
 import ShortFaqContact from "../components/homePage/ShortFaqContact";
 import ShortInstagram from "../components/homePage/ShortInstagram";
+import { blogData } from "../public/data";
 
-const Home = ({ thumbnails }) => {
+const Home = ({ thumbnails, fourTitle }) => {
   const [showDetails, setShowDetails] = useState("");
   return (
     <>
@@ -31,7 +32,7 @@ const Home = ({ thumbnails }) => {
         <FirstInfo />
         <ShortGallery />
         <ShortOffer showDetails={showDetails} setShowDetails={setShowDetails} />
-        <ShortBlog />
+        <ShortBlog fourTitle={fourTitle} />
         <ShortAboutMe />
         <ShortFaqContact />
         <ShortInstagram thumbnails={thumbnails} />
@@ -49,9 +50,15 @@ export const getStaticProps = async () => {
     const smallImg = image.media_details.sizes.full.source_url;
     return smallImg;
   });
+  const titleOfArticles = blogData.map((item) => {
+    const title = item.title;
+    return title;
+  });
+  const fourTitle = titleOfArticles.slice(0, 4);
   return {
     props: {
       thumbnails,
+      fourTitle,
     },
     revalidate: 60,
   };
