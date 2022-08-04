@@ -40,7 +40,7 @@ body {
 
 
 .app {
-  --secondaryColor: #94693c;
+  --secondaryColor: rgb(148, 105, 60);
   /* --secondaryColor3: #3b1806; */
   --secondaryColor3: #5a270d;
   --primaryColor: rgb(10, 10, 10);

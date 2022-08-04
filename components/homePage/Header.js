@@ -58,7 +58,7 @@ const HomePage = ({ setShowDetails }) => {
           }
         >
           {headerData.map((item) => {
-            const { id, img, imgM, shortTitle, longTitle, category } = item;
+            const { id, img, imgM, shortTitle, longTitle, slug } = item;
             return (
               <div key={id} className="headerPart">
                 <div
@@ -86,7 +86,7 @@ const HomePage = ({ setShowDetails }) => {
                   >
                     Zobacz więcej
                   </Link> */}
-                  <Link href={`/oferta/${category}`}>Zobacz więcej</Link>
+                  <Link href={`/oferta/${slug}`}>Zobacz więcej</Link>
                 </section>
               </div>
             );

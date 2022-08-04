@@ -11,10 +11,10 @@ const OneOffer = (props) => {
     title,
     headerImg,
     graphic,
-    smallGraphic,
     longDescription,
     smallGallery,
     pakiety,
+    category,
   } = props;
 
   if (!title) {
@@ -49,14 +49,26 @@ const OneOffer = (props) => {
           <h2>{title}</h2>
         </div>
       </header>
-      <div className="infoAndGraphic">
-        <section className="longInfo">
-          {longDescription.map((text, index) => {
-            return <p key={index}>{text}</p>;
-          })}
-        </section>
-        <img src={graphic} alt="grafika" />
-      </div>
+      {category === "brzuszkowe" ? (
+        <div className="infoAndGraphic">
+          <section className="longInfo">
+            {longDescription.map((text, index) => {
+              return <p key={index}>{text}</p>;
+            })}
+          </section>
+          <img src={graphic[0]} alt="grafika" />
+        </div>
+      ) : (
+        <div className="infoAndGraphic2">
+          <img src={graphic[0]} alt="grafika" />
+          <section className="longInfo">
+            {longDescription.map((text, index) => {
+              return <p key={index}>{text}</p>;
+            })}
+          </section>
+          <img src={graphic[1]} alt="grafika" />
+        </div>
+      )}
       <SRLWrapper>
         <section className="smallGallery">
           {smallGallery.map((image, index) => {
@@ -64,7 +76,7 @@ const OneOffer = (props) => {
           })}
         </section>
       </SRLWrapper>
-      <PakietSingleOffer pakiety={pakiety} smallGraphic={smallGraphic} />
+      <PakietSingleOffer pakiety={pakiety} />
       <h3 className="cennik">Powyższy cennik obowiązuje od 01.08.2022 r.</h3>
       <Opinion />
       <Link href="/oferta">
@@ -123,13 +135,35 @@ const Wrapper = styled.div`
       opacity: 0.8;
       margin-bottom: -10vh;
     }
+    .longInfo {
+      width: 70%;
+      p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 3vh;
+      }
+    }
   }
-  .longInfo {
-    width: 70%;
-    p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      margin-bottom: 3vh;
+  .infoAndGraphic2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85vw;
+    margin: 20vh auto;
+    img {
+      width: 12%;
+      opacity: 0.8;
+      margin-bottom: -10vh;
+    }
+    .longInfo {
+      width: 60%;
+      margin-top: -10vh;
+      p {
+        text-align: center;
+        font-size: 1.4rem;
+        line-height: 2;
+        /* margin-bottom: 3vh; */
+      }
     }
   }
   .smallGallery {
@@ -178,16 +212,16 @@ const Wrapper = styled.div`
 `;
 
 export const getStaticProps = async (context) => {
-  const category = context.params.category;
-  const oneOffer = offers.find((item) => item.category === category);
+  const slug = context.params.slug;
+  const oneOffer = offers.find((item) => item.slug === slug);
   const {
     title,
     imgs,
     graphic,
     longDescription,
     smallGallery,
-    smallGraphic,
     pakiety,
+    category,
   } = oneOffer;
   const headerImg = imgs[1];
   return {
@@ -195,17 +229,17 @@ export const getStaticProps = async (context) => {
       headerImg,
       title,
       graphic,
-      smallGraphic,
       longDescription,
       smallGallery,
       pakiety,
+      category,
     },
     revalidate: 30,
   };
 };
 export const getStaticPaths = async () => {
   const paths = offers.map((offer) => ({
-    params: { category: offer.category },
+    params: { slug: offer.slug },
   }));
 
   return {

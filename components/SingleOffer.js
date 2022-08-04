@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const SingleOffer = ({ offer, setShowDetails }) => {
   const router = useRouter();
-  const { category, imgs } = offer;
+  const { category, slug, imgs } = offer;
   return (
     <Wrapper className="singleOffer">
       <div
@@ -15,7 +15,7 @@ const SingleOffer = ({ offer, setShowDetails }) => {
       <div className="singleContent">
         <h3 className="title">{category}</h3>
         {router.pathname == "/oferta" ? (
-          <Link href={`/oferta/${category}`}>
+          <Link href={`/oferta/${slug}`}>
             <button className="detailsBtn">szczegóły</button>
           </Link>
         ) : (

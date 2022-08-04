@@ -4,7 +4,7 @@ import { ImCross } from "react-icons/im";
 import Link from "next/link";
 
 const DetailsOffer = ({ oneOffer, setShowDetails }) => {
-  const { title, category, shortDescription, imgs } = oneOffer;
+  const { title, slug, shortDescription, imgs } = oneOffer;
   return (
     <Wrapper className="detailsBG">
       <div className="details">
@@ -16,44 +16,10 @@ const DetailsOffer = ({ oneOffer, setShowDetails }) => {
         <h2 className="detailsTitle">{title}</h2>
         <div className="detailsContent">
           <p>{shortDescription}</p>
-          <Link href={`/oferta/${category}`}>
+          <Link href={`/oferta/${slug}`}>
             <button className="detailsBtn">szczegóły</button>
           </Link>
         </div>
-        {/* <div className="detailsContent">
-          <div className="firstPart">
-            <h3 className="detailsPrice">
-              <span>Cena:</span> od {price} zł
-            </h3>
-            <h3 className="detailsNumber">
-              <span>Minimalna ilość zdjęć:</span> {numberOfImages}
-            </h3>
-            <h3 className="detailsTime">
-              <span>Czas:</span> ok. {time}
-            </h3>
-            <h3 className="detailsPlace">
-              {" "}
-              <span>Miejsce:</span> {place}
-            </h3>
-            <h3 className="detailsReady">
-              {" "}
-              <span>Gotowe zdjęcia:</span> {ready}
-            </h3>
-            <h3 className="detailsAlbum">
-              {" "}
-              <span>Album:</span> {album}
-            </h3>
-            <h3 className="detailsQuality">
-              {" "}
-              <span>Rozdzielczość:</span> {quality}
-            </h3>
-          </div>
-          <div className="detailsBorder"></div>
-          <div className="secondPart">
-            <h3>Opis:</h3>
-            <p>{description}</p>
-          </div>
-        </div> */}
       </div>
     </Wrapper>
   );
