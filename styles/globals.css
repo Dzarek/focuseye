@@ -55,7 +55,7 @@ body {
   --activeNavLink: #d9b89c;
   --footerBgColor: #eee6e0;
   --galleryContentColor: #111;
-  --logoBgMobile: rgba(0, 0, 0, 0.7);
+  --logoBgMobile: rgba(255, 255, 255, 0.9);
   --textFont: 'EB Garamond', serif;
   --titleFont: 'Poppins', sans-serif;
   width: 100vw;
@@ -192,4 +192,48 @@ body {
 .loading h2 {
   font-family: var(--titleFont);
   font-weight: 600;
+}
+
+.navHamburger {
+  position: fixed;
+  top: 0vh;
+  right: 4vw;
+  width: 50px;
+  height: 50px;
+  z-index: 999999;
+  background: var(--navigationBgColor);
+  display: none;
+  font-size: 2.3rem;
+  border-radius: 0 0 10px 10px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: #fff;
+  /* opacity: 0.9; */
+}
+
+.navHamburger2 {
+  position: fixed;
+  bottom: 0vh;
+  right: 4vw;
+  width: 50px;
+  height: 50px;
+  z-index: 999999;
+  background: var(--navigationBgColor);
+  display: none;
+  font-size: 2rem;
+  border-radius: 10px 10px 0 0;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: #fff;
+  /* opacity: 0.8; */
+}
+
+@media screen and (max-width:800px) {
+
+  .navHamburger,
+  .navHamburger2 {
+    display: flex;
+  }
 }

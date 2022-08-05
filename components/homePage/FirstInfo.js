@@ -35,11 +35,13 @@ const FirstInfo = () => {
 
 const Wrapper = styled.div`
   width: 60vw;
-  max-width: 1360px;
   min-height: 50vh;
   margin: 20vh auto 10vh;
   padding-top: 10vh;
   position: relative;
+  @media screen and (max-width: 800px) {
+    width: 90vw;
+  }
   .imgContainer {
     position: absolute;
     top: 50%;
@@ -65,20 +67,26 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
-    h1 {
+    /* h1 {
       font-family: var(--titleFont);
       margin-bottom: 7vh;
       font-size: 2rem;
       text-transform: uppercase;
       font-weight: 600;
       color: var(--secondaryColor3);
-      /* color: var(--navigationBgColor); */
-    }
+    } */
     p {
       font-size: 1.4rem;
       font-weight: 500;
       font-family: var(--textFont);
       line-height: 1.7;
+    }
+    @media screen and (max-width: 800px) {
+      width: 80%;
+      p {
+        font-size: 1.3rem;
+        line-height: 1.6;
+      }
     }
   }
 `;

@@ -40,10 +40,8 @@ const Wrapper = styled.div`
   border-bottom: 2px solid var(--secondaryColor);
   width: 100vw;
   position: relative;
-  /* height: 30vh; */
   .carousel {
     width: 100vw;
-    /* height: 30vh; */
     img {
       height: 14.28vw;
       width: 14.28vw;

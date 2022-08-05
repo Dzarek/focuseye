@@ -51,7 +51,6 @@ const HomePage = ({ setShowDetails }) => {
           animationSpeed={1000}
           slidesPerPage={1}
           addArrowClickHandler
-          // stopAutoPlayOnHover
           arrowLeft={<IoIosArrowDropleftCircle className="arrow arrowLeft" />}
           arrowRight={
             <IoIosArrowDroprightCircle className="arrow arrowRight" />
@@ -76,16 +75,6 @@ const HomePage = ({ setShowDetails }) => {
                     <div className="oneline"></div>
                   </div>
                   <h1>{longTitle}</h1>
-                  {/* <Link
-                    to="shortOffer"
-                    smooth={true}
-                    duration={1000}
-                    spy={true}
-                    onClick={() => handleShowDetails(category)}
-                    offset={-100}
-                  >
-                    Zobacz więcej
-                  </Link> */}
                   <Link href={`/oferta/${slug}`}>Zobacz więcej</Link>
                 </section>
               </div>
@@ -212,7 +201,7 @@ const Wrapper = styled.div`
       right: 5%;
     }
     @media screen and (max-width: 800px) {
-      height: 90vh;
+      height: 100vh;
       width: 100vw;
       top: 0%;
       transform: translateX(-50%);
@@ -230,13 +219,12 @@ const Wrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     @media screen and (max-width: 800px) {
-      height: 90vh;
+      height: 100vh;
       width: 100vw;
     }
     .headerPartImg {
       width: 100%;
       height: 100%;
-      /* object-fit: cover; */
       position: absolute;
       top: 50%;
       left: 50%;
@@ -245,7 +233,7 @@ const Wrapper = styled.div`
       background-size: cover;
       background-position: center;
       @media screen and (max-width: 800px) {
-        height: 90vh;
+        height: 100vh;
         width: 100vw;
       }
     }
@@ -298,13 +286,16 @@ const Wrapper = styled.div`
         width: 90%;
         left: 5%;
         bottom: 5%;
-        h2 {
-          font-size: 1.7rem;
-          margin: 1vh 0 5vh 0;
+        h1 {
+          font-size: 1.8rem;
+          margin: 3vh 0 5vh 0;
         }
         a {
-          width: 50%;
-          font-size: 1.1rem;
+          max-width: 55%;
+          font-size: 1rem;
+        }
+        p {
+          font-size: 1rem;
         }
       }
     }
