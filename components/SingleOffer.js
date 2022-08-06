@@ -37,7 +37,7 @@ const Wrapper = styled.div`
   position: relative;
   @media screen and (max-width: 800px) {
     width: 100%;
-    height: 70vh;
+    height: 60vh;
   }
   .singleBG {
     width: 100%;
@@ -73,15 +73,10 @@ const Wrapper = styled.div`
       padding-bottom: 15px;
       font-size: 2rem;
       text-shadow: 2px 2px 2px black;
+      @media screen and (max-width: 800px) {
+        font-size: 1.5rem;
+      }
     }
-    /* .price {
-      font-size: 2rem;
-      margin-top: 50%;
-      text-shadow: 3px 3px 3px black;
-      font-family: var(--textFont);
-      color: white;
-      text-transform: lowercase;
-    } */
 
     .detailsBtn {
       background-color: transparent;
@@ -101,6 +96,10 @@ const Wrapper = styled.div`
         background-color: white;
         color: var(--secondaryColor3);
         text-shadow: none;
+      }
+      @media screen and (max-width: 800px) {
+        font-size: 1.2rem;
+        padding: 5px 20px;
       }
     }
   }

@@ -9,36 +9,56 @@ const ShortBlog = ({ fourTitle }) => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <Wrapper>
-      <h3 className="firsth3">
-        Jeśli interesują Cię ciekawostki na temat fotografii zapraszam do
-        zakładki BLOG. <br /> Znajdziesz tam artykuły takie jak:
-      </h3>
-      <Link href="/blog">
-        <h2 className="blogTitle">BLOG</h2>
-      </Link>
-      {fourTitle[0] && <p data-aos="zoom-in-right">{fourTitle[0]}</p>}
-      {fourTitle[1] && (
-        <p data-aos="zoom-in-left" data-aos-delay="500">
-          {fourTitle[1]}
-        </p>
-      )}
-      {fourTitle[2] && (
-        <p data-aos="zoom-in-right" data-aos-delay="1000">
-          {fourTitle[2]}
-        </p>
-      )}
-      {fourTitle[3] && (
-        <p data-aos="zoom-in-left" data-aos-delay="1500">
-          {fourTitle[3]}
-        </p>
-      )}
-      <h3 className="lasth3">oraz wiele innych...</h3>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <h3 className="firsth3">
+          Jeśli interesują Cię ciekawostki na temat fotografii zapraszam do
+          zakładki BLOG. <br /> Znajdziesz tam artykuły takie jak:
+        </h3>
+        <Link href="/blog">
+          <h2 className="blogTitle">BLOG</h2>
+        </Link>
+        {fourTitle[0] && <p data-aos="zoom-in-right">{fourTitle[0]}</p>}
+        {fourTitle[1] && (
+          <p data-aos="zoom-in-left" data-aos-delay="500">
+            {fourTitle[1]}
+          </p>
+        )}
+        {fourTitle[2] && (
+          <p data-aos="zoom-in-right" data-aos-delay="1000">
+            {fourTitle[2]}
+          </p>
+        )}
+        {fourTitle[3] && (
+          <p data-aos="zoom-in-left" data-aos-delay="1500">
+            {fourTitle[3]}
+          </p>
+        )}
+        <h3 className="lasth3">oraz wiele innych...</h3>
+      </Wrapper>
+      <Wrapper2>
+        <h3 className="firsth3">
+          Jeśli interesują Cię ciekawostki na temat fotografii zapraszam do
+          zakładki{" "}
+          <Link href="/blog">
+            <span>BLOG</span>
+          </Link>
+          . <br /> Znajdziesz tam artykuły takie jak:
+        </h3>
+        {fourTitle[0] && <p data-aos="zoom-in-right">{fourTitle[0]}</p>}
+        {fourTitle[1] && <p data-aos="zoom-in-right">{fourTitle[1]}</p>}
+        {fourTitle[2] && <p data-aos="zoom-in-right">{fourTitle[2]}</p>}
+        {fourTitle[3] && <p data-aos="zoom-in-right">{fourTitle[3]}</p>}
+        <h3 className="lasth3">oraz wiele innych...</h3>
+      </Wrapper2>
+    </>
   );
 };
 
 const Wrapper = styled.div`
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
   width: 90vw;
   min-height: 60vh;
   margin: 10vh auto;
@@ -99,6 +119,43 @@ const Wrapper = styled.div`
   p:nth-of-type(4) {
     bottom: 25%;
     right: 5%;
+  }
+`;
+const Wrapper2 = styled.div`
+  @media screen and (min-width: 801px) {
+    display: none;
+  }
+  width: 95vw;
+  min-height: 60vh;
+  margin: 10vh auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  h3 {
+    text-align: center;
+    font-size: 1.3rem;
+    width: 90%;
+    font-weight: 600;
+    span {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--secondaryColor);
+    }
+  }
+  .firsth3 {
+    margin-bottom: 5vh;
+  }
+  .lasth3 {
+    margin-top: 5vh;
+  }
+  p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--secondaryColor3);
+    width: 90%;
+    margin: 2vh auto;
   }
 `;
 

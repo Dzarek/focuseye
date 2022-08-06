@@ -32,7 +32,7 @@ const Wrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 99;
 
   .details {
     background-color: var(--singleOfferBgColor);
@@ -57,7 +57,9 @@ const Wrapper = styled.div`
       height: 60%;
       background-size: cover;
       background-position: center;
-      /* filter: saturate(0.5); */
+      @media screen and (max-width: 800px) {
+        height: 40%;
+      }
       button {
         position: absolute;
         top: 0%;
@@ -75,6 +77,9 @@ const Wrapper = styled.div`
         :hover .detailIcon {
           transform: rotate(90deg);
         }
+        @media screen and (max-width: 800px) {
+          right: 80%;
+        }
       }
     }
     .detailsTitle {
@@ -85,6 +90,10 @@ const Wrapper = styled.div`
       text-shadow: 2px 2px 2px black;
       font-size: 2.2rem;
       color: #fff;
+      @media screen and (max-width: 800px) {
+        font-size: 2rem;
+        width: 95%;
+      }
     }
     .detailsContent {
       margin: 5vh auto;

@@ -142,16 +142,10 @@ const Wrapper = styled.div`
         font-size: 1.4rem;
         font-weight: 500;
         .icon {
-          /* font-size: 1.3rem; */
           margin-top: 4px;
           margin-right: 10px;
           color: var(--secondaryColor);
         }
-        /* p {
-          margin-bottom: 3vh;
-          font-size: 1.4rem;
-          font-weight: 500;
-        } */
       }
     }
     button {
@@ -189,9 +183,6 @@ const Wrapper = styled.div`
       @media screen and (max-width: 800px) {
         z-index: 9;
         position: absolute;
-        color: #ddd;
-        font-size: 3rem;
-        opacity: 0.6;
       }
     }
     @media screen and (max-width: 800px) {
@@ -201,6 +192,28 @@ const Wrapper = styled.div`
       .arrowLeft {
         left: 0;
       }
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .shortOfferContainer {
+      width: 90vw;
+      flex-direction: column;
+      padding: 5vh 0;
+    }
+    .textContainer {
+      width: 100%;
+      h2 {
+        margin-bottom: 5vh;
+        font-size: 3rem;
+      }
+    }
+    .offerContainer {
+      width: 90%;
+    }
+    .allOffer {
+      width: 100%;
+      height: 60vh;
+      margin: 5vh auto;
     }
   }
 `;

@@ -90,23 +90,17 @@ const Wrapper = styled.div`
   position: relative;
   overflow: hidden;
   @media screen and (max-width: 800px) {
-    margin-bottom: 10vh;
-    height: 12vh;
-    text-align: center;
-    border-bottom: 2px solid var(--secondaryColor);
+    flex-direction: column;
+    height: auto;
+    padding: 5vh 1vw 10vh;
+    font-size: 1.1rem;
   }
   .logo {
     width: 15vw;
     margin-bottom: 3vh;
-    /* animation: bigger 2s ease infinite alternate;
-    @keyframes bigger {
-      80% {
-        transform: scale(1);
-      }
-      100% {
-        transform: scale(0.5);
-      }
-    } */
+    @media screen and (max-width: 800px) {
+      width: 45vw;
+    }
   }
   .firstSection {
     display: flex;
@@ -154,6 +148,9 @@ const Wrapper = styled.div`
       color: var(--secondaryColor);
       transition: 0.4s;
     }
+    @media screen and (max-width: 800px) {
+      margin: 5vh auto;
+    }
   }
   .thirdSection {
     display: flex;
@@ -169,6 +166,13 @@ const Wrapper = styled.div`
       color: var(--secondaryColor3);
       font-family: var(--textFont);
       font-size: 0.9rem;
+    }
+    @media screen and (max-width: 800px) {
+      width: 95%;
+      margin: 0 auto;
+      img {
+        width: 80%;
+      }
     }
   }
   .logoJarek {
@@ -197,7 +201,7 @@ const Wrapper = styled.div`
       letter-spacing: 1px;
     }
     @media screen and (max-width: 800px) {
-      top: 80%;
+      bottom: 2%;
       left: 3%;
     }
   }

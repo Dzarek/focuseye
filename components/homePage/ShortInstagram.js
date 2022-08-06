@@ -13,6 +13,11 @@ const ShortInstagram = ({ thumbnails }) => {
         autoPlay={3000}
         animationSpeed={1000}
         slidesPerPage={7}
+        breakpoints={{
+          900: {
+            slidesPerPage: 3,
+          },
+        }}
       >
         {thumbnails && thumbnails.length > 9
           ? thumbnails.map((item, index) => {
@@ -46,6 +51,10 @@ const Wrapper = styled.div`
       height: 14.28vw;
       width: 14.28vw;
       object-fit: cover;
+      @media screen and (max-width: 800px) {
+        height: 33.33vw;
+        width: 33.33vw;
+      }
     }
   }
   a {
@@ -72,6 +81,11 @@ const Wrapper = styled.div`
     :hover {
       background: var(--activeNavLink);
       color: var(--secondaryColor3);
+    }
+    @media screen and (max-width: 800px) {
+      font-size: 1rem;
+      width: 150px;
+      height: 40px;
     }
   }
 `;

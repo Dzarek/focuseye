@@ -103,6 +103,7 @@ const Wrapper = styled.div`
         }
         p {
           text-align: right;
+          font-size: 1.2rem;
         }
       }
     }

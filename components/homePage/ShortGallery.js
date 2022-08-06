@@ -44,6 +44,9 @@ const ShortGallery = () => {
 
 const Wrapper = styled.div`
   margin: 20vh auto 0vh;
+  @media screen and (max-width: 800px) {
+    margin: 10vh auto 10vh;
+  }
   .pageContainer {
     width: 90%;
     height: 70vh;
@@ -114,6 +117,47 @@ const Wrapper = styled.div`
       transition: 0.5s;
       :hover {
         color: var(--secondaryColor3);
+      }
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .pageContainer {
+      flex-direction: column-reverse;
+      height: 100vh;
+      .imgContainer {
+        width: 100%;
+        img {
+          height: 15vh;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        img:nth-of-type(1) {
+          top: 0;
+          left: 0;
+        }
+        img:nth-of-type(2) {
+          top: 5%;
+          left: 55%;
+        }
+        img:nth-of-type(3) {
+          top: 45%;
+          left: 57%;
+        }
+        img:nth-of-type(4) {
+          top: 47%;
+          left: 2%;
+        }
+      }
+      .textContainer {
+        width: 100%;
+        h2 {
+          margin-bottom: 4vh;
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 1.3rem;
+        }
       }
     }
   }
