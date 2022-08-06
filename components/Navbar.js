@@ -207,6 +207,14 @@ const Navbar = () => {
             </div>
           </section>
         </div>
+        <button
+          className={offset > 200 ? "upBtn" : "upBtn upBtnNone"}
+          onClick={() => {
+            scroll.scrollToTop();
+          }}
+        >
+          <BsFillArrowUpSquareFill />
+        </button>
       </Wrapper2>
     </>
   );
@@ -545,6 +553,24 @@ const Wrapper2 = styled.div`
         font-weight: 500;
       }
     }
+  }
+  .upBtn {
+    position: fixed;
+    z-index: 9;
+    bottom: 3vh;
+    right: 3vw;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    color: var(--navigationBgColor);
+    transition: 0.5s;
+    cursor: pointer;
+    :hover {
+      color: var(--secondaryColor);
+    }
+  }
+  .upBtnNone {
+    opacity: 0;
   }
 `;
 

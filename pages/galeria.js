@@ -184,11 +184,7 @@ const Wrapper = styled.div`
   padding-top: 10vh;
   position: relative;
   @media screen and (max-width: 800px) {
-    /* margin-top: 5vh; */
-    .title {
-      /* padding-top: 8vh; */
-      /* margin-top: -5vh; */
-    }
+    padding-top: 0vh;
   }
 
   header {
@@ -220,6 +216,9 @@ const Wrapper = styled.div`
     img {
       height: 50vh;
       margin-left: 5vw;
+    }
+    @media screen and (max-width: 800px) {
+      margin-top: 0vh;
     }
   }
 

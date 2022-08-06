@@ -7,7 +7,7 @@ const bgImg = "/images/logoBg.png";
 
 const FirstInfo = () => {
   useEffect(() => {
-    Aos.init({ duration: 1000 });
+    Aos.init({ duration: 1000, disable: "mobile" });
   }, []);
   return (
     <Wrapper>

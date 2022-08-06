@@ -62,6 +62,7 @@ const ShortOffer = ({ showDetails, setShowDetails }) => {
           <Carousel
             className="allOffer"
             infinite
+            draggable={false}
             autoPlay={3000}
             animationSpeed={1000}
             slidesPerPage={1}

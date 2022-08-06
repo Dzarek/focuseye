@@ -149,7 +149,9 @@ const Wrapper = styled.div`
       transition: 0.4s;
     }
     @media screen and (max-width: 800px) {
-      margin: 5vh auto;
+      margin-top: 5vh;
+      margin-bottom: 5vh;
+      width: 90vw;
     }
   }
   .thirdSection {

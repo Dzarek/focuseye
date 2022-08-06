@@ -127,7 +127,8 @@ const Wrapper = styled.div`
       .imgContainer {
         width: 100%;
         img {
-          height: 15vh;
+          height: auto;
+          width: 40vw;
           position: absolute;
           top: 0;
           left: 0;
