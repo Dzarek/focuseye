@@ -208,6 +208,10 @@ const Wrapper = styled.div`
 
       .arrowLeft {
         right: 15%;
+        bottom: 10%;
+      }
+      .arrowRight {
+        bottom: 10%;
       }
     }
   }
@@ -285,10 +289,10 @@ const Wrapper = styled.div`
       @media screen and (max-width: 800px) {
         width: 90%;
         left: 5%;
-        bottom: 5%;
+        bottom: 10%;
         h1 {
-          font-size: 1.8rem;
-          margin: 3vh 0 5vh 0;
+          font-size: 1.9rem;
+          margin: 2vh auto 5vh 0;
         }
         a {
           max-width: 55%;

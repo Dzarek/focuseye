@@ -861,7 +861,7 @@ export const headerData = [
     img: offerChrzest2,
     imgM: offerChrzest1,
     shortTitle: "chrzty święte",
-    longTitle: "Zdjęcia z Chrztu Świętego",
+    longTitle: "Reportaż z Chrztu Świętego",
     category: "chrzest",
     slug: "chrzest",
   },

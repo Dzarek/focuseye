@@ -8,14 +8,30 @@ import { IoHome } from "react-icons/io5";
 
 import { HiMenuAlt2 } from "react-icons/hi";
 import { FaRegArrowAltCircleUp } from "react-icons/fa";
+import {
+  FaFacebookSquare,
+  FaInstagramSquare,
+  FaPhoneSquare,
+} from "react-icons/fa";
+import { ImMail } from "react-icons/im";
 
-const navImg = "/images/faq/faqPerson.png";
+// const navImg = "/images/faq/faqPerson.png";
+const navLogo = "/images/navLogo.png";
 
 const Navbar = () => {
   const [offset, setOffset] = useState(0);
   const [showMenu, setShowMenu] = useState(false);
-  // const [showPhone, setShowPhone] = useState(false);
-  // const [showEmail, setShowEmail] = useState(false);
+  const [showPhone, setShowPhone] = useState(false);
+  const [showEmail, setShowEmail] = useState(false);
+
+  const handlePhone = () => {
+    setShowPhone(!showPhone);
+    setShowEmail(false);
+  };
+  const handleEmail = () => {
+    setShowPhone(false);
+    setShowEmail(!showEmail);
+  };
 
   useEffect(() => {
     window.onscroll = () => {
@@ -106,45 +122,89 @@ const Navbar = () => {
             </h2>
           </div>
           <div className="navlinks">
-            <img src={navImg} alt="" />
+            <img src={navLogo} alt="logo" />
             <Link href="/">
-              <a className={router.pathname == "/" ? "active" : ""}>
+              <a
+                onClick={() => setShowMenu(false)}
+                className={router.pathname == "/" ? "active" : ""}
+              >
                 Strona Główna
               </a>
             </Link>
             <Link href="/galeria">
-              <a className={router.pathname == "/galeria" ? "active" : ""}>
+              <a
+                onClick={() => setShowMenu(false)}
+                className={router.pathname == "/galeria" ? "active" : ""}
+              >
                 Galeria
               </a>
             </Link>
             <Link href="/oferta">
-              <a className={router.pathname == "/oferta" ? "active" : ""}>
+              <a
+                onClick={() => setShowMenu(false)}
+                className={router.pathname == "/oferta" ? "active" : ""}
+              >
                 Oferta
               </a>
             </Link>
             <Link href="/blog">
-              <a className={router.pathname == "/blog" ? "active" : ""}>Blog</a>
+              <a
+                onClick={() => setShowMenu(false)}
+                className={router.pathname == "/blog" ? "active" : ""}
+              >
+                Blog
+              </a>
             </Link>
 
             <Link href="/omnie">
-              <a className={router.pathname == "/omnie" ? "active" : ""}>
+              <a
+                onClick={() => setShowMenu(false)}
+                className={router.pathname == "/omnie" ? "active" : ""}
+              >
                 O mnie
               </a>
             </Link>
             <Link href="/faq">
-              <a className={router.pathname == "/faq" ? "active" : ""}>FAQ</a>
+              <a
+                onClick={() => setShowMenu(false)}
+                className={router.pathname == "/faq" ? "active" : ""}
+              >
+                FAQ
+              </a>
             </Link>
             <Link href="/kontakt">
-              <a className={router.pathname == "/kontakt" ? "active" : ""}>
+              <a
+                onClick={() => setShowMenu(false)}
+                className={router.pathname == "/kontakt" ? "active" : ""}
+              >
                 Kontakt
               </a>
             </Link>
           </div>
-          <footer className="footer">
-            <p>
-              &copy; {new Date().getFullYear()} <br />
-            </p>
-          </footer>
+          <section className="media-icons">
+            <a
+              href="https://www.facebook.com/sylwiasajdakfotografia/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookSquare className="icon" />
+            </a>
+            <a
+              href="https://www.instagram.com/focuseye_sylwiasajdak/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagramSquare className="icon" />
+            </a>
+            <a href="tel:+48798698605" onClick={handlePhone}>
+              <FaPhoneSquare className="icon" />
+            </a>
+            <ImMail className="icon" onClick={handleEmail} />
+            <div className="media-info">
+              {showPhone && <p>798 698 605</p>}
+              {showEmail && <p>kontakt.focuseye@gmail.com</p>}
+            </div>
+          </section>
         </div>
       </Wrapper2>
     </>
@@ -344,7 +404,8 @@ const Wrapper2 = styled.div`
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    background: var(--navigationBgColor);
+    background: var(--activeNavLink);
+    box-shadow: 0px 3px 5px 0px var(--activeNavLink);
   }
   h2 {
     font-family: "Genos", sans-serif;
@@ -358,8 +419,7 @@ const Wrapper2 = styled.div`
       margin: 5px 25px 0;
       height: 1rem;
       width: 3px;
-      background: white;
-      background: #999;
+      background: var(--primaryColor);
       animation: logoR 4s linear infinite;
 
       @keyframes logoR {
@@ -393,11 +453,11 @@ const Wrapper2 = styled.div`
       }
     }
     span {
-      color: var(--activeNavLink);
+      color: var(--secondaryColor3);
     }
   }
   .navlinks {
-    margin: 0 auto 10vh;
+    margin: 0 auto;
     /* height: 10vh; */
     width: 95vw;
     display: flex;
@@ -427,11 +487,62 @@ const Wrapper2 = styled.div`
     }
     img {
       position: absolute;
-      top: 30%;
-      left: 5%;
-      width: 55vw;
-      transform: rotateY(180deg);
+      top: 20%;
+      left: 0%;
+      width: 65vw;
+      /* transform: rotateY(180deg); */
       opacity: 0.8;
+      animation: hideImg 2s linear infinite alternate;
+      @keyframes hideImg {
+        0% {
+          opacity: 0.8;
+        }
+        100% {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+  .media-icons {
+    height: 20vh;
+    color: var(--secondaryColor);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5rem;
+    width: 80%;
+    margin: -10vh auto 8vh;
+    flex-wrap: wrap;
+    position: relative;
+    a {
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .icon {
+      cursor: pointer;
+      transition: 0.3s;
+      color: var(--secondaryColor);
+      font-size: 2.3rem;
+      :hover {
+        font-size: 2.4rem;
+      }
+    }
+    .media-info {
+      width: 100%;
+      margin: 0vh auto;
+      text-align: center;
+      position: absolute;
+      bottom: 2%;
+      left: 50%;
+      transform: translateX(-50%);
+      p {
+        font-size: 1rem;
+        font-family: var(--titleFont);
+        color: var(--primaryColor);
+        font-weight: 500;
+      }
     }
   }
 `;
