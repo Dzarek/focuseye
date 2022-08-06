@@ -499,7 +499,7 @@ const Wrapper2 = styled.div`
           opacity: 0.8;
         }
         100% {
-          opacity: 0.6;
+          opacity: 0.5;
         }
       }
     }
@@ -512,7 +512,7 @@ const Wrapper2 = styled.div`
     align-items: center;
     font-size: 1.5rem;
     width: 80%;
-    margin: -5vh auto 10vh;
+    margin: -7vh auto 12vh;
     flex-wrap: wrap;
     position: relative;
     a {

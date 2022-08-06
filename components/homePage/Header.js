@@ -47,6 +47,7 @@ const HomePage = ({ setShowDetails }) => {
       <div className="headerImages">
         <Carousel
           infinite
+          draggable={false}
           autoPlay={5000}
           animationSpeed={1000}
           slidesPerPage={1}
@@ -208,10 +209,10 @@ const Wrapper = styled.div`
 
       .arrowLeft {
         right: 15%;
-        bottom: 10%;
+        bottom: 12%;
       }
       .arrowRight {
-        bottom: 10%;
+        bottom: 12%;
       }
     }
   }
@@ -289,10 +290,10 @@ const Wrapper = styled.div`
       @media screen and (max-width: 800px) {
         width: 90%;
         left: 5%;
-        bottom: 10%;
+        bottom: 12%;
         h1 {
           font-size: 1.9rem;
-          margin: 2vh auto 5vh 0;
+          margin: 2vh auto 3vh 0;
         }
         a {
           max-width: 55%;
