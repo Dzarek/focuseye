@@ -99,21 +99,22 @@ const Navbar = () => {
         </button>
       </Wrapper>
       <Wrapper2>
-        {!showMenu && (
+        {!showMenu ? (
           <button
             onClick={() => setShowMenu(!showMenu)}
             className="navHamburger"
           >
             <HiMenuAlt2 />
           </button>
-        )}
-        <div className={showMenu ? "mobileNav showMain-Nav" : "mobileNav"}>
+        ) : (
           <button
             onClick={() => setShowMenu(!showMenu)}
             className="navHamburger2"
           >
             <FaRegArrowAltCircleUp />
           </button>
+        )}
+        <div className={showMenu ? "mobileNav showMain-Nav" : "mobileNav"}>
           <div className="logo">
             <h2>
               FocusEye
@@ -511,7 +512,7 @@ const Wrapper2 = styled.div`
     align-items: center;
     font-size: 1.5rem;
     width: 80%;
-    margin: -10vh auto 8vh;
+    margin: -5vh auto 10vh;
     flex-wrap: wrap;
     position: relative;
     a {
