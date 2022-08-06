@@ -570,7 +570,7 @@ const Wrapper2 = styled.div`
     }
   }
   .upBtnNone {
-    opacity: 0;
+    display: none;
   }
 `;
 

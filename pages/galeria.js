@@ -164,8 +164,8 @@ const GalleryPage = () => {
                   className="loadingImg"
                   bubbles
                   color={"#94693c"}
-                  height={"6%"}
-                  width={"6%"}
+                  height={"8%"}
+                  width={"8%"}
                 />
               )}
             </>
@@ -219,6 +219,22 @@ const Wrapper = styled.div`
     }
     @media screen and (max-width: 800px) {
       margin-top: 0vh;
+      flex-direction: column-reverse;
+      img {
+        height: auto;
+        width: 60vw;
+        margin: 0 auto;
+      }
+      .title {
+        padding: 5vh 2vw;
+        text-align: center;
+        margin: 0 auto;
+        h2 {
+          font-size: 2.5rem;
+          text-align: center;
+          margin: 3vh auto;
+        }
+      }
     }
   }
 
@@ -305,7 +321,7 @@ const Wrapper = styled.div`
     margin-bottom: 10px;
     width: 250px;
     @media screen and (max-width: 800px) {
-      width: 100vw;
+      width: 95vw;
     }
   }
   .loadImagesBtn {
