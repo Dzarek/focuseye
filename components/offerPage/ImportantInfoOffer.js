@@ -105,6 +105,9 @@ const Wrapper = styled.section`
   background: var(--sectionBgColor);
   /* margin-bottom: 15vh; */
   position: relative;
+  @media screen and (max-width: 800px) {
+    padding: 5vh 2vw;
+  }
   .iconBig {
     position: absolute;
     right: 6vw;
@@ -112,12 +115,19 @@ const Wrapper = styled.section`
     transform: translateY(-50%);
     font-size: 12rem;
     color: var(--secondaryColor);
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
   }
   h2 {
     text-transform: uppercase;
     color: var(--secondaryColor);
     font-size: 2rem;
     margin-bottom: 5vh;
+    @media screen and (max-width: 800px) {
+      text-align: center;
+      margin: 0 auto 5vh;
+    }
   }
   .infoContent {
     display: flex;
@@ -133,6 +143,9 @@ const Wrapper = styled.section`
       .icon {
         color: var(--secondaryColor);
         margin-top: 3px;
+      }
+      @media screen and (max-width: 800px) {
+        font-size: 1.2rem;
       }
     }
   }

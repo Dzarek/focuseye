@@ -26,7 +26,7 @@ const crystalAlbums = "/images/ofertaImg/albums/crystalAlbums.png";
 
 const Albums = () => {
   useEffect(() => {
-    Aos.init({ duration: 1000 });
+    Aos.init({ duration: 1000, disable: "mobile" });
   }, []);
   return (
     <Wrapper>
@@ -35,7 +35,7 @@ const Albums = () => {
         className="carousel"
         infinite
         draggable={false}
-        autoPlay={5000}
+        // autoPlay={5000}
         animationSpeed={1000}
         slidesPerPage={1}
         addArrowClickHandler
@@ -236,6 +236,10 @@ const Wrapper = styled.section`
     width: 90vw;
     margin: 0 auto;
     min-height: 55vh;
+    @media screen and (max-width: 800px) {
+      width: 100vw;
+      position: relative;
+    }
   }
 
   .albumsAndCovers {
@@ -244,6 +248,10 @@ const Wrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media screen and (max-width: 800px) {
+      width: 100vw;
+      flex-direction: column;
+    }
     .oneAlbum {
       width: 65%;
       min-height: 55vh;
@@ -251,23 +259,38 @@ const Wrapper = styled.section`
       padding: 2vw;
       border: 2px solid var(--secondaryColor3);
       border-radius: 10px;
+      @media screen and (max-width: 800px) {
+        width: 100%;
+        padding: 1vw;
+        border: 1px solid var(--secondaryColor3);
+      }
       h3 {
         color: var(--secondaryColor3);
         font-size: 1.4rem;
         margin: 0 auto 5vh;
         text-align: center;
+        @media screen and (max-width: 800px) {
+          font-size: 1.2rem;
+          margin-bottom: 3vh;
+        }
       }
       .oneAlbumContent {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-
+        @media screen and (max-width: 800px) {
+          flex-direction: column;
+        }
         .table {
           width: 40%;
           display: flex;
           justify-content: center;
           align-items: center;
           flex-wrap: wrap;
+          @media screen and (max-width: 800px) {
+            width: 100%;
+            margin: 2vh auto;
+          }
           h4 {
             margin-top: 2vh;
           }
@@ -294,6 +317,9 @@ const Wrapper = styled.section`
 
         .info {
           width: 55%;
+          @media screen and (max-width: 800px) {
+            width: 95%;
+          }
           ul {
             list-style: none;
             li {
@@ -325,7 +351,10 @@ const Wrapper = styled.section`
       border-radius: 10px;
       display: flex;
       flex-direction: column;
-
+      @media screen and (max-width: 800px) {
+        width: 100%;
+        padding: 1vw;
+      }
       h3 {
         color: var(--secondaryColor3);
         font-size: 1.4rem;
@@ -345,6 +374,9 @@ const Wrapper = styled.section`
           justify-content: center;
           align-items: center;
           flex-wrap: wrap;
+          @media screen and (max-width: 800px) {
+            width: 100%;
+          }
           h4 {
             margin-top: 2vh;
           }
@@ -356,6 +388,11 @@ const Wrapper = styled.section`
             border-bottom: none;
             font-weight: 500;
             width: 30%;
+            @media screen and (max-width: 800px) {
+              width: 33.33%;
+              height: 7vh;
+              padding: 0 5px;
+            }
             :nth-last-child(2),
             :nth-last-child(3),
             :nth-last-child(4) {
@@ -365,12 +402,18 @@ const Wrapper = styled.section`
             :nth-of-type(4),
             :nth-of-type(7) {
               width: 40%;
+              @media screen and (max-width: 800px) {
+                width: 33.33%;
+              }
             }
           }
         }
         .info {
           width: 85%;
           margin-bottom: 1vh;
+          @media screen and (max-width: 800px) {
+            width: 95%;
+          }
           ul {
             list-style: none;
             li {
@@ -408,11 +451,22 @@ const Wrapper = styled.section`
       .oneSection {
         width: 45%;
       }
+      @media screen and (max-width: 800px) {
+        width: 100%;
+        flex-direction: column;
+        .oneSection {
+          width: 100%;
+          margin-bottom: 4vh;
+        }
+      }
       h3 {
         color: var(--secondaryColor3);
         font-size: 1.2rem;
         margin: 0 auto 5vh;
         text-align: center;
+        @media screen and (max-width: 800px) {
+          margin: 0 auto 1vh;
+        }
       }
       .oneAlbumContent {
         display: flex;
@@ -453,6 +507,9 @@ const Wrapper = styled.section`
       .info {
         width: 85%;
         margin-bottom: 1vh;
+        @media screen and (max-width: 800px) {
+          width: 100%;
+        }
         ul {
           list-style: none;
           li {
@@ -480,6 +537,9 @@ const Wrapper = styled.section`
       /* background: var(--aboutMeBgColor); */
       border: 2px solid var(--secondaryColor3);
       border-radius: 10px;
+      @media screen and (max-width: 800px) {
+        width: 100%;
+      }
       .oneSliderA {
         width: 100%;
         height: 55vh;
@@ -568,10 +628,41 @@ const Wrapper = styled.section`
         margin-top: 10vh;
       }
     }
+    @media screen and (max-width: 800px) {
+      width: 100vw;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 5vh auto;
+      img {
+        height: auto;
+        width: 45vw;
+        margin: 2vw;
+        :nth-child(2) {
+          display: none;
+        }
+        :nth-child(even) {
+          margin-top: 0vh;
+        }
+      }
+    }
   }
   .arrow {
     font-size: 2.5rem;
     color: var(--secondaryColor3);
+    @media screen and (max-width: 800px) {
+      font-size: 2rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .arrowLeft {
+      left: 30%;
+    }
+    .arrowRight {
+      left: 60%;
+    }
   }
 `;
 

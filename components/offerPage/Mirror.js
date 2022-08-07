@@ -32,16 +32,28 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: 800px) {
+    height: auto;
+    flex-direction: column;
+    padding: 0 0 5vh 0;
+  }
   h2 {
     text-transform: uppercase;
     color: var(--secondaryColor3);
     font-size: 2rem;
     margin: 0 auto;
     text-align: center;
+    @media screen and (max-width: 800px) {
+      margin-top: 5vh;
+    }
   }
   .leftMirror {
     height: 60vh;
     opacity: 0.8;
+    @media screen and (max-width: 800px) {
+      height: auto;
+      width: 100vw;
+    }
   }
 
   .mirrorText {
@@ -50,6 +62,9 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     margin-right: 5vw;
+    @media screen and (max-width: 800px) {
+      margin: 0 auto;
+    }
   }
   p {
     font-size: 1.3rem;
@@ -57,6 +72,9 @@ const Wrapper = styled.div`
     width: 50vw;
     text-align: right;
     margin: 7vh auto;
+    @media screen and (max-width: 800px) {
+      width: 90vw;
+    }
   }
   .backToBlog {
     display: flex;

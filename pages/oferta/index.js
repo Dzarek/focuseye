@@ -20,7 +20,7 @@ const OfferPage = () => {
   const [showDetails, setShowDetails] = useState("");
 
   useEffect(() => {
-    Aos.init({ duration: 1000 });
+    Aos.init({ duration: 1000, disable: "mobile" });
   }, []);
   return (
     <>
@@ -106,12 +106,13 @@ const OfferPage = () => {
 const Wrapper = styled.div`
   width: 100vw;
   max-width: 100vw;
-  /* width: 90vw;
-  max-width: 1440px; */
   min-height: 100vh;
   margin: 0 auto;
   padding-top: 10vh;
   position: relative;
+  @media screen and (max-width: 800px) {
+    padding-top: 0;
+  }
   .headerTitle {
     position: relative;
     width: 100vw;
@@ -121,6 +122,7 @@ const Wrapper = styled.div`
     align-items: center;
     margin-top: 2vh;
     background: var(--aboutMeBgColor);
+
     .title {
       display: flex;
       flex-direction: column;
@@ -141,6 +143,20 @@ const Wrapper = styled.div`
     img {
       height: 50vh;
       margin-right: 5vw;
+    }
+    @media screen and (max-width: 800px) {
+      margin-top: 0vh;
+      flex-direction: column;
+      img {
+        height: auto;
+        width: 100vw;
+        margin-right: 0;
+      }
+      .title {
+        text-align: center;
+        padding: 5vh 0;
+        align-items: center;
+      }
     }
   }
   .offerFeatures {
@@ -173,10 +189,28 @@ const Wrapper = styled.div`
       align-items: center;
       font-size: 3rem;
     }
+    @media screen and (max-width: 800px) {
+      height: 50vh;
+      width: 95vw;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 5vh auto;
+      div {
+        margin: 3vw;
+        h4 {
+          margin-top: 2vh;
+          font-size: 1.1rem;
+        }
+      }
+      span {
+        width: 18vw;
+        height: 18vw;
+        font-size: 2rem;
+      }
+    }
   }
   .sesjeContent {
     width: 80vw;
-    /* margin: 15vh 0 10vh 30vw; */
     margin: 10vh auto;
     .sesjeTitle {
       margin: 0 auto 5vh;
@@ -197,6 +231,9 @@ const Wrapper = styled.div`
         background: var(--navigationBgColor);
       }
     }
+    @media screen and (max-width: 800px) {
+      width: 90vw;
+    }
   }
   .offerContent {
     width: 100%;
@@ -213,7 +250,8 @@ const Wrapper = styled.div`
       margin: 1vw;
       @media screen and (max-width: 800px) {
         width: 100%;
-        height: 70vh;
+        height: 60vh;
+        margin-bottom: 5vh;
       }
       .singleBG {
         width: 100%;
