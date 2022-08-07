@@ -82,7 +82,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  /* opacity: 0.2; */
   .faqContainer {
     width: 85vw;
     margin: 0 auto;

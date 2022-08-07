@@ -223,7 +223,6 @@ const Wrapper = styled.div`
         color: var(--secondaryColor);
         font-size: 2rem;
         margin: 0 3vw;
-        /* margin-bottom: 5vh; */
       }
       span {
         width: 15vw;

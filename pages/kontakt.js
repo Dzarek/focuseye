@@ -156,7 +156,6 @@ const Wrapper = styled.div`
       width: 10vw;
       align-self: center;
       opacity: 0.5;
-      /* transform: rotateY(180deg); */
     }
     .contactForm,
     .contactSocialMedia {

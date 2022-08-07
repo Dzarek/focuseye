@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
-// import { Link } from "react-scroll";
 import Link from "next/link";
-
 import { headerData } from "../../public/data";
 
 import {
@@ -250,11 +248,9 @@ const Wrapper = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      /* height: 40%; */
       width: 60%;
       h1 {
         font-family: var(--textFont);
-        /* letter-spacing: 1px; */
         font-size: 2.5rem;
         font-weight: 800;
         text-shadow: 1px 1px 1px #000;
@@ -274,7 +270,6 @@ const Wrapper = styled.div`
         text-decoration: none;
         text-transform: uppercase;
         font-weight: 700;
-        /* border: 1px solid white; */
         border-radius: 10px;
         max-width: 25%;
         padding: 7px 0;
@@ -306,7 +301,6 @@ const Wrapper = styled.div`
     }
     .infoLine {
       display: flex;
-      /* justify-content: center; */
       align-items: center;
       width: 50%;
       @media screen and (max-width: 800px) {

@@ -179,7 +179,6 @@ const Wrapper = styled.form`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /* height: 65vh; */
   width: 80%;
   margin: 0 auto;
   @media screen and (max-width: 800px) {
@@ -228,7 +227,6 @@ const Wrapper = styled.form`
   }
   textarea {
     width: 100%;
-    /* min-height: 15vh; */
     padding: 10px 20px 0;
     border-radius: 5px;
     font-size: 1rem;

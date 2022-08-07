@@ -15,7 +15,6 @@ import {
 } from "react-icons/fa";
 import { ImMail } from "react-icons/im";
 
-// const navImg = "/images/faq/faqPerson.png";
 const navLogo = "/images/navLogo.png";
 
 const Navbar = () => {
@@ -467,7 +466,6 @@ const Wrapper2 = styled.div`
   }
   .navlinks {
     margin: 0 auto;
-    /* height: 10vh; */
     width: 95vw;
     display: flex;
     flex-direction: column;
@@ -499,7 +497,6 @@ const Wrapper2 = styled.div`
       top: 20%;
       left: 0%;
       width: 65vw;
-      /* transform: rotateY(180deg); */
       opacity: 0.8;
       animation: hideImg 2s linear infinite alternate;
       @keyframes hideImg {

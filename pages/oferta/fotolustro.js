@@ -240,7 +240,6 @@ const Wrapper = styled.div`
   }
   .pakietyWrapper {
     width: 100vw;
-    /* background: var(--sectionBgColor); */
     padding-top: 5vh;
     @media screen and (max-width: 800px) {
       padding-top: 0;

@@ -85,7 +85,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding-top: 5vh; */
 }
 
 .title h2 {
@@ -95,7 +94,6 @@ body {
   color: var(--secondaryColor);
   text-transform: uppercase;
   letter-spacing: 5px;
-  /* margin-bottom: 10vh; */
 }
 
 
@@ -120,16 +118,11 @@ body {
 }
 
 
-/* @media screen and (max-width:800px) {
-  .title h2 {}
-} */
-
 .subtitle {
   font-size: 1.8rem;
   text-align: center;
   margin: 0vh auto 3vh;
   color: var(--secondaryColor2);
-  /* text-transform: uppercase; */
   font-weight: 600;
   font-family: var(--titleFont);
 }
@@ -209,7 +202,6 @@ body {
   align-items: center;
   border: none;
   color: #fff;
-  /* opacity: 0.9; */
 }
 
 .navHamburger2 {
@@ -227,7 +219,6 @@ body {
   align-items: center;
   border: none;
   color: #fff;
-  /* opacity: 0.8; */
 }
 
 @media screen and (max-width:800px) {

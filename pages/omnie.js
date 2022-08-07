@@ -121,8 +121,6 @@ const OmniePage = () => {
 const Wrapper = styled.div`
   width: 100vw;
   max-width: 100vw;
-  /* width: 90vw;
-  max-width: 1440px; */
   min-height: 100vh;
   margin: 0 auto;
   padding-top: 10vh;
@@ -153,16 +151,11 @@ const Wrapper = styled.div`
       justify-content: space-between;
       img {
         height: 50vh;
-        /* width: 40vw; */
-        /* margin-left: 15vw; */
       }
       h2 {
         font-weight: 800;
         font-size: 3rem;
         margin-left: 25vw;
-        /* position: absolute;
-        top: 50%;
-        left: 10%; */
       }
       @media screen and (max-width: 800px) {
         flex-direction: column-reverse;

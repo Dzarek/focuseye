@@ -224,7 +224,6 @@ const Wrapper = styled.section`
   margin: 0 auto;
   width: 100vw;
   min-height: 80vh;
-  /* padding: 2vh 12vw; */
   h2 {
     margin-left: 12vw;
     text-transform: uppercase;
@@ -538,7 +537,6 @@ const Wrapper = styled.section`
     .covers {
       width: 27%;
       height: 55vh;
-      /* background: var(--aboutMeBgColor); */
       border: 2px solid var(--secondaryColor3);
       border-radius: 10px;
       @media screen and (max-width: 800px) {

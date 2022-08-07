@@ -10,8 +10,6 @@ import { BiPhotoAlbum } from "react-icons/bi";
 import { GiConfirmed } from "react-icons/gi";
 import Link from "next/link";
 
-// const videoWedding = '/images/weeding.mp4'
-
 const PakietSingleOffer = ({ pakiety }) => {
   const { basic, premium } = pakiety;
   return (
@@ -32,7 +30,6 @@ const PakietSingleOffer = ({ pakiety }) => {
           className={basic.weddingInfo ? "pakiet weedingContainer" : "pakiet"}
         >
           <h2>{basic.name}</h2>
-          {/* {smallGraphic[0] && <img src={smallGraphic[0]} alt="" />} */}
           <div className="infoContent">
             {basic.numberOfImages && (
               <article>
@@ -114,7 +111,6 @@ const PakietSingleOffer = ({ pakiety }) => {
       ></div>
       {pakiety.special && (
         <div className="pakiet">
-          {/* {smallGraphic[1] && <img src={smallGraphic[1]} alt="" />} */}
           <h2>{pakiety.special.name}</h2>
           <div className="infoContent">
             {pakiety.special.numberOfImages && (
@@ -184,7 +180,6 @@ const PakietSingleOffer = ({ pakiety }) => {
         <div
           className={basic.weddingInfo ? "pakiet weedingContainer" : "pakiet"}
         >
-          {/* {smallGraphic[2] && <img src={smallGraphic[2]} alt="" />} */}
           <h2>{premium.name}</h2>
           <div className="infoContent">
             {premium.numberOfImages && (

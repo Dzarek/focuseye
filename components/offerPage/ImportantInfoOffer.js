@@ -103,7 +103,6 @@ const Wrapper = styled.section`
   justify-content: center;
   padding: 5vh 20vw 5vh 12vw;
   background: var(--sectionBgColor);
-  /* margin-bottom: 15vh; */
   position: relative;
   @media screen and (max-width: 800px) {
     padding: 5vh 2vw;
@@ -137,7 +136,6 @@ const Wrapper = styled.section`
     article {
       display: flex;
       align-items: flex-start;
-      /* justify-content: center; */
       font-size: 1.3rem;
       margin-bottom: 1vh;
       .icon {

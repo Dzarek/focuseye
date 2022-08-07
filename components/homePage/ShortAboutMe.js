@@ -97,7 +97,6 @@ const Wrapper = styled.div`
       }
       .aboutInfo {
         width: 90%;
-        /* text-align: center; */
         h3 {
           text-align: left;
         }
