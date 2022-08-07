@@ -231,6 +231,10 @@ const Wrapper = styled.section`
     color: var(--secondaryColor);
     font-size: 2rem;
     margin-bottom: 5vh;
+    @media screen and (max-width: 800px) {
+      margin: 0 auto 5vh;
+      text-align: center;
+    }
   }
   .carousel {
     width: 90vw;

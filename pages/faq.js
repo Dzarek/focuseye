@@ -269,6 +269,7 @@ const Wrapper = styled.div`
           }
           .icon {
             margin-top: 3px;
+            flex-shrink: 0;
           }
         }
       }
