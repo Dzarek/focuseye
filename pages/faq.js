@@ -14,7 +14,7 @@ import Head from "next/head";
 const faqPersonImg = "/images/faq/faqPerson.png";
 const faqHeaderImg = "/images/faq/faqHeader.png";
 
-const BlogPage = () => {
+const FaqPage = () => {
   return (
     <>
       <Head>
@@ -90,6 +90,9 @@ const Wrapper = styled.div`
   margin: 0 auto;
   padding-top: 10vh;
   position: relative;
+  @media screen and (max-width: 800px) {
+    padding-top: 0;
+  }
   header {
     position: relative;
     width: 100vw;
@@ -99,6 +102,7 @@ const Wrapper = styled.div`
     align-items: center;
     margin-top: 2vh;
     background: var(--faqHeaderBgColor);
+
     .title {
       display: flex;
       flex-direction: column;
@@ -136,6 +140,31 @@ const Wrapper = styled.div`
         }
       }
     }
+    @media screen and (max-width: 800px) {
+      margin-top: 0;
+      height: 80vh;
+      align-items: flex-start;
+      .title {
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        text-align: center;
+        width: 90vw;
+        h2 {
+          margin: 0 auto;
+          margin-bottom: 3vh;
+          margin-top: 3vh;
+          text-align: center;
+        }
+      }
+      img {
+        height: auto;
+        width: 100vw;
+        z-index: 0;
+        animation: none;
+      }
+    }
   }
   .faqSubTitle {
     width: 80vw;
@@ -145,6 +174,10 @@ const Wrapper = styled.div`
     color: var(--secondaryColor);
     font-weight: 500;
     font-size: 1.2rem;
+    @media screen and (max-width: 800px) {
+      width: 90vw;
+      margin: 10vh auto 0;
+    }
   }
   .faqSubTitle2 {
     width: 80vw;
@@ -154,6 +187,9 @@ const Wrapper = styled.div`
     color: var(--secondaryColor);
     font-weight: 500;
     font-size: 1.2rem;
+    @media screen and (max-width: 800px) {
+      width: 90vw;
+    }
   }
   .faqContainer {
     width: 90vw;
@@ -228,13 +264,21 @@ const Wrapper = styled.div`
           align-items: flex-start;
           font-size: 1.3rem;
           font-weight: 600;
+          @media screen and (max-width: 800px) {
+            font-size: 1.2rem;
+          }
           .icon {
             margin-top: 3px;
           }
         }
       }
     }
+    @media screen and (max-width: 800px) {
+      img {
+        display: none;
+      }
+    }
   }
 `;
 
-export default BlogPage;
+export default FaqPage;

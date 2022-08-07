@@ -223,7 +223,7 @@ const Wrapper = styled.div`
           top: 85%;
           left: 50%;
           transform: translate(-50%, -50%);
-          animation: showParagraph 10s infinite alternate;
+          animation: showParagraph 15s infinite;
         }
         p:nth-of-type(1) {
           top: 85%;
@@ -234,34 +234,37 @@ const Wrapper = styled.div`
           top: 85%;
           left: 50%;
           opacity: 0;
-          animation-delay: 4s;
+          animation-delay: 3s;
         }
         p:nth-of-type(3) {
           top: 85%;
           left: 50%;
           opacity: 0;
-          animation-delay: 8s;
+          animation-delay: 6s;
         }
         p:nth-of-type(4) {
           top: 85%;
           left: 50%;
           opacity: 0;
-          animation-delay: 12s;
+          animation-delay: 9s;
         }
         p:nth-of-type(5) {
           top: 85%;
           left: 50%;
           opacity: 0;
-          animation-delay: 16s;
+          animation-delay: 12s;
         }
         p:nth-of-type(6) {
           display: none;
         }
         @keyframes showParagraph {
           0% {
-            opacity: 1;
+            opacity: 0;
           }
           20% {
+            opacity: 1;
+          }
+          30% {
             opacity: 0;
           }
           100% {
