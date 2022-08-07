@@ -239,7 +239,8 @@ const Wrapper = styled.form`
     @media screen and (max-width: 800px) {
       font-size: 1rem;
       padding: 8px 10px;
-      min-height: 30vh;
+      min-height: 15vh;
+      border: 2px solid var(--secondaryColor);
     }
   }
   .labelCookieContainer {
@@ -251,12 +252,17 @@ const Wrapper = styled.form`
     line-height: 1.2;
     label {
       margin: 3vh auto 0;
-      @media (orientation: portrait) and (max-width: 800px) {
+      @media screen and (max-width: 800px) {
         font-size: 0.9rem;
       }
       input {
         margin-right: 10px;
         cursor: pointer;
+        @media screen and (max-width: 800px) {
+          font-size: 1rem;
+          width: auto;
+          padding: 0px;
+        }
       }
     }
     .cookieLink {

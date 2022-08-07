@@ -207,6 +207,9 @@ const Wrapper = styled.div`
     color: var(--secondaryColor);
     cursor: pointer;
     padding: 10px;
+    @media screen and (max-width: 800px) {
+      right: 80vw;
+    }
   }
   @media screen and (max-width: 800px) {
     width: 100vw;

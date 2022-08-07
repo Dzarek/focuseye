@@ -11,7 +11,7 @@ const blogHeaderImg = "/images/blog/blogHeader.png";
 
 const BlogPage = () => {
   useEffect(() => {
-    Aos.init({ duration: 1000 });
+    Aos.init({ duration: 1000, disable: "mobile" });
   }, []);
   return (
     <>
@@ -73,7 +73,9 @@ const Wrapper = styled.div`
   margin: 0 auto;
   padding-top: 10vh;
   position: relative;
-
+  @media screen and (max-width: 800px) {
+    padding-top: 0;
+  }
   header {
     position: relative;
     width: 100vw;
@@ -83,6 +85,7 @@ const Wrapper = styled.div`
     align-items: center;
     margin-top: 2vh;
     background: var(--activeNavLink);
+
     .title {
       display: flex;
       flex-direction: column;
@@ -107,6 +110,19 @@ const Wrapper = styled.div`
       height: 50vh;
       margin-left: 5vw;
     }
+    @media screen and (max-width: 800px) {
+      margin-top: 0;
+      flex-direction: column-reverse;
+      img {
+        height: auto;
+        width: 100vw;
+        margin-left: 0;
+      }
+      .title {
+        padding: 5vh 0;
+        text-align: center;
+      }
+    }
   }
   .blogSubtitle {
     text-align: center;
@@ -121,10 +137,8 @@ const Wrapper = styled.div`
     margin: 0 auto 20vh;
     display: flex;
     justify-content: space-around;
-    /* align-items: center; */
     flex-wrap: wrap;
     article {
-      /* margin-bottom: 10vh; */
       width: 35%;
       height: 70vh;
       display: flex;
@@ -164,10 +178,6 @@ const Wrapper = styled.div`
         }
       }
       .icon {
-        /* position: absolute;
-        bottom: 10%;
-        left: 50%;
-        transform: translateX(-50%); */
         color: var(--secondaryColor);
         font-size: 3rem;
         opacity: 0.6;
@@ -198,14 +208,22 @@ const Wrapper = styled.div`
           color: var(--secondaryColor);
           font-size: 1.5rem;
         }
-        /* span {
-          font-size: 1rem;
-          margin-bottom: 2vh;
-        } */
+
         p {
           font-size: 1.1rem;
           text-align: center;
           margin-bottom: 2vh;
+        }
+      }
+    }
+    @media screen and (max-width: 800px) {
+      width: 90vw;
+      article {
+        width: 100%;
+        height: auto;
+        margin: 0vh auto 10vh;
+        :nth-of-type(even) {
+          margin-top: 0vh;
         }
       }
     }

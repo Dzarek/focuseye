@@ -10,7 +10,7 @@ const contactPersonImg2 = "/images/contact/contactPerson2.png";
 
 const KontaktPage = ({ setVisibleCookie }) => {
   useEffect(() => {
-    Aos.init({ duration: 1000 });
+    Aos.init({ duration: 1000, disable: "mobile" });
   }, []);
   return (
     <>
@@ -90,6 +90,9 @@ const Wrapper = styled.div`
   margin: 0 auto;
   padding-top: 10vh;
   position: relative;
+  @media screen and (max-width: 800px) {
+    padding-top: 0;
+  }
   header {
     position: relative;
     width: 100vw;
@@ -99,6 +102,10 @@ const Wrapper = styled.div`
     align-items: center;
     margin-top: 2vh;
     background: var(--contactHeaderBgColor);
+    @media screen and (max-width: 800px) {
+      margin-top: 0;
+      flex-direction: column;
+    }
     .title {
       display: flex;
       flex-direction: column;
@@ -116,10 +123,18 @@ const Wrapper = styled.div`
         font-weight: 400;
         font-family: var(--titleFont);
       }
+      @media screen and (max-width: 800px) {
+        padding: 5vh 0;
+      }
     }
     img {
       height: 50vh;
       margin-right: 5vw;
+      @media screen and (max-width: 800px) {
+        height: auto;
+        width: 100vw;
+        margin-right: 0;
+      }
     }
   }
   .contactContainer {
@@ -154,6 +169,19 @@ const Wrapper = styled.div`
         margin-bottom: 5vh;
       }
     }
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+      margin: 15vh auto;
+      section {
+        width: 100%;
+      }
+      .separateImg {
+        display: none;
+      }
+      .contactSocialMedia {
+        margin-top: 10vh;
+      }
+    }
   }
 
   .socialMediaWrapper {
@@ -170,6 +198,10 @@ const Wrapper = styled.div`
       font-weight: 500;
       text-decoration: none;
       color: var(--primaryColor);
+      @media screen and (max-width: 800px) {
+        margin: 2vh auto;
+        width: 90vw;
+      }
       span {
         color: var(--secondaryColor);
       }
@@ -181,12 +213,19 @@ const Wrapper = styled.div`
       font-size: 1.3rem;
       margin: 2vh 5vw;
       font-weight: 500;
+      @media screen and (max-width: 800px) {
+        margin: 2vh auto;
+        width: 90vw;
+      }
       span {
         color: var(--secondaryColor);
       }
     }
     .bankInfoName {
       font-weight: 600;
+      @media screen and (max-width: 800px) {
+        text-align: center;
+      }
     }
   }
 `;
