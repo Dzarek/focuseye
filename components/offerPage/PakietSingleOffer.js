@@ -99,7 +99,9 @@ const PakietSingleOffer = ({ pakiety }) => {
             <div className="weedingPakiet">
               <h4>{basic.weddingInfo}</h4>
               <Link href="/kontakt">
-                <button className="button">Wyśli do mnie wiadomość!</button>
+                <button className="button buttonWedding">
+                  Wyśli do mnie wiadomość!
+                </button>
               </Link>
             </div>
           )}
@@ -268,7 +270,9 @@ const Wrapper = styled.section`
   margin: 10vh auto 10vh;
   flex-wrap: wrap;
   position: relative;
-
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
   .videoContainer {
     position: absolute;
     top: 50%;
@@ -284,6 +288,9 @@ const Wrapper = styled.section`
     height: 50vh;
     width: 2px;
     background: var(--secondaryColor3);
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
   }
   .whiteLine {
     background: white;
@@ -300,7 +307,10 @@ const Wrapper = styled.section`
     justify-content: center;
     position: relative;
     margin-bottom: 10vh;
-
+    @media screen and (max-width: 800px) {
+      width: 95%;
+      margin: 0 auto 10vh;
+    }
     img {
       position: absolute;
       bottom: 0;
@@ -320,11 +330,20 @@ const Wrapper = styled.section`
       align-items: flex-start;
       justify-content: center;
       margin-left: 25%;
+      @media screen and (max-width: 800px) {
+        margin: 0 auto 0 1vw;
+      }
       article {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-bottom: 2.5vh;
+        @media screen and (max-width: 800px) {
+          margin-bottom: 1vh;
+          align-items: flex-start;
+          width: 90%;
+          justify-content: flex-start;
+        }
         p {
           font-size: 1.2rem;
         }
@@ -332,6 +351,7 @@ const Wrapper = styled.section`
           font-size: 1.5rem;
           color: var(--secondaryColor);
           margin-right: 15px;
+          flex-shrink: 0;
         }
       }
     }
@@ -340,10 +360,19 @@ const Wrapper = styled.section`
     background: rgba(0, 0, 0, 0.5);
     width: 50%;
     height: 100%;
+    @media screen and (max-width: 800px) {
+      width: 100%;
+      height: 50%;
+      margin: 0 auto 0vh;
+    }
     h2 {
       color: white;
       text-transform: uppercase;
       font-size: 2rem;
+      @media screen and (max-width: 800px) {
+        font-size: 1.8rem;
+        margin: -5vh auto 0vh;
+      }
     }
   }
   .weedingPakiet {
@@ -358,6 +387,15 @@ const Wrapper = styled.section`
       margin-top: 10vh;
       text-align: center;
       font-weight: 500;
+      @media screen and (max-width: 800px) {
+        margin-top: 2vh;
+        font-size: 1.2rem;
+      }
+    }
+    @media screen and (max-width: 800px) {
+      .buttonWedding {
+        display: none;
+      }
     }
   }
   .button {
@@ -385,6 +423,9 @@ const Wrapper = styled.section`
     .icon {
       margin-right: 10px;
       font-size: 1.2rem;
+    }
+    @media screen and (max-width: 800px) {
+      margin: 10vh auto 7vh;
     }
   }
 `;

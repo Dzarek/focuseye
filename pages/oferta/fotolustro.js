@@ -142,6 +142,9 @@ const Wrapper = styled.div`
   min-height: 100vh;
   margin: 0 auto;
   padding-top: 12vh;
+  @media screen and (max-width: 800px) {
+    padding-top: 0vh;
+  }
   header {
     height: 70vh;
     width: 100vw;
@@ -158,6 +161,14 @@ const Wrapper = styled.div`
       top: 60%;
       left: 10%;
     }
+    @media screen and (max-width: 800px) {
+      height: 50vh;
+      h2 {
+        font-size: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
   }
   h3 {
     font-size: 2rem;
@@ -165,6 +176,9 @@ const Wrapper = styled.div`
     margin-bottom: 5vh;
     margin-top: 10vh;
     text-align: left;
+    @media screen and (max-width: 800px) {
+      margin-top: 5vh;
+    }
   }
   .info {
     width: 80vw;
@@ -173,8 +187,17 @@ const Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     position: relative;
+    @media screen and (max-width: 800px) {
+      width: 100vw;
+      flex-direction: column;
+      margin: 10vh auto 0vh;
+    }
     .text {
       width: 60%;
+      @media screen and (max-width: 800px) {
+        width: 90%;
+        margin: 0 auto;
+      }
       p {
         font-size: 1.2rem;
         line-height: 1.4;
@@ -201,12 +224,27 @@ const Wrapper = styled.div`
           left: 10%;
         }
       }
+      @media screen and (max-width: 800px) {
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        margin: 10vh auto;
+        img {
+          position: static;
+          width: 33.33%;
+        }
+      }
     }
   }
   .pakietyWrapper {
     width: 100vw;
     /* background: var(--sectionBgColor); */
     padding-top: 5vh;
+    @media screen and (max-width: 800px) {
+      padding-top: 0;
+    }
     h2 {
       text-transform: uppercase;
       margin: 3vh auto 0;
@@ -220,6 +258,9 @@ const Wrapper = styled.div`
     width: 2px;
     background: var(--secondaryColor3);
     align-self: center;
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
   }
   .pakietyMirror {
     width: 100vw;
@@ -227,6 +268,9 @@ const Wrapper = styled.div`
     justify-content: space-between;
     align-items: flex-start;
     margin: 5vh auto 10vh;
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+    }
     .onePakiet {
       padding-bottom: 5vh;
       width: 33.33%;
@@ -270,6 +314,21 @@ const Wrapper = styled.div`
         color: var(--secondaryColor3);
         font-size: 2rem;
         font-weight: 700;
+        @media screen and (max-width: 800px) {
+          margin-top: 3vh;
+        }
+      }
+      @media screen and (max-width: 800px) {
+        width: 100vw;
+        height: auto;
+        padding: 0vh 2vw 5vh;
+        ul {
+          list-style-type: circle;
+          li {
+            margin-bottom: 1vh;
+            margin-left: 5vw;
+          }
+        }
       }
     }
   }

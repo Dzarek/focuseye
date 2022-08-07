@@ -94,14 +94,20 @@ const Wrapper = styled.section`
     }
   }
   .carousel {
-    width: 95vw;
+    width: 100vw;
     margin: 10vh auto;
+    @media screen and (max-width: 800px) {
+      margin: 2vh auto;
+    }
     .oneOpinion {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       width: 60vw;
+      @media screen and (max-width: 800px) {
+        width: 100%;
+      }
       p {
         font-size: 1.2rem;
         text-align: center;
@@ -127,6 +133,9 @@ const Wrapper = styled.section`
   .arrow {
     font-size: 2rem;
     color: var(--secondaryColor);
+    @media screen and (max-width: 800px) {
+      font-size: 1.5rem;
+    }
   }
 `;
 

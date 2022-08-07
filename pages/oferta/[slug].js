@@ -46,7 +46,7 @@ const OneOffer = (props) => {
               backgroundSize: "cover",
               animation: "singleOfferHeader 5s linear 1 forwards",
               width: "100vw",
-              height: "80vh",
+              // height: "80vh",
               filter: "brightness(0.8)",
             }}
           ></div>
@@ -101,16 +101,31 @@ const Wrapper = styled.div`
   min-height: 100vh;
   margin: 0 auto;
   padding-top: 10vh;
+  @media screen and (max-width: 800px) {
+    padding-top: 0vh;
+  }
+  .headerBg {
+    height: 80vh;
+    @media screen and (max-width: 800px) {
+      height: 50vh;
+    }
+  }
   .cennik {
     text-align: center;
     margin-bottom: 10vh;
+    @media screen and (max-width: 800px) {
+      width: 80vw;
+      margin: 0 auto 10vh;
+    }
   }
   header {
     position: relative;
     width: 100vw;
     height: 80vh;
     overflow: "hidden";
-
+    @media screen and (max-width: 800px) {
+      height: 50vh;
+    }
     .title {
       position: absolute;
       bottom: 10%;
@@ -129,6 +144,14 @@ const Wrapper = styled.div`
         font-family: var(--textFont);
         text-shadow: 3px 3px 3px black;
       }
+      @media screen and (max-width: 800px) {
+        width: 90vw;
+        h2 {
+          letter-spacing: 2px;
+          font-size: 2rem;
+          text-shadow: 2px 2px 2px black;
+        }
+      }
     }
   }
   .infoAndGraphic {
@@ -136,10 +159,17 @@ const Wrapper = styled.div`
     justify-content: space-between;
     width: 80vw;
     margin: 15vh auto 10vh;
+    @media screen and (max-width: 800px) {
+      width: 100vw;
+      margin: 10vh auto 5vh;
+    }
     img {
       width: 25%;
       opacity: 0.8;
       margin-bottom: -10vh;
+      @media screen and (max-width: 800px) {
+        display: none;
+      }
     }
     .longInfo {
       width: 70%;
@@ -147,6 +177,15 @@ const Wrapper = styled.div`
         font-size: 1.2rem;
         line-height: 1.8;
         margin-bottom: 3vh;
+      }
+      @media screen and (max-width: 800px) {
+        width: 90%;
+        margin: 0 auto;
+        p {
+          line-height: 1.5;
+          text-align: center;
+          line-height: 1.6;
+        }
       }
     }
   }
@@ -156,10 +195,16 @@ const Wrapper = styled.div`
     align-items: center;
     width: 85vw;
     margin: 20vh auto;
+    @media screen and (max-width: 800px) {
+      margin: 20vh auto 10vh;
+    }
     img {
       width: 12%;
       opacity: 0.8;
       margin-bottom: -10vh;
+      @media screen and (max-width: 800px) {
+        display: none;
+      }
     }
     .longInfo {
       width: 60%;
@@ -168,7 +213,13 @@ const Wrapper = styled.div`
         text-align: center;
         font-size: 1.4rem;
         line-height: 2;
-        /* margin-bottom: 3vh; */
+      }
+      @media screen and (max-width: 800px) {
+        width: 100%;
+        p {
+          line-height: 1.8;
+          font-size: 1.2rem;
+        }
       }
     }
   }
@@ -186,6 +237,15 @@ const Wrapper = styled.div`
       margin-top: 5vh;
       width: 22%;
       cursor: pointer;
+    }
+    @media screen and (max-width: 800px) {
+      justify-content: space-around;
+      padding: 2vh 1vw;
+      img {
+        margin-bottom: 2vh;
+        margin-top: 2vh;
+        width: 45%;
+      }
     }
   }
   .backToBlog {
