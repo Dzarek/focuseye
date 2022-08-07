@@ -11,7 +11,7 @@ const meImg2 = "/images/aboutMeImg/meImg2.jpg";
 
 const OmniePage = () => {
   useEffect(() => {
-    Aos.init({ duration: 1000 });
+    Aos.init({ duration: 1000, disable: "mobile" });
   }, []);
 
   const numberOfExperience = new Date().getFullYear() - 2019;
@@ -127,6 +127,9 @@ const Wrapper = styled.div`
   margin: 0 auto;
   padding-top: 10vh;
   position: relative;
+  @media screen and (max-width: 800px) {
+    padding-top: 0;
+  }
   header {
     position: relative;
     width: 100vw;
@@ -137,6 +140,12 @@ const Wrapper = styled.div`
     margin-top: 2vh;
     background: var(--aboutMeHeaderBgColor);
     margin-bottom: 10vh;
+    @media screen and (max-width: 800px) {
+      margin-top: 0;
+      height: 70vh;
+      justify-content: space-between;
+      margin-bottom: 5vh;
+    }
     .title {
       width: 100%;
       display: flex;
@@ -154,6 +163,17 @@ const Wrapper = styled.div`
         /* position: absolute;
         top: 50%;
         left: 10%; */
+      }
+      @media screen and (max-width: 800px) {
+        flex-direction: column-reverse;
+        img {
+          height: auto;
+          width: 100vw;
+        }
+        h2 {
+          font-size: 3rem;
+          margin: 5vh auto;
+        }
       }
     }
     .myFeatures {
@@ -192,6 +212,63 @@ const Wrapper = styled.div`
         top: 50%;
         left: 75%;
       }
+      @media screen and (max-width: 800px) {
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        p {
+          width: 95%;
+          text-align: center;
+          top: 85%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          animation: showParagraph 10s infinite alternate;
+        }
+        p:nth-of-type(1) {
+          top: 85%;
+          left: 50%;
+          opacity: 0;
+        }
+        p:nth-of-type(2) {
+          top: 85%;
+          left: 50%;
+          opacity: 0;
+          animation-delay: 4s;
+        }
+        p:nth-of-type(3) {
+          top: 85%;
+          left: 50%;
+          opacity: 0;
+          animation-delay: 8s;
+        }
+        p:nth-of-type(4) {
+          top: 85%;
+          left: 50%;
+          opacity: 0;
+          animation-delay: 12s;
+        }
+        p:nth-of-type(5) {
+          top: 85%;
+          left: 50%;
+          opacity: 0;
+          animation-delay: 16s;
+        }
+        p:nth-of-type(6) {
+          display: none;
+        }
+        @keyframes showParagraph {
+          0% {
+            opacity: 1;
+          }
+          20% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+      }
     }
   }
   .aboutTitle {
@@ -201,6 +278,11 @@ const Wrapper = styled.div`
     text-align: center;
     text-transform: uppercase;
     font-weight: 500;
+    @media screen and (max-width: 800px) {
+      width: 90%;
+      font-size: 1.5rem;
+      margin: 10vh auto 10vh;
+    }
   }
   .aboutMeContent {
     width: 100vw;
@@ -234,6 +316,19 @@ const Wrapper = styled.div`
         }
       }
     }
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+      img {
+        width: 100%;
+      }
+      section {
+        width: 85%;
+        margin: 3vh auto 0;
+        p {
+          text-align: justify;
+        }
+      }
+    }
   }
   .aboutNumbers {
     display: flex;
@@ -260,6 +355,23 @@ const Wrapper = styled.div`
       width: 2px;
       height: 50px;
       background: var(--secondaryColor3);
+    }
+    @media screen and (max-width: 800px) {
+      width: 95vw;
+      flex-direction: column;
+      section {
+        margin: 3vh auto;
+        span {
+          font-size: 2.5rem;
+        }
+        h4 {
+          font-size: 1rem;
+          text-align: center;
+        }
+      }
+      .lineNumber {
+        display: none;
+      }
     }
   }
 `;

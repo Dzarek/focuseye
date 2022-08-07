@@ -28,7 +28,7 @@ const GalleryPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    Aos.init({ duration: 1000 });
+    Aos.init({ duration: 1000, disable: "false" });
   }, []);
   const galleryImages = menuItems.map((item) => {
     const { img } = item;
