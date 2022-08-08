@@ -536,7 +536,7 @@ const Wrapper2 = styled.div`
     justify-content: space-around;
     align-items: center;
     width: 80%;
-    margin: 0vh auto 5vh;
+    margin: 0vh auto 7vh;
     flex-wrap: wrap;
     position: relative;
     a {

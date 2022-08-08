@@ -97,8 +97,8 @@ const Wrapper = styled.div`
       }
       .aboutInfo {
         width: 90%;
-        h3 {
-          text-align: left;
+        h2 {
+          text-align: center;
         }
         p {
           text-align: center;
@@ -134,6 +134,7 @@ const Wrapper = styled.div`
       font-size: 0.9rem;
       width: 180px;
       height: 45px;
+      margin: 7vh auto 0;
     }
   }
   .icon {
