@@ -15,6 +15,12 @@ import {
 } from "react-icons/fa";
 import { ImMail } from "react-icons/im";
 
+import { IoMdImages } from "react-icons/io";
+import { FaHandshake, FaQuestion } from "react-icons/fa";
+import { BsFillPersonFill } from "react-icons/bs";
+import { MdOutlinePhoneAndroid } from "react-icons/md";
+import { RiArticleLine } from "react-icons/ri";
+
 const navLogo = "/images/navLogo.png";
 
 const Navbar = () => {
@@ -122,13 +128,13 @@ const Navbar = () => {
             </h2>
           </div>
           <div className="navlinks">
-            <img src={navLogo} alt="logo" />
+            {/* <img src={navLogo} alt="logo" /> */}
             <Link href="/">
               <a
                 onClick={() => setShowMenu(false)}
                 className={router.pathname == "/" ? "active" : ""}
               >
-                Strona Główna
+                <IoHome /> Strona Główna
               </a>
             </Link>
             <Link href="/galeria">
@@ -136,7 +142,7 @@ const Navbar = () => {
                 onClick={() => setShowMenu(false)}
                 className={router.pathname == "/galeria" ? "active" : ""}
               >
-                Galeria
+                <IoMdImages /> Galeria
               </a>
             </Link>
             <Link href="/oferta">
@@ -144,7 +150,7 @@ const Navbar = () => {
                 onClick={() => setShowMenu(false)}
                 className={router.pathname == "/oferta" ? "active" : ""}
               >
-                Oferta
+                <FaHandshake /> Oferta
               </a>
             </Link>
             <Link href="/blog">
@@ -152,7 +158,7 @@ const Navbar = () => {
                 onClick={() => setShowMenu(false)}
                 className={router.pathname == "/blog" ? "active" : ""}
               >
-                Blog
+                <RiArticleLine /> Blog
               </a>
             </Link>
 
@@ -161,7 +167,7 @@ const Navbar = () => {
                 onClick={() => setShowMenu(false)}
                 className={router.pathname == "/omnie" ? "active" : ""}
               >
-                O mnie
+                <BsFillPersonFill /> O mnie
               </a>
             </Link>
             <Link href="/faq">
@@ -169,7 +175,7 @@ const Navbar = () => {
                 onClick={() => setShowMenu(false)}
                 className={router.pathname == "/faq" ? "active" : ""}
               >
-                FAQ
+                <FaQuestion /> FAQ
               </a>
             </Link>
             <Link href="/kontakt">
@@ -177,10 +183,11 @@ const Navbar = () => {
                 onClick={() => setShowMenu(false)}
                 className={router.pathname == "/kontakt" ? "active" : ""}
               >
-                Kontakt
+                <MdOutlinePhoneAndroid /> Kontakt
               </a>
             </Link>
           </div>
+          <div className="separateLine"></div>
           <section className="media-icons">
             <a
               href="https://www.facebook.com/sylwiasajdakfotografia/"
@@ -381,6 +388,12 @@ const Wrapper2 = styled.div`
   @media screen and (min-width: 801px) {
     display: none;
   }
+  .separateLine {
+    width: 70vw;
+    margin: 2vh auto;
+    height: 2px;
+    background: var(--navigationBgColor);
+  }
 
   .mobileNav {
     display: flex;
@@ -395,7 +408,9 @@ const Wrapper2 = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    background: #fff;
+    /* background: #fff; */
+    background: var(--aboutMeHeaderBgColor);
+    /* background: var(--aboutMeBgColor); */
     color: var(--secondaryColor3);
     z-index: 999;
   }
@@ -412,8 +427,8 @@ const Wrapper2 = styled.div`
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    background: var(--activeNavLink);
-    box-shadow: 0px 3px 5px 0px var(--activeNavLink);
+    background: var(--navigationBgColor);
+    box-shadow: 0px 1px 3px 0px var(--navigationBgColor);
   }
   h2 {
     font-family: "Genos", sans-serif;
@@ -427,7 +442,7 @@ const Wrapper2 = styled.div`
       margin: 5px 25px 0;
       height: 1rem;
       width: 3px;
-      background: var(--primaryColor);
+      background: var(--activeNavLink);
       animation: logoR 4s linear infinite;
 
       @keyframes logoR {
@@ -461,23 +476,24 @@ const Wrapper2 = styled.div`
       }
     }
     span {
-      color: var(--secondaryColor3);
+      color: white;
     }
   }
   .navlinks {
-    margin: 0 auto;
+    margin: 5vh auto 0;
     width: 95vw;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: flex-end;
+    /* align-items: flex-end; */
+    align-items: center;
     z-index: 9999;
     position: relative;
     h5,
     a {
-      margin-right: 5vw;
-      font-weight: 500;
-      font-size: 1.5rem;
+      /* margin-right: 5vw; */
+      font-weight: 600;
+      font-size: 1.4rem;
       font-family: var(--titleFont);
       text-decoration: none;
       text-transform: uppercase;
@@ -486,13 +502,18 @@ const Wrapper2 = styled.div`
       display: flex;
       align-items: center;
       user-select: none;
-      color: var(--primaryColor);
+      color: var(--navigationBgColor);
       margin-bottom: 2vh;
       &.active {
         color: var(--secondaryColor);
       }
+      svg {
+        margin-right: 10px;
+        font-size: 1.2rem;
+        /* display: none; */
+      }
     }
-    img {
+    /* img {
       position: absolute;
       top: 20%;
       left: 0%;
@@ -507,17 +528,15 @@ const Wrapper2 = styled.div`
           opacity: 0.5;
         }
       }
-    }
+    } */
   }
   .media-icons {
     height: 20vh;
-    color: var(--secondaryColor);
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 1.5rem;
     width: 80%;
-    margin: -7vh auto 12vh;
+    margin: 0vh auto 5vh;
     flex-wrap: wrap;
     position: relative;
     a {
@@ -530,9 +549,9 @@ const Wrapper2 = styled.div`
       cursor: pointer;
       transition: 0.3s;
       color: var(--secondaryColor);
-      font-size: 2.3rem;
+      font-size: 2rem;
       :hover {
-        font-size: 2.4rem;
+        color: var(--navigationBgColor);
       }
     }
     .media-info {
@@ -540,7 +559,7 @@ const Wrapper2 = styled.div`
       margin: 0vh auto;
       text-align: center;
       position: absolute;
-      bottom: 2%;
+      top: 0%;
       left: 50%;
       transform: translateX(-50%);
       p {

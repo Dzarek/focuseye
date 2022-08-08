@@ -7,6 +7,7 @@ import ReactLoading from "react-loading";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Head from "next/head";
+// import { getChrzestImages } from "../helpers/api-util";
 
 const galleryHeaderImg2 = "/images/gallery/galleryHeader.png";
 
@@ -20,6 +21,8 @@ const galleryCategory = gallery.filter(
 );
 
 const GalleryPage = () => {
+  // console.log(data);
+
   const [menuItems, setMenuItems] = useState(galleryCategory);
   const [categories] = useState(allCategories);
   const [activeBtn, setActiveBtn] = useState("brzuszkowe");
@@ -348,5 +351,23 @@ const Wrapper = styled.div`
     margin: 10vh auto;
   }
 `;
+
+// export const getStaticProps = async () => {
+//   const response = await fetch(
+//     "https://focuseye.pl/wp-json/wp/v2/media?media_folder=60"
+//   );
+//   const data = await response.json();
+//   // const chrzestWPImg = data.map((image) => {
+//   //   const images = image.media_details.sizes.full.source_url;
+//   //   return images;
+//   // });
+
+//   return {
+//     props: {
+//       data,
+//     },
+//     revalidate: 60,
+//   };
+// };
 
 export default GalleryPage;

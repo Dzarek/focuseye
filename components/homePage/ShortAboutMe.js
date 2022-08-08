@@ -101,7 +101,7 @@ const Wrapper = styled.div`
           text-align: left;
         }
         p {
-          text-align: right;
+          text-align: center;
           font-size: 1.2rem;
         }
       }
@@ -129,6 +129,11 @@ const Wrapper = styled.div`
       color: #fff;
       border: 2px solid #fff;
       background: var(--secondaryColor);
+    }
+    @media screen and (max-width: 800px) {
+      font-size: 0.9rem;
+      width: 180px;
+      height: 45px;
     }
   }
   .icon {
