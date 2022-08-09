@@ -295,7 +295,7 @@ export const galleryInstagram = [
   instaImg10,
 ];
 
-export const gallery = [
+export const localGallery = [
   {
     id: 1,
     img: [

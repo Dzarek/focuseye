@@ -35,36 +35,42 @@ const Home = ({ thumbnails, fourTitle }) => {
         <FirstInfo />
         <ShortGallery />
         <ShortOffer showDetails={showDetails} setShowDetails={setShowDetails} />
-        <ShortBlog fourTitle={fourTitle} />
+        <ShortBlog fourTitle={fourTitle && fourTitle} />
         <ShortAboutMe />
         <ShortFaqContact />
-        <ShortInstagram thumbnails={thumbnails} />
+        <ShortInstagram thumbnails={thumbnails && thumbnails} />
       </>
     </>
   );
 };
 
 export const getStaticProps = async () => {
-  const response = await fetch(
-    "https://focuseye.pl/wp-json/wp/v2/media?media_folder=59"
-  );
-  const data = await response.json();
-  const thumbnails = data.map((image) => {
-    const smallImg = image.media_details.sizes.full.source_url;
-    return smallImg;
-  });
-  const titleOfArticles = blogData.map((item) => {
-    const title = item.title;
-    return title;
-  });
-  const fourTitle = titleOfArticles.slice(0, 4);
-  return {
-    props: {
-      thumbnails,
-      fourTitle,
-    },
-    revalidate: 60,
-  };
+  try {
+    const response = await fetch(
+      "https://focuseye.pl/wp-json/wp/v2/media?media_folder=59&per_page=100"
+    );
+    const data = await response.json();
+    const thumbnails = data.map((image) => {
+      const smallImg = image.media_details.sizes.full.source_url;
+      return smallImg;
+    });
+    const titleOfArticles = blogData.map((item) => {
+      const title = item.title;
+      return title;
+    });
+    const fourTitle = titleOfArticles.slice(0, 4);
+    return {
+      props: {
+        thumbnails,
+        fourTitle,
+      },
+      revalidate: 60,
+    };
+  } catch (error) {
+    return {
+      props: {},
+    };
+  }
 };
 
 export default Home;

@@ -4,6 +4,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
 
+const loadingSpinner = "/images/loading.gif";
+
 const ShortBlog = ({ fourTitle }) => {
   useEffect(() => {
     Aos.init({ duration: 1000 });
@@ -18,21 +20,25 @@ const ShortBlog = ({ fourTitle }) => {
         <Link href="/blog">
           <h2 className="blogTitle">BLOG</h2>
         </Link>
-        {fourTitle[0] && <p data-aos="zoom-in-right">{fourTitle[0]}</p>}
-        {fourTitle[1] && (
-          <p data-aos="zoom-in-left" data-aos-delay="500">
-            {fourTitle[1]}
-          </p>
-        )}
-        {fourTitle[2] && (
-          <p data-aos="zoom-in-right" data-aos-delay="1000">
-            {fourTitle[2]}
-          </p>
-        )}
-        {fourTitle[3] && (
-          <p data-aos="zoom-in-left" data-aos-delay="1500">
-            {fourTitle[3]}
-          </p>
+        {fourTitle ? (
+          <>
+            <p data-aos="zoom-in-right">{fourTitle[0]}</p>
+            <p data-aos="zoom-in-left" data-aos-delay="500">
+              {fourTitle[1]}
+            </p>
+
+            <p data-aos="zoom-in-right" data-aos-delay="1000">
+              {fourTitle[2]}
+            </p>
+
+            <p data-aos="zoom-in-left" data-aos-delay="1500">
+              {fourTitle[3]}
+            </p>
+          </>
+        ) : (
+          <>
+            <img className="blogLoading" src={loadingSpinner} alt="loading" />
+          </>
         )}
         <h3 className="lasth3">oraz wiele innych...</h3>
       </Wrapper>
@@ -45,10 +51,18 @@ const ShortBlog = ({ fourTitle }) => {
           </Link>
           . <br /> Znajdziesz tam artykuły takie jak:
         </h3>
-        {fourTitle[0] && <p data-aos="zoom-in-right">{fourTitle[0]}</p>}
-        {fourTitle[1] && <p data-aos="zoom-in-right">{fourTitle[1]}</p>}
-        {fourTitle[2] && <p data-aos="zoom-in-right">{fourTitle[2]}</p>}
-        {fourTitle[3] && <p data-aos="zoom-in-right">{fourTitle[3]}</p>}
+        {fourTitle ? (
+          <>
+            <p data-aos="zoom-in-right">{fourTitle[0]}</p>
+            <p data-aos="zoom-in-right">{fourTitle[1]}</p>
+            <p data-aos="zoom-in-right">{fourTitle[2]}</p>
+            <p data-aos="zoom-in-right">{fourTitle[3]}</p>
+          </>
+        ) : (
+          <>
+            <img className="blogLoading" src={loadingSpinner} alt="loading" />
+          </>
+        )}
         <h3 className="lasth3">oraz wiele innych...</h3>
       </Wrapper2>
     </>
@@ -63,6 +77,14 @@ const Wrapper = styled.div`
   min-height: 60vh;
   margin: 10vh auto;
   position: relative;
+  .blogLoading {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   .blogTitle {
     position: absolute;
     top: 50%;
@@ -133,6 +155,16 @@ const Wrapper2 = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  .blogLoading {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   h3 {
     text-align: center;
     font-size: 1.3rem;
