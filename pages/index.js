@@ -5,14 +5,16 @@ import Header from "../components/homePage/Header";
 import FirstInfo from "../components/homePage/FirstInfo";
 import ShortGallery from "../components/homePage/ShortGallery";
 import ShortOffer from "../components/homePage/ShortOffer";
+import ShortOfferWP from "../components/homePage/ShortOfferWP";
 import ShortBlog from "../components/homePage/ShortBlog";
 import ShortAboutMe from "../components/homePage/ShortAboutMe";
 import ShortFaqContact from "../components/homePage/ShortFaqContact";
 import ShortInstagram from "../components/homePage/ShortInstagram";
 import { blogData } from "../public/data";
 
-const Home = ({ thumbnails, fourTitle }) => {
+const Home = ({ thumbnails, fourTitle, offersWP }) => {
   const [showDetails, setShowDetails] = useState("");
+
   return (
     <>
       <Head>
@@ -34,7 +36,18 @@ const Home = ({ thumbnails, fourTitle }) => {
         <Header setShowDetails={setShowDetails} />
         <FirstInfo />
         <ShortGallery />
-        <ShortOffer showDetails={showDetails} setShowDetails={setShowDetails} />
+        {offersWP ? (
+          <ShortOfferWP
+            showDetails={showDetails}
+            setShowDetails={setShowDetails}
+            offersWP={offersWP}
+          />
+        ) : (
+          <ShortOffer
+            showDetails={showDetails}
+            setShowDetails={setShowDetails}
+          />
+        )}
         <ShortBlog fourTitle={fourTitle && fourTitle} />
         <ShortAboutMe />
         <ShortFaqContact />
@@ -59,10 +72,20 @@ export const getStaticProps = async () => {
       return title;
     });
     const fourTitle = titleOfArticles.slice(0, 4);
+
+    const responseOferta = await fetch(
+      `https://focuseye.pl/wp-json/wp/v2/oferty?order=asc`
+    );
+    const dataOfferWP = await responseOferta.json();
+    const offersWP = dataOfferWP.map((offer) => {
+      return offer;
+    });
+
     return {
       props: {
         thumbnails,
         fourTitle,
+        offersWP,
       },
       revalidate: 60,
     };

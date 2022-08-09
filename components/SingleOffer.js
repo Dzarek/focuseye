@@ -3,13 +3,12 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-const SingleOffer = ({ offer, setShowDetails }) => {
+const SingleOffer = ({ category, slug, img, setShowDetails }) => {
   const router = useRouter();
-  const { category, slug, imgs } = offer;
   return (
     <Wrapper className="singleOffer">
       <div
-        style={{ backgroundImage: `url(${imgs[0]})` }}
+        style={{ backgroundImage: `url(${img})` }}
         className="singleBG"
       ></div>
       <div className="singleContent">

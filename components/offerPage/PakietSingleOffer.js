@@ -9,12 +9,21 @@ import { RiImageAddLine } from "react-icons/ri";
 import { BiPhotoAlbum } from "react-icons/bi";
 import { GiConfirmed } from "react-icons/gi";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const PakietSingleOffer = ({ pakiety }) => {
   const { basic, premium } = pakiety;
+  const [weddingIs, setWeedingIs] = useState(false);
+  useEffect(() => {
+    if (basic.weddinginfo && basic.weddinginfo !== "") {
+      setWeedingIs(true);
+    }
+  }, []);
   return (
-    <Wrapper style={basic.weddingInfo && { height: "70vh" }}>
-      {basic.weddingInfo && (
+    <Wrapper
+      style={basic.weddinginfo ? { height: "70vh" } : { height: "auto" }}
+    >
+      {weddingIs && (
         <video
           src="/images/weeding.mp4"
           autoPlay
@@ -26,15 +35,13 @@ const PakietSingleOffer = ({ pakiety }) => {
         ></video>
       )}
       {basic && (
-        <div
-          className={basic.weddingInfo ? "pakiet weedingContainer" : "pakiet"}
-        >
+        <div className={weddingIs ? "pakiet weedingContainer" : "pakiet"}>
           <h2>{basic.name}</h2>
           <div className="infoContent">
-            {basic.numberOfImages && (
+            {basic.numberofimages && (
               <article>
                 <TiCamera className="icon" />
-                <p>{basic.numberOfImages}</p>
+                <p>{basic.numberofimages}</p>
               </article>
             )}
             {basic.time && (
@@ -55,10 +62,10 @@ const PakietSingleOffer = ({ pakiety }) => {
                 <p>{basic.quality}</p>
               </article>
             )}
-            {basic.webGallery && (
+            {basic.webgallery && (
               <article>
                 <MdOutlineTravelExplore className="icon" />
-                <p>{basic.webGallery}</p>
+                <p>{basic.webgallery}</p>
               </article>
             )}
             {basic.album && (
@@ -73,10 +80,10 @@ const PakietSingleOffer = ({ pakiety }) => {
                 <p>{basic.price}</p>
               </article>
             )}
-            {basic.extraImg && (
+            {basic.extraimg && (
               <article>
                 <RiImageAddLine className="icon" />
-                <p>{basic.extraImg}</p>
+                <p>{basic.extraimg}</p>
               </article>
             )}
             {basic.drive && (
@@ -92,9 +99,9 @@ const PakietSingleOffer = ({ pakiety }) => {
               </article>
             )}
           </div>
-          {basic.weddingInfo && (
+          {weddingIs && (
             <div className="weedingPakiet">
-              <h4>{basic.weddingInfo}</h4>
+              <h4>{basic.weddinginfo}</h4>
               <Link href="/kontakt">
                 <button className="button buttonWedding">
                   Wyśli do mnie wiadomość!
@@ -105,18 +112,16 @@ const PakietSingleOffer = ({ pakiety }) => {
         </div>
       )}
       <div
-        className={
-          basic.weddingInfo ? "separateLine whiteLine" : "separateLine"
-        }
+        className={weddingIs ? "separateLine whiteLine" : "separateLine"}
       ></div>
-      {pakiety.special && (
+      {pakiety.special && pakiety.special.name !== "" && (
         <div className="pakiet">
           <h2>{pakiety.special.name}</h2>
           <div className="infoContent">
-            {pakiety.special.numberOfImages && (
+            {pakiety.special.numberofimages && (
               <article>
                 <TiCamera className="icon" />
-                <p>{pakiety.special.numberOfImages}</p>
+                <p>{pakiety.special.numberofimages}</p>
               </article>
             )}
             {pakiety.special.time && (
@@ -137,10 +142,10 @@ const PakietSingleOffer = ({ pakiety }) => {
                 <p>{pakiety.special.quality}</p>
               </article>
             )}
-            {pakiety.special.webGallery && (
+            {pakiety.special.webgallery && (
               <article>
                 <MdOutlineTravelExplore className="icon" />
-                <p>{pakiety.special.webGallery}</p>
+                <p>{pakiety.special.webgallery}</p>
               </article>
             )}
             {pakiety.special.album && (
@@ -155,10 +160,10 @@ const PakietSingleOffer = ({ pakiety }) => {
                 <p>{pakiety.special.price}</p>
               </article>
             )}
-            {pakiety.special.extraImg && (
+            {pakiety.special.extraimg && (
               <article>
                 <RiImageAddLine className="icon" />
-                <p>{pakiety.special.extraImg}</p>
+                <p>{pakiety.special.extraimg}</p>
               </article>
             )}
             {pakiety.special.drive && (
@@ -177,15 +182,13 @@ const PakietSingleOffer = ({ pakiety }) => {
         </div>
       )}
       {premium && (
-        <div
-          className={basic.weddingInfo ? "pakiet weedingContainer" : "pakiet"}
-        >
+        <div className={weddingIs ? "pakiet weedingContainer" : "pakiet"}>
           <h2>{premium.name}</h2>
           <div className="infoContent">
-            {premium.numberOfImages && (
+            {premium.numberofimages && (
               <article>
                 <TiCamera className="icon" />
-                <p>{premium.numberOfImages}</p>
+                <p>{premium.numberofimages}</p>
               </article>
             )}
             {premium.time && (
@@ -206,10 +209,10 @@ const PakietSingleOffer = ({ pakiety }) => {
                 <p>{premium.quality}</p>
               </article>
             )}
-            {premium.webGallery && (
+            {premium.webgallery && (
               <article>
                 <MdOutlineTravelExplore className="icon" />
-                <p>{premium.webGallery}</p>
+                <p>{premium.webgallery}</p>
               </article>
             )}
             {premium.album && (
@@ -224,10 +227,10 @@ const PakietSingleOffer = ({ pakiety }) => {
                 <p>{premium.price}</p>
               </article>
             )}
-            {premium.extraImg && (
+            {premium.extraimg && (
               <article>
                 <RiImageAddLine className="icon" />
-                <p>{premium.extraImg}</p>
+                <p>{premium.extraimg}</p>
               </article>
             )}
             {premium.drive && (
@@ -243,9 +246,9 @@ const PakietSingleOffer = ({ pakiety }) => {
               </article>
             )}
           </div>
-          {premium.weddingInfo && (
+          {weddingIs && (
             <div className="weedingPakiet">
-              <h4>{premium.weddingInfo}</h4>
+              <h4>{premium.weddinginfo}</h4>
               <Link href="/kontakt">
                 <button className="button">Wyśli do mnie wiadomość!</button>
               </Link>

@@ -16,9 +16,9 @@ import Mirror from "../../components/offerPage/Mirror";
 import Head from "next/head";
 const ofertaHeader = "/images/ofertaImg/header/ofertaHeader.png";
 
-const OfferPage = () => {
+const OfferPage = ({ offersWP }) => {
   const [showDetails, setShowDetails] = useState("");
-
+  console.log(offersWP);
   useEffect(() => {
     Aos.init({ duration: 1000, disable: "mobile" });
   }, []);
@@ -71,18 +71,37 @@ const OfferPage = () => {
             <h2>Sesje zdjęciowe</h2>
             <span></span>
           </div>
-          <div data-aos="fade-up" className="offerContent">
-            {offers.map((item) => {
-              return (
-                <SingleOffer
-                  key={item.id}
-                  offer={item}
-                  setShowDetails={setShowDetails}
-                  className="singleOffer"
-                />
-              );
-            })}
-          </div>
+          {offersWP ? (
+            <div data-aos="fade-up" className="offerContent">
+              {offersWP.map((item) => {
+                return (
+                  <SingleOffer
+                    key={item.acf.id}
+                    category={item.acf.category}
+                    slug={item.acf.slug}
+                    img={item.acf.imgs.img1}
+                    setShowDetails={setShowDetails}
+                    className="singleOffer"
+                  />
+                );
+              })}
+            </div>
+          ) : (
+            <div data-aos="fade-up" className="offerContent">
+              {offers.map((item) => {
+                return (
+                  <SingleOffer
+                    key={item.id}
+                    category={item.category}
+                    slug={item.slug}
+                    img={item.imgs[0]}
+                    setShowDetails={setShowDetails}
+                    className="singleOffer"
+                  />
+                );
+              })}
+            </div>
+          )}
         </section>
         <Mirror />
         <Albums />
@@ -343,5 +362,28 @@ const Wrapper = styled.div`
     }
   }
 `;
+
+export const getStaticProps = async () => {
+  try {
+    const responseOferta = await fetch(
+      `https://focuseye.pl/wp-json/wp/v2/oferty?order=asc`
+    );
+    const data = await responseOferta.json();
+    const offersWP = data.map((offer) => {
+      return offer;
+    });
+
+    return {
+      props: {
+        offersWP,
+      },
+      revalidate: 30,
+    };
+  } catch (error) {
+    return {
+      props: {},
+    };
+  }
+};
 
 export default OfferPage;

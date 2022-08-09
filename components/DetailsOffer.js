@@ -3,12 +3,18 @@ import styled from "styled-components";
 import { ImCross } from "react-icons/im";
 import Link from "next/link";
 
-const DetailsOffer = ({ oneOffer, setShowDetails }) => {
-  const { title, slug, shortDescription, imgs } = oneOffer;
+const DetailsOffer = ({
+  title,
+  slug,
+  shortDescription,
+  img,
+  setShowDetails,
+}) => {
+  // const { title, slug, shortDescription, imgs } = oneOffer;
   return (
     <Wrapper className="detailsBG">
       <div className="details">
-        <header style={{ backgroundImage: `url(${imgs[1]})` }}>
+        <header style={{ backgroundImage: `url(${img})` }}>
           <button onClick={() => setShowDetails(false)}>
             <ImCross />
           </button>

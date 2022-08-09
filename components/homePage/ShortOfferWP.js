@@ -11,14 +11,13 @@ import {
   IoIosArrowDroprightCircle,
 } from "react-icons/io";
 
-import { offers } from "../../public/data";
 import SingleOffer from "../SingleOffer";
 import DetailsOffer from "../DetailsOffer";
 
 import { TiCamera } from "react-icons/ti";
 
-const ShortOffer = ({ showDetails, setShowDetails }) => {
-  const oneOffer = offers.find((item) => item.category === showDetails);
+const ShortOfferWP = ({ showDetails, setShowDetails, offersWP }) => {
+  const oneOfferWP = offersWP.find((item) => item.acf.category === showDetails);
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
@@ -79,13 +78,13 @@ const ShortOffer = ({ showDetails, setShowDetails }) => {
               <IoIosArrowDroprightCircle className="arrow arrowRight" />
             }
           >
-            {offers.map((item) => {
+            {offersWP.map((item) => {
               return (
                 <SingleOffer
-                  key={item.id}
-                  category={item.category}
-                  slug={item.slug}
-                  img={item.imgs[0]}
+                  key={item.acf.id}
+                  category={item.acf.category}
+                  slug={item.acf.slug}
+                  img={item.acf.imgs.img1}
                   setShowDetails={setShowDetails}
                 />
               );
@@ -93,10 +92,10 @@ const ShortOffer = ({ showDetails, setShowDetails }) => {
           </Carousel>
           {showDetails && (
             <DetailsOffer
-              title={oneOffer.title}
-              slug={oneOffer.slug}
-              shortDescription={oneOffer.shortDescription}
-              img={oneOffer.imgs[1]}
+              title={oneOfferWP.acf.title}
+              slug={oneOfferWP.acf.slug}
+              shortDescription={oneOfferWP.acf.shortdescription}
+              img={oneOfferWP.acf.imgs.img2}
               setShowDetails={setShowDetails}
             />
           )}
@@ -228,4 +227,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default ShortOffer;
+export default ShortOfferWP;

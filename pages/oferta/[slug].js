@@ -6,22 +6,22 @@ import PakietSingleOffer from "../../components/offerPage/PakietSingleOffer";
 import Opinion from "../../components/offerPage/Opinion";
 import { IoChevronBackCircle } from "react-icons/io5";
 import Head from "next/head";
-import Loading from "../../components/Loading";
 
 const OneOffer = (props) => {
   const {
-    title,
-    headerImg,
-    graphic,
-    longDescription,
-    smallGallery,
-    pakiety,
-    category,
+    headerImgWP,
+    titleWP,
+    longDescriptionWP,
+    smallGalleryWP,
+    pakietyWP,
+    cennikWP,
+    slug,
   } = props;
 
-  if (!title) {
-    return <Loading />;
-  }
+  const localOffer = offers.find((item) => item.slug === slug);
+  const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
+    localOffer;
+  const headerImg = imgs[1];
 
   return (
     <>
@@ -36,53 +36,93 @@ const OneOffer = (props) => {
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="shortcut icon" href="/logo192.png" />
       </Head>
+
       <Wrapper>
         <header className="headerTitle" style={{ overflow: "hidden" }}>
-          <div
-            className="headerBg"
-            style={{
-              backgroundImage: `url(${headerImg})`,
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              animation: "singleOfferHeader 5s linear 1 forwards",
-              width: "100vw",
-              // height: "80vh",
-              filter: "brightness(0.8)",
-            }}
-          ></div>
+          {headerImgWP ? (
+            <div
+              className="headerBg"
+              style={{
+                backgroundImage: `url(${headerImgWP})`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                animation: "singleOfferHeader 5s linear 1 forwards",
+                width: "100vw",
+                filter: "brightness(0.8)",
+              }}
+            ></div>
+          ) : (
+            <div
+              className="headerBg"
+              style={{
+                backgroundImage: `url(${headerImg})`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                animation: "singleOfferHeader 5s linear 1 forwards",
+                width: "100vw",
+                filter: "brightness(0.8)",
+              }}
+            ></div>
+          )}
           <div className="title">
-            <h2>{title}</h2>
+            <h2>{titleWP ? titleWP : title}</h2>
           </div>
         </header>
-        {category === "brzuszkowe" ? (
+        {slug === "brzuszkowe" ? (
           <div className="infoAndGraphic">
-            <section className="longInfo">
-              {longDescription.map((text, index) => {
-                return <p key={index}>{text}</p>;
-              })}
-            </section>
+            {longDescriptionWP ? (
+              <section className="longInfo">
+                {longDescriptionWP.map((text, index) => {
+                  return <p key={index}>{text}</p>;
+                })}
+              </section>
+            ) : (
+              <section className="longInfo">
+                {longDescription.map((text, index) => {
+                  return <p key={index}>{text}</p>;
+                })}
+              </section>
+            )}
             <img src={graphic[0]} alt="grafika" />
           </div>
         ) : (
           <div className="infoAndGraphic2">
             <img src={graphic[0]} alt="grafika" />
-            <section className="longInfo">
-              {longDescription.map((text, index) => {
-                return <p key={index}>{text}</p>;
-              })}
-            </section>
+            {longDescriptionWP ? (
+              <section className="longInfo">
+                {longDescriptionWP.map((text, index) => {
+                  return <p key={index}>{text}</p>;
+                })}
+              </section>
+            ) : (
+              <section className="longInfo">
+                {longDescription.map((text, index) => {
+                  return <p key={index}>{text}</p>;
+                })}
+              </section>
+            )}
             <img src={graphic[1]} alt="grafika" />
           </div>
         )}
         <SRLWrapper>
-          <section className="smallGallery">
-            {smallGallery.map((image, index) => {
-              return <img key={index} src={image} />;
-            })}
-          </section>
+          {smallGalleryWP ? (
+            <section className="smallGallery">
+              {smallGalleryWP.map((image, index) => {
+                return <img key={index} src={image} />;
+              })}
+            </section>
+          ) : (
+            <section className="smallGallery">
+              {smallGallery.map((image, index) => {
+                return <img key={index} src={image} />;
+              })}
+            </section>
+          )}
         </SRLWrapper>
-        <PakietSingleOffer pakiety={pakiety} />
-        <h3 className="cennik">Powyższy cennik obowiązuje od 01.08.2022 r.</h3>
+        <PakietSingleOffer pakiety={pakietyWP ? pakietyWP : pakiety} />
+        <h3 className="cennik">
+          {cennikWP ? cennikWP : "Powyższy cennik obowiązuje od 01.08.2022 r."}
+        </h3>
         <Opinion />
         <Link href="/oferta">
           <button className="backToBlog">
@@ -279,30 +319,39 @@ const Wrapper = styled.div`
 
 export const getStaticProps = async (context) => {
   const slug = context.params.slug;
-  const oneOffer = offers.find((item) => item.slug === slug);
-  const {
-    title,
-    imgs,
-    graphic,
-    longDescription,
-    smallGallery,
-    pakiety,
-    category,
-  } = oneOffer;
-  const headerImg = imgs[1];
-  return {
-    props: {
-      headerImg,
-      title,
-      graphic,
-      longDescription,
-      smallGallery,
-      pakiety,
-      category,
-    },
-    revalidate: 30,
-  };
+
+  try {
+    const responseOferta = await fetch(
+      `https://focuseye.pl/wp-json/wp/v2/oferty?slug=${slug}`
+    );
+    const data = await responseOferta.json();
+    const { title, imgs, longdescription, smallgallery, pakiety, cennik } =
+      data[0].acf;
+    const headerImgWP = imgs.img2;
+    const smallGalleryWP = Object.values(smallgallery);
+    const longDescriptionWP = Object.values(longdescription);
+
+    return {
+      props: {
+        headerImgWP,
+        titleWP: title,
+        longDescriptionWP,
+        smallGalleryWP,
+        pakietyWP: pakiety,
+        cennikWP: cennik,
+        slug,
+      },
+      revalidate: 30,
+    };
+  } catch (error) {
+    return {
+      props: {
+        slug,
+      },
+    };
+  }
 };
+
 export const getStaticPaths = async () => {
   const paths = offers.map((offer) => ({
     params: { slug: offer.slug },

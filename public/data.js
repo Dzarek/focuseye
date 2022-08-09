@@ -567,25 +567,25 @@ export const offers = [
     pakiety: {
       basic: {
         name: "Pakiet BASIC w sam raz na początek:",
-        numberOfImages:
+        numberofimages:
           "15 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
         time: "czas: 1h",
         place: "miejsce: plener lub dom",
         quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
         price: "inwestujesz: 500 zł",
-        extraImg: "dodatkowe ujęcie: 35 zł/szt",
+        extraimg: "dodatkowe ujęcie: 35 zł/szt",
         drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
         ready: "gotowe zdjęcia: do 3 tygodni",
       },
       premium: {
         name: "Pakiet PRO wszystko czego potrzebujesz:",
-        numberOfImages:
+        numberofimages:
           "30 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
         time: "czas: 1-1,5h",
         place: "miejsce: plener lub dom",
         quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
         price: "inwestujesz: 800 zł",
-        extraImg: "dodatkowe ujęcie: 30 zł/szt",
+        extraimg: "dodatkowe ujęcie: 30 zł/szt",
         drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
         ready: "gotowe zdjęcia: do 3 tygodni",
       },
@@ -620,25 +620,25 @@ export const offers = [
     pakiety: {
       basic: {
         name: "Pakiet BASIC w sam raz na początek:",
-        numberOfImages:
+        numberofimages:
           "10 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
         time: "czas: 1h",
         place: "miejsce: dom",
         quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
         price: "inwestujesz: 500 zł",
-        extraImg: "dodatkowe ujęcie: 35 zł/szt",
+        extraimg: "dodatkowe ujęcie: 35 zł/szt",
         drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
         ready: "gotowe zdjęcia: do 3 tygodni",
       },
       premium: {
         name: "Pakiet PRO wszystko czego potrzebujesz:",
-        numberOfImages:
+        numberofimages:
           "20 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
         time: "czas: 1-1,5h",
         place: "miejsce: dom",
         quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
         price: "inwestujesz: 750 zł",
-        extraImg: "dodatkowe ujęcie: 30 zł/szt",
+        extraimg: "dodatkowe ujęcie: 30 zł/szt",
         drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
         ready: "gotowe zdjęcia: do 3 tygodni",
       },
@@ -663,33 +663,33 @@ export const offers = [
     pakiety: {
       basic: {
         name: "Pakiet BASIC w sam raz na początek:",
-        numberOfImages:
+        numberofimages:
           "30 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
         place: "Kościół + plener w pobliżu kościoła",
         quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
-        webGallery: "galeria internetowa dla gości: TAK",
+        webgallery: "galeria internetowa dla gości: TAK",
         price: "inwestujesz: 450 zł",
         drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
         ready: "gotowe zdjęcia: do 3 tygodni",
       },
       special: {
         name: "Pakiet SPECIAL:",
-        numberOfImages:
+        numberofimages:
           "90-100 zdjęć elektronicznych i 30 papierowych w rozmiarze 15x23 cm",
         place: "przygotowania w domu, Kościół, przyjęcie max 1,5h",
         quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
-        webGallery: "galeria internetowa dla gości: TAK",
+        webgallery: "galeria internetowa dla gości: TAK",
         price: "inwestujesz: 850 zł",
         drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
         ready: "gotowe zdjęcia: do 3 tygodni",
       },
       premium: {
         name: "Pakiet PRO wszystko czego potrzebujesz:",
-        numberOfImages:
+        numberofimages:
           "wszystkie najlepsze ujęcia z dnia oraz 50 zdjęć w wersji papierowej w rozmiarze 15x23 cm",
         place: "przygotowania w domu, Kościół, przyjęcie max 1,5h",
         quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
-        webGallery: "galeria internetowa dla gości: TAK",
+        webgallery: "galeria internetowa dla gości: TAK",
         album: "Album: TAK, 20-stronicowy z personalizowanym grawerem",
         price: "inwestujesz: 1300 zł",
         drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
@@ -715,25 +715,25 @@ export const offers = [
     pakiety: {
       basic: {
         name: "Pakiet BASIC w sam raz na początek:",
-        numberOfImages:
+        numberofimages:
           "15 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
         time: "czas: 1h",
         place: "miejsce: plener lub dom",
         quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
         price: "inwestujesz: 500 zł",
-        extraImg: "dodatkowe ujęcie: 35 zł/szt",
+        extraimg: "dodatkowe ujęcie: 35 zł/szt",
         drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
         ready: "gotowe zdjęcia: do 3 tygodni",
       },
       premium: {
         name: "Pakiet PRO wszystko czego potrzebujesz:",
-        numberOfImages:
+        numberofimages:
           "30 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
         time: "czas: 1-1,5h",
         place: "miejsce: plener lub dom",
         quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
         price: "inwestujesz: 800 zł",
-        extraImg: "dodatkowe ujęcie: 30 zł/szt",
+        extraimg: "dodatkowe ujęcie: 30 zł/szt",
         drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
         ready: "gotowe zdjęcia: do 3 tygodni",
       },
@@ -756,11 +756,11 @@ export const offers = [
     pakiety: {
       basic: {
         name: "Pakiet Small 6h:",
-        weddingInfo: "Interesuje Cię krótka relacja?",
+        weddinginfo: "Interesuje Cię krótka relacja?",
       },
       premium: {
         name: "Całodzienny Reportaż:",
-        weddingInfo: "Dostępne 3 pakiety!",
+        weddinginfo: "Dostępne 3 pakiety!",
       },
     },
     shortDescription:
@@ -784,25 +784,25 @@ export const offers = [
     pakiety: {
       basic: {
         name: "Pakiet BASIC w sam raz na początek:",
-        numberOfImages:
+        numberofimages:
           "15 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
         time: "czas: 1h",
         place: "miejsce: plener lub dom",
         quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
         price: "inwestujesz: 500 zł",
-        extraImg: "dodatkowe ujęcie: 35 zł/szt",
+        extraimg: "dodatkowe ujęcie: 35 zł/szt",
         drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
         ready: "gotowe zdjęcia: do 3 tygodni",
       },
       premium: {
         name: "Pakiet PRO wszystko czego potrzebujesz:",
-        numberOfImages:
+        numberofimages:
           "30 zdjęć elektronicznych i papierowych w rozmiarze 15x23 cm",
         time: "czas: 1-1,5h",
         place: "miejsce: plener lub dom",
         quality: "rozdzielczość: pełna + wersja pod publikację w Internecie",
         price: "inwestujesz: 800 zł",
-        extraImg: "dodatkowe ujęcie: 30 zł/szt",
+        extraimg: "dodatkowe ujęcie: 30 zł/szt",
         drive: "dojazd powyżej 20 km od Tuchowa: 1zł/1km",
         ready: "gotowe zdjęcia: do 3 tygodni",
       },

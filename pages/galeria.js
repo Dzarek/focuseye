@@ -18,22 +18,13 @@ const GalleryPage = ({
   slubyImgWP,
   zakochaniImgWP,
 }) => {
-  // console.log(
-  //   chrzestImgWP,
-  //   ciazoweImgWP,
-  //   noworodkoweImgWP,
-  //   rodzinneImgWP,
-  //   slubyImgWP,
-  //   zakochaniImgWP
-  // );
-
   const galleryWordPress = [
-    { id: 1, img: ciazoweImgWP, category: "brzuszkoweW" },
-    { id: 2, img: slubyImgWP, category: "ślubneW" },
-    { id: 3, img: zakochaniImgWP, category: "miłosneW" },
-    { id: 4, img: noworodkoweImgWP, category: "noworodkoweW" },
-    { id: 5, img: chrzestImgWP, category: "chrzcinyW" },
-    { id: 6, img: rodzinneImgWP, category: "rodzinneW" },
+    { id: 1, img: ciazoweImgWP, category: "brzuszkowe" },
+    { id: 2, img: slubyImgWP, category: "ślubne" },
+    { id: 3, img: zakochaniImgWP, category: "miłosne" },
+    { id: 4, img: noworodkoweImgWP, category: "noworodkowe" },
+    { id: 5, img: chrzestImgWP, category: "chrzciny" },
+    { id: 6, img: rodzinneImgWP, category: "rodzinne" },
   ];
 
   const [gallery, setGallery] = useState(localGallery);
