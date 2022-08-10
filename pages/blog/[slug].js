@@ -6,12 +6,21 @@ import { blogData } from "../../public/data";
 import Head from "next/head";
 import Loading from "../../components/Loading";
 
-const SingleArticleBlog = (props) => {
-  const { title, date, text, images, headerImg, bgImg } = props;
-
-  if (!title) {
+const SingleArticleBlog = ({
+  slug,
+  titleWP,
+  dateWP,
+  textWP,
+  imagesWP,
+  headerImgWP,
+  bgImgWP,
+}) => {
+  if (!slug) {
     return <Loading />;
   }
+
+  const localBlog = blogData.find((item) => item.slug === slug);
+  const { title, date, text, images, headerImg, bgImg } = localBlog;
 
   return (
     <>
@@ -30,7 +39,7 @@ const SingleArticleBlog = (props) => {
         <div
           className="bgArticle"
           style={{
-            background: `url(${bgImg})`,
+            background: `url(${bgImgWP ? bgImgWP : bgImg})`,
             width: "100vw",
             height: "100vh",
             position: "fixed",
@@ -43,23 +52,39 @@ const SingleArticleBlog = (props) => {
         <div className="articleContainer">
           <div className="titleContainer">
             <h1>
-              {title}
-              <span>Data publikacji: {date}</span>
+              {titleWP ? titleWP : title}
+              <span>Data publikacji: {dateWP ? dateWP : date}</span>
             </h1>
-            <img src={headerImg} alt="title" />
+            <img src={headerImgWP ? headerImgWP : headerImg} alt="title" />
           </div>
           <div className="separateLine"></div>
-          <section className="infoContent">
-            {text.map((item, index) => {
-              return <p key={index}>{item}</p>;
-            })}
-          </section>
-          <SRLWrapper>
-            <section className="images">
-              {images.map((img, index) => {
-                return <img key={index} src={img} alt="name" />;
+          {textWP ? (
+            <section className="infoContent">
+              {textWP.map((item, index) => {
+                return <p key={index}>{item}</p>;
               })}
             </section>
+          ) : (
+            <section className="infoContent">
+              {text.map((item, index) => {
+                return <p key={index}>{item}</p>;
+              })}
+            </section>
+          )}
+          <SRLWrapper>
+            {imagesWP ? (
+              <section className="images">
+                {imagesWP.map((img, index) => {
+                  return <img key={index} src={img} alt="name" />;
+                })}
+              </section>
+            ) : (
+              <section className="images">
+                {images.map((img, index) => {
+                  return <img key={index} src={img} alt="name" />;
+                })}
+              </section>
+            )}
           </SRLWrapper>
         </div>
         <Link href="/blog">
@@ -206,23 +231,48 @@ const Wrapper = styled.div`
 
 export const getStaticProps = async (context) => {
   const slug = context.params.slug;
-  const oneArticle = blogData.find((item) => item.slug === slug);
-  const { title, date, text, images, headerImg, bgImg } = oneArticle;
-  return {
-    props: {
-      title,
-      date,
-      text,
-      images,
-      headerImg,
-      bgImg,
-    },
-    revalidate: 30,
-  };
+
+  try {
+    const responseBlog = await fetch(
+      `https://focuseye.pl/wp-json/wp/v2/artykuly?slug=${slug}`
+    );
+    const data = await responseBlog.json();
+    const { title, date, text, images, headerimg, bgimg } = data[0].acf;
+
+    const textWP = Object.values(text);
+    const imagesWP = Object.values(images);
+
+    return {
+      props: {
+        titleWP: title,
+        dateWP: date,
+        textWP,
+        imagesWP,
+        headerImgWP: headerimg,
+        bgImgWP: bgimg,
+        slug,
+      },
+      revalidate: 60,
+    };
+  } catch (error) {
+    return {
+      props: {
+        slug,
+      },
+    };
+  }
 };
+
 export const getStaticPaths = async () => {
-  const paths = blogData.map((item) => ({
-    params: { slug: item.slug },
+  const responseBlog = await fetch(
+    `https://focuseye.pl/wp-json/wp/v2/artykuly`
+  );
+  const data = await responseBlog.json();
+  const blogWP = data.map((article) => {
+    return article;
+  });
+  const paths = blogWP.map((item) => ({
+    params: { slug: item.acf.slug },
   }));
 
   return {
