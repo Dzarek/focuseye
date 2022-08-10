@@ -6,6 +6,7 @@ import PakietSingleOffer from "../../components/offerPage/PakietSingleOffer";
 import Opinion from "../../components/offerPage/Opinion";
 import { IoChevronBackCircle } from "react-icons/io5";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 const OneOffer = (props) => {
   const {
@@ -18,7 +19,8 @@ const OneOffer = (props) => {
     slug,
   } = props;
 
-  const localOffer = offers.find((item) => item.slug === slug);
+  const router = useRouter();
+  const localOffer = offers.find((item) => item.slug === router.query.slug);
   const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
     localOffer;
   const headerImg = imgs[1];
