@@ -6,7 +6,7 @@ import PakietSingleOffer from "../../components/offerPage/PakietSingleOffer";
 import Opinion from "../../components/offerPage/Opinion";
 import { IoChevronBackCircle } from "react-icons/io5";
 import Head from "next/head";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 
 const OneOffer = (props) => {
   const {
@@ -17,13 +17,19 @@ const OneOffer = (props) => {
     pakietyWP,
     cennikWP,
     slug,
+    title,
+    headerImg,
+    graphic,
+    longDescription,
+    smallGallery,
+    pakiety,
   } = props;
 
-  const router = useRouter();
-  const localOffer = offers.find((item) => item.slug === router.query.slug);
-  const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
-    localOffer;
-  const headerImg = imgs[1];
+  // const router = useRouter();
+  // const localOffer = offers.find((item) => item.slug === router.query.slug);
+  // const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
+  //   localOffer;
+  // const headerImg = imgs[1];
 
   return (
     <>
@@ -333,6 +339,9 @@ export const getStaticProps = async (context) => {
     const smallGalleryWP = Object.values(smallgallery);
     const longDescriptionWP = Object.values(longdescription);
 
+    const localOffer = offers.find((item) => item.slug === slug);
+    const { graphic } = localOffer;
+
     return {
       props: {
         headerImgWP,
@@ -341,13 +350,24 @@ export const getStaticProps = async (context) => {
         smallGalleryWP,
         pakietyWP: pakiety,
         cennikWP: cennik,
+        graphic,
         slug,
       },
       revalidate: 30,
     };
   } catch (error) {
+    const localOffer = offers.find((item) => item.slug === slug);
+    const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
+      localOffer;
+    const headerImg = imgs[1];
     return {
       props: {
+        title,
+        headerImg,
+        graphic,
+        longDescription,
+        smallGallery,
+        pakiety,
         slug,
       },
     };
