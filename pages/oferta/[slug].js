@@ -17,7 +17,12 @@ const OneOffer = (props) => {
     pakietyWP,
     cennikWP,
     slug,
-    localOffer,
+    title,
+    headerImg,
+    graphic,
+    longDescription,
+    smallGallery,
+    pakiety,
   } = props;
 
   // const router = useRouter();
@@ -25,10 +30,6 @@ const OneOffer = (props) => {
   // const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
   //   localOffer;
   // const headerImg = imgs[1];
-
-  const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
-    localOffer;
-  const headerImg = imgs[1];
 
   return (
     <>
@@ -327,6 +328,9 @@ const Wrapper = styled.div`
 export const getStaticProps = async (context) => {
   const slug = context.params.slug;
   const localOffer = offers.find((item) => item.slug === slug);
+  const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
+    localOffer;
+  const headerImg = imgs[1];
 
   try {
     const responseOferta = await fetch(
@@ -339,8 +343,8 @@ export const getStaticProps = async (context) => {
     const smallGalleryWP = Object.values(smallgallery);
     const longDescriptionWP = Object.values(longdescription);
 
-    // const localOffer = offers.find((item) => item.slug === slug);
-    // const { graphic } = localOffer;
+    const localOffer = offers.find((item) => item.slug === slug);
+    const { graphic } = localOffer;
 
     return {
       props: {
@@ -350,15 +354,20 @@ export const getStaticProps = async (context) => {
         smallGalleryWP,
         pakietyWP: pakiety,
         cennikWP: cennik,
-        localOffer,
+        graphic,
         slug,
       },
-      revalidate: 30,
+      revalidate: 60,
     };
   } catch (error) {
     return {
       props: {
-        localOffer,
+        title,
+        headerImg,
+        graphic,
+        longDescription,
+        smallGallery,
+        pakiety,
         slug,
       },
     };
