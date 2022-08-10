@@ -6,17 +6,18 @@ import PakietSingleOffer from "../../components/offerPage/PakietSingleOffer";
 import Opinion from "../../components/offerPage/Opinion";
 import { IoChevronBackCircle } from "react-icons/io5";
 import Head from "next/head";
+import Loading from "react-loading";
 // import { useEffect, useState } from "react";
 // import { useRouter } from "next/router";
 
 const OneOffer = ({
+  slug,
   headerImgWP,
   titleWP,
   longDescriptionWP,
   smallGalleryWP,
   pakietyWP,
   cennikWP,
-  slug,
 }) => {
   // const {
   //   headerImgWP,
@@ -28,6 +29,9 @@ const OneOffer = ({
   //   slug,
 
   // } = props;
+  if (!slug) {
+    return <Loading />;
+  }
 
   const localOffer = offers.find((item) => item.slug === slug);
   const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
