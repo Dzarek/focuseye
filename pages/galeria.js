@@ -378,7 +378,8 @@ const Wrapper = styled.div`
   }
 `;
 
-export const getStaticProps = async () => {
+// export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   try {
     const responseChrzestImg = await fetch(
       "https://focuseye.pl/wp-json/wp/v2/media?media_folder=60&per_page=100"
@@ -441,7 +442,6 @@ export const getStaticProps = async () => {
         slubyImgWP,
         zakochaniImgWP,
       },
-      revalidate: 60,
     };
   } catch (error) {
     return {
