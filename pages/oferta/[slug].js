@@ -6,30 +6,33 @@ import PakietSingleOffer from "../../components/offerPage/PakietSingleOffer";
 import Opinion from "../../components/offerPage/Opinion";
 import { IoChevronBackCircle } from "react-icons/io5";
 import Head from "next/head";
+// import { useEffect, useState } from "react";
 // import { useRouter } from "next/router";
 
-const OneOffer = (props) => {
-  const {
-    headerImgWP,
-    titleWP,
-    longDescriptionWP,
-    smallGalleryWP,
-    pakietyWP,
-    cennikWP,
-    slug,
-    title,
-    headerImg,
-    graphic,
-    longDescription,
-    smallGallery,
-    pakiety,
-  } = props;
+const OneOffer = ({
+  headerImgWP,
+  titleWP,
+  longDescriptionWP,
+  smallGalleryWP,
+  pakietyWP,
+  cennikWP,
+  slug,
+}) => {
+  // const {
+  //   headerImgWP,
+  //   titleWP,
+  //   longDescriptionWP,
+  //   smallGalleryWP,
+  //   pakietyWP,
+  //   cennikWP,
+  //   slug,
 
-  // const router = useRouter();
-  // const localOffer = offers.find((item) => item.slug === router.query.slug);
-  // const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
-  //   localOffer;
-  // const headerImg = imgs[1];
+  // } = props;
+
+  const localOffer = offers.find((item) => item.slug === slug);
+  const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
+    localOffer;
+  const headerImg = imgs[1];
 
   return (
     <>
@@ -327,10 +330,10 @@ const Wrapper = styled.div`
 
 export const getStaticProps = async (context) => {
   const slug = context.params.slug;
-  const localOffer = offers.find((item) => item.slug === slug);
-  const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
-    localOffer;
-  const headerImg = imgs[1];
+  // const localOffer = offers.find((item) => item.slug === slug);
+  // const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
+  //   localOffer;
+  // const headerImg = imgs[1];
 
   try {
     const responseOferta = await fetch(
@@ -343,8 +346,8 @@ export const getStaticProps = async (context) => {
     const smallGalleryWP = Object.values(smallgallery);
     const longDescriptionWP = Object.values(longdescription);
 
-    const localOffer = offers.find((item) => item.slug === slug);
-    const { graphic } = localOffer;
+    // const localOffer = offers.find((item) => item.slug === slug);
+    // const { graphic } = localOffer;
 
     return {
       props: {
@@ -354,7 +357,7 @@ export const getStaticProps = async (context) => {
         smallGalleryWP,
         pakietyWP: pakiety,
         cennikWP: cennik,
-        graphic,
+        // graphic,
         slug,
       },
       revalidate: 60,
@@ -362,12 +365,12 @@ export const getStaticProps = async (context) => {
   } catch (error) {
     return {
       props: {
-        title,
-        headerImg,
-        graphic,
-        longDescription,
-        smallGallery,
-        pakiety,
+        // title,
+        // headerImg,
+        // graphic,
+        // longDescription,
+        // smallGallery,
+        // pakiety,
         slug,
       },
     };
@@ -375,19 +378,19 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const responseOferta = await fetch(
-    `https://focuseye.pl/wp-json/wp/v2/oferty`
-  );
-  const dataOfferWP = await responseOferta.json();
-  const offersWP = dataOfferWP.map((offer) => {
-    return offer;
-  });
-  const paths = offersWP.map((offer) => ({
-    params: { slug: offer.acf.slug },
-  }));
-  // const paths = offers.map((offer) => ({
-  //   params: { slug: offer.slug },
+  // const responseOferta = await fetch(
+  //   `https://focuseye.pl/wp-json/wp/v2/oferty`
+  // );
+  // const dataOfferWP = await responseOferta.json();
+  // const offersWP = dataOfferWP.map((offer) => {
+  //   return offer;
+  // });
+  // const paths = offersWP.map((offer) => ({
+  //   params: { slug: offer.acf.slug },
   // }));
+  const paths = offers.map((offer) => ({
+    params: { slug: offer.slug },
+  }));
 
   return {
     paths,
