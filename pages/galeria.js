@@ -10,23 +10,7 @@ import Head from "next/head";
 
 const galleryHeaderImg2 = "/images/gallery/galleryHeader.png";
 
-const GalleryPage = ({
-  ciazoweImgWP,
-  chrzestImgWP,
-  noworodkoweImgWP,
-  rodzinneImgWP,
-  slubyImgWP,
-  zakochaniImgWP,
-}) => {
-  const galleryWordPress = [
-    { id: 1, img: ciazoweImgWP, category: "brzuszkoweWP" },
-    { id: 2, img: slubyImgWP, category: "ślubneWP" },
-    { id: 3, img: zakochaniImgWP, category: "miłosneWP" },
-    { id: 4, img: noworodkoweImgWP, category: "noworodkoweWP" },
-    { id: 5, img: chrzestImgWP, category: "chrzcinyWP" },
-    { id: 6, img: rodzinneImgWP, category: "rodzinneWP" },
-  ];
-
+const GalleryPage = () => {
   const [gallery, setGallery] = useState(localGallery);
   const galleryCategory = gallery.filter(
     (item) => item.category === "brzuszkowe"
@@ -36,22 +20,75 @@ const GalleryPage = ({
   const [currentPage] = useState(1);
   const [imagesPerPage, setImagesPerPage] = useState(10);
   const [loading, setLoading] = useState(true);
-
   const categories = [
     ...new Set(gallery.map((item) => item.category)),
     "wszystkie",
   ];
-  useEffect(() => {
-    if (
-      ciazoweImgWP &&
-      slubyImgWP &&
-      zakochaniImgWP &&
-      noworodkoweImgWP &&
-      chrzestImgWP &&
-      rodzinneImgWP
-    ) {
+
+  useEffect(async () => {
+    try {
+      const responseChrzestImg = await fetch(
+        "https://focuseye.pl/wp-json/wp/v2/media?media_folder=60&per_page=100"
+      );
+      const dataChrzest = await responseChrzestImg.json();
+      const chrzestImgWP = dataChrzest.map((image) => {
+        const images = image.source_url;
+        return images;
+      });
+
+      const responseCiazoweImg = await fetch(
+        "https://focuseye.pl/wp-json/wp/v2/media?media_folder=62&per_page=100"
+      );
+      const dataCiazowe = await responseCiazoweImg.json();
+      const ciazoweImgWP = dataCiazowe.map((image) => {
+        const images = image.source_url;
+        return images;
+      });
+
+      const responseNoworodkoweImg = await fetch(
+        "https://focuseye.pl/wp-json/wp/v2/media?media_folder=63&per_page=100"
+      );
+      const dataNoworodkowe = await responseNoworodkoweImg.json();
+      const noworodkoweImgWP = dataNoworodkowe.map((image) => {
+        const images = image.source_url;
+        return images;
+      });
+
+      const responseRodzinneImg = await fetch(
+        "https://focuseye.pl/wp-json/wp/v2/media?media_folder=64&per_page=100"
+      );
+      const dataRodzinne = await responseRodzinneImg.json();
+      const rodzinneImgWP = dataRodzinne.map((image) => {
+        const images = image.source_url;
+        return images;
+      });
+      const responseSlubyImg = await fetch(
+        "https://focuseye.pl/wp-json/wp/v2/media?media_folder=65&per_page=100"
+      );
+      const dataSluby = await responseSlubyImg.json();
+      const slubyImgWP = dataSluby.map((image) => {
+        const images = image.source_url;
+        return images;
+      });
+      const responseZakochaniImg = await fetch(
+        "https://focuseye.pl/wp-json/wp/v2/media?media_folder=66&per_page=100"
+      );
+      const dataZakochani = await responseZakochaniImg.json();
+      const zakochaniImgWP = dataZakochani.map((image) => {
+        const images = image.source_url;
+        return images;
+      });
+      const galleryWordPress = [
+        { id: 1, img: ciazoweImgWP, category: "brzuszkoweWP" },
+        { id: 2, img: slubyImgWP, category: "ślubneWP" },
+        { id: 3, img: zakochaniImgWP, category: "miłosneWP" },
+        { id: 4, img: noworodkoweImgWP, category: "noworodkoweWP" },
+        { id: 5, img: chrzestImgWP, category: "chrzcinyWP" },
+        { id: 6, img: rodzinneImgWP, category: "rodzinneWP" },
+      ];
       setGallery(galleryWordPress);
-    } else {
+    } catch (error) {
+      console.log(error);
       setGallery(localGallery);
     }
   }, []);
@@ -59,6 +96,7 @@ const GalleryPage = ({
   useEffect(() => {
     Aos.init({ duration: 1000, disable: "false" });
   }, []);
+
   const galleryImages = menuItems.map((item) => {
     const { img } = item;
     return img.map((item, index) => {
@@ -379,75 +417,75 @@ const Wrapper = styled.div`
 `;
 
 // export const getStaticProps = async () => {
-export const getServerSideProps = async () => {
-  try {
-    const responseChrzestImg = await fetch(
-      "https://focuseye.pl/wp-json/wp/v2/media?media_folder=60&per_page=100"
-    );
-    const dataChrzest = await responseChrzestImg.json();
-    const chrzestImgWP = dataChrzest.map((image) => {
-      const images = image.source_url;
-      return images;
-    });
 
-    const responseCiazoweImg = await fetch(
-      "https://focuseye.pl/wp-json/wp/v2/media?media_folder=62&per_page=100"
-    );
-    const dataCiazowe = await responseCiazoweImg.json();
-    const ciazoweImgWP = dataCiazowe.map((image) => {
-      const images = image.source_url;
-      return images;
-    });
+//   try {
+//     const responseChrzestImg = await fetch(
+//       "https://focuseye.pl/wp-json/wp/v2/media?media_folder=60&per_page=100"
+//     );
+//     const dataChrzest = await responseChrzestImg.json();
+//     const chrzestImgWP = dataChrzest.map((image) => {
+//       const images = image.source_url;
+//       return images;
+//     });
 
-    const responseNoworodkoweImg = await fetch(
-      "https://focuseye.pl/wp-json/wp/v2/media?media_folder=63&per_page=100"
-    );
-    const dataNoworodkowe = await responseNoworodkoweImg.json();
-    const noworodkoweImgWP = dataNoworodkowe.map((image) => {
-      const images = image.source_url;
-      return images;
-    });
+//     const responseCiazoweImg = await fetch(
+//       "https://focuseye.pl/wp-json/wp/v2/media?media_folder=62&per_page=100"
+//     );
+//     const dataCiazowe = await responseCiazoweImg.json();
+//     const ciazoweImgWP = dataCiazowe.map((image) => {
+//       const images = image.source_url;
+//       return images;
+//     });
 
-    const responseRodzinneImg = await fetch(
-      "https://focuseye.pl/wp-json/wp/v2/media?media_folder=64&per_page=100"
-    );
-    const dataRodzinne = await responseRodzinneImg.json();
-    const rodzinneImgWP = dataRodzinne.map((image) => {
-      const images = image.source_url;
-      return images;
-    });
-    const responseSlubyImg = await fetch(
-      "https://focuseye.pl/wp-json/wp/v2/media?media_folder=65&per_page=100"
-    );
-    const dataSluby = await responseSlubyImg.json();
-    const slubyImgWP = dataSluby.map((image) => {
-      const images = image.source_url;
-      return images;
-    });
-    const responseZakochaniImg = await fetch(
-      "https://focuseye.pl/wp-json/wp/v2/media?media_folder=66&per_page=100"
-    );
-    const dataZakochani = await responseZakochaniImg.json();
-    const zakochaniImgWP = dataZakochani.map((image) => {
-      const images = image.source_url;
-      return images;
-    });
+//     const responseNoworodkoweImg = await fetch(
+//       "https://focuseye.pl/wp-json/wp/v2/media?media_folder=63&per_page=100"
+//     );
+//     const dataNoworodkowe = await responseNoworodkoweImg.json();
+//     const noworodkoweImgWP = dataNoworodkowe.map((image) => {
+//       const images = image.source_url;
+//       return images;
+//     });
 
-    return {
-      props: {
-        chrzestImgWP,
-        ciazoweImgWP,
-        noworodkoweImgWP,
-        rodzinneImgWP,
-        slubyImgWP,
-        zakochaniImgWP,
-      },
-    };
-  } catch (error) {
-    return {
-      props: {},
-    };
-  }
-};
+//     const responseRodzinneImg = await fetch(
+//       "https://focuseye.pl/wp-json/wp/v2/media?media_folder=64&per_page=100"
+//     );
+//     const dataRodzinne = await responseRodzinneImg.json();
+//     const rodzinneImgWP = dataRodzinne.map((image) => {
+//       const images = image.source_url;
+//       return images;
+//     });
+//     const responseSlubyImg = await fetch(
+//       "https://focuseye.pl/wp-json/wp/v2/media?media_folder=65&per_page=100"
+//     );
+//     const dataSluby = await responseSlubyImg.json();
+//     const slubyImgWP = dataSluby.map((image) => {
+//       const images = image.source_url;
+//       return images;
+//     });
+//     const responseZakochaniImg = await fetch(
+//       "https://focuseye.pl/wp-json/wp/v2/media?media_folder=66&per_page=100"
+//     );
+//     const dataZakochani = await responseZakochaniImg.json();
+//     const zakochaniImgWP = dataZakochani.map((image) => {
+//       const images = image.source_url;
+//       return images;
+//     });
+
+//     return {
+//       props: {
+//         chrzestImgWP,
+//         ciazoweImgWP,
+//         noworodkoweImgWP,
+//         rodzinneImgWP,
+//         slubyImgWP,
+//         zakochaniImgWP,
+//       },
+//     };
+//   } catch (error) {
+//     return {
+//       props: {},
+//     };
+//   }
+// };
 
 export default GalleryPage;
