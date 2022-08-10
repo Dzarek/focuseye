@@ -442,7 +442,6 @@ export const getServerSideProps = async () => {
         slubyImgWP,
         zakochaniImgWP,
       },
-      revalidate: 60,
     };
   } catch (error) {
     return {
