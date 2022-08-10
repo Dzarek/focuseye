@@ -2,11 +2,9 @@ import styled from "styled-components";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
-
 import { offers } from "../../public/data";
 import SingleOffer from "../../components/SingleOffer";
 import ImportantInfoOffer from "../../components/offerPage/ImportantInfoOffer";
-
 import { BsPersonCheckFill } from "react-icons/bs";
 import { IoIosEye } from "react-icons/io";
 import { GiFlowers } from "react-icons/gi";
@@ -16,12 +14,29 @@ import Mirror from "../../components/offerPage/Mirror";
 import Head from "next/head";
 const ofertaHeader = "/images/ofertaImg/header/ofertaHeader.png";
 
-const OfferPage = ({ offersWP }) => {
+const OfferPage = () => {
   const [showDetails, setShowDetails] = useState("");
-  console.log(offersWP);
+  const [offersWP, setOffersWP] = useState(null);
+
+  useEffect(async () => {
+    try {
+      const responseOferta = await fetch(
+        `https://focuseye.pl/wp-json/wp/v2/oferty?order=asc`
+      );
+      const data = await responseOferta.json();
+      const offersWP = data.map((offer) => {
+        return offer;
+      });
+      setOffersWP(offersWP);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   useEffect(() => {
     Aos.init({ duration: 1000, disable: "mobile" });
   }, []);
+
   return (
     <>
       <Head>
@@ -363,27 +378,27 @@ const Wrapper = styled.div`
   }
 `;
 
-export const getStaticProps = async () => {
-  try {
-    const responseOferta = await fetch(
-      `https://focuseye.pl/wp-json/wp/v2/oferty?order=asc`
-    );
-    const data = await responseOferta.json();
-    const offersWP = data.map((offer) => {
-      return offer;
-    });
+// export const getStaticProps = async () => {
+//   try {
+//     const responseOferta = await fetch(
+//       `https://focuseye.pl/wp-json/wp/v2/oferty?order=asc`
+//     );
+//     const data = await responseOferta.json();
+//     const offersWP = data.map((offer) => {
+//       return offer;
+//     });
 
-    return {
-      props: {
-        offersWP,
-      },
-      revalidate: 30,
-    };
-  } catch (error) {
-    return {
-      props: {},
-    };
-  }
-};
+//     return {
+//       props: {
+//         offersWP,
+//       },
+//       revalidate: 30,
+//     };
+//   } catch (error) {
+//     return {
+//       props: {},
+//     };
+//   }
+// };
 
 export default OfferPage;

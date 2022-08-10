@@ -6,25 +6,50 @@ import PakietSingleOffer from "../../components/offerPage/PakietSingleOffer";
 import Opinion from "../../components/offerPage/Opinion";
 import { IoChevronBackCircle } from "react-icons/io5";
 import Head from "next/head";
-import Loading from "react-loading";
+import Loading from "../../components/Loading";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
-const OneOffer = ({
-  slug,
-  headerImgWP,
-  titleWP,
-  longDescriptionWP,
-  smallGalleryWP,
-  pakietyWP,
-  cennikWP,
-}) => {
+const OneOffer = () => {
+  const router = useRouter();
+  const slug = router.query.slug;
   if (!slug) {
     return <Loading />;
   }
+  const [headerImgWP, setHeaderImgWP] = useState(null);
+  const [titleWP, setTitleWP] = useState(null);
+  const [longDescriptionWP, setLongDescriptionWP] = useState(null);
+  const [smallGalleryWP, setSmallGalleryWP] = useState(null);
+  const [pakietyWP, setPakietyWP] = useState(null);
+  const [cennikWP, setCennikWP] = useState(null);
 
   const localOffer = offers.find((item) => item.slug === slug);
   const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
     localOffer;
   const headerImg = imgs[1];
+
+  useEffect(async () => {
+    try {
+      const responseOferta = await fetch(
+        `https://focuseye.pl/wp-json/wp/v2/oferty?slug=${slug}`
+      );
+      const data = await responseOferta.json();
+      const { title, imgs, longdescription, smallgallery, pakiety, cennik } =
+        data[0].acf;
+      const headerImgWP = imgs.img2;
+      const smallGalleryWP = Object.values(smallgallery);
+      const longDescriptionWP = Object.values(longdescription);
+      setHeaderImgWP(headerImgWP);
+      setTitleWP(title);
+      setLongDescriptionWP(longDescriptionWP);
+      setSmallGalleryWP(smallGalleryWP);
+      setPakietyWP(pakiety);
+      setCennikWP(cennik);
+      console.log("ok");
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
   return (
     <>
@@ -320,50 +345,50 @@ const Wrapper = styled.div`
   }
 `;
 
-export const getStaticProps = async (context) => {
-  const slug = context.params.slug;
+// export const getStaticProps = async (context) => {
+//   const slug = context.params.slug;
 
-  try {
-    const responseOferta = await fetch(
-      `https://focuseye.pl/wp-json/wp/v2/oferty?slug=${slug}`
-    );
-    const data = await responseOferta.json();
-    const { title, imgs, longdescription, smallgallery, pakiety, cennik } =
-      data[0].acf;
-    const headerImgWP = imgs.img2;
-    const smallGalleryWP = Object.values(smallgallery);
-    const longDescriptionWP = Object.values(longdescription);
+//   try {
+//     const responseOferta = await fetch(
+//       `https://focuseye.pl/wp-json/wp/v2/oferty?slug=${slug}`
+//     );
+//     const data = await responseOferta.json();
+//     const { title, imgs, longdescription, smallgallery, pakiety, cennik } =
+//       data[0].acf;
+//     const headerImgWP = imgs.img2;
+//     const smallGalleryWP = Object.values(smallgallery);
+//     const longDescriptionWP = Object.values(longdescription);
 
-    return {
-      props: {
-        headerImgWP,
-        titleWP: title,
-        longDescriptionWP,
-        smallGalleryWP,
-        pakietyWP: pakiety,
-        cennikWP: cennik,
-        slug,
-      },
-      revalidate: 60,
-    };
-  } catch (error) {
-    return {
-      props: {
-        slug,
-      },
-    };
-  }
-};
+//     return {
+//       props: {
+//         headerImgWP,
+//         titleWP: title,
+//         longDescriptionWP,
+//         smallGalleryWP,
+//         pakietyWP: pakiety,
+//         cennikWP: cennik,
+//         slug,
+//       },
+//       revalidate: 60,
+//     };
+//   } catch (error) {
+//     return {
+//       props: {
+//         slug,
+//       },
+//     };
+//   }
+// };
 
-export const getStaticPaths = async () => {
-  const paths = offers.map((offer) => ({
-    params: { slug: offer.slug },
-  }));
+// export const getStaticPaths = async () => {
+//   const paths = offers.map((offer) => ({
+//     params: { slug: offer.slug },
+//   }));
 
-  return {
-    paths,
-    fallback: true,
-  };
-};
+//   return {
+//     paths,
+//     fallback: true,
+//   };
+// };
 
 export default OneOffer;
