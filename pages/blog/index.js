@@ -9,7 +9,7 @@ import Head from "next/head";
 
 const blogHeaderImg = "/images/blog/blogHeader.png";
 
-const BlogPage = () => {
+const BlogPage = ({ blogWP }) => {
   useEffect(() => {
     Aos.init({ duration: 1000, disable: "mobile" });
   }, []);
@@ -37,30 +37,57 @@ const BlogPage = () => {
           <img src={blogHeaderImg} alt="gallery title" />
         </header>
         <h2 className="blogSubtitle">Lista Artykułów</h2>
-        <div className="blogContent">
-          {blogData.map((article) => {
-            const { id, slug, title, text, headerImg, date } = article;
-            return (
-              <Link key={id} href={`/blog/${slug}`}>
-                <article
-                  data-aos="flip-left"
-                  data-aos-duration="1000"
-                  data-aos-offset="300"
-                >
-                  <section className="articleImg">
-                    <img src={headerImg} alt="zdjęcie" />
-                    <span>{date}</span>
-                  </section>
-                  <section className="articleInfo">
-                    <h3>{title}</h3>
-                    <p>{text[0].slice(0, 250) + "..."}</p>
-                    <IoEnter className="icon" />
-                  </section>
-                </article>
-              </Link>
-            );
-          })}
-        </div>
+        {blogWP ? (
+          <div className="blogContent">
+            {blogWP.map((article) => {
+              const { id, title, slug, date, text, headerimg } = article.acf;
+              return (
+                <Link key={id} href={`/blog/${slug}`}>
+                  <article
+                    data-aos="flip-left"
+                    data-aos-duration="1000"
+                    data-aos-offset="300"
+                  >
+                    <section className="articleImg">
+                      <img src={headerimg} alt="zdjęcie" />
+                      <span>{date}</span>
+                    </section>
+                    <section className="articleInfo">
+                      <h3>{title}</h3>
+                      <p>{text.text1.slice(0, 250) + "..."}</p>
+                      <IoEnter className="icon" />
+                    </section>
+                  </article>
+                </Link>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="blogContent">
+            {blogData.map((article) => {
+              const { id, slug, title, text, headerImg, date } = article;
+              return (
+                <Link key={id} href={`/blog/${slug}`}>
+                  <article
+                    data-aos="flip-left"
+                    data-aos-duration="1000"
+                    data-aos-offset="300"
+                  >
+                    <section className="articleImg">
+                      <img src={headerImg} alt="zdjęcie" />
+                      <span>{date}</span>
+                    </section>
+                    <section className="articleInfo">
+                      <h3>{title}</h3>
+                      <p>{text[0].slice(0, 250) + "..."}</p>
+                      <IoEnter className="icon" />
+                    </section>
+                  </article>
+                </Link>
+              );
+            })}
+          </div>
+        )}
       </Wrapper>
     </>
   );
@@ -229,5 +256,26 @@ const Wrapper = styled.div`
     }
   }
 `;
+export const getStaticProps = async () => {
+  try {
+    const responseBlog = await fetch(
+      `https://focuseye.pl/wp-json/wp/v2/artykuly`
+    );
+    const data = await responseBlog.json();
+    const blogWP = data.map((article) => {
+      return article;
+    });
+    return {
+      props: {
+        blogWP,
+      },
+      revalidate: 30,
+    };
+  } catch (error) {
+    return {
+      props: {},
+    };
+  }
+};
 
 export default BlogPage;

@@ -10,7 +10,7 @@ import ShortBlog from "../components/homePage/ShortBlog";
 import ShortAboutMe from "../components/homePage/ShortAboutMe";
 import ShortFaqContact from "../components/homePage/ShortFaqContact";
 import ShortInstagram from "../components/homePage/ShortInstagram";
-import { blogData } from "../public/data";
+// import { blogData } from "../public/data";
 
 const Home = ({ thumbnails, fourTitle, offersWP }) => {
   const [showDetails, setShowDetails] = useState("");
@@ -67,8 +67,16 @@ export const getStaticProps = async () => {
       const smallImg = image.media_details.sizes.full.source_url;
       return smallImg;
     });
-    const titleOfArticles = blogData.map((item) => {
-      const title = item.title;
+
+    const responseBlog = await fetch(
+      `https://focuseye.pl/wp-json/wp/v2/artykuly`
+    );
+    const dataBlog = await responseBlog.json();
+    const blogWP = dataBlog.map((article) => {
+      return article;
+    });
+    const titleOfArticles = blogWP.map((item) => {
+      const title = item.acf.title;
       return title;
     });
     const fourTitle = titleOfArticles.slice(0, 4);

@@ -17,12 +17,7 @@ const OneOffer = (props) => {
     pakietyWP,
     cennikWP,
     slug,
-    title,
-    headerImg,
-    graphic,
-    longDescription,
-    smallGallery,
-    pakiety,
+    localOffer,
   } = props;
 
   // const router = useRouter();
@@ -30,6 +25,10 @@ const OneOffer = (props) => {
   // const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
   //   localOffer;
   // const headerImg = imgs[1];
+
+  const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
+    localOffer;
+  const headerImg = imgs[1];
 
   return (
     <>
@@ -328,9 +327,6 @@ const Wrapper = styled.div`
 export const getStaticProps = async (context) => {
   const slug = context.params.slug;
   const localOffer = offers.find((item) => item.slug === slug);
-  const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
-    localOffer;
-  const headerImg = imgs[1];
 
   try {
     const responseOferta = await fetch(
@@ -343,8 +339,8 @@ export const getStaticProps = async (context) => {
     const smallGalleryWP = Object.values(smallgallery);
     const longDescriptionWP = Object.values(longdescription);
 
-    const localOffer = offers.find((item) => item.slug === slug);
-    const { graphic } = localOffer;
+    // const localOffer = offers.find((item) => item.slug === slug);
+    // const { graphic } = localOffer;
 
     return {
       props: {
@@ -354,7 +350,7 @@ export const getStaticProps = async (context) => {
         smallGalleryWP,
         pakietyWP: pakiety,
         cennikWP: cennik,
-        graphic,
+        localOffer,
         slug,
       },
       revalidate: 30,
@@ -362,12 +358,7 @@ export const getStaticProps = async (context) => {
   } catch (error) {
     return {
       props: {
-        title,
-        headerImg,
-        graphic,
-        longDescription,
-        smallGallery,
-        pakiety,
+        localOffer,
         slug,
       },
     };
@@ -375,9 +366,19 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const paths = offers.map((offer) => ({
-    params: { slug: offer.slug },
+  const responseOferta = await fetch(
+    `https://focuseye.pl/wp-json/wp/v2/oferty`
+  );
+  const dataOfferWP = await responseOferta.json();
+  const offersWP = dataOfferWP.map((offer) => {
+    return offer;
+  });
+  const paths = offersWP.map((offer) => ({
+    params: { slug: offer.acf.slug },
   }));
+  // const paths = offers.map((offer) => ({
+  //   params: { slug: offer.slug },
+  // }));
 
   return {
     paths,
