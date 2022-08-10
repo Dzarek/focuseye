@@ -327,6 +327,10 @@ const Wrapper = styled.div`
 
 export const getStaticProps = async (context) => {
   const slug = context.params.slug;
+  const localOffer = offers.find((item) => item.slug === slug);
+  const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
+    localOffer;
+  const headerImg = imgs[1];
 
   try {
     const responseOferta = await fetch(
@@ -356,10 +360,6 @@ export const getStaticProps = async (context) => {
       revalidate: 30,
     };
   } catch (error) {
-    const localOffer = offers.find((item) => item.slug === slug);
-    const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
-      localOffer;
-    const headerImg = imgs[1];
     return {
       props: {
         title,
