@@ -79,17 +79,17 @@ const GalleryPage = () => {
         return images;
       });
       const galleryWordPress = [
-        { id: 1, img: ciazoweImgWP, category: "brzuszkoweWP" },
-        { id: 2, img: slubyImgWP, category: "ślubneWP" },
-        { id: 3, img: zakochaniImgWP, category: "miłosneWP" },
-        { id: 4, img: noworodkoweImgWP, category: "noworodkoweWP" },
-        { id: 5, img: chrzestImgWP, category: "chrzcinyWP" },
-        { id: 6, img: rodzinneImgWP, category: "rodzinneWP" },
+        { id: 1, img: ciazoweImgWP, category: "brzuszkowe" },
+        { id: 2, img: slubyImgWP, category: "ślubne" },
+        { id: 3, img: zakochaniImgWP, category: "miłosne" },
+        { id: 4, img: noworodkoweImgWP, category: "noworodkowe" },
+        { id: 5, img: chrzestImgWP, category: "chrzciny" },
+        { id: 6, img: rodzinneImgWP, category: "rodzinne" },
       ];
       setGallery(galleryWordPress);
     } catch (error) {
       console.log(error);
-      setGallery(localGallery);
+      // setGallery(localGallery);
     }
   }, []);
 
@@ -480,6 +480,7 @@ const Wrapper = styled.div`
 //         slubyImgWP,
 //         zakochaniImgWP,
 //       },
+// revalidate: 60
 //     };
 //   } catch (error) {
 //     return {
