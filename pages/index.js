@@ -19,7 +19,7 @@ const Home = () => {
   useEffect(async () => {
     try {
       const response = await fetch(
-        "https://focuseye.pl/wp-json/wp/v2/media?media_folder=59&per_page=100"
+        "https://data.focuseye.pl/wp-json/wp/v2/media?media_folder=59&per_page=100"
       );
       const data = await response.json();
       const thumbnails = data.map((image) => {

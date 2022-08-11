@@ -14,7 +14,7 @@ const AppProvider = ({ children }) => {
     setIsLoading(true);
     try {
       const responseBlog = await fetch(
-        `https://focuseye.pl/wp-json/wp/v2/artykuly`
+        `https://data.focuseye.pl/wp-json/wp/v2/artykuly`
       );
       const data = await responseBlog.json();
       const blogWP = data.map((article) => {
@@ -36,7 +36,7 @@ const AppProvider = ({ children }) => {
   useEffect(async () => {
     try {
       const responseOferta = await fetch(
-        `https://focuseye.pl/wp-json/wp/v2/oferty?order=asc`
+        `https://data.focuseye.pl/wp-json/wp/v2/oferty?order=asc`
       );
       const data = await responseOferta.json();
       const offersWP = data.map((offer) => {
@@ -51,7 +51,7 @@ const AppProvider = ({ children }) => {
   useEffect(async () => {
     try {
       const responseChrzestImg = await fetch(
-        "https://focuseye.pl/wp-json/wp/v2/media?media_folder=60&per_page=100"
+        "https://data.focuseye.pl/wp-json/wp/v2/media?media_folder=60&per_page=100"
       );
       const dataChrzest = await responseChrzestImg.json();
       const chrzestImgWP = dataChrzest.map((image) => {
@@ -60,7 +60,7 @@ const AppProvider = ({ children }) => {
       });
 
       const responseCiazoweImg = await fetch(
-        "https://focuseye.pl/wp-json/wp/v2/media?media_folder=62&per_page=100"
+        "https://data.focuseye.pl/wp-json/wp/v2/media?media_folder=62&per_page=100"
       );
       const dataCiazowe = await responseCiazoweImg.json();
       const ciazoweImgWP = dataCiazowe.map((image) => {
@@ -69,7 +69,7 @@ const AppProvider = ({ children }) => {
       });
 
       const responseNoworodkoweImg = await fetch(
-        "https://focuseye.pl/wp-json/wp/v2/media?media_folder=63&per_page=100"
+        "https://data.focuseye.pl/wp-json/wp/v2/media?media_folder=63&per_page=100"
       );
       const dataNoworodkowe = await responseNoworodkoweImg.json();
       const noworodkoweImgWP = dataNoworodkowe.map((image) => {
@@ -78,7 +78,7 @@ const AppProvider = ({ children }) => {
       });
 
       const responseRodzinneImg = await fetch(
-        "https://focuseye.pl/wp-json/wp/v2/media?media_folder=64&per_page=100"
+        "https://data.focuseye.pl/wp-json/wp/v2/media?media_folder=64&per_page=100"
       );
       const dataRodzinne = await responseRodzinneImg.json();
       const rodzinneImgWP = dataRodzinne.map((image) => {
@@ -86,7 +86,7 @@ const AppProvider = ({ children }) => {
         return images;
       });
       const responseSlubyImg = await fetch(
-        "https://focuseye.pl/wp-json/wp/v2/media?media_folder=65&per_page=100"
+        "https://data.focuseye.pl/wp-json/wp/v2/media?media_folder=65&per_page=100"
       );
       const dataSluby = await responseSlubyImg.json();
       const slubyImgWP = dataSluby.map((image) => {
@@ -94,7 +94,7 @@ const AppProvider = ({ children }) => {
         return images;
       });
       const responseZakochaniImg = await fetch(
-        "https://focuseye.pl/wp-json/wp/v2/media?media_folder=66&per_page=100"
+        "https://data.focuseye.pl/wp-json/wp/v2/media?media_folder=66&per_page=100"
       );
       const dataZakochani = await responseZakochaniImg.json();
       const zakochaniImgWP = dataZakochani.map((image) => {
