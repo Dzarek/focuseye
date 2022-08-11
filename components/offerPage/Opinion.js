@@ -43,8 +43,8 @@ const Opinion = () => {
         slidesPerPage={1}
         addArrowClickHandler
         stopAutoPlayOnHover
-        arrowLeft={<IoIosArrowDropleftCircle className="arrow arrowLeft" />}
-        arrowRight={<IoIosArrowDroprightCircle className="arrow arrowRight" />}
+        arrowLeft={<IoIosArrowDropleftCircle className="arrow" />}
+        arrowRight={<IoIosArrowDroprightCircle className="arrow" />}
       >
         {opinions.map((opinion) => {
           const { id, text, author } = opinion;
@@ -94,10 +94,11 @@ const Wrapper = styled.section`
     }
   }
   .carousel {
-    width: 100vw;
+    width: 95vw;
     margin: 10vh auto;
     @media screen and (max-width: 800px) {
       margin: 2vh auto;
+      width: 100vw;
     }
     .oneOpinion {
       display: flex;
@@ -133,6 +134,10 @@ const Wrapper = styled.section`
   .arrow {
     font-size: 2rem;
     color: var(--secondaryColor);
+    cursor: pointer;
+    :hover {
+      color: var(--secondaryColor3);
+    }
     @media screen and (max-width: 800px) {
       font-size: 1.5rem;
     }

@@ -12,26 +12,13 @@ import { GrDocumentPdf } from "react-icons/gr";
 import Albums from "../../components/offerPage/Albums";
 import Mirror from "../../components/offerPage/Mirror";
 import Head from "next/head";
+import { useGlobalContext } from "../../components/context";
+
 const ofertaHeader = "/images/ofertaImg/header/ofertaHeader.png";
 
 const OfferPage = () => {
+  const { offersWP } = useGlobalContext();
   const [showDetails, setShowDetails] = useState("");
-  const [offersWP, setOffersWP] = useState(null);
-
-  useEffect(async () => {
-    try {
-      const responseOferta = await fetch(
-        `https://focuseye.pl/wp-json/wp/v2/oferty?order=asc`
-      );
-      const data = await responseOferta.json();
-      const offersWP = data.map((offer) => {
-        return offer;
-      });
-      setOffersWP(offersWP);
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
 
   useEffect(() => {
     Aos.init({ duration: 1000, disable: "mobile" });
@@ -377,28 +364,5 @@ const Wrapper = styled.div`
     }
   }
 `;
-
-// export const getStaticProps = async () => {
-//   try {
-//     const responseOferta = await fetch(
-//       `https://focuseye.pl/wp-json/wp/v2/oferty?order=asc`
-//     );
-//     const data = await responseOferta.json();
-//     const offersWP = data.map((offer) => {
-//       return offer;
-//     });
-
-//     return {
-//       props: {
-//         offersWP,
-//       },
-//       revalidate: 30,
-//     };
-//   } catch (error) {
-//     return {
-//       props: {},
-//     };
-//   }
-// };
 
 export default OfferPage;

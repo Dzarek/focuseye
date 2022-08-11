@@ -7,49 +7,109 @@ import Opinion from "../../components/offerPage/Opinion";
 import { IoChevronBackCircle } from "react-icons/io5";
 import Head from "next/head";
 import Loading from "../../components/Loading";
-import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { useGlobalContext } from "../../components/context";
 
 const OneOffer = () => {
+  const { offersWP } = useGlobalContext();
   const router = useRouter();
   const slug = router.query.slug;
   if (!slug) {
     return <Loading />;
   }
-  const [headerImgWP, setHeaderImgWP] = useState(null);
-  const [titleWP, setTitleWP] = useState(null);
-  const [longDescriptionWP, setLongDescriptionWP] = useState(null);
-  const [smallGalleryWP, setSmallGalleryWP] = useState(null);
-  const [pakietyWP, setPakietyWP] = useState(null);
-  const [cennikWP, setCennikWP] = useState(null);
 
-  const localOffer = offers.find((item) => item.slug === slug);
-  const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
-    localOffer;
-  const headerImg = imgs[1];
+  if (!offersWP) {
+    const localOffer = offers.find((item) => item.slug === slug);
+    const { title, imgs, graphic, longDescription, smallGallery, pakiety } =
+      localOffer;
+    const headerImg = imgs[1];
+    return (
+      <>
+        <Head>
+          <title>FocusEye | Oferta</title>
+          <meta
+            name="description"
+            content="Nie pozwól aby Twoje piękne chwile uległy zapomnieniu."
+          />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/favicon.ico" />
+          <link rel="apple-touch-icon" href="/logo192.png" />
+          <link rel="shortcut icon" href="/logo192.png" />
+        </Head>
+        <Wrapper>
+          <header className="headerTitle" style={{ overflow: "hidden" }}>
+            <div
+              className="headerBg"
+              style={{
+                backgroundImage: `url(${headerImg})`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                animation: "singleOfferHeader 5s linear 1 forwards",
+                width: "100vw",
+                filter: "brightness(0.8)",
+              }}
+            ></div>
+            <div className="title">
+              <h2>{title}</h2>
+            </div>
+          </header>
+          {slug === "brzuszkowe" ? (
+            <div className="infoAndGraphic">
+              <section className="longInfo">
+                {longDescription.map((text, index) => {
+                  return <p key={index}>{text}</p>;
+                })}
+              </section>
+              <img src={graphic[0]} alt="grafika" />
+            </div>
+          ) : (
+            <div className="infoAndGraphic2">
+              <img src={graphic[0]} alt="grafika" />
+              <section className="longInfo">
+                {longDescription.map((text, index) => {
+                  return <p key={index}>{text}</p>;
+                })}
+              </section>
+              <img src={graphic[1]} alt="grafika" />
+            </div>
+          )}
+          <SRLWrapper>
+            <section className="smallGallery">
+              {smallGallery.map((image, index) => {
+                return <img key={index} src={image} />;
+              })}
+            </section>
+          </SRLWrapper>
+          <PakietSingleOffer pakiety={pakiety} />
+          <h3 className="cennik">
+            Powyższy cennik obowiązuje od 01.08.2022 r.
+          </h3>
+          <Opinion />
+          <Link href="/oferta">
+            <button className="backToBlog">
+              <IoChevronBackCircle className="icon" />
+              powrót do listy ofert
+            </button>
+          </Link>
+        </Wrapper>
+      </>
+    );
+  }
 
-  useEffect(async () => {
-    try {
-      const responseOferta = await fetch(
-        `https://focuseye.pl/wp-json/wp/v2/oferty?slug=${slug}`
-      );
-      const data = await responseOferta.json();
-      const { title, imgs, longdescription, smallgallery, pakiety, cennik } =
-        data[0].acf;
-      const headerImgWP = imgs.img2;
-      const smallGalleryWP = Object.values(smallgallery);
-      const longDescriptionWP = Object.values(longdescription);
-      setHeaderImgWP(headerImgWP);
-      setTitleWP(title);
-      setLongDescriptionWP(longDescriptionWP);
-      setSmallGalleryWP(smallGalleryWP);
-      setPakietyWP(pakiety);
-      setCennikWP(cennik);
-      console.log("ok");
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+  const oneOffer = offersWP.filter((offer) => offer.acf.slug === slug);
+  const {
+    title,
+    imgs,
+    longdescription,
+    smallgallery,
+    pakiety,
+    cennik,
+    graphic,
+  } = oneOffer[0].acf;
+  const headerImgWP = imgs.img2;
+  const smallGalleryWP = Object.values(smallgallery);
+  const longDescriptionWP = Object.values(longdescription);
+  const graphicWP = Object.values(graphic);
 
   return (
     <>
@@ -67,7 +127,7 @@ const OneOffer = () => {
 
       <Wrapper>
         <header className="headerTitle" style={{ overflow: "hidden" }}>
-          {headerImgWP ? (
+          {headerImgWP && (
             <div
               className="headerBg"
               style={{
@@ -79,78 +139,46 @@ const OneOffer = () => {
                 filter: "brightness(0.8)",
               }}
             ></div>
-          ) : (
-            <div
-              className="headerBg"
-              style={{
-                backgroundImage: `url(${headerImg})`,
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                animation: "singleOfferHeader 5s linear 1 forwards",
-                width: "100vw",
-                filter: "brightness(0.8)",
-              }}
-            ></div>
           )}
           <div className="title">
-            <h2>{titleWP ? titleWP : title}</h2>
+            <h2>{title && title}</h2>
           </div>
         </header>
         {slug === "brzuszkowe" ? (
           <div className="infoAndGraphic">
-            {longDescriptionWP ? (
+            {longDescriptionWP && (
               <section className="longInfo">
                 {longDescriptionWP.map((text, index) => {
                   return <p key={index}>{text}</p>;
                 })}
               </section>
-            ) : (
-              <section className="longInfo">
-                {longDescription.map((text, index) => {
-                  return <p key={index}>{text}</p>;
-                })}
-              </section>
             )}
-            <img src={graphic[0]} alt="grafika" />
+            {graphicWP[0] && <img src={graphicWP[0]} alt="grafika" />}
           </div>
         ) : (
           <div className="infoAndGraphic2">
-            <img src={graphic[0]} alt="grafika" />
-            {longDescriptionWP ? (
+            {graphicWP[0] && <img src={graphicWP[0]} alt="grafika" />}
+            {longDescriptionWP && (
               <section className="longInfo">
                 {longDescriptionWP.map((text, index) => {
                   return <p key={index}>{text}</p>;
                 })}
               </section>
-            ) : (
-              <section className="longInfo">
-                {longDescription.map((text, index) => {
-                  return <p key={index}>{text}</p>;
-                })}
-              </section>
             )}
-            <img src={graphic[1]} alt="grafika" />
+            {graphicWP[1] && <img src={graphicWP[1]} alt="grafika" />}
           </div>
         )}
         <SRLWrapper>
-          {smallGalleryWP ? (
+          {smallGalleryWP && (
             <section className="smallGallery">
               {smallGalleryWP.map((image, index) => {
                 return <img key={index} src={image} />;
               })}
             </section>
-          ) : (
-            <section className="smallGallery">
-              {smallGallery.map((image, index) => {
-                return <img key={index} src={image} />;
-              })}
-            </section>
           )}
         </SRLWrapper>
-        <PakietSingleOffer pakiety={pakietyWP ? pakietyWP : pakiety} />
-        <h3 className="cennik">
-          {cennikWP ? cennikWP : "Powyższy cennik obowiązuje od 01.08.2022 r."}
-        </h3>
+        <PakietSingleOffer pakiety={pakiety && pakiety} />
+        <h3 className="cennik">{cennik && cennik}</h3>
         <Opinion />
         <Link href="/oferta">
           <button className="backToBlog">
@@ -344,51 +372,5 @@ const Wrapper = styled.div`
     }
   }
 `;
-
-// export const getStaticProps = async (context) => {
-//   const slug = context.params.slug;
-
-//   try {
-//     const responseOferta = await fetch(
-//       `https://focuseye.pl/wp-json/wp/v2/oferty?slug=${slug}`
-//     );
-//     const data = await responseOferta.json();
-//     const { title, imgs, longdescription, smallgallery, pakiety, cennik } =
-//       data[0].acf;
-//     const headerImgWP = imgs.img2;
-//     const smallGalleryWP = Object.values(smallgallery);
-//     const longDescriptionWP = Object.values(longdescription);
-
-//     return {
-//       props: {
-//         headerImgWP,
-//         titleWP: title,
-//         longDescriptionWP,
-//         smallGalleryWP,
-//         pakietyWP: pakiety,
-//         cennikWP: cennik,
-//         slug,
-//       },
-//       revalidate: 60,
-//     };
-//   } catch (error) {
-//     return {
-//       props: {
-//         slug,
-//       },
-//     };
-//   }
-// };
-
-// export const getStaticPaths = async () => {
-//   const paths = offers.map((offer) => ({
-//     params: { slug: offer.slug },
-//   }));
-
-//   return {
-//     paths,
-//     fallback: true,
-//   };
-// };
 
 export default OneOffer;

@@ -2,25 +2,26 @@ import styled from "styled-components";
 import Link from "next/link";
 import { SRLWrapper } from "simple-react-lightbox";
 import { IoChevronBackCircle } from "react-icons/io5";
-import { blogData } from "../../public/data";
 import Head from "next/head";
 import Loading from "../../components/Loading";
+import { useRouter } from "next/router";
+import { useGlobalContext } from "../../components/context";
 
-const SingleArticleBlog = ({
-  slug,
-  titleWP,
-  dateWP,
-  textWP,
-  imagesWP,
-  headerImgWP,
-  bgImgWP,
-}) => {
-  if (!slug) {
+const SingleArticleBlog = () => {
+  const { blogWP, isLoading } = useGlobalContext();
+  const router = useRouter();
+  const slug = router.query.slug;
+  if (!slug || !blogWP) {
     return <Loading />;
   }
+  const oneArticle = blogWP.filter((article) => article.slug === slug);
+  const { title, date, text, images, headerimg, bgimg } = oneArticle[0].acf;
+  const textWP = Object.values(text);
+  const imagesWP = Object.values(images);
 
-  const localBlog = blogData.find((item) => item.slug === slug);
-  const { title, date, text, images, headerImg, bgImg } = localBlog;
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <>
@@ -39,7 +40,7 @@ const SingleArticleBlog = ({
         <div
           className="bgArticle"
           style={{
-            background: `url(${bgImgWP ? bgImgWP : bgImg})`,
+            background: `url(${bgimg && bgimg})`,
             width: "100vw",
             height: "100vh",
             position: "fixed",
@@ -52,36 +53,24 @@ const SingleArticleBlog = ({
         <div className="articleContainer">
           <div className="titleContainer">
             <h1>
-              {titleWP ? titleWP : title}
-              <span>Data publikacji: {dateWP ? dateWP : date}</span>
+              {title && title}
+              <span>Data publikacji: {date && date}</span>
             </h1>
-            <img src={headerImgWP ? headerImgWP : headerImg} alt="title" />
+            <img src={headerimg && headerimg} alt="title" />
           </div>
           <div className="separateLine"></div>
-          {textWP ? (
+          {textWP && (
             <section className="infoContent">
               {textWP.map((item, index) => {
                 return <p key={index}>{item}</p>;
               })}
             </section>
-          ) : (
-            <section className="infoContent">
-              {text.map((item, index) => {
-                return <p key={index}>{item}</p>;
-              })}
-            </section>
           )}
           <SRLWrapper>
-            {imagesWP ? (
+            {imagesWP && (
               <section className="images">
                 {imagesWP.map((img, index) => {
-                  return <img key={index} src={img} alt="name" />;
-                })}
-              </section>
-            ) : (
-              <section className="images">
-                {images.map((img, index) => {
-                  return <img key={index} src={img} alt="name" />;
+                  return <img key={index} src={img} alt="" />;
                 })}
               </section>
             )}
@@ -142,6 +131,7 @@ const Wrapper = styled.div`
     min-height: 80vh;
     background: var(--sectionBgColor);
     padding: 5vh 5vw;
+    overflow: hidden;
     @media screen and (max-width: 800px) {
       width: 100vw;
       margin: 0vh auto 10vh;
@@ -228,57 +218,5 @@ const Wrapper = styled.div`
     }
   }
 `;
-
-export const getStaticProps = async (context) => {
-  const slug = context.params.slug;
-
-  try {
-    const responseBlog = await fetch(
-      `https://focuseye.pl/wp-json/wp/v2/artykuly?slug=${slug}`
-    );
-    const data = await responseBlog.json();
-    const { title, date, text, images, headerimg, bgimg } = data[0].acf;
-
-    const textWP = Object.values(text);
-    const imagesWP = Object.values(images);
-
-    return {
-      props: {
-        titleWP: title,
-        dateWP: date,
-        textWP,
-        imagesWP,
-        headerImgWP: headerimg,
-        bgImgWP: bgimg,
-        slug,
-      },
-      revalidate: 60,
-    };
-  } catch (error) {
-    return {
-      props: {
-        slug,
-      },
-    };
-  }
-};
-
-export const getStaticPaths = async () => {
-  const responseBlog = await fetch(
-    `https://focuseye.pl/wp-json/wp/v2/artykuly`
-  );
-  const data = await responseBlog.json();
-  const blogWP = data.map((article) => {
-    return article;
-  });
-  const paths = blogWP.map((item) => ({
-    params: { slug: item.acf.slug },
-  }));
-
-  return {
-    paths,
-    fallback: true,
-  };
-};
 
 export default SingleArticleBlog;

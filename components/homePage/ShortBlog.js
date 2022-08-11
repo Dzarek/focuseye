@@ -3,10 +3,13 @@ import styled from "styled-components";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
+import { useGlobalContext } from "../context";
 
 const loadingSpinner = "/images/loading.gif";
 
-const ShortBlog = ({ fourTitle }) => {
+const ShortBlog = () => {
+  const { fourTitle } = useGlobalContext();
+
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);

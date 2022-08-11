@@ -4,15 +4,19 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Link from "next/link";
-import { blogData } from "../../public/data";
 import Head from "next/head";
+import Loading from "../../components/Loading";
+import { useGlobalContext } from "../../components/context";
 
 const blogHeaderImg = "/images/blog/blogHeader.png";
 
-const BlogPage = ({ blogWP }) => {
+const BlogPage = () => {
+  const { blogWP, isLoading } = useGlobalContext();
+
   useEffect(() => {
     Aos.init({ duration: 1000, disable: "mobile" });
   }, []);
+
   return (
     <>
       <Head>
@@ -37,12 +41,14 @@ const BlogPage = ({ blogWP }) => {
           <img src={blogHeaderImg} alt="gallery title" />
         </header>
         <h2 className="blogSubtitle">Lista Artykułów</h2>
-        {blogWP ? (
+        {isLoading ? (
+          <Loading />
+        ) : (
           <div className="blogContent">
             {blogWP.map((article) => {
-              const { id, title, slug, date, text, headerimg } = article.acf;
+              const { id, title, date, text, headerimg } = article.acf;
               return (
-                <Link key={id} href={`/blog/${slug}`}>
+                <Link key={id} href={`/blog/${article.slug}`}>
                   <article
                     data-aos="flip-left"
                     data-aos-duration="1000"
@@ -55,31 +61,6 @@ const BlogPage = ({ blogWP }) => {
                     <section className="articleInfo">
                       <h3>{title}</h3>
                       <p>{text.text1.slice(0, 250) + "..."}</p>
-                      <IoEnter className="icon" />
-                    </section>
-                  </article>
-                </Link>
-              );
-            })}
-          </div>
-        ) : (
-          <div className="blogContent">
-            {blogData.map((article) => {
-              const { id, slug, title, text, headerImg, date } = article;
-              return (
-                <Link key={id} href={`/blog/${slug}`}>
-                  <article
-                    data-aos="flip-left"
-                    data-aos-duration="1000"
-                    data-aos-offset="300"
-                  >
-                    <section className="articleImg">
-                      <img src={headerImg} alt="zdjęcie" />
-                      <span>{date}</span>
-                    </section>
-                    <section className="articleInfo">
-                      <h3>{title}</h3>
-                      <p>{text[0].slice(0, 250) + "..."}</p>
                       <IoEnter className="icon" />
                     </section>
                   </article>
@@ -230,6 +211,7 @@ const Wrapper = styled.div`
         padding: 10px 20px;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
+        overflow: hidden;
         h3 {
           margin-bottom: 4vh;
           color: var(--secondaryColor);
@@ -256,26 +238,5 @@ const Wrapper = styled.div`
     }
   }
 `;
-export const getStaticProps = async () => {
-  try {
-    const responseBlog = await fetch(
-      `https://focuseye.pl/wp-json/wp/v2/artykuly`
-    );
-    const data = await responseBlog.json();
-    const blogWP = data.map((article) => {
-      return article;
-    });
-    return {
-      props: {
-        blogWP,
-      },
-      revalidate: 30,
-    };
-  } catch (error) {
-    return {
-      props: {},
-    };
-  }
-};
 
 export default BlogPage;

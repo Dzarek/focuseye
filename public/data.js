@@ -936,7 +936,7 @@ export const blogData = [
   {
     id: 1,
     title: "Sesja lifestyle? Zobacz dla kogo ona jest i jak przebiega.",
-    slug: "jak-przebiega-sesja-lifestyle",
+    slug: "sesja-lifestyle-zobacz-dla-kogo-ona-jest-i-jak-przebiega",
     date: "04.08.2022",
     text: [
       "Myślisz o spontanicznej i pełnej śmiechów sesji? Obawiasz się, że to nie dla Ciebie bo nie umiesz pozować do zdjęć? Coś wspaniałego, w sesji lifestyle chodzi o wyłapanie wyjątkowych chwil tu i teraz. Skupiacie się na sobie, u mnie nie ma nudy, biegacie, skaczecie, gonicie się, podrzucacie, dotykacie, całujecie, przytulacie:)",
