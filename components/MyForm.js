@@ -1,6 +1,45 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { offers } from "../public/data";
+var Email = {
+  send: function (a) {
+    return new Promise(function (n, e) {
+      (a.nocache = Math.floor(1e6 * Math.random() + 1)), (a.Action = "Send");
+      var t = JSON.stringify(a);
+      Email.ajaxPost("https://smtpjs.com/v3/smtpjs.aspx?", t, function (e) {
+        n(e);
+      });
+    });
+  },
+  ajaxPost: function (e, n, t) {
+    var a = Email.createCORSRequest("POST", e);
+    a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"),
+      (a.onload = function () {
+        var e = a.responseText;
+        null != t && t(e);
+      }),
+      a.send(n);
+  },
+  ajax: function (e, n) {
+    var t = Email.createCORSRequest("GET", e);
+    (t.onload = function () {
+      var e = t.responseText;
+      null != n && n(e);
+    }),
+      t.send();
+  },
+  createCORSRequest: function (e, n) {
+    var t = new XMLHttpRequest();
+    return (
+      "withCredentials" in t
+        ? t.open(e, n, !0)
+        : "undefined" != typeof XDomainRequest
+        ? (t = new XDomainRequest()).open(e, n)
+        : (t = null),
+      t
+    );
+  },
+};
 
 let minDate = new Date().toISOString().slice(0, 10);
 
@@ -28,16 +67,20 @@ const MyForm = ({ setVisibleCookie }) => {
     `<br/> <br/> WIADOMOŚĆ:  ` +
     `<strong>${text}</strong>`;
   const mailSubject = `focuseye.pl, Wiadomość od ${name}`;
+
   const handleWowSubmit = async (e) => {
     e.preventDefault();
+    console.log("aa");
     if (category === "---") {
       return alert("Wybierz kategorię przed wysłaniem formularza.");
     } else {
-      window.Email.send({
+      // blablafotosylwia@gmail.com
+      // blablafotosylwia1!
+      Email.send({
         Host: "smtp.gmail.com",
-        Username: "",
-        Password: ``,
-        To: [""],
+        Username: "blablafotosylwia@gmail.com",
+        Password: "blablafotosylwia1!",
+        To: ["dzarekcoding@gmail.com"],
         From: email,
         Subject: mailSubject,
         Body: mailBody,
