@@ -1,45 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { offers } from "../public/data";
-var Email = {
-  send: function (a) {
-    return new Promise(function (n, e) {
-      (a.nocache = Math.floor(1e6 * Math.random() + 1)), (a.Action = "Send");
-      var t = JSON.stringify(a);
-      Email.ajaxPost("https://smtpjs.com/v3/smtpjs.aspx?", t, function (e) {
-        n(e);
-      });
-    });
-  },
-  ajaxPost: function (e, n, t) {
-    var a = Email.createCORSRequest("POST", e);
-    a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"),
-      (a.onload = function () {
-        var e = a.responseText;
-        null != t && t(e);
-      }),
-      a.send(n);
-  },
-  ajax: function (e, n) {
-    var t = Email.createCORSRequest("GET", e);
-    (t.onload = function () {
-      var e = t.responseText;
-      null != n && n(e);
-    }),
-      t.send();
-  },
-  createCORSRequest: function (e, n) {
-    var t = new XMLHttpRequest();
-    return (
-      "withCredentials" in t
-        ? t.open(e, n, !0)
-        : "undefined" != typeof XDomainRequest
-        ? (t = new XDomainRequest()).open(e, n)
-        : (t = null),
-      t
-    );
-  },
-};
+import emailjs from "emailjs-com";
 
 let minDate = new Date().toISOString().slice(0, 10);
 
@@ -53,55 +15,47 @@ const MyForm = ({ setVisibleCookie }) => {
   const [category, setCategory] = useState("---");
   const [date, setDate] = useState(minDate);
 
-  const mailBody =
-    `IMIĘ I NAZWISKO:  ` +
-    `<strong>${name}</strong>` +
-    `<br/> <br/> ADRES EMAIL:  ` +
-    `<strong>${email}</strong>` +
-    `<br/> <br/> NUMER TELEFONU:  ` +
-    `<strong>${phone}</strong>` +
-    `<br/> <br/> KATEGORIA:  ` +
-    `<strong>${category}</strong>` +
-    `<br/> <br/> TERMIN:  ` +
-    `<strong>${date}</strong>` +
-    `<br/> <br/> WIADOMOŚĆ:  ` +
-    `<strong>${text}</strong>`;
-  const mailSubject = `focuseye.pl, Wiadomość od ${name}`;
-
-  const handleWowSubmit = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    console.log("aa");
     if (category === "---") {
       return alert("Wybierz kategorię przed wysłaniem formularza.");
     } else {
-      // blablafotosylwia@gmail.com
-      // blablafotosylwia1!
-      // tykknaizxzlreedm
-      Email.send({
-        Host: "smtp.gmail.com",
-        Username: "blablafotosylwia@gmail.com",
-        Password: "tykknaizxzlreedm",
-        To: ["dzarekcoding@gmail.com"],
-        From: email,
-        Subject: mailSubject,
-        Body: mailBody,
-      }).then((data) => {
-        if (data === "OK") {
-          setStatus("SUCCESS");
-        } else {
-          setStatus("ERROR");
-        }
-      });
-      setTimeout(() => {
-        setStatus("");
-        setName("");
-        setEmail("");
-        setPhone("");
-        setText("");
-        setBox(false);
-        setCategory("---");
-        setDate(minDate);
-      }, 3000);
+      emailjs
+        .sendForm(
+          "service_9s94mu1",
+          "template_p3qolfe",
+          e.target,
+          "WgQWoqpRy3nW2fmKj"
+        )
+        .then(
+          () => {
+            e.target.reset();
+            setStatus("SUCCESS");
+            setTimeout(() => {
+              setStatus("");
+              setName("");
+              setEmail("");
+              setPhone("");
+              setText("");
+              setBox(false);
+              setCategory("---");
+              setDate(minDate);
+            }, 3000);
+          },
+          () => {
+            setStatus("ERROR");
+            setTimeout(() => {
+              setStatus("");
+              setName("");
+              setEmail("");
+              setPhone("");
+              setText("");
+              setBox(false);
+              setCategory("---");
+              setDate(minDate);
+            }, 3000);
+          }
+        );
     }
   };
 
@@ -119,7 +73,7 @@ const MyForm = ({ setVisibleCookie }) => {
 
   return (
     <>
-      <Wrapper onSubmit={(e) => handleWowSubmit(e)}>
+      <Wrapper onSubmit={(e) => sendEmail(e)}>
         <input
           className="inputName"
           type="text"
