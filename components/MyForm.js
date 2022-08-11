@@ -76,10 +76,11 @@ const MyForm = ({ setVisibleCookie }) => {
     } else {
       // blablafotosylwia@gmail.com
       // blablafotosylwia1!
+      // tykknaizxzlreedm
       Email.send({
         Host: "smtp.gmail.com",
         Username: "blablafotosylwia@gmail.com",
-        Password: "blablafotosylwia1!",
+        Password: "tykknaizxzlreedm",
         To: ["dzarekcoding@gmail.com"],
         From: email,
         Subject: mailSubject,
