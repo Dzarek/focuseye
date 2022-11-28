@@ -11,7 +11,8 @@ import ShortAboutMe from "../components/homePage/ShortAboutMe";
 import ShortFaqContact from "../components/homePage/ShortFaqContact";
 import ShortInstagram from "../components/homePage/ShortInstagram";
 
-const Home = () => {
+const Home = ({ items }) => {
+  console.log(items);
   const [showDetails, setShowDetails] = useState("");
   const [thumbnails, showThumbnails] = useState(null);
   const { offersWP } = useGlobalContext();
@@ -73,5 +74,26 @@ const Home = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  let singleProduct = {};
+  const response = await fetch(
+    "https://buylist-dj.herokuapp.com/api/buy-lists/"
+  );
+  const data = await response.json();
+  const items = data.data.map((item) => {
+    const {
+      attributes: { idproduct, name },
+    } = item;
+    return (singleProduct = { id: idproduct, name: name });
+  });
+
+  return {
+    props: {
+      items,
+    },
+    revalidate: 60,
+  };
+}
 
 export default Home;
