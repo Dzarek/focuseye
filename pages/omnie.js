@@ -10,7 +10,6 @@ const aboutMeHeaderImg = "/images/aboutMeImg/aboutMeHeader.png";
 const meImg2 = "/images/aboutMeImg/meImg2.jpg";
 
 const OmniePage = () => {
-  // console.log(items);
   useEffect(() => {
     Aos.init({ duration: 1000, disable: "mobile" });
   }, []);
@@ -118,27 +117,6 @@ const OmniePage = () => {
     </>
   );
 };
-
-// export async function getStaticProps() {
-//   let singleProduct = {};
-//   const response = await fetch(
-//     "https://buylist-dj.herokuapp.com/api/buy-lists/"
-//   );
-//   const data = await response.json();
-//   const items = data.data.map((item) => {
-//     const {
-//       attributes: { idproduct, name },
-//     } = item;
-//     return (singleProduct = { id: idproduct, name: name });
-//   });
-
-//   return {
-//     props: {
-//       items,
-//     },
-//     revalidate: 60,
-//   };
-// }
 
 const Wrapper = styled.div`
   width: 100vw;
